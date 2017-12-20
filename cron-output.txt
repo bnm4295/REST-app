@@ -1,0 +1,2 @@
+stdout is not a tty
+stdout is not a tty
