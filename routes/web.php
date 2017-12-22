@@ -65,7 +65,7 @@ Route::post ( 'testing', function (Request $request) {
         return Redirect::back ();
     }
 } );
-
+Route::resource('blogs', 'BlogController');
 Route::resource('properties','PropertyController',
   array('except'=> ['index', 'store', 'destroy'] )
 );

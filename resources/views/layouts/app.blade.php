@@ -231,7 +231,7 @@
                         <!-- erase this, admin check -->
                         @auth('admin')
                           @if (Auth::guard('admin')->check() == true )
-                            <h1><strong>You are an admin!</strong></h1>
+                            <!--h1><strong>You are an admin!</strong></h1>-->
                           @endif
                         @endauth
                         <!-- -->

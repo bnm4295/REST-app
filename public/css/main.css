@@ -105,6 +105,9 @@ img[src=""] {
 
 
 /* map */
+#showmap .gm-iv-address{
+	height: 55px;
+}
 #map-screen-fix{
 	float: left;
 }

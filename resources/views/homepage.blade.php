@@ -26,7 +26,7 @@
                         <div class="form-group">
                             <label class="filter-col" style="margin-right:0;" for="numbeds">Beds:</label>
                             <select id="numbeds"class="form-control" name="number_of_beds">
-                               <option value="0"></option>
+                               <option value=""></option>
                                <option value="1">1</option>
                                <option value="2">2</option>
                                <option value="3">3</option>
@@ -37,7 +37,7 @@
                         <div class="form-group">
                             <label class="filter-col" style="margin-right:0;" for="numbaths">Baths:</label>
                             <select id="numbaths"class="form-control" name="number_of_baths">
-                                <option value="0"></option>
+                                <option value=""></option>
                                 <option value="1">1</option>
                                 <option value="2">2</option>
                                 <option value="3">3</option>

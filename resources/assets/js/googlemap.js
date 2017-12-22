@@ -29,8 +29,11 @@
       initMap();
       initAutocomplete();
     }
+    if(document.getElementById("showmap") != null){
+      initMapShow();
+    }
   }
-  var map;
+  var map, panorama, showmap;
   function initMap() {
     map = new google.maps.Map(document.getElementById('map'), {
       center: new google.maps.LatLng(49.246292, -123.116226),
@@ -73,6 +76,28 @@
         });
       });
     });
+  }
+  function initMapShow(){
+    //var astorPlace = {lat: document.getElementById('showmaplat').value, lng: document.getElementById('showmaplong').value};
+    showmap = new google.maps.Map(document.getElementById('showmap'), {
+      center: new google.maps.LatLng(document.getElementById('showmaplat').value, document.getElementById('showmaplong').value),
+      zoom: 15,
+      streetViewControl: false
+    });
+    var point = new google.maps.LatLng(
+        parseFloat(document.getElementById('showmaplat').value),
+        parseFloat(document.getElementById('showmaplong').value)
+    );
+    var marker = new google.maps.Marker({
+      map: showmap,
+      position: point
+    });
+    panorama = showmap.getStreetView();
+        panorama.setPosition(point);
+        panorama.setPov(/** @type {google.maps.StreetViewPov} */({
+          heading: 265,
+          pitch: 0
+        }));
   }
 
 
@@ -189,6 +214,15 @@ function geolocate() {
       autocomplete.setBounds(circle.getBounds());
     });
   }
+}
+
+function toggleStreetView() {
+        var toggle = panorama.getVisible();
+        if (toggle == false) {
+          panorama.setVisible(true);
+        } else {
+          panorama.setVisible(false);
+        }
 }
 
 function doNothing() {}

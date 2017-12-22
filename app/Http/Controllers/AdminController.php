@@ -4,6 +4,7 @@ namespace Suuty\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Suuty\Offer;
+use Suuty\Blog;
 class AdminController extends Controller
 {
     /**
@@ -24,6 +25,7 @@ class AdminController extends Controller
     public function index()
     {
         $offers = Offer::all();
-        return view('admin', compact('offers'));
+        $blogs = Blog::all();
+        return view('admin', compact('offers', 'blogs'));
     }
 }

@@ -41,5 +41,27 @@
             </div>
         </div>
     </div>
+  </div class="row">
+    <a href="{{ asset('/../server.php/blogs/create') }}" >Create a Blog</a>
+    @foreach($blogs as $blog)
+      <form action="{{action('BlogController@show', $blog['id'])}}" method="get">
+        <!--input name="_method" type="hidden" value="show">-->
+        @if($blog['images'] != "")
+          <?php
+            $decodedarr = json_decode( $post->images , true);
+            $counter = count($decodedarr);
+            //$image = $decodedarr[$i];
+            $image = $decodedarr[0];
+          ?>
+          <input class="img-rounded" value="" type="submit" style="border: solid 0px #000000; height: 200px; width: 60%;
+           background-image: url({{ asset('/../public/images/') }}/{{$image}});
+            background-size: 300px; background-repeat: no-repeat;"/>
+          <!--img class="img-rounded" style="height: 230px; width: 100%" src="{{ asset('/../public/images/') }}/{{$image}}"/>
+          <button class="btn btn-success" type="submit">Show</button>-->
+        @endif
+        <input value="{{$blog->id}}" type="submit">
+      </form>
+    @endforeach
+  </div>
 </div>
 @endsection

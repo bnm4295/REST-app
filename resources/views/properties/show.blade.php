@@ -130,6 +130,13 @@
     </div>
     <!-- Widget START -->
     <div class="col-md-6 col-sm-6 col-xs-12 no-padding" style="margin: 20px width: 300px;">
+        <input id="showmaplat" type="hidden" value="{{$property->latitude}}">
+        <input id="showmaplong" type="hidden" value="{{$property->longitude}}">
+        <div id="floating-panel">
+          <input type="button" value="Toggle Street View" onclick="toggleStreetView();"></input>
+        </div>
+        <div id="showmap" style="width: 500px; height: 500px;">
+        </div>
         <!--div style="margin-left: 30px;">
           <h2 style="font-family:stagsans,arial,helvetica,sans-serif;font-size:1.6em;font-weight:400;margin-top:0">
             <a href="/best-mortgage-rates" style="text-decoration:none;color:#A3C139;">Mortgage rate comparison</a>
