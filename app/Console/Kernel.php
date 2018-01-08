@@ -5,6 +5,7 @@ namespace Suuty\Console;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
 use DB;
+use Mail;
 
 class Kernel extends ConsoleKernel
 {
@@ -29,6 +30,8 @@ class Kernel extends ConsoleKernel
         //...if it matches do above otherwise do none
         //Every day check for new property listings and execute above
         $schedule->call(function(){
+          //return new Suuty\Mail\SaveSearch($property);
+
           $checktest = DB::table('properties')->get();
           date_default_timezone_set('America/Los_Angeles');
           $tomorrow = time() + (1 * 24 * 60 * 60);
@@ -54,12 +57,19 @@ class Kernel extends ConsoleKernel
                 //echo "<br>";
                 echo "SaveSearch ID: " . $post->id . " " . $post->email . " ";
                 echo "localhost:8080" . $post->url;
+
+                Mail::raw('Sending emails with Mailgun and Laravel is easy!', function($message)
+                {
+                		$message->subject('Mailgun and Laravel are awesome!');
+                		$message->from('no-reply@website_name.com', 'Website Name');
+                		$message->to('jhso@sfu.ca');
+                });
               }
             }
             //echo "<br>";
           }
-        })->everyMinute()
-          ->emailOutputTo('jhso@sfu.ca');
+        })->everyMinute();
+
         $schedule->command('inspire')
           ->everyMinute()
           ->emailOutputTo('jhso@sfu.ca');
