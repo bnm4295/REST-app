@@ -29,6 +29,7 @@ class Kernel extends ConsoleKernel
         //For every save search, compare it to the new listings and send email notification
         //...if it matches do above otherwise do none
         //Every day check for new property listings and execute above
+        /*
         $schedule->call(function(){
           //return new Suuty\Mail\SaveSearch($property);
 
@@ -73,7 +74,40 @@ class Kernel extends ConsoleKernel
             //echo "<br>";
           }
         })->everyMinute();
+        */
+        $schedule->call(function(){
+          $checktest = DB::table('properties')->get();
+          date_default_timezone_set('America/Los_Angeles');
+          $tomorrow = time() + (1 * 24 * 60 * 60);
+          $diff = $tomorrow - time();
 
+          foreach($checktest as $check){
+            $testing = strtotime($check->created_at);
+            $remaining = time() - $testing;
+            if($remaining < $diff && $remaining > -1){
+
+              echo "This property was created recently (Today)";
+
+              echo $checkcity = $check->city;
+
+              $messages = "";
+              $savesearch = DB::table('savesearch')->where('url', 'LIKE', "%$checkcity%")->get();
+              foreach($savesearch as $post){
+
+                $messages .= $post->id . " " . $post->email . " " . $post->url;
+
+              }
+              Mail::raw($messages, function($message)
+              {
+                $message->subject('Mailgun and Laravel are awesome!');
+                $message->from('david@suuty.com', 'Suuty');
+                $message->to('jhso@sfu.ca');
+              });
+
+            }
+            //echo "<br>";
+          }
+        })->everyMinute();
         $schedule->command('inspire')
           ->everyMinute()
           ->emailOutputTo('jhso@sfu.ca');

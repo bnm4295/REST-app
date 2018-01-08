@@ -55,6 +55,7 @@ class PropertyController extends Controller
    */
   public function store(Request $request)
   {
+      date_default_timezone_set('America/Los_Angeles');
       $bucketName = 'suutybucket';
       $keyName = 'suuty-properties.xml';
       $filepath = 'suuty-properties.xml';
