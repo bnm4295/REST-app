@@ -87,7 +87,7 @@ class PropertyController extends Controller
               $filename = $file->getClientOriginalName();
               $extension = $file->getClientOriginalExtension();
               $picture = $filename;
-              $destinationPath = base_path() . '\public\images';
+              $destinationPath = public_path('images');
               array_push( $imagepaths, $filename);
               $file->move($destinationPath, $picture);
           }
