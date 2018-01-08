@@ -1,7 +1,6 @@
 <?php
 
 namespace Suuty\Http\Controllers;
-require 'vendor/autoload.php';
 use Aws\Resource\Aws;
 use Aws\S3\S3Client;
 use Illuminate\Http\Request;

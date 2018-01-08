@@ -217,7 +217,7 @@
               $image = $decodedarr[0];
               ?>
               <input class="img-rounded" value="" type="submit" style="border: solid 0px #000000; height: 200px; width: 60%;
-               background-image: url({{ asset('/../public/images/') }}/{{$image}});
+               background-image: url({{ asset('/../images/') }}/{{$image}});
                 background-size: 300px; background-repeat: no-repeat;"/>
               </div>
             </div>
@@ -249,7 +249,7 @@
                         <!--input name="_method" type="hidden" value="show">-->
                         <input name="title" type="hidden" value="{{$post['title']}}">
                         <input class="img-rounded" value="" type="submit" style="border: solid 0px #000000; height: 200px; width: 60%;
-                         background-image: url({{ asset('/../public/images/') }}/{{$image}});
+                         background-image: url({{ asset('/../images/') }}/{{$image}});
                           background-size: 300px; background-repeat: no-repeat;"/>
                         <!--img class="img-rounded" style="height: 230px; width: 100%" src="{{ asset('/../public/images/') }}/{{$image}}"/>
                         <button class="btn btn-success" type="submit">Show</button>-->

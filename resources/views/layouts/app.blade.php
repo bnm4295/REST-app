@@ -28,7 +28,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment-with-locales.js"></script>
 <!--
 -->
-<script src="{{ asset('/../resources/assets/js/googlemap.js')}}" ></script>
+<script src="{{ asset('/../js/googlemap.js')}}" ></script>
 <!--script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.9.2/jquery.ui.widget.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.9.2/jquery.ui.core.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.9.2/jquery.ui.mouse.min.js"></script>-->
@@ -283,10 +283,10 @@
     </div>
 
     <!-- Scripts -->
-    <script src="{{ asset('/../public/js/app.js') }}"></script>
+    <script src="{{ asset('/../js/app.js') }}"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/js/bootstrap-datepicker.js"></script>
-    <script src="{{ asset('/../public/js/jquery.countdown.min.js') }}"></script>
-    <script src="{{ asset('/../resources/assets/js/main.js')}}" ></script>
+    <script src="{{ asset('/../js/jquery.countdown.min.js') }}"></script>
+    <script src="{{ asset('/../js/main.js') }}"></script>
     @yield('script')
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCCMiNb2ZO_OOM16aU9xTwC3m0fa0Xq6NY&libraries=places&callback=initialize"
     async defer></script>
