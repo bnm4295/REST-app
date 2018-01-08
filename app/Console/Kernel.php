@@ -53,21 +53,21 @@ class Kernel extends ConsoleKernel
               //$savesearch = DB::table('savesearch')->get();
 
               $savesearch = DB::table('savesearch')->where('url', 'LIKE', "%$checkcity%")->get();
+              $messages = "";
               foreach($savesearch as $post){
                 //echo "<br>";
-                echo "SaveSearch ID: " . $post->id . " " . $post->email . " ";
-                echo "localhost:8080" . $post->url;
+                $messages = . $post->id . " " . $post->email . " " . $post->url;
 
               }
+              Mail::raw($messages, function($message)
+              {
+                $message->subject('Mailgun and Laravel are awesome!');
+                $message->from('david@suuty.com', 'Suuty');
+                $message->to('jhso@sfu.ca');
+              });
             }
             //echo "<br>";
           }
-          Mail::raw('Sending emails with Mailgun and Laravel is easy!', function($message)
-          {
-            $message->subject('Mailgun and Laravel are awesome!');
-            $message->from('no-reply@website_name.com', 'Website Name');
-            $message->to('jhso@sfu.ca');
-          });
         })->everyMinute();
 
         $schedule->command('inspire')
