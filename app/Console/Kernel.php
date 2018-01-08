@@ -97,12 +97,14 @@ class Kernel extends ConsoleKernel
                 $messages .= $post->id . " " . $post->email . " " . $post->url;
 
               }
-              Mail::raw($messages, function($message)
-              {
-                $message->subject('Mailgun and Laravel are awesome!');
-                $message->from('david@suuty.com', 'Suuty');
-                $message->to('jhso@sfu.ca');
-              });
+              if ($messages != ""){
+                Mail::raw($messages, function($message)
+                {
+                  $message->subject('Suuty Save Search Match!');
+                  $message->from('david@suuty.com', 'Suuty');
+                  $message->to('jhso@sfu.ca');
+                });
+              }
 
             }
             //echo "<br>";
