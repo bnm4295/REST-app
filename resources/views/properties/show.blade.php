@@ -14,8 +14,8 @@
             //$image = $decodedarr[0];
             echo $decodedarr[$i];
         ?>
-          <!--img class="img-rounded" style="height: 230px; width: 100%" src="{{ asset('/../public/images/') }}/{{$image}}"/>-->
-          <img src="{{ asset('/../public/images/') }}/{{$image}}">
+          <!--img class="img-rounded" style="height: 230px; width: 100%" src="{{ asset('/../images/') }}/{{$image}}"/>-->
+          <img src="{{ asset('/../images/') }}/{{$image}}">
         <?php } ?>
       </div>
       <!-- PANEL START -->

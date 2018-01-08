@@ -86,7 +86,7 @@ img[src=""] {
 /* splash section */
 .splash-section .splash-inner-media {
 	opacity: 0.6;
-	background-image: url(http://localhost:8080/suuty/public/images/pic11.jpg);
+	/*background-image: url(http://localhost:8080/suuty/images/pic11.jpg);*/
 	background-attachment: fixed;
 	background-position: center;
 	background-repeat: no-repeat;

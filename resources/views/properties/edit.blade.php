@@ -130,7 +130,7 @@
           for ($i = 0 ; $i < $counter; $i++ ){
             $image = $decodedarr[$i];
             echo $decodedarr[$i];
-        ?> <img class="img-rounded" style="height: 230px; width: 100%" src="{{ asset('/../public/images/') }}/{{$image}}"/>
+        ?> <img class="img-rounded" style="height: 230px; width: 100%" src="{{ asset('/../images/') }}/{{$image}}"/>
         <?php } ?>
         </div>
 
