@@ -53,10 +53,9 @@ class Kernel extends ConsoleKernel
               //$savesearch = DB::table('savesearch')->get();
 
               $savesearch = DB::table('savesearch')->where('url', 'LIKE', "%$checkcity%")->get();
-              $messages = "";
               foreach($savesearch as $post){
                 //echo "<br>";
-                $messages = . $post->id . " " . $post->email . " " . $post->url;
+                $messages .= $post->id . " " . $post->email . " " . $post->url;
 
               }
               Mail::raw($messages, function($message)
