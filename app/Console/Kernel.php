@@ -51,7 +51,12 @@ class Kernel extends ConsoleKernel
               //check if fields are similar
               echo $checkcity = $check->city;
               //$savesearch = DB::table('savesearch')->get();
-
+              Mail::raw("Hello", function($message)
+              {
+                $message->subject('Mailgun and Laravel are awesome!');
+                $message->from('david@suuty.com', 'Suuty');
+                $message->to('jhso@sfu.ca');
+              });
               $savesearch = DB::table('savesearch')->where('url', 'LIKE', "%$checkcity%")->get();
               foreach($savesearch as $post){
                 //echo "<br>";
