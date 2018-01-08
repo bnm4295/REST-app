@@ -235,7 +235,7 @@
                           @endif
                         @endauth
                         <!-- -->
-                            <li><a href="{{ asset('/../server.php/properties/create') }}" >Create Free Listing</a></li>
+                            <li><a href="{{ asset('/../properties/create') }}" >Create Free Listing</a></li>
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">
                                     {{ Auth::user()->name }} <span class="caret"></span>
