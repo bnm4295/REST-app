@@ -25,9 +25,6 @@ class RedirectIfAuthenticated
             break;
 
           default:
-            if (!Auth::guard($guard)->check() && (strpos($request->session()->get('url')['intended'] , 'admin') == true)) {
-              return redirect('/admin/login');
-            }
             if (Auth::guard($guard)->check()){
               return redirect('/');
             }
