@@ -4,9 +4,11 @@ namespace Suuty;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Lexx\ChatMessenger\Traits\Messagable;
 
 class Admin extends Authenticatable
 {
+    use Messagable;
     use Notifiable;
     protected $guard = 'admin';
     /**

@@ -14,6 +14,10 @@ use Illuminate\Support\Facades\Input;
 use Illuminate\Http\Request;
 use Suuty\User;
 
+//AUTH
+Auth::routes();
+
+//GET
 Route::get('/home', 'HomeController@index');
 Route::get('/', function () {
     return view('homepage');
@@ -28,7 +32,6 @@ Route::get('/blogs', function () {
     return view('blogs');
 });
 
-Auth::routes();
 
 Route::get('my-profile', function (){
     //$name = $user->name;
@@ -46,9 +49,9 @@ Route::get('/mailable', function () {
 //});
 //Route::get('/testing', 'PaymentController@payment');
 
-Route::resource('payments','PaymentController');
-Route::resource('offers', 'OfferController');
 
+
+//STRIPE
 Route::post ( 'testing', function (Request $request) {
     \Stripe\Stripe::setApiKey ( 'sk_test_KSSmMrMppIdQdSwCN1N1XHfx' );
     $id = Auth::id();
@@ -67,20 +70,28 @@ Route::post ( 'testing', function (Request $request) {
         return Redirect::back ();
     }
 } );
+
+//RESOURCES
+Route::resource('payments','PaymentController');
+Route::resource('offers', 'OfferController');
 Route::resource('blogs', 'BlogController');
 Route::resource('properties','PropertyController',
-  array('except'=> ['index', 'store', 'destroy'] )
+array('except'=> ['index', 'store', 'destroy'] )
 );
+
 Route::get('properties', 'PropertyController@index')->name('properties.index');
 Route::delete('properties/{property}', 'PropertyController@destroy')->name('properties.destroy');//->middleware('auth:admin');
 Route::post('properties', 'PropertyController@store')->name('properties.store');
 
+
+//ADMIN
 Route::prefix('admin')->group(function(){
   Route::get('/login', 'Auth\AdminLoginController@showLoginForm')->name('admin.login');
   Route::post('/login', 'Auth\AdminLoginController@login')->name('admin.login.submit');
   Route::get('/', 'AdminController@index')->name('admin.dashboard');
 });
 
+//MESSAGES
 Route::group(['prefix' => 'messages'], function () {
     Route::get('/', ['as' => 'messages', 'uses' => 'MessagesController@index']);
     Route::get('/unread', ['as' => 'messages.unread', 'uses' => 'MessagesController@unread']); // ajax + Pusher
