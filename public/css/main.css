@@ -4,6 +4,10 @@ h1, h2, h3, p, ul, a, input, label, button{
 html{
 
 }
+/* jquery 3 hack fix */
+.bootstrap-datetimepicker-widget {
+  display: block;
+}
 /* Mobile */
 /* MOBILE END */
 img[src=""] {

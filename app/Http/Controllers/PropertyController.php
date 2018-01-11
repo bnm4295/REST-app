@@ -150,9 +150,10 @@ class PropertyController extends Controller
       $property = Property::find($id);
       $offers = Offer::where('prop_id', '=', $id)
       ->get();
+      $owner = User::find($property->user_id);
 
 
-      return view('properties.show', compact('property', 'offers'));
+      return view('properties.show', compact('property', 'offers', 'owner'));
   }
 
   /**
@@ -190,6 +191,8 @@ class PropertyController extends Controller
       $property->details = $request->get('details');
       $property->price = $request->get('price');
       $property->date = $request->get('date');
+      $property->firstdate = $request->get('date');
+      $property->seconddate = $request->get('date');
       $property->street_address = $request->get('street_address');
       $property->route = $request ->get('route');
       $property->city = $request ->get('city');

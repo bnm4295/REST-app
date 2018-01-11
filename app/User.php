@@ -5,9 +5,12 @@ namespace Suuty;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Cashier\Billable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Lexx\ChatMessenger\Traits\Messagable;
+
 
 class User extends Authenticatable
 {
+    use Messagable;
     use Notifiable;
     use Billable;
 

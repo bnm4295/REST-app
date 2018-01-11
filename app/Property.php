@@ -19,6 +19,8 @@ class Property extends Model
       'title',
       'area',
       'date',
+      'firstdate',
+      'seconddate',
       'details',
       'price',
       'house_type',

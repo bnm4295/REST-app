@@ -34,8 +34,22 @@ var rangeSlider = function(){
 rangeSlider();
 
 $(document).ready(function () {
-    $('#get_datepicker').datepicker({
-      startDate: '+7d'
+
+    jQuery.fn.extend({
+        size: function() {
+            return $(this).length;
+        }
+    });
+    $(function () {
+      $('#closingtime').datetimepicker({
+        format: 'MM/DD/YYYY HH:mm',
+      });
+      $('#firstdate').datetimepicker({
+        format: 'MM/DD/YYYY HH:mm',
+      });
+      $('#seconddate').datetimepicker({
+        format: 'MM/DD/YYYY HH:mm',
+      });
     });
     $('[data-countdown]').each(function() {
       var $this = $(this), finalDate = $(this).data('countdown');

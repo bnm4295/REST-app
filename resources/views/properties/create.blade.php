@@ -49,12 +49,43 @@
           <input id="getprice" type="integer" name="price" placeholder="Price" class="form-control">
         </div>
     </div>
-    <div class="col-xs-12 col-sm-12 col-md-12">
+
+    <div class='col-sm-6'>
         <div class="form-group">
           <strong>Offer Closing Time:</strong>
-          <input id="get_datepicker" type="text" name="date" placeholder="Date" class="form-control">
+          <div class='input-group date' id='closingtime'>
+              <input id="get_closingtime" type="text" name="date" placeholder="Date" class="form-control">
+              <span class="input-group-addon">
+                  <span class="glyphicon glyphicon-calendar"></span>
+              </span>
+          </div>
         </div>
     </div>
+
+    <div class='col-sm-6'>
+        <div class="form-group">
+          <strong>First Open House</strong>
+          <div class='input-group date' id='firstdate'>
+              <input id="get_firstdate" type="text" name="firstdate" placeholder="Date" class="form-control">
+              <span class="input-group-addon">
+                  <span class="glyphicon glyphicon-calendar"></span>
+              </span>
+          </div>
+        </div>
+    </div>
+
+    <div class='col-sm-6'>
+        <div class="form-group">
+          <strong>Second Open House</strong>
+          <div class='input-group date' id='seconddate'>
+              <input id="get_seconddate" type="text" name="seconddate" placeholder="Date" class="form-control">
+              <span class="input-group-addon">
+                  <span class="glyphicon glyphicon-calendar"></span>
+              </span>
+          </div>
+        </div>
+    </div>
+
     <div class="col-xs-12 col-sm-12 col-md-12">
         <div class="form-group">
           <strong>Area:</strong>

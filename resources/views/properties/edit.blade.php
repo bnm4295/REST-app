@@ -17,6 +17,8 @@
     </ul>
   </div>
 @endif
+
+@if (Auth::id() == $property->user_id || (Auth::guard('admin')->check() == true ))
 <div class="container">
   <form id="submit-edit" method="post" action="{{ action('PropertyController@update', $id )}}" enctype="multipart/form-data">
     <div class="row">
@@ -53,6 +55,42 @@
             <div class="form-group">
                 <strong>House Type:</strong>
                 <input type="text" name="house_type" placeholder="Type" class="form-control" value="{{$property->house_type}}">
+            </div>
+        </div>
+
+        <div class='col-sm-6'>
+            <div class="form-group">
+              <strong>Offer Closing Time:</strong>
+              <div class='input-group date' id='closingtime'>
+                  <input id="get_closingtime" type="text" name="date" placeholder="Date" class="form-control" value="{{$property->date}}">
+                  <span class="input-group-addon">
+                      <span class="glyphicon glyphicon-calendar"></span>
+                  </span>
+              </div>
+            </div>
+        </div>
+
+        <div class='col-sm-6'>
+            <div class="form-group">
+              <strong>First Open House</strong>
+              <div class='input-group date' id='firstdate'>
+                  <input id="get_firstdate" type="text" name="firstdate" placeholder="Date" class="form-control" value="{{$property->firstdate}}">
+                  <span class="input-group-addon">
+                      <span class="glyphicon glyphicon-calendar"></span>
+                  </span>
+              </div>
+            </div>
+        </div>
+
+        <div class='col-sm-6'>
+            <div class="form-group">
+              <strong>Second Open House</strong>
+              <div class='input-group date' id='seconddate'>
+                  <input id="get_seconddate" type="text" name="seconddate" placeholder="Date" class="form-control" value="{{$property->firstdate}}">
+                  <span class="input-group-addon">
+                      <span class="glyphicon glyphicon-calendar"></span>
+                  </span>
+              </div>
             </div>
         </div>
 
@@ -140,4 +178,7 @@
     </div>
 
 </div>
+@else
+<p>You do not have permission to edit this content</p>
+@endif
 @endsection

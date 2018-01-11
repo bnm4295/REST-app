@@ -19,13 +19,18 @@
     <link href="{{ asset('/../css/main.css') }}" rel="stylesheet">
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/css/datepicker.css" rel="stylesheet">
+    <!--link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/css/datepicker.css" rel="stylesheet">-->
+    <link href="//cdn.rawgit.com/Eonasdan/bootstrap-datetimepicker/e8bddc60e73c1ec2475f827be36e1957af72e2ea/build/css/bootstrap-datetimepicker.css" rel="stylesheet">
+
+    <!-- toastr -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" />
     <!--link rel="stylesheet" href="{{ asset('/../public/css/iThing.css') }}" type="text/css" />-->
     <!--link rel="stylesheet" href="{{ asset('/../public/css/jquery-ui-1.8.10.custom.css') }}" type="text/css" />-->
 </head>
 <!-- scripts -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment-with-locales.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
 <!--
 -->
 <script src="{{ asset('/../js/googlemap.js')}}" ></script>
@@ -248,6 +253,9 @@
                                       </a>
                                     </li>
                                     <li>
+                                      <a href="/messages">Messages @include('messenger.unread-count')</a>
+                                    </li>
+                                    <li>
                                         <a href="{{ route('logout') }}"
                                             onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
@@ -284,7 +292,8 @@
 
     <!-- Scripts -->
     <script src="{{ asset('/../js/app.js') }}"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/js/bootstrap-datepicker.js"></script>
+    <!--script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/js/bootstrap-datepicker.js"></script>-->
+    <script src="//cdn.rawgit.com/Eonasdan/bootstrap-datetimepicker/e8bddc60e73c1ec2475f827be36e1957af72e2ea/src/js/bootstrap-datetimepicker.js"></script>
     <script src="{{ asset('/../js/jquery.countdown.min.js') }}"></script>
     <script src="{{ asset('/../js/main.js') }}"></script>
     @yield('script')
@@ -308,6 +317,103 @@
     /dark-v9
     /streets-v10
      -->
+     @if(Auth::check())
+     <!-- check if pusher is allowed -->
+         @if(config('chatmessenger.use_pusher')) {
+             <script src="https://cdnjs.cloudflare.com/ajax/libs/pusher/4.2.1/pusher.min.js"></script>
+
+             <script type="text/javascript">
+                 $(document).ready(function() {
+
+                     $('form').submit(function(e) {
+                         e.preventDefault();
+
+                         var data = $(this).serialize();
+                         var url = $(this).attr('action');
+                         var method = $(this).attr('method');
+
+                         // clear textarea/ reset form
+                         $(this).trigger('reset');
+
+                         $.ajax({
+                             method: method,
+                             data: data,
+                             url: url,
+                             success: function(response) {
+                                 var thread = $('#thread_' + response.message.thread_id);
+
+                                 $('body').find(thread).append(response.html);
+                             },
+                             error: function(error) {
+                                 console.log(error);
+                             }
+                         });
+                     });
+
+                     var pusher = new Pusher('{{ config('pusher.connections.main.auth_key') }}', {
+                         cluster: '{{ config('pusher.connections.main.options.cluster') }}',
+                         encrypted: true
+                     });
+
+
+
+                     var channel = pusher.subscribe('for_user_{{ Auth::id() }}');
+
+                     channel.bind('new_message', function(data) {
+                         // console.log(data);
+                         var thread = $('#' + data.div_id);
+                         var thread_id = data.thread_id;
+                         var thread_plain_text = data.text;
+                         var thread_subject = data.thread_subject;
+
+
+                         if (thread.length) {
+                             // thread opened
+
+                             // append message to thread
+                             thread.append(data.html);
+
+                             // make sure the thread is set to read
+                             $.ajax({
+                                 url: "/messages/" + thread_id + "/read"
+                             });
+                         } else {
+                             // thread not currently opened
+
+                             // create message
+                             var message = '<strong>' + data.sender_name + ': </strong>' + data.text + '<br/><a href="' + data.thread_url + '" class="text-right">View Message</a>';
+
+                             // notify the user
+                             toastr.success(thread_subject + '<br/>' + message);
+
+                             // set unread count
+                             let url = "{{ route('messages.unread') }}";
+                             console.log(url);
+                             $.ajax({
+                                 method: 'GET',
+                                 url: url,
+                                 success: function(data) {
+                                     console.log('data from fetch: ', data);
+                                     var div = $('#unread_messages');
+
+                                     var count = data.msg_count;
+                                     if (count == 0) {
+                                         $(div).addClass('hidden');
+                                     } else {
+                                         $(div).text(count).removeClass('hidden');
+
+                                         // if on messages.index - add alert class and update latest message
+                                         $('#thread_list_' + thread_id).addClass('alert-info');
+                                         $('#thread_list_' + thread_id + '_text').html(thread_plain_text);
+                                     }
+                                 }
+                             });
+                         }
+                     });
+                 });
+             </script>
+         @endif
+     @endif
 </body>
 @yield('footer')
 </html>

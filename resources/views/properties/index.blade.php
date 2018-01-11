@@ -7,6 +7,7 @@
         {{ session('alert') }}
     </div>
 @endif
+
 <div class="container-fluid">
   <div id="filter-panel" class="filter-panel">
     <div class="panel panel-default">
