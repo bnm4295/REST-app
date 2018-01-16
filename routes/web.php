@@ -19,9 +19,10 @@ Auth::routes();
 
 //GET
 Route::get('/user/logout', 'Auth\LoginController@userLogout')->name('user.logout');
-Route::get('/home', 'HomeController@index');
-Route::get('/', function () {
-    return view('homepage');
+//Route::get('/home', 'HomeController@index');
+Route::get('/', 'HomeController@index')->name('home');
+Route::get('/paginateprop', function(){
+    return view('paginateprop');
 });
 Route::get('/about', function () {
     return view('about');
@@ -77,9 +78,10 @@ Route::resource('payments','PaymentController');
 Route::resource('offers', 'OfferController');
 Route::resource('blogs', 'BlogController');
 Route::resource('properties','PropertyController',
-array('except'=> ['index', 'store', 'destroy'] )
+array('except'=> ['index', 'store', 'destroy', 'show'] )
 );
 
+Route::get('properties/{slug}', 'PropertyController@show')->name('properties.show');
 Route::get('properties', 'PropertyController@index')->name('properties.index');
 Route::delete('properties/{property}', 'PropertyController@destroy')->name('properties.destroy');//->middleware('auth:admin');
 Route::post('properties', 'PropertyController@store')->name('properties.store');

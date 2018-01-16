@@ -37,7 +37,7 @@ class CreatePropertiesTable extends Migration
           $table->boolean('hideshow')->default(0);
           $table->boolean('sold')->default(0);
           $table->string('images')->nullable();
-          $table->foreign('user_id')->references('id')->on('users');
+          $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
           $table->timestamps();
         });
     }

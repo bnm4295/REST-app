@@ -4,6 +4,7 @@ namespace Suuty\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Suuty\User;
+use Suuty\Property;
 
 
 class HomeController extends Controller
@@ -15,7 +16,7 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
+        //$this->middleware('auth');
     }
 
     /**
@@ -23,9 +24,23 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+
+    protected $properties_per_page = 3;
+
+    public function index(Request $request)
     {
-      $users = User::all();
-      return view('home', compact('users'));
+      $properties = Property::paginate($this->properties_per_page);
+      /*
+      if($request->ajax()){
+        return [
+          'properties' => view('properties.ajax.index')->with(compact('properties'))->render(),
+          'next_page' => $properties->nextPageUrl()
+        ];
+      }
+      */
+      return view('homepage')->with(compact('properties'));
+    }
+    public function fetchNextPropertySet($page){
+
     }
 }

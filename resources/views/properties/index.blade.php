@@ -7,110 +7,25 @@
         {{ session('alert') }}
     </div>
 @endif
-
 <div class="container-fluid">
-  <div id="filter-panel" class="filter-panel">
-    <div class="panel panel-default">
-        <div class="panel-body">
-          <!-- {{url('properties')}} -->
-            <form action="{{url('/properties')}}" method="GET" class="form-inline" role="form">
-
-                <div class="form-group">
-                    <label class="filter-col" style="margin-right:0;" for="numbeds">Beds:</label>
-                    <select id="numbeds"class="form-control" name="number_of_beds">
-                       <option value=""></option>
-                       <option value="1">1</option>
-                       <option value="2">2</option>
-                       <option value="3">3</option>
-                       <option value="4">4</option>
-                       <option value="5">5</option>
-                  </select>
-                </div> <!-- form group [rows] -->
-                <div class="form-group">
-                    <label class="filter-col" style="margin-right:0;" for="numbaths">Baths:</label>
-                    <select id="numbaths"class="form-control" name="number_of_baths">
-                        <option value=""></option>
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                    </select>
-                </div> <!-- form group [rows] -->
-                <div class="form-group">
-                    <label class="filter-col" style="margin-right:0;" for="proptype">Property Type:</label>
-                    <select id="proptype" class="form-control" name="house_type">
-                      <option value=""></option>
-                      <option value="Single Family Home">Single Family Home</option>
-                      <option value="Apartment">Apartment</option>
-                      <option value="Condo">Condo</option>
-                    </select>
-                </div> <!-- form group [rows] -->
-                <div class="form-group">
-                    <label class="filter-col" style="margin-right:0;" for="pref-search">Search:</label>
-                    <input type="text" class="form-control input-sm" id="pref-search" name="addr">
-                </div>
-                <!-- form group [search] -->
-                <!--div class="form-group">
-                    <label class="filter-col" style="margin-right:0;" for="pref-orderby">Order by:</label>
-                    <select id="pref-orderby" class="form-control">
-                        <option>Descendent</option>
-                    </select>
-                </div>  form group [order by] -->
-                <div class="form-group">
-                    <div class="checkbox" style="margin-left:10px; margin-right:10px;">
-                        <label><input type="checkbox" name="mempar"> Remember parameters</label>
-                    </div>
-                    <button type="submit" class="btn btn-default filter-col">
-                        <span class="glyphicon glyphicon-record"></span> Submit
-                    </button>
-                </div>
-                <h2>Price Range</h2>
-                <div class="col-sm-6">
-                    <div class="range-slider">
-                      <input class="range-slider__range" type="range" value="0" min="0" max="2500000" name="price_left">
-                      <span class="range-slider__value">0</span>
-                    </div>
-                </div>
-                <div class="col-sm-6">
-                    <div class="range-slider">
-                      <input class="range-slider__range" type="range" value="2500000" min="2500000" max="5000000" name="price_right">
-                      <span class="range-slider__value">0</span>
-                    </div>
-                </div>
-                <h2>Area Range</h2>
-                <div class="col-sm-6">
-                    <div class="range-slider">
-                      <input class="range-slider__range" type="range" value="0" min="0" max="25000" name="area_left">
-                      <span class="range-slider__value">0</span>
-                    </div>
-                </div>
-                <div class="col-sm-6">
-                    <div class="range-slider">
-                      <input class="range-slider__range" type="range" value="25000" min="25000" max="50000" name="area_right">
-                      <span class="range-slider__value">0</span>
-                    </div>
-                </div>
-            </form>
-        </div>
-    </div>
-</div>
-  <div class="row">
-    <div id="map-screen-fix">
+  <div id="listings-row" class="row">
+    <div class="col-md-6 col-sm-6 col-xs-12 no-padding">
         <div id="locationField">
           <div id="moveloc">
             <input class="form-control" id="autocomplete" placeholder="Enter your address"
             onFocus="geolocate()" type="text"></input>
           </div>
         </div>
-        <div id='map' style="width: 500px;"></div>
+        <div id='map' style="position: absolute; top: 0; right: 0; left: 0; bottom: 0;"></div>
         <div id="infowindow-content">
           <img src="" width="16" height="16" id="place-icon">
           <span id="place-name"  class="title"></span><br>
           <span id="place-address"></span>
         </div>
     </div>
-    <div id="property-listings" class="col-md-6 col-sm-6 col-xs-12 no-padding">
+    <div class="col-md-6 col-sm-6 col-xs-12 no-padding">
+      <div id="property-listings">
+        @include('includes.advsearch')
         <div class="col-md-10 col-md-offset-0">
           <h2>Property Listings</h2>
           <!-- <a href="{{ asset('/../server.php/properties/create') }}" >Create New Listing</a> -->
@@ -246,26 +161,24 @@
                       ?>
                       <!--?php //} ?-->
                       <br>
-                      <form action="{{action('PropertyController@show', $post['id'])}}" method="get">
-                        <!--input name="_method" type="hidden" value="show">-->
-                        <input name="title" type="hidden" value="{{$post['title']}}">
-                        <input class="img-rounded" value="" type="submit" style="border: solid 0px #000000; height: 200px; width: 60%;
-                         background-image: url({{ asset('/../images/') }}/{{$image}});
-                          background-size: 300px; background-repeat: no-repeat;"/>
-                        <!--img class="img-rounded" style="height: 230px; width: 100%" src="{{ asset('/../images/') }}/{{$image}}"/>
-                        <button class="btn btn-success" type="submit">Show</button>-->
-                      </form>
+                      <!--form action="{{action('PropertyController@show', $post->slug)}}" method="get">
+                        <input name="_method" type="hidden" value="show">
+                        <input name="title" type="hidden" value="">
+                        <img class="img-rounded" style="height: 230px; width: 100%" src="{{ asset('/../images/') }}/{{$image}}"/>
+                        <button class="btn btn-success" type="submit">Show</button>
+                      </form>-->
+                      <a href="http://192.241.153.145/properties/{{$post->slug}}"><input class="img-rounded" value="" type="submit" style="border: solid 0px #000000; height: 200px; width: 60%;
+                       background-image: url({{ asset('/../images/') }}/{{$image}});
+                        background-size: 300px; background-repeat: no-repeat;"/></a>
 
                       @if (Auth::id() == $post['user_id'] || (Auth::guard('admin')->check() == true ))
                         <form action="{{action('PropertyController@edit', $post['id'])}}" method="get">
                           {{csrf_field()}}
-                          <input name="_method" type="hidden" value="edit">
                           <button class="btn btn-success" type="submit">Edit</button>
                         </form>
 
                         <form action="{{action('PropertyController@destroy', $post['id'])}}" method="post">
                           {{csrf_field()}}
-                          <input name="_method" type="hidden" value="delete">
                           <button class="btn btn-danger" type="submit" onclick="return confirm('Do you really want to delete this property?')">
                             Delete
                           </button>
@@ -276,6 +189,7 @@
               </div>
       @endforeach
       <?php } ?>
+      </div>
     </div>
   </div>
 </div>

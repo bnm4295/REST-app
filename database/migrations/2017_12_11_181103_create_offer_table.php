@@ -22,7 +22,7 @@ class CreateOfferTable extends Migration
             $table->string('comments')->nullable();
             $table->boolean('status')->default(0);
             $table->foreign('user_id')->references('id')->on('users');
-            $table->foreign('prop_id')->references('id')->on('properties');
+            $table->foreign('prop_id')->references('id')->on('properties')->onDelete('cascade');
             $table->timestamps();
         });
     }

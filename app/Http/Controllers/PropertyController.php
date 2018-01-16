@@ -76,6 +76,11 @@ class PropertyController extends Controller
         'images' => 'required',
       ]);
       $inputs = $request->all();
+      $slug = strtolower($request->title);
+      if ($count = Property::where('slug', 'like', "$slug%")->count()){
+        $slug = str_finish($slug, "-$count");
+      }
+      $inputs['slug'] = preg_replace('/\s+/', '-', $slug);
       $inputs['user_id'] = Auth::id();
       //$propertyid = $this->get('id');
       $imagepaths = array();
@@ -131,7 +136,8 @@ class PropertyController extends Controller
 
       /*fwrite($stream, '<marker id="12" name="Red Lantern" address="60 Riley Street, Darlinghurst, NSW" lat="{{$properties->latitude}}" lng="{{$properties->longitude}}" type="restaurant"/>
       </markers>');*/
-      fwrite($stream, '<marker id="'.$properties->id.'" name="'.$properties->title.'" address="'.$properties->street_address.' '.$properties->route.' '.$properties->city.', '.$properties->state.'" lat="'.$properties->latitude.'" lng="'.$properties->longitude.'" type="'.$properties->house_type.'"/>
+      fwrite($stream, '<marker id="'.$properties->id.'" name="'.$properties->title.'" address="'.$properties->street_address.' '.$properties->route.' '.$properties->city.', '.$properties->state.'" lat="'.$properties->latitude.'" lng="'.$properties->longitude.'" type="'.$properties->house_type.'"
+      img="'.$imagepaths[0].'" slug="'.$properties->slug.'"/>
       </markers>');
       fclose($stream);
       }
@@ -145,10 +151,13 @@ class PropertyController extends Controller
    * @param  int  $id
    * @return Response
    */
-  public function show($id)
+  public function show($slug)
   {
-      $property = Property::find($id);
-      $offers = Offer::where('prop_id', '=', $id)
+      //$property = Property::find($id);
+      $property = Property::where('slug', $slug)->first();
+      //dd($property);
+      $propid = $property->id;
+      $offers = Offer::where('prop_id', '=', $propid)
       ->get();
       $owner = User::find($property->user_id);
 
@@ -206,6 +215,13 @@ class PropertyController extends Controller
       $property->number_of_baths = $request->get('number_of_baths');
       $property->sold = $request->get('sold');
 
+      $slug = strtolower($property->title);
+      //$property->slug = $slug;
+      if ($count = Property::where('slug', 'like', "$slug%")->count()){
+        $slug = str_finish($slug, "-$count");
+      }
+      $property->slug = preg_replace('/\s+/', '-', $slug);
+
       $imagepaths = array();
       $picture = '';
 
@@ -257,6 +273,8 @@ class PropertyController extends Controller
           $post['address'] = $property->street_address.' '.$property->route.' '.$property->city.', '.$property->state;
           $post['type'] = $property->house_type;
           $post['name'] = $property->title;
+          $post['slug'] = $property->slug;
+          $post['img'] = $imagepaths[0];
           $post['lat'] = $property->latitude;
           $post['lng'] = $property->longitude;
         }
@@ -321,6 +339,14 @@ class PropertyController extends Controller
       $property = Property::find($id);
       $property->delete();
       return redirect('/properties');
+  }
+  public function makeSlugFromTitle($title)
+  {
+      $slug = Str::slug($title);
+
+      $count = Conversation::whereRaw("slug RLIKE '^{$slug}(-[0-9]+)?$'")->count();
+
+      return $count ? "{$slug}-{$count}" : $slug;
   }
 
 

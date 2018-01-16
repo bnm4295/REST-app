@@ -39,7 +39,9 @@
       center: new google.maps.LatLng(49.246292, -123.116226),
       zoom: 10
     });
-    var infowindow = new google.maps.InfoWindow();
+    var infowindow = new google.maps.InfoWindow({
+      content: "<img src='http://i.stack.imgur.com/g672i.png'>"
+    });
 
     // Change this depending on the name of your PHP or XML file
     downloadUrl('https://s3.ca-central-1.amazonaws.com/suutybucket/suuty-properties.xml', function(data) {
@@ -50,19 +52,23 @@
         var name = markerElem.getAttribute('name');
         var address = markerElem.getAttribute('address');
         var type = markerElem.getAttribute('type');
+        var img = markerElem.getAttribute('img');
         var point = new google.maps.LatLng(
             parseFloat(markerElem.getAttribute('lat')),
             parseFloat(markerElem.getAttribute('lng'))
         );
+        var slug = markerElem.getAttribute('slug');
         var infowincontent = document.createElement('div');
-        var strong = document.createElement('strong');
-        strong.textContent = name
-        infowincontent.appendChild(strong);
-        infowincontent.appendChild(document.createElement('br'));
 
-        var text = document.createElement('text');
-        text.textContent = address
-        infowincontent.appendChild(text);
+        //var strong = document.createElement('strong');
+        //strong.textContent = name
+        //infowincontent.appendChild(strong);
+        //infowincontent.appendChild(document.createElement('br'));
+
+        //var text = document.createElement('text');
+        //text.textContent = address
+        //infowincontent.appendChild(text);
+
         var icon = customLabel[type] || {};
         var marker = new google.maps.Marker({
           map: map,
@@ -70,7 +76,10 @@
           label: icon.label
         });
         marker.addListener('click', function() {
-          infowindow.setContent(infowincontent);
+          infowindow.close();
+          infowindow.setContent("<strong>"+name+"</strong>" + "<br>" +
+           "<a href='http://192.241.153.145/properties/"+slug+"'>" + "<img src='http://192.241.153.145/images/"+img+"' style='width:100px; height: 100px;'>" + "</a>"
+          + "<strong>"+address+"</strong>");
           infowindow.open(map, marker);
 
         });

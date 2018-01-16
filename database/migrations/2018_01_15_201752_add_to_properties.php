@@ -14,8 +14,7 @@ class AddToProperties extends Migration
     public function up()
     {
         Schema::table('properties', function (Blueprint $table) {
-          $table->string('firstdate')->nullable();
-          $table->string('seconddate')->nullable();
+            $table->string('slug');
         });
     }
 

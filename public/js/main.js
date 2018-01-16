@@ -65,6 +65,53 @@ $(document).ready(function () {
         //make $post['user_id'] equate to $post['currentbidderid']
       });
     });
+
+    $('body').on('click', '.pagination a', function(e){
+
+         e.preventDefault();
+         var url = $(this).attr('href');
+        // var url = "/paginateprop"
+
+         //$.get(url, function(data){
+          //   $('.properties').html(data);
+         //});
+         $.ajax({
+              type: "GET",
+              url: url,
+              dataType: 'html',
+              success: function(data) {
+                  $('.properties').html(
+                      $('<div />').html(data).find('.properties').html()
+                  );
+              }
+          });
+
+     });
+ /*
+     $(window).scroll(fetchProperties);
+
+     function fetchProperties() {
+
+         var page = $('.endless-pagination').data('next-page');
+
+         if(page !== null) {
+
+             clearTimeout( $.data( this, "scrollCheck" ) );
+
+             $.data( this, "scrollCheck", setTimeout(function() {
+                 var scroll_position_for_prop_load = $(window).height() + $(window).scrollTop() + 100;
+
+                 if(scroll_position_for_prop_load >= $(document).height()) {
+                     $.get(page, function(data){
+                         $('.properties').append(data.properties);
+                         $('.endless-pagination').data('next-page', data.next_page);
+                     });
+                 }
+             }, 350))
+
+         }
+     }
+ */
     //$('#datepicker').datepicker({
       //  startDate: '-180d',
         //endDate: '+1d',

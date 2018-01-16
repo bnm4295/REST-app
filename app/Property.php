@@ -18,6 +18,7 @@ class Property extends Model
       'user_id',
       'title',
       'area',
+      'slug',
       'date',
       'firstdate',
       'seconddate',
@@ -46,7 +47,10 @@ class Property extends Model
     */
     protected $hidden = [
     ];
-
+    public function getRouteKeyName()
+    {
+        return 'slug';
+    }
     public function images() {
         return $this->hasMany('Suuty\Media');
     }
