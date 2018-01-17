@@ -1,7 +1,7 @@
 h1, h2, h3, p, ul, a, input, label, button{
 	font-family: 'Quicksand', serif !important;
 }
-html, body {
+html{
 	overflow-x: hidden;
 }
 body {
@@ -13,8 +13,6 @@ body {
 .bootstrap-datetimepicker-widget {
   display: block;
 }
-/* Mobile */
-/* MOBILE END */
 
 /* IMG */
 img[src=""] {
@@ -197,7 +195,6 @@ img[src=""] {
 	height: 55px;
 }
 #map{
-	width: 100%;
 	height: 835px;
 	width: 900px;
 }
@@ -486,3 +483,16 @@ input::-moz-focus-inner,
 input::-moz-focus-outer {
   border: 0;
 }
+
+/* Mobile */
+@media only screen
+and (min-width: 850px)
+and (max-width: 1400px){
+	#map{
+		width: 600px;
+	}
+	#listings-row #filter-panel{
+		width: initial;
+	}
+}
+/* MOBILE END */
