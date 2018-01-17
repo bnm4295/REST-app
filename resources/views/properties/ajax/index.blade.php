@@ -17,7 +17,7 @@
               ?>
               <br>
 
-              <a href="http://192.241.153.145/properties/{{$property->slug}}"><input class="img-rounded" value="" type="submit" style="border: solid 0px #000000; height: 200px; width: 60%;
+              <a href="{{ url('properties')}}/{{$property->slug}}"><input class="img-rounded" value="" type="submit" style="border: solid 0px #000000; height: 200px; width: 60%;
                background-image: url({{ asset('/../images/') }}/{{$image}});
                 background-size: 300px; background-repeat: no-repeat;"/></a>
 

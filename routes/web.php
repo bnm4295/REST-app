@@ -78,12 +78,11 @@ Route::resource('payments','PaymentController');
 Route::resource('offers', 'OfferController');
 Route::resource('blogs', 'BlogController');
 Route::resource('properties','PropertyController',
-array('except'=> ['index', 'store', 'destroy', 'show'] )
+array('except'=> ['index', 'store', 'show'] )
 );
 
 Route::get('properties/{slug}', 'PropertyController@show')->name('properties.show');
 Route::get('properties', 'PropertyController@index')->name('properties.index');
-Route::delete('properties/{property}', 'PropertyController@destroy')->name('properties.destroy');//->middleware('auth:admin');
 Route::post('properties', 'PropertyController@store')->name('properties.store');
 
 

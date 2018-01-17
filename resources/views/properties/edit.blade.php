@@ -86,7 +86,7 @@
             <div class="form-group">
               <strong>Second Open House</strong>
               <div class='input-group date' id='seconddate'>
-                  <input id="get_seconddate" type="text" name="seconddate" placeholder="Date" class="form-control" value="{{$property->firstdate}}">
+                  <input id="get_seconddate" type="text" name="seconddate" placeholder="Date" class="form-control" value="{{$property->seconddate}}">
                   <span class="input-group-addon">
                       <span class="glyphicon glyphicon-calendar"></span>
                   </span>

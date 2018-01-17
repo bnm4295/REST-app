@@ -186,13 +186,13 @@ class PropertyController extends Controller
   public function update(Request $request, $id)
   {
       $request->validate([
-        'images' => 'required',
         'title' => 'required',
         'details' => 'required',
         'price' => 'required',
         'house_type' => 'required',
         'number_of_beds' => 'required',
         'number_of_baths' => 'required',
+        'city' => 'required',
       ]);
 
       $property = Property::find($id);
@@ -238,7 +238,11 @@ class PropertyController extends Controller
       }
       $encodedArray = array_map("utf8_encode", $imagepaths);
       $encodeimg = json_encode($encodedArray);
+      $temp = $property['images'];
       $property['images'] = $encodeimg;
+      if($picture == ''){
+        $property['images'] = $temp;
+      }
       $property->save();
 
       $bucketName = 'suutybucket';
@@ -338,7 +342,7 @@ class PropertyController extends Controller
       fclose($stream);
       $property = Property::find($id);
       $property->delete();
-      return redirect('/properties');
+      return redirect('/properties')->with('alert','success');;
   }
   public function makeSlugFromTitle($title)
   {
