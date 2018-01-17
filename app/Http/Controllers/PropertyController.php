@@ -200,8 +200,8 @@ class PropertyController extends Controller
       $property->details = $request->get('details');
       $property->price = $request->get('price');
       $property->date = $request->get('date');
-      $property->firstdate = $request->get('date');
-      $property->seconddate = $request->get('date');
+      $property->firstdate = $request->get('firstdate');
+      $property->seconddate = $request->get('seconddate');
       $property->street_address = $request->get('street_address');
       $property->route = $request ->get('route');
       $property->city = $request ->get('city');
@@ -231,7 +231,7 @@ class PropertyController extends Controller
               $filename = $file->getClientOriginalName();
               $extension = $file->getClientOriginalExtension();
               $picture = $filename;
-              $destinationPath = base_path() . '\public\images';
+              $destinationPath = public_path('images');
               array_push( $imagepaths, $filename);
               $file->move($destinationPath, $picture);
           }
