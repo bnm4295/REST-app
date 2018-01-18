@@ -107,6 +107,7 @@
                   <input class="form-control" id="autocomplete" placeholder="Enter your address"
                   onFocus="geolocate()" type="text"></input>
                 </div>
+                <input id="edit-check" type="hidden" value="1">
                 <input class="form-control" id="street_number" disabled="true" name="street_address" placeholder="Street Number" value="{{$property->street_address}}"></input>
                 <input class="form-control" id="route" disabled="true" name="route" placeholder="Street" value="{{$property->route}}"></input>
                 <input class="form-control" id="locality" disabled="true" name="city" placeholder="City" value="{{$property->city}}"></input>

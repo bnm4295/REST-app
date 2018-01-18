@@ -42,6 +42,11 @@
     var infowindow = new google.maps.InfoWindow({
       content: "<img src='http://i.stack.imgur.com/g672i.png'>"
     });
+    for (var component in componentForm) {
+      if (document.getElementById('edit-check')){
+        document.getElementById(component).disabled = false;
+      }
+    }
 
     // Change this depending on the name of your PHP or XML file
     downloadUrl('https://s3.ca-central-1.amazonaws.com/suutybucket/suuty-properties.xml', function(data) {

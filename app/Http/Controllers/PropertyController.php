@@ -203,10 +203,10 @@ class PropertyController extends Controller
       $property->firstdate = $request->get('firstdate');
       $property->seconddate = $request->get('seconddate');
       $property->street_address = $request->get('street_address');
-      $property->route = $request ->get('route');
-      $property->city = $request ->get('city');
-      $property->state = $request ->get('state');
-      $property->country = $request ->get('country');
+      $property->route = $request->get('route');
+      $property->city = $request->get('city');
+      $property->state = $request->get('state');
+      $property->country = $request->get('country');
       $property->postal_code = $request->get('postal_code');
       $property->latitude = $request->get('latitude');
       $property->longitude = $request->get('longitude');
