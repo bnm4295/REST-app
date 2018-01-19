@@ -13,7 +13,7 @@
             <ul class="list-unstyled" style="text-align: left;">
               <li><i class="fa fa-location-arrow"></i> 1250 - 789 West Pender Street</li>
               <li><i class="fa fa-phone"></i> 604-346-5185</li>
-              <li><i class="fa fa-envelope-o"></i> <a href="mailto:connect@suuty.com" style="color: white;">connect@suuty.com</a></li>
+              <li><i class="fa fa-envelope-o"></i> <a href="mailto:connect@suuty.com">connect@suuty.com</a></li>
             </ul>
           </div>
   	    </div>

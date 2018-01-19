@@ -18,13 +18,15 @@ body {
 img[src=""] {
     display: none;
 }
+
 /* IMG END *
 
 /* FOOTER */
 .footer {
-   background-color: #33a0aa;
+   /*background-color: #33a0aa;*/
+	 background-color: #f5f8fa;
    line-height: 20px;
-	 color: white;
+	 /*color: black;*/
 	 padding: 80px 0 50px;
  	 margin-bottom: -30px;
 }
@@ -47,7 +49,7 @@ img[src=""] {
 .footer li {
     margin-bottom: 6px;
     line-height: 25px;
-    color: #fff;
+    /*color: #fff;*/
 }
 .navi >ul >li {
     position: relative;
@@ -57,7 +59,7 @@ img[src=""] {
     overflow: hidden;
 }
 .footer a, .footer-bottom .navi a, .footer-bottom .foot-social p a {
-    color: #FFFFFF;
+    /*color: #FFFFFF;*/
 }
 .footer-bottom .navi li {
 		padding-right: 20px;
@@ -74,12 +76,12 @@ img[src=""] {
   text-align: inherit;
 }
 .footer-bottom{
-	background-color: #33a0aa;
-	border-top: 1px solid #33a0aa;
+	/*background-color: #33a0aa;*/
+	/*border-top: 1px solid #33a0aa;*/
 	width: 100%;
 	line-height: 20px;
 	padding: 30px 0;
-	color: white;
+	/*color: white;*/
 }
 /* FOOTER END */
 
@@ -87,7 +89,7 @@ img[src=""] {
 .navbar{
   margin-bottom: inherit;
   border: none;
-	background-color: #3ac2c0;
+	background-color: #fff;
 }
 .nav>li>a{
 	color: #9d9d9d;
@@ -100,19 +102,19 @@ img[src=""] {
 }
 
 .navbar-inverse{
-  background-color: white;
+  background-color: #f9fbfc;
 }
 
-.navbar-default .navbar-nav>li>a, .navbar-default .navbar-text{
-	color: white;
+/*.navbar-default .navbar-nav>li>a, .navbar-default .navbar-text{
+
 }
 .navbar-default .navbar-nav>.open>a, .navbar-default .navbar-nav>.open>a:focus, .navbar-default .navbar-nav>.open>a:hover{
 	background-color: #33a0aa;
-}
+}*/
 
-.navbar-inverse .navbar-nav>li>a:focus, .navbar-inverse .navbar-nav>li>a:hover{
+/*.navbar-inverse .navbar-nav>li>a:focus, .navbar-inverse .navbar-nav>li>a:hover{
   color: black;
-}
+}*/
 /* NAV BAR END */
 
 
@@ -134,10 +136,17 @@ img[src=""] {
   font-weight: 500;
 }
 
-.btn-info{
-  background-color: rgb(58, 194, 192);
-	border-color: white;
+/*#reg-btn{
+	color: white;
 }
+#login-btn{
+	color: white;
+}*/
+.btn-info{
+	color: white;
+	border-color: #777;
+}
+
 /* BTNS END */
 
 /* property */
@@ -149,16 +158,29 @@ img[src=""] {
 /* PROPERTY END */
 
 /* splash section */
+.splash-title{
+	text-align: center;
+	color: white;
+	position: relative;
+	top: 40%;
+}
 #listings-row{
 	margin-right: -28px;
 }
-#listings-row #filter-panel{
+#listings-row .filter-panel{
 	width: 850px;
 	margin: auto;
 }
-#filter-panel{
-	margin-top: 20px;
+.filter-panel{
 	text-align: center;
+}
+#filter-panel-home{
+	position: relative;
+	width: 85%;
+	top: 40%;
+}
+#home-container div {
+    margin: 0 auto;
 }
 .splash-section .splash-inner-content{
 	position: relative;

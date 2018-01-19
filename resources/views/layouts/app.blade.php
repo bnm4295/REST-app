@@ -55,16 +55,27 @@
                     </button>
 
                     <!-- Branding Image -->
-                    <a class="navbar-brand" href="{{ url('/') }}" style="color: white;">
+                    <a class="navbar-brand" href="{{ url('/') }}">
                         {{ config('app.name', 'Laravel') }}
                     </a>
                 </div>
 
                 <div class="collapse navbar-collapse" id="app-navbar-collapse">
                     <!-- Left Side Of Navbar -->
-                    <ul class="nav navbar-nav">
-                       &nbsp;
+
+                    <ul class="nav navbar-nav" style="margin-left: 50px;">
+                      <!--<div class="navbar-header">
+                          <a class="navbar-brand" href="{{ URL::to('properties') }}">Listings</a>
+                      </div>-->
+
+                        <!--<li class="active"><a href="#">Home</a></li>-->
+                        <li><a class="navbar-brand" href="{{ URL::to('properties') }}">Listings</a></li>
+                        <li><a class="navbar-brand" href="{{ URL::to('about') }}">About</a></li>
+                        <li><a class="navbar-brand" href="{{ URL::to('resources') }}">Resources</a></li>
+                        <li><a class="navbar-brand" href="{{ URL::to('blogs') }}">Blogs</a></li>
+
                     </ul>
+
 
                     <!-- Right Side Of Navbar -->
                     <ul class="nav navbar-nav navbar-right">
@@ -74,8 +85,8 @@
                             <!-- <li id="logroute"><a href="{{ route('login') }}">Login</a></li> -->
                             <!-- <li id="regroute"><a href="{{ route('register') }}">Register</a></li> -->
 
-                            <li><button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#mylogin">Login</button></li>
-                            <li><button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myreg">Register</button></li>
+                            <li><button type="button" id="login-btn" class="btn btn-info btn-lg" data-toggle="modal" data-target="#mylogin">Login</button></li>
+                            <li><button type="button" id="reg-btn" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myreg">Register</button></li>
                             <!-- Modal -->
                             <div class="modal fade" id="mylogin" role="dialog">
                              <div class="modal-dialog">
@@ -273,20 +284,18 @@
                 </div>
             </div>
         </nav>
-        <nav class="navbar navbar-inverse">
+        <!--nav class="navbar navbar-inverse">
             <div class="container">
-              <!--<div class="navbar-header">
-                  <a class="navbar-brand" href="{{ URL::to('properties') }}">Listings</a>
-              </div>-->
+
               <ul class="nav navbar-nav">
-                <!--<li class="active"><a href="#">Home</a></li>-->
+
                 <li><a class="navbar-brand" href="{{ URL::to('properties') }}">Listings</a></li>
                 <li><a class="navbar-brand" href="{{ URL::to('about') }}">About</a></li>
                 <li><a class="navbar-brand" href="{{ URL::to('resources') }}">Resources</a></li>
                 <li><a class="navbar-brand" href="{{ URL::to('blogs') }}">Blogs</a></li>
               </ul>
             </div>
-        </nav>
+        </nav>-->
         @yield('content')
     </div>
 
