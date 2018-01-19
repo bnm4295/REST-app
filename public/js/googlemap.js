@@ -16,11 +16,11 @@
     postal_code: 'short_name'
   };
   var customLabel = {
-    restaurant: {
-      label: 'R'
+    Single_Family_Home: {
+      label: 'S'
     },
-    bar: {
-      label: 'B'
+    Apartment: {
+      label: 'A'
     }
   };
 
@@ -40,7 +40,7 @@
       zoom: 10
     });
     var infowindow = new google.maps.InfoWindow({
-      content: "<img src='http://i.stack.imgur.com/g672i.png'>"
+      content: "<img src=''>"
     });
     for (var component in componentForm) {
       if (document.getElementById('edit-check')){
@@ -77,9 +77,28 @@
         var icon = customLabel[type] || {};
         var marker = new google.maps.Marker({
           map: map,
+          id: id,
           position: point,
           label: icon.label
         });
+        //console.log(marker.id);
+
+        $('#'+marker.id).mouseover(function(){
+            infowindow.close();
+            //google.maps.event.trigger(marker, 'click');
+            //marker.addListener('click', function() {
+            //  console.log($(this).attr('id'));
+            //});
+            //console.log(marker.id);
+            infowindow.setContent("<strong>"+name+"</strong>" + "<br>" +
+             "<a href='http://192.241.153.145/properties/"+slug+"'>" + "<img src='http://192.241.153.145/images/"+img+"' style='width:100px; height: 100px;'>" + "</a>"
+            + "<strong>"+address+"</strong>");
+            infowindow.open(map, marker);
+        });
+        $('#'+marker.id).mouseout(function(){
+            infowindow.close();
+        });
+
         marker.addListener('click', function() {
           infowindow.close();
           infowindow.setContent("<strong>"+name+"</strong>" + "<br>" +

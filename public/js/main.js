@@ -40,6 +40,12 @@ $(document).ready(function () {
             return $(this).length;
         }
     });
+
+    //$('#171').mouseover(function(){
+      //google.maps.event.trigger(markers.id, "click");
+      //alert("hello");
+    //});
+
     $(function () {
       $('#closingtime').datetimepicker({
         format: 'MM/DD/YYYY HH:mm',
@@ -65,7 +71,6 @@ $(document).ready(function () {
         //make $post['user_id'] equate to $post['currentbidderid']
       });
     });
-
     $('body').on('click', '.pagination a', function(e){
 
          e.preventDefault();
