@@ -23,15 +23,26 @@ var rangeSlider = function(){
 
     value.each(function(){
       var value = $(this).prev().attr('value');
-      $(this).html(value);
+      $(this).html(commafy(value));
     });
 
     range.on('input', function(){
-      $(this).next(value).html(this.value);
+      $(this).next(value).html(commafy(this.value));
     });
   });
 };
 rangeSlider();
+
+function commafy( num ) {
+    var str = num.toString().split('.');
+    if (str[0].length >= 5) {
+        str[0] = str[0].replace(/(\d)(?=(\d{3})+$)/g, '$1,');
+    }
+    if (str[1] && str[1].length >= 5) {
+        str[1] = str[1].replace(/(\d{3})/g, '$1 ');
+    }
+    return str.join('.');
+}
 
 $(document).ready(function () {
 
@@ -40,12 +51,24 @@ $(document).ready(function () {
             return $(this).length;
         }
     });
-
+    setTimeout(function(){
+      $(".alert-success").fadeOut().empty();
+    },1000);
     //$('#171').mouseover(function(){
       //google.maps.event.trigger(markers.id, "click");
       //alert("hello");
     //});
-
+    window.onscroll = function() {sticknav()};
+    var header = document.getElementById("stickynav");
+    var sticky = header.offsetTop;
+    //header.classList.add("sticky");
+    function sticknav() {
+      if (window.pageYOffset > sticky) {
+        header.classList.add("sticky");
+      } else {
+        header.classList.remove("sticky");
+      }
+    }
     $(function () {
       $('#closingtime').datetimepicker({
         format: 'MM/DD/YYYY HH:mm',

@@ -1,10 +1,12 @@
 @extends('layouts.app')
 
 @section('content')
-    <h1>Create a new message</h1>
+@if (Auth::guard('admin')->check() == true )
+<div class="container">
+    <h1 style="text-align: center;">Create a new message</h1>
     <form action="{{ route('messages.store') }}" method="post">
         {{ csrf_field() }}
-        <div class="col-md-6">
+        <div class="col-md-12">
             <!-- Subject Form Input -->
             <div class="form-group">
                 <label class="control-label">Subject</label>
@@ -33,4 +35,10 @@
             </div>
         </div>
     </form>
+</div>
+@else
+<script>
+  window.location.href = "/";
+</script>
+@endif
 @stop

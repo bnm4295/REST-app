@@ -5,7 +5,7 @@
         <div class="col-md-3 col-sm-6 col-xs-12">
           <h3>About Suuty</h3>
           <p>We are redefining real estate in the 21st century, creating a transparent peer to peer platform for home buyers and sellers.</p>
-          <p>Read more...</p>
+          <a href="/about">Read more...</a>
         </div>
         <div class="col-md-3 col-sm-6 col-xs-12">
           <div class="colstyle">

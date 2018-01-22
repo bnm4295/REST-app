@@ -236,6 +236,7 @@ class PropertyController extends Controller
               $file->move($destinationPath, $picture);
           }
       }
+
       $encodedArray = array_map("utf8_encode", $imagepaths);
       $encodeimg = json_encode($encodedArray);
       $temp = $property['images'];
@@ -278,7 +279,7 @@ class PropertyController extends Controller
           $post['type'] = $property->house_type;
           $post['name'] = $property->title;
           $post['slug'] = $property->slug;
-          $post['img'] = $imagepaths[0];
+          $post['img'] = $property->images;
           $post['lat'] = $property->latitude;
           $post['lng'] = $property->longitude;
         }

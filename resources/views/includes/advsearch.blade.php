@@ -48,7 +48,7 @@
               <h2>Price Range</h2>
               <div class="col-sm-6">
                   <div class="range-slider">
-                    <input class="range-slider__range" type="range" value="0" min="0" max="2500000" name="price_left">
+                    <input class="range-slider__range" type="range" value="0" min="0" max="5000000" name="price_left">
                     <span class="range-slider__value">0</span>
                   </div>
               </div>
@@ -61,7 +61,7 @@
               <h2>Area Range</h2>
               <div class="col-sm-6">
                   <div class="range-slider">
-                    <input class="range-slider__range" type="range" value="0" min="0" max="25000" name="area_left">
+                    <input class="range-slider__range" type="range" value="0" min="0" max="50000" name="area_left">
                     <span class="range-slider__value">0</span>
                   </div>
               </div>

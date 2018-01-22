@@ -5,7 +5,7 @@
   <strong><h2>{{$property->title}}</h2></strong>
   <div class="row">
     <div class="col-md-6 col-sm-6 col-xs-12 no-padding" style="float: left;">
-      <div class="fotorama" data-nav="thumbs" style="width: 560px;">
+      <div class="fotorama" data-nav="thumbs" style="width: 568px;">
         <?php
           $decodedarr = json_decode( $property->images , true);
           $counter = count($decodedarr);
@@ -23,26 +23,26 @@
         <div class="panel-heading">
           <div class="row justify-content-md-center">
             <div class="col col-sm-6">
-              <p><strong>Price: {{$property->price}}</strong></p>
-              <p><strong>Area: {{$property->area}}</strong></p>
+              <p><strong>Price: ${{$property->price}}</strong></p>
+              <p><strong>Area(sqft): {{$property->area}}</strong></p>
               <p><strong>Type: {{$property->house_type}}</strong></p>
-              <p><strong># of Beds: {{$property->number_of_beds}}</strong></p>
-              <p><strong># of Baths: {{$property->number_of_baths}}</strong></p>
+              <p><strong>Beds: {{$property->number_of_beds}}</strong></p>
+              <p><strong>Baths: {{$property->number_of_baths}}</strong></p>
             </div>
-            <div class="col col-sm-4">
-              <p><strong>Street Number:
-              @if($property->street_address == NULL)
-              <strong>Not Provided</strong>
+            <div class="col col-sm-6">
+              @if($property->street_address && $property->route == NULL)
+                <p><strong>Address: Not Provided</strong></p>
               @else
-                {{$property->street_address}}
-              @endif</strong></p>
-              <p><strong>Street: {{$property->route}}</strong></p>
+                <p><strong>Address: {{$property->street_address}} {{$property->route}}</strong></p>
+              @endif
               <p><strong>City: {{$property->city}}</strong></p>
-              <p><strong>State: {{$property->state}}</strong></p>
+              <p><strong>Province: {{$property->state}}</strong></p>
               <p><strong>Country: {{$property->country}}</strong></p>
-              <p><strong>Postal Code: {{$property->postal_code}}</strong></p>
-              <p><strong>Latitude: {{$property->latitude}}</strong></p>
-              <p><strong>Longitude: {{$property->longitude}}</strong></p>
+              @if($property->postal_code == NULL)
+                <p><strong>Postal Code: N/A</strong></p>
+              @else
+                <p><strong>Postal Code: {{$property->postal_code}}</strong></p>
+              @endif
             </div>
             <!--div class="panel-body" style="width: 500px; margin-right: auto; margin-left: auto;">
           </div>-->
@@ -124,7 +124,7 @@
           @else
           @endif
           <div class="row">
-            <h1>Create a new message</h1>
+            <h1 style="text-align: center">Send a Message</h1>
             <form action="{{ route('messages.store') }}" method="post">
               {{ csrf_field() }}
               <div class="col-xs-12 col-sm-12 col-md-12">
@@ -162,7 +162,7 @@
         <input id="showmaplat" type="hidden" value="{{$property->latitude}}">
         <input id="showmaplong" type="hidden" value="{{$property->longitude}}">
         <div id="floating-panel">
-          <input type="button" value="Toggle Street View" onclick="toggleStreetView();"></input>
+          <input class="btn btn-primary" type="button" value="Toggle Street View" onclick="toggleStreetView();"></input>
         </div>
         <div id="showmap" style="width: 500px; height: 500px;">
         </div>

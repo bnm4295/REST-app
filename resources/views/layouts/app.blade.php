@@ -42,7 +42,7 @@
 <!-- scripts -->
 <body>
     <div id="app">
-        <nav class="navbar navbar-default navbar-static-top">
+        <nav id="stickynav" class="navbar navbar-default navbar-static-top">
             <div class="container">
                 <div class="navbar-header">
 
@@ -71,10 +71,31 @@
                         <!--<li class="active"><a href="#">Home</a></li>-->
                         <li><a class="navbar-brand" href="{{ URL::to('properties') }}">Listings</a></li>
                         <li><a class="navbar-brand" href="{{ URL::to('about') }}">About</a></li>
-                        <li><a class="navbar-brand" href="{{ URL::to('resources') }}">Resources</a></li>
-                        <li><a class="navbar-brand" href="{{ URL::to('blogs') }}">Blogs</a></li>
 
-                    </ul>
+                        <li><a class="navbar-brand" href="{{ URL::to('blogs') }}">Blogs</a></li>
+                        <li class="dropdown"><!--href="{{ URL::to('resources') }}"-->
+                          <a href="#" class="dropdown-toggle navbar-brand" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">
+                            Resources<span class="caret"></span>
+                          </a>
+                          <ul class="dropdown-menu">
+                            <li>
+                              <a href="/">FAQs</a>
+                            </li>
+                            <li>
+                              <a href="/">Suuty Insights</a>
+                            </li>
+                            <li>
+                              <a href="/">Service Providers</a>
+                            </li>
+                            <li>
+                              <a href="/">Resources for Home Owners</a>
+                            </li>
+                            <li>
+                              <a href="/">Resources for Home Buyers</a>
+                            </li>
+                          </ul>
+                        </li>
+                      </ul>
 
 
                     <!-- Right Side Of Navbar -->
@@ -261,6 +282,16 @@
                                     <li>
                                       <a href="{{ url('my-profile') }}">
                                         My Profile
+                                      </a>
+                                    </li>
+                                    <li>
+                                      <a href="{{ url('my-profile/savesearch') }}">
+                                        Saved Searches
+                                      </a>
+                                    </li>
+                                    <li>
+                                      <a href="{{ url('my-profile/properties') }}">
+                                        My Properties
                                       </a>
                                     </li>
                                     <li>

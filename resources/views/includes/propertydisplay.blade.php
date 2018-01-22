@@ -1,34 +1,37 @@
-<div class="container-fluid">
 <section class="properties endless-pagination" data-next-page="{{ $properties->nextPageUrl() }}">
-  <h3>Properties</h3>
-  @foreach($properties as $property)
-  <div>
-      <div class="col-md-4 text-center">
-          <div class ="panel panel-default">
-            <div class="panel-heading">
-                <strong>ID : {{$property->id}}</strong>
-                <strong>Title: {{$property->title}}</strong>
-                <hr>
-                <strong>Number of Beds: {{$property->number_of_beds}} </strong>
-                <br>
-                <strong>Number of Baths: {{$property->number_of_baths}} </strong>
-                <br>
-                <?php
-                  $decodedarr = json_decode( $property->images , true);
-                  $counter = count($decodedarr);
-                  $image = $decodedarr[0];
-                ?>
-                <br>
-
-                <a href="{{ url('properties')}}/{{$property->slug}}"><input class="img-rounded" value="" type="submit" style="border: solid 0px #000000; height: 200px; width: 60%;
-                 background-image: url({{ asset('/../images/') }}/{{$image}});
-                  background-size: 300px; background-repeat: no-repeat;"/></a>
-
+  <div class="container-fluid">
+    <h3 style="text-align: center">New Listings</h3>
+    @foreach($properties as $property)
+    <?php
+    $decodedarr = json_decode( $property->images , true);
+    $counter = count($decodedarr);
+    $image = $decodedarr[0];
+    ?>
+    <div>
+        <div class="col-md-4 text-center">
+            <div class ="panel panel-default">
+              <a href="{{ url('properties')}}/{{$property->slug}}"><input class="img-rounded" value="" type="submit" style="border: solid 0px #000000; height: 200px; width: 100%;
+                background-image: url({{ asset('/../images/') }}/{{$image}});
+                background-size: 350px; background-repeat: no-repeat;"/></a>
+              <div class="panel-heading">
+                <div style="text-align: left;">
+                  <h3><p><strong>{{$property->title}}</strong></p></h3>
+                  <h4><strong>${{$property->price}}</strong></h4>
+                  <hr>
+                  <p><b>Beds: {{$property->number_of_beds}} | Baths: {{$property->number_of_baths}} </b></p>
+                  <p><strong>Sqft: {{$property->area}}</strong></p>
+                  <strong>
+                    {{$property->street_address}}
+                    {{$property->route}}
+                    {{$property->city}}
+                    {{$property->state}}
+                  </strong>
+                </div>
+              </div>
             </div>
-          </div>
-      </div>
+        </div>
+    </div>
+    @endforeach
   </div>
-  @endforeach
 {!! $properties->render() !!}
 </section>
-</div>

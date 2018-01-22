@@ -34,6 +34,13 @@ Route::get('/blogs', function () {
     return view('blogs');
 });
 
+Route::get('/my-profile/savesearch', function(){
+    return view('save-search');
+});
+
+Route::get('/my-profile/properties', function(){
+  return view('my-properties');
+});
 
 Route::get('my-profile', function (){
     //$name = $user->name;
@@ -74,6 +81,7 @@ Route::post ( 'testing', function (Request $request) {
 } );
 
 //RESOURCES
+Route::DELETE('saves/{savesearch}', 'SaveSearchController@destroy')->name('savesearch.destroy');
 Route::resource('payments','PaymentController');
 Route::resource('offers', 'OfferController');
 Route::resource('blogs', 'BlogController');
