@@ -7,7 +7,6 @@ html{
 body {
   margin: 0px;
   padding: 0px;
-	min-width: 1167px;
 }
 /* jquery 3 hack fix */
 .bootstrap-datetimepicker-widget {
@@ -132,7 +131,8 @@ img[src=""] {
 /* Btns */
 
 .btn-group-lg>.btn, .btn-lg{
-  margin: 8px;
+	margin-top: 2px;
+  margin-right: 10px;
   font-weight: 500;
 }
 
@@ -517,6 +517,18 @@ and (max-width: 1400px){
 	#map{
 		height: 522px;
 		width: 600px;
+	}
+	#listings-row #filter-panel{
+		width: initial;
+	}
+}
+
+@media only screen
+and (min-width: 1405px)
+and (max-width: 1750px){
+	#map{
+		height: 900px;
+		width: 750px;
 	}
 	#listings-row #filter-panel{
 		width: initial;
