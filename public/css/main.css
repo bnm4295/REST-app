@@ -520,20 +520,23 @@ and (max-width: 767px){
 	#map-fix{
 		position: relative !important;
 		top: initial !important;
-		left: -5px !important;
+		left: 0px !important;
 	}
 	#prop-fix{
 		position: initial !important;
 	}
 	#property-listings{
 		position: relative;
-		left: -5px;
+		left: 0px;
 	}
 	.splash-title{
 			top: initial !important;
 	}
 	#listings-row .filter-panel{
 		width: 100%;
+	}
+	#listings-row{
+		margin-right: initial !important;
 	}
 	#moveloc #autocomplete{
 			margin-left: initial;
