@@ -21,6 +21,7 @@ class CreatePropertiesTable extends Migration
           $table->string('date');
           $table->string('firstdate')->nullable();
           $table->string('seconddate')->nullable();
+          $table->string('slug');
           $table->integer('price');
           $table->string('area');
           $table->string('house_type')->nullable();

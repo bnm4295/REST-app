@@ -32,7 +32,7 @@ Route::get('/resources', function () {
 });
 Route::get('/blogs', function () {
     return view('blogs');
-});
+})->middleware(['auth', 'isVerified']);
 
 Route::get('/my-profile/savesearch', function(){
     return view('save-search');
@@ -111,4 +111,14 @@ Route::group(['prefix' => 'messages'], function () {
     Route::get('{id}', ['as' => 'messages.show', 'uses' => 'MessagesController@show']);
     Route::put('{id}', ['as' => 'messages.update', 'uses' => 'MessagesController@update']);
     Route::get('{id}/read', ['as' => 'messages.read', 'uses' => 'MessagesController@read']); // ajax + Pusher
+});
+
+Route::group([
+    'middleware' => 'web'
+], function () {
+    Route::get('email-verification/error', 'Auth\RegisterController@getVerificationError')
+        ->name('email-verification.error');
+
+    Route::get('email-verification/check/{token}', 'Auth\RegisterController@getVerification')
+        ->name('email-verification.check');
 });

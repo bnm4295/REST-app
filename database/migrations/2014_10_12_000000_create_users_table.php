@@ -18,6 +18,8 @@ class CreateUsersTable extends Migration
             $table->string('stripe_id')->nullable();
             $table->string('card_brand')->nullable();
             $table->string('card_last_four')->nullable();
+            $table->boolean('verified')->default(false);
+            $table->string('verification_token')->nullable();
             $table->string('name');
             $table->string('email')->unique();
             $table->string('profileimg')->nullable();

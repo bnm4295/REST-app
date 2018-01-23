@@ -59,5 +59,6 @@ class Kernel extends HttpKernel
         'guest' => \Suuty\Http\Middleware\RedirectIfAuthenticated::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'Cors' => \Suuty\Http\Middleware\Cors::class,
+        'isVerified' => \Jrean\UserVerification\Middleware\IsVerified::class,
     ];
 }

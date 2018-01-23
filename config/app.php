@@ -176,6 +176,7 @@ return [
         Suuty\Providers\AuthServiceProvider::class,
         // Suuty\Providers\BroadcastServiceProvider::class,
         Suuty\Providers\EventServiceProvider::class,
+        Jrean\UserVerification\UserVerificationServiceProvider::class,
         Suuty\Providers\RouteServiceProvider::class,
 
     ],
@@ -228,6 +229,7 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
         'Form' => Collective\Html\FormFacade::class,
         'Html' => Collective\Html\HtmlFacade::class,
+        'UserVerification' => Jrean\UserVerification\Facades\UserVerification::class,
 
     ],
 

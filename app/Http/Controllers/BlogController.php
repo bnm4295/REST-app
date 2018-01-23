@@ -12,6 +12,10 @@ class BlogController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+     public function __construct()
+     {
+         //$this->middleware('isVerified');
+     }
     public function index()
     {
         $blogs = Blog::all();

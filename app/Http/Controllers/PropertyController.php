@@ -18,6 +18,10 @@ use Suuty\Mail\SaveSearch;
 
 class PropertyController extends Controller
 {
+  public function __construct()
+  {
+      $this->middleware(['auth', 'isVerified'], ['except'=> ['index']]);
+  }
   /**
    * Display a listing of the resource.
    *
