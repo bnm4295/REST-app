@@ -5,6 +5,7 @@ namespace Suuty\Exceptions;
 use Exception;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 use Illuminate\Auth\AuthenticationException;
+use Jrean\UserVerification\Exceptions\UserNotVerifiedException;
 
 class Handler extends ExceptionHandler
 {
@@ -49,6 +50,9 @@ class Handler extends ExceptionHandler
      */
     public function render($request, Exception $exception)
     {
+        if($exception instanceof UserNotVerifiedException){
+           return response()->view('errors.require-verified', [], 401);
+        }
         return parent::render($request, $exception);
     }
     /**
