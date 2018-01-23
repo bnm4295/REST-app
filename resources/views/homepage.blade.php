@@ -33,7 +33,7 @@
 <section class="splash-section">
   <div class="splash-inner-media"></div>
   <div class="splash-inner-content">
-    <div class="container" style="width: 800px">
+    <div class="container">
       <div class="row">
         <h2 style="text-align: center; color: white">
           Now You Can Save Thousands on Your Next Home Transaction

@@ -36,7 +36,7 @@
               </div> <!-- form group [rows] -->
               <div class="form-group">
                   <label class="filter-col" style="margin-right:0;" for="pref-search">City:</label>
-                  <input type="text" class="form-control input-sm" id="pref-search" name="addr">
+                  <input type="text" class="form-control" id="pref-search" name="addr">
               </div>
               <!-- form group [search] -->
               <!--div class="form-group">
