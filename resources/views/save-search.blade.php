@@ -7,7 +7,7 @@
       $savedsearch = DB::table('savesearch')->where('user_id', Auth::id() )->get();
       if($savedsearch == "[]"){
         echo '<br>';
-        echo "No saved searches";
+        echo "<h3 style='text-align: center;'>No saved searches</h3>";
       }
     ?>
     @foreach($savedsearch as $post)

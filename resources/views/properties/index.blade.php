@@ -9,7 +9,7 @@
 @endif
 <div class="container-fluid">
   <div id="listings-row" class="row">
-    <div class="col-md-6 col-sm-6 col-xs-12 no-padding" style="position: fixed; top:50px; left:-15px; bottom: 0;">
+    <div id="map-fix" class="col-md-6 col-sm-6 col-xs-12 no-padding" style="position: fixed; top:50px; left:-15px; bottom: 0;">
         <div id="locationField">
           <div id="moveloc">
             <input class="form-control" id="autocomplete" placeholder="Enter your address"
@@ -23,7 +23,7 @@
           <span id="place-address"></span>
         </div>
     </div>
-    <div class="col-md-6 col-sm-6 col-xs-12 no-padding" style="position: absolute; top: 50px; right:0;">
+    <div id="prop-fix" class="col-md-6 col-sm-6 col-xs-12 no-padding" style="position: absolute; top: 50px; right:0;">
       <div id="property-listings">
         @include('includes.advsearch')
         <div class="col-md-10 col-md-offset-0">

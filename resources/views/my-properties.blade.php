@@ -7,7 +7,7 @@
       $properties = DB::table('properties')->where('user_id', Auth::id() )->get();
       if($properties == "[]"){
         echo '<br>';
-        echo "No Properties";
+        echo "<h3 style='text-align: center;'>No Properties</h3>";
       }
     ?>
     @foreach($properties as $post)
