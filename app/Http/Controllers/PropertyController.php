@@ -277,17 +277,19 @@ class PropertyController extends Controller
 
       //print_r($xml);
 
-      $decodedarr = json_decode( $post['images'] , true);
-      $counter = count($decodedarr);
-      $image = $decodedarr[0];
+      //$counter = count($decodedarr);
+      //$image = $decodedarr[$i];
+      //dd($image);
 
+      $decodedarr = json_decode( $property->images , true);
+      $image = $decodedarr[0];
       foreach($xml->marker as $post){
         if($post['id'] == $id){
           $post['address'] = $property->street_address.' '.$property->route.' '.$property->city.', '.$property->state;
           $post['type'] = $property->house_type;
           $post['name'] = $property->title;
           $post['slug'] = $property->slug;
-          $post['img'] = $property->images[0];
+          $post['img'] = $image;
           $post['lat'] = $property->latitude;
           $post['lng'] = $property->longitude;
         }
