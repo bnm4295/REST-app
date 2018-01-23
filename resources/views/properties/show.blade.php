@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container" style="width: 1200px; margin-right: auto; margin-left: auto; margin-top: 50px;">
+<div class="container">
   <strong><h2>{{$property->title}}</h2></strong>
   <div class="row">
     <div class="col-md-6 col-sm-6 col-xs-12 no-padding" style="float: left;">

@@ -517,6 +517,12 @@ and (max-width: 767px){
 	#map{
 		width: 100%;
 	}
+	#showmap{
+		width: 300px !important;
+	}
+	.fotorama img{
+		width: 300px !important;
+	}
 	#map-fix{
 		position: relative !important;
 		top: initial !important;
