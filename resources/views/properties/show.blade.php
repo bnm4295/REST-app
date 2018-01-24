@@ -80,10 +80,11 @@
                   </div>
                 </form>
               @endif
+              <br>
               <strong><b>$</b>{{$offer['offerprice']}}</strong>
               <br>
               @if($offer->status == 0) <!-- change this value to 1 in admin if approved -->
-                <b>Status: Pending</b>
+                <b>Status: Waiting for Approval</b>
               @else
                 <b>Approved</b>
               @endif
@@ -117,7 +118,7 @@
                       </div>
                   </div>
                   <div class="col-xs-12 col-sm-12 col-md-12 text-center">
-                    <input id="submit-offer" type="submit" name="submit" class="btn btn-primary"></input>
+                    <input id="submit-offer" type="submit" name="submit" class="btn btn-primary" onclick="return confirm('Your offer will be submitted. We will forward you an email for the next step to make this offer legitimate.')"></input>
                   </div>
               </div>
             </form>
@@ -147,7 +148,7 @@
 
                 <!-- Submit Form Input -->
                 <div class="form-group">
-                  <button type="submit" class="btn btn-primary form-control">Submit</button>
+                  <button type="submit" class="btn btn-primary form-control" onclick="return confirm('Message will be submitted. Check your message box for further conversation.')">Submit</button>
                 </div>
               </div>
             </form>
