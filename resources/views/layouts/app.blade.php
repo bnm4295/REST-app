@@ -79,19 +79,16 @@
                           </a>
                           <ul class="dropdown-menu">
                             <li>
-                              <a href="/">FAQs</a>
+                              <a href="/questions">FAQs</a>
                             </li>
                             <li>
-                              <a href="/">Suuty Insights</a>
+                              <a href="/service">Service Providers</a>
                             </li>
                             <li>
-                              <a href="/">Service Providers</a>
+                              <a href="/home-owner">Resources for Home Owners</a>
                             </li>
                             <li>
-                              <a href="/">Resources for Home Owners</a>
-                            </li>
-                            <li>
-                              <a href="/">Resources for Home Buyers</a>
+                              <a href="/home-buyer">Resources for Home Buyers</a>
                             </li>
                           </ul>
                         </li>

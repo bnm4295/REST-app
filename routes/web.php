@@ -50,6 +50,24 @@ Route::get('/mailable', function () {
     $property = Suuty\Property::find(165);
     return new Suuty\Mail\SaveSearch($property);
 });
+Route::get('/home-buyer', function () {
+    return view('resources-home-buyers');
+});
+Route::get('/home-owner', function () {
+    return view('resources-home-owners');
+});
+Route::get('/service', function () {
+    return view('service-providers');
+});
+Route::get('/questions', function () {
+    return view('faq');
+});
+Route::get('/privacy', function () {
+    return view('privacy');
+});
+Route::get('/terms-and-conditions', function () {
+    return view('terms-of-use');
+});
 //$user = \Auth::user(); dd($user);
 //Route::get('/properties', 'SearchController@filter');
 
@@ -62,7 +80,7 @@ Route::get('/mailable', function () {
 
 //STRIPE
 Route::post ( 'testing', function (Request $request) {
-    \Stripe\Stripe::setApiKey ( 'sk_test_KSSmMrMppIdQdSwCN1N1XHfx' );
+    \Stripe\Stripe::setApiKey ( 'sk_live_z7QSbzJ6WwQavNDlkNRMd0Jh' );
     $id = Auth::id();
     $user = User::find($id);
     try {

@@ -1,11 +1,22 @@
 @extends('layouts.app')
 
 @section('content')
+
 <div class="container">
+  @if ($errors->any())
+    <div class="alert alert-danger">
+      <ul>
+        @foreach ($errors->all() as $error)
+          <li>{{ $error }}</li>
+        @endforeach
+      </ul>
+    </div>
+  @endif
+
   <strong><h2>{{$property->title}}</h2></strong>
   <div class="row">
     <div class="col-md-6 col-sm-6 col-xs-12 no-padding" style="float: left;">
-      <div class="fotorama" data-nav="thumbs" style="width: 568px;">
+      <div class="fotorama" data-nav="thumbs">
         <?php
           $decodedarr = json_decode( $property->images , true);
           $counter = count($decodedarr);
@@ -53,7 +64,6 @@
           <hr>
           <p style="text-align: right;"><b>ENDING DATE: {{$property->date}}</b></p>
           <strong><div data-countdown= "{{$property->date}}" style="font-size: 50px; text-align: center;"></div></strong>
-          <hr>
           <?php
             date_default_timezone_set('America/Los_Angeles');
             $date=strtotime($property->date);
@@ -124,6 +134,7 @@
             </form>
           @else
           @endif
+          <hr>
           <div class="row">
             <h1 style="text-align: center">Send a Message</h1>
             <form action="{{ route('messages.store') }}" method="post">

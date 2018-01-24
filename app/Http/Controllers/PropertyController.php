@@ -353,7 +353,7 @@ class PropertyController extends Controller
       fclose($stream);
       $property = Property::find($id);
       $property->delete();
-      return redirect('/properties')->with('alert','success');;
+      return redirect('/properties')->with('alert','success');
   }
   public function makeSlugFromTitle($title)
   {

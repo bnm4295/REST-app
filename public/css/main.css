@@ -509,7 +509,10 @@ input::-moz-focus-inner,
 input::-moz-focus-outer {
   border: 0;
 }
-
+.entry-content{
+	background-color: white;
+	padding: 30px;
+}
 /* Mobile */
 @media only screen
 and (min-width: 300px)

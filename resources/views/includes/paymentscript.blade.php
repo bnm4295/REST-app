@@ -13,7 +13,7 @@
 				<script src='https://js.stripe.com/v2/' type='text/javascript'></script>
 				<form accept-charset="UTF-8" action="{{url('testing')}}" class="require-validation"
 					data-cc-on-file="false"
-					data-stripe-publishable-key="pk_test_jrelq9mh68g8VvgUbU45vtHI"
+					data-stripe-publishable-key="pk_live_NO7myZuzTbbe6YPL02NtbiXx"
 					id="payment-form" method="post">
 					{{ csrf_field() }}
 					<div class='form-row'>

@@ -15,7 +15,7 @@ return [
     */
 
     'mailgun' => [
-        'domain' => env('MAILGUN_DOMAIN', 'sandbox6cc5bc4418e1454495f5a37c8e26f065.mailgun.org'),
+        'domain' => env('MAILGUN_DOMAIN', 'suuty.com'),
         'secret' => env('MAILGUN_SECRET', 'key-7318a6f3ec892088b4482b922f7c3f43'),
     ],
 
@@ -31,8 +31,8 @@ return [
 
     'stripe' => [
         'model' => Suuty\User::class,
-        'key' => env('pk_test_jrelq9mh68g8VvgUbU45vtHI'),
-        'secret' => env('sk_test_KSSmMrMppIdQdSwCN1N1XHfx'),
+        'key' => env('pk_live_NO7myZuzTbbe6YPL02NtbiXx'),
+        'secret' => env('sk_live_z7QSbzJ6WwQavNDlkNRMd0Jh'),
     ],
 
 ];

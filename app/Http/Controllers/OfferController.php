@@ -40,7 +40,6 @@ class OfferController extends Controller
       $request->validate([
         'name' => 'required',
         'offerprice' => 'required',
-        'comments' => 'required',
       ]);
       $inputs = $request->all();
       $inputs['user_id'] = Auth::id();

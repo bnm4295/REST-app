@@ -35,10 +35,10 @@
           <div class="footer-col">
             <div class="navi">
               <ul id="footer-menu">
-                <li><a href="https://www.suuty.com/about-suuty/">About Suuty</a></li>
-                <li><a href="https://www.suuty.com/privacy/">Privacy</a></li>
-                <li><a href="https://www.suuty.com/terms-and-conditions/">Terms of Use</a></li>
-                <li><a href="https://www.suuty.com/home-buyer/">Resource Center</a></li>
+                <li><a href="/about">About Suuty</a></li>
+                <li><a href="/privacy">Privacy</a></li>
+                <li><a href="/terms-and-conditions">Terms of Use</a></li>
+                <li><a href="/questions">Resource Center</a></li>
               </ul>
             </div>
           </div>

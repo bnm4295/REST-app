@@ -108,6 +108,8 @@ class BlogController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $blog = Blog::find($id);
+        $blog->delete();
+        return redirect('/admin')->with('alert','success');;
     }
 }

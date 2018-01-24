@@ -11,7 +11,7 @@
     </ul>
   </div>
 @endif
-@auth('admin')
+@if (Auth::guard('admin')->check() == true || auth('admin') )
   <form id="create-blog" method="post" action="{{url('blogs')}}" enctype="multipart/form-data">
     <meta name="csrf-token" content="{{csrf_token()}}">
     {{ csrf_field() }}
@@ -44,6 +44,9 @@
     </div>
 
   </form>
+@else
+<script>
+  window.location.href = "/";
+</script>
 @endauth
-
 @endsection

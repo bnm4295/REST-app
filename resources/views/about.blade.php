@@ -43,18 +43,18 @@
     </div>
     <div class="row row-fluid">
       <div class="col-sm-6">
-            <span class="fa fa-usd"></span>
-          	<div>
-          		<div>
-              <p style="text-align: left;"><b>How does selling my home on Suuty work?&nbsp;</b></p>
-              <p>At Suuty, we put the control back in your hands.</p>
-              <p>Once you have registered an account with Suuty, you can create your listing. You will have the ability to set open house showings based on your schedule and availability, update your listing whenever you want, and set an offer submission deadline suitable for your timeline. Suuty finalizes a legally binding transaction and transfer of ownership quickly, fairly and transparently.</p>
-              <p>Give your home the exposure it deserves with Suuty’s marketing machine and save thousands of dollars worth of commissions with our $990 flat fee, which will only be collected if you receive and accept an offer you are happy with.</p>
-          		</div>
-          	</div>
+          <span style="font-size: 30px" class="fa fa-usd"></span>
+        	<div>
+        		<div>
+            <p style="text-align: left;"><b>How does selling my home on Suuty work?&nbsp;</b></p>
+            <p>At Suuty, we put the control back in your hands.</p>
+            <p>Once you have registered an account with Suuty, you can create your listing. You will have the ability to set open house showings based on your schedule and availability, update your listing whenever you want, and set an offer submission deadline suitable for your timeline. Suuty finalizes a legally binding transaction and transfer of ownership quickly, fairly and transparently.</p>
+            <p>Give your home the exposure it deserves with Suuty’s marketing machine and save thousands of dollars worth of commissions with our $990 flat fee, which will only be collected if you receive and accept an offer you are happy with.</p>
+        		</div>
+        	</div>
       </div>
        <div class="col-sm-6">
-          <span class="fa fa-home"></span>
+          <span style="font-size: 30px" class="fa fa-home"></span>
         	<div>
         		<div>
               <p><b>How does buying my next home on Suuty work?&nbsp;</b></p>
@@ -76,7 +76,7 @@
        <div class="col-sm-12">
          <div style="text-align: center;" >
            <h4><img src="https://www.suuty.com/wp-content/myimage/2016/03/HFHGV-Vertical-Colour.jpg" alt="" width="166" height="192"></h4>
-           <h4 style="text-align: center;">Have more questions? Visit our <a href="/">FAQs </a>page.</h4>
+           <h4 style="text-align: center;">Have more questions? Visit our <a href="/questions">FAQs </a>page.</h4>
           </div>
        </div>
     </div>
