@@ -85,9 +85,9 @@ return [
     |
     */
 
-    'username' => env('MAIL_USERNAME', 'postmaster@sandbox6cc5bc4418e1454495f5a37c8e26f065.mailgun.org'),
+    'username' => env('MAIL_USERNAME', 'postmaster@suuty.com'),
 
-    'password' => env('MAIL_PASSWORD', '999b1bf159d4799c097b31e8afb428a6'),
+    'password' => env('MAIL_PASSWORD', '225ec84ce48911401167c7e4c4b3372e'),
 
     /*
     |--------------------------------------------------------------------------
