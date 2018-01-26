@@ -46,8 +46,15 @@ Route::get('my-profile', function (){
     return view('profile');
 });
 Route::get('/mailable', function () {
-    $property = Suuty\Property::find(165);
-    return new Suuty\Mail\SaveSearch($property);
+//    $property = Suuty\Property::find(171);
+//    return new Suuty\Mail\SaveSearch($property);
+  $message=
+  Mail::raw('FCKING SEND', function($message)
+  {
+    $message->subject('Suuty Save Search Match!');
+    $message->from('david@suuty.com', 'Suuty');
+    $message->to('bnm4295@hotmail.com');
+  });
 });
 Route::get('/home-buyer', function () {
     return view('resources-home-buyers');
