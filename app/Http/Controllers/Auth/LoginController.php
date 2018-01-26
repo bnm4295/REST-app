@@ -43,7 +43,7 @@ class LoginController extends Controller
     public function userLogout()
     {
         Auth::guard('web')->logout();
-        Session::flash('danger', 'Please verify your email.');
+        Session::flash('danger', 'Please check your email for verification.');
         return redirect('/');
     }
 }

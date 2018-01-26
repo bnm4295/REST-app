@@ -97,22 +97,24 @@ class Kernel extends ConsoleKernel
                 $messages .= $post->id . " " . $post->email . " " . $post->url;
 
               }
-              if ($messages != ""){
-                Mail::raw($messages, function($message)
-                {
-                  $message->subject('Suuty Save Search Match!');
-                  $message->from('david@suuty.com', 'Suuty');
-                  $message->to('jhso@sfu.ca');
-                });
+              foreach($savesearch as $post){
+                if ($messages != ""){
+                  Mail::raw($messages, function($message)
+                  {
+                    $message->subject('Suuty Save Search Match!');
+                    $message->from('david@suuty.com', 'Suuty');
+                    $message->to($post->email);
+                  });
+                }
               }
 
             }
             //echo "<br>";
           }
-        })->everyMinute();
-        $schedule->command('inspire')
-          ->everyMinute()
-          ->emailOutputTo('jhso@sfu.ca');
+        });
+        //$schedule->command('inspire')
+          //->everyMinute()
+          //->emailOutputTo('jhso@sfu.ca');
 
     }
 

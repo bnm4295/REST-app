@@ -26,6 +26,15 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" />
     <!--link rel="stylesheet" href="{{ asset('/../public/css/iThing.css') }}" type="text/css" />-->
     <!--link rel="stylesheet" href="{{ asset('/../public/css/jquery-ui-1.8.10.custom.css') }}" type="text/css" />-->
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-113127234-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-113127234-1');
+    </script>
 </head>
 <!-- scripts -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
