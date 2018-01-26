@@ -21,7 +21,7 @@ img[src=""] {
     display: none;
 }
 
-/* IMG END *
+/* IMG END */
 
 /* FOOTER */
 .footer {
@@ -121,14 +121,17 @@ img[src=""] {
 
 
 /* modal */
-
+body.modal-open{
+	padding-right: 0 !important;
+}
+.modal-open .modal{
+	overflow-y: hidden !important;
+	padding-right: 0 !important;
+}
 .modal-backdrop{
   z-index: 900;
 }
 
-.modal-open .modal{
-  overflow-y: scroll !important;
-}
 /* MODAL END */
 
 /* Btns */
@@ -586,6 +589,7 @@ and (max-width: 767px){
 
 	}
 }
+
 @media only screen
 and (min-width: 768px)
 and (max-width: 849px){

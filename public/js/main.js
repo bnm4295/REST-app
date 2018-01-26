@@ -51,6 +51,7 @@ $(document).ready(function () {
             return $(this).length;
         }
     });
+
     setTimeout(function(){
       $(".alert-success").fadeOut().empty();
       $(".alert-danger").fadeOut().empty();
