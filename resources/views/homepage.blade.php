@@ -17,7 +17,7 @@
 @endif
 
 <section class="splash-section">
-  <div class="splash-inner-media"></div>
+  <div id="front-page-media" class="splash-inner-media"></div>
   <div class="splash-inner-content">
     <div id="home-container" class="container">
       <div class="splash-title">

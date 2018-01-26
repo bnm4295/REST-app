@@ -192,7 +192,6 @@ img[src=""] {
 }
 .splash-section .splash-inner-media {
 	opacity: 0.6;
-	background-image: url(https://www.suuty.com/images/pic11.jpg);
 	background-attachment: fixed;
 	background-position: center;
 	background-repeat: no-repeat;
@@ -205,6 +204,9 @@ img[src=""] {
   width: 100%;
   height: 100%!important;
   z-index: 1;
+}
+.splash-section #front-page-media{
+		background-image: url(/images/living-7.jpg);
 }
 .splash-section{
 	background: #000;
