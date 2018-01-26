@@ -53,8 +53,6 @@
 
 
 @endsection('content')
-
-
 @section('footer')
 @include('includes.footer')
 @endsection

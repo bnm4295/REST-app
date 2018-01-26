@@ -8,6 +8,12 @@ use Suuty\Offer;
 use Suuty\User;
 class OfferController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+        $this->middleware('isVerified');
+    }
     /**
      * Display a listing of the resource.
      *

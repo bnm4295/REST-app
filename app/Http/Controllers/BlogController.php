@@ -7,15 +7,15 @@ use Suuty\Blog;
 
 class BlogController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-     public function __construct()
-     {
-         //$this->middleware('isVerified');
-     }
+  /**
+   * Display a listing of the resource.
+   *
+   * @return \Illuminate\Http\Response
+   */
+   public function __construct()
+   {
+       $this->middleware('isVerified');
+   }
     public function index()
     {
         $blogs = Blog::all();

@@ -7,6 +7,11 @@ use Suuty\SaveSearch;
 
 class SaveSearchController extends Controller
 {
+      public function __construct()
+      {
+          $this->middleware('auth');
+          $this->middleware('isVerified');
+      }
 
       /**
        * Remove the specified resource from storage.

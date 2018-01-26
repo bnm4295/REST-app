@@ -58,6 +58,9 @@ $(document).ready(function () {
       //google.maps.event.trigger(markers.id, "click");
       //alert("hello");
     //});
+    $("#login-btn").modal({"backdrop": "static"});
+    $("#reg-btn").modal({"backdrop": "static"});
+
     window.onscroll = function() {sticknav()};
     var header = document.getElementById("stickynav");
     var sticky = header.offsetTop;

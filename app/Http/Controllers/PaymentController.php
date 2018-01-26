@@ -6,6 +6,12 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
 class PaymentController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+        $this->middleware('isVerified');
+    }
     /**
      * Display a listing of the resource.
      *

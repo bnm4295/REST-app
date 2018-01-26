@@ -26,48 +26,47 @@ Route::get('/paginateprop', function(){
 });
 Route::get('/about', function () {
     return view('about');
-});
+})->middleware('isVerified');
 Route::get('/resources', function () {
     return view('resources');
-});
+})->middleware('isVerified');
 Route::get('/blogs', function () {
     return view('blogs');
-})->middleware(['auth', 'isVerified']);
-
+});
 Route::get('/my-profile/savesearch', function(){
     return view('save-search');
-});
+})->middleware('isVerified');
 
 Route::get('/my-profile/properties', function(){
   return view('my-properties');
-});
+})->middleware('isVerified');
 
 Route::get('my-profile', function (){
     //$name = $user->name;
     return view('profile');
-});
+})->middleware('isVerified');
 Route::get('/mailable', function () {
     $property = Suuty\Property::find(165);
     return new Suuty\Mail\SaveSearch($property);
-});
+})->middleware('isVerified');
 Route::get('/home-buyer', function () {
     return view('resources-home-buyers');
-});
+})->middleware('isVerified');
 Route::get('/home-owner', function () {
     return view('resources-home-owners');
-});
+})->middleware('isVerified');
 Route::get('/service', function () {
     return view('service-providers');
-});
+})->middleware('isVerified');
 Route::get('/questions', function () {
     return view('faq');
-});
+})->middleware('isVerified');
 Route::get('/privacy', function () {
     return view('privacy');
-});
+})->middleware('isVerified');
 Route::get('/terms-and-conditions', function () {
     return view('terms-of-use');
-});
+})->middleware('isVerified');
 //$user = \Auth::user(); dd($user);
 //Route::get('/properties', 'SearchController@filter');
 
