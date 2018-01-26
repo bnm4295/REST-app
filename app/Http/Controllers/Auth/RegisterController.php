@@ -10,6 +10,7 @@ use Illuminate\Http\Request;
 use Illuminate\Auth\Events\Registered;
 use Jrean\UserVerification\Traits\VerifiesUsers;
 use Jrean\UserVerification\Facades\UserVerification;
+use Session;
 
 class RegisterController extends Controller
 {
@@ -27,6 +28,7 @@ class RegisterController extends Controller
     use RegistersUsers;
 
     use VerifiesUsers;
+
 
     /**
      * Where to redirect users after registration.
@@ -68,6 +70,7 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+        Session::flash('success', 'You have successfully created an account, please verify your email.');
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
@@ -88,6 +91,7 @@ class RegisterController extends Controller
 
           UserVerification::send($user, 'E-mail Verification');
 
+          //Session::flash('success', 'Sent E-mail Verification.');
           return $this->registered($request, $user)
                           ?: redirect($this->redirectPath());
     }

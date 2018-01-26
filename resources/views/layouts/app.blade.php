@@ -341,9 +341,9 @@
     <script type="text/javascript" src="https://www.ratehub.ca/assets/js/widget-loader.js"></script>
 
     @if (count($errors) > 0)
-    <script type="text/javascript">
-      $('#mylogin').modal('show');
-    </script>
+      <script type="text/javascript">
+        $('#mylogin').modal('show');
+      </script>
     @endif
 
     <!-- google api key: AIzaSyDnqGAnkOUEljrv7-gZUnvaZeikeK0wYdo -->

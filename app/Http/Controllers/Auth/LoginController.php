@@ -6,6 +6,8 @@ use Suuty\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Auth;
 
+use Session;
+
 class LoginController extends Controller
 {
     /*
@@ -41,6 +43,7 @@ class LoginController extends Controller
     public function userLogout()
     {
         Auth::guard('web')->logout();
+        //Session::flash('success', 'You have successfully logged out.');
         return redirect('/');
     }
 }
