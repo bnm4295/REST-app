@@ -53,7 +53,8 @@ $(document).ready(function () {
     });
     setTimeout(function(){
       $(".alert-success").fadeOut().empty();
-    },1000);
+      $(".alert-danger").fadeOut().empty();
+    },3000);
     //$('#171').mouseover(function(){
       //google.maps.event.trigger(markers.id, "click");
       //alert("hello");

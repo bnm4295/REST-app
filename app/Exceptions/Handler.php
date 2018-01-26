@@ -51,7 +51,6 @@ class Handler extends ExceptionHandler
     public function render($request, Exception $exception)
     {
         if($exception instanceof UserNotVerifiedException){
-           Session::flash('success', 'Please verify your email after registration.');
            return redirect('user/logout');
            //return response()->view('errors.require-verified', [], 401);
         }

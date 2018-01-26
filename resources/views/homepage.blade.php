@@ -8,6 +8,10 @@
     </div>
 @endif
 
+@if (Session::has('danger'))
+	<div class="alert alert-danger"  style="z-index: 2; text-align:center; position: absolute; width: 100%">{{ Session::get('success') }}</div>
+@endif
+
 @if (Session::has('success'))
 	<div class="alert alert-success"  style="z-index: 2; text-align:center; position: absolute; width: 100%">{{ Session::get('success') }}</div>
 @endif

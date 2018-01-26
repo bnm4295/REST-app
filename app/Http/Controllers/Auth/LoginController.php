@@ -43,7 +43,7 @@ class LoginController extends Controller
     public function userLogout()
     {
         Auth::guard('web')->logout();
-        //Session::flash('success', 'You have successfully logged out.');
+        Session::flash('danger', 'Please verify your email.');
         return redirect('/');
     }
 }
