@@ -91,7 +91,7 @@
             //});
             //console.log(marker.id);
             infowindow.setContent("<strong>"+name+"</strong>" + "<br>" +
-             "<a href='http://192.241.153.145/properties/"+slug+"'>" + "<img src='http://192.241.153.145/images/"+img+"' style='width:100px; height: 100px;'>" + "</a>"
+             "<a href='suuty/properties/"+slug+"'>" + "<img src='suuty/images/"+img+"' style='width:100px; height: 100px;'>" + "</a>"
             + "<strong>"+address+"</strong>");
             infowindow.open(map, marker);
         });
@@ -102,7 +102,7 @@
         marker.addListener('click', function() {
           infowindow.close();
           infowindow.setContent("<strong>"+name+"</strong>" + "<br>" +
-           "<a href='http://192.241.153.145/properties/"+slug+"'>" + "<img src='http://192.241.153.145/images/"+img+"' style='width:100px; height: 100px;'>" + "</a>"
+           "<a href='suuty/properties/"+slug+"'>" + "<img src='suuty/images/"+img+"' style='width:100px; height: 100px;'>" + "</a><br>"
           + "<strong>"+address+"</strong>");
           infowindow.open(map, marker);
 
