@@ -40,6 +40,7 @@
 <!--script src="{{ asset('/../public/js/jquery-ui-1.8.16.custom.min.js')}}"></script>-->
 <!--script src="{{ asset('/../public/js/jQRangeSlider-min.js')}}"></script>-->
 <!-- scripts -->
+
 <body>
     <div id="app">
         <nav id="stickynav" class="navbar navbar-default navbar-static-top">
@@ -105,6 +106,7 @@
 
                             <li><button type="button" id="login-btn" class="btn btn-info btn-lg" data-toggle="modal" data-target="#mylogin">Login</button></li>
                             <li><button type="button" id="reg-btn" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myreg">Register</button></li>
+
                             <!-- Modal -->
                             <div class="modal fade" id="mylogin" role="dialog">
                              <div class="modal-dialog">
@@ -123,7 +125,6 @@
                                           <label for="email" class="col-md-4 control-label">E-Mail Address</label>
                                           <div class="col-md-6">
                                             <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required autofocus>
-
                                             @if ($errors->has('email'))
                                               <span class="help-block">
                                                   <strong>{{ $errors->first('email') }}</strong>
@@ -339,7 +340,11 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.js"></script> <!-- 16 KB -->
     <script type="text/javascript" src="https://www.ratehub.ca/assets/js/widget-loader.js"></script>
 
-
+    @if (count($errors) > 0)
+    <script type="text/javascript">
+      $('#mylogin').modal('show');
+    </script>
+    @endif
 
     <!-- google api key: AIzaSyDnqGAnkOUEljrv7-gZUnvaZeikeK0wYdo -->
     <!--script src='https://api.mapbox.com/mapbox-gl-js/v0.40.0/mapbox-gl.js'></script>
