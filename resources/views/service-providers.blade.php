@@ -3,7 +3,7 @@
 
 @section('content')
 <section class="splash-section">
-  <div class="splash-inner-media"></div>
+  <div id="services-media" class="splash-inner-media"></div>
   <div class="splash-inner-content">
     <div class="container">
       <div id="home-container" class="container">

@@ -2,7 +2,7 @@
 
 @section('content')
 <section class="splash-section">
-  <div class="splash-inner-media"></div>
+  <div id="about-media" class="splash-inner-media"></div>
   <div class="splash-inner-content">
     <div class="container">
       <div id="home-container" class="container">
@@ -75,7 +75,7 @@
        </div>
        <div class="col-sm-12">
          <div style="text-align: center;" >
-           <h4><img src="https://www.suuty.com/wp-content/myimage/2016/03/HFHGV-Vertical-Colour.jpg" alt="" width="166" height="192"></h4>
+           <h4><img src="/images/HFHGV-Vertical-Colour.jpg" alt="" width="166" height="192"></h4>
            <h4 style="text-align: center;">Have more questions? Visit our <a href="/questions">FAQs </a>page.</h4>
           </div>
        </div>

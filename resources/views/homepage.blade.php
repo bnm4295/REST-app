@@ -39,7 +39,7 @@
 </div>
 
 <section class="splash-section">
-  <div class="splash-inner-media"></div>
+  <div class="splash-inner-media" style="background-image: url(/images/living-7.jpg);"></div>
   <div class="splash-inner-content">
     <div class="container">
       <div class="row">

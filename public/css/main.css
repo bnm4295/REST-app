@@ -8,6 +8,9 @@ body {
   margin: 0px;
   padding: 0px;
 }
+#appname{
+	color: #00a79d;
+}
 /* jquery 3 hack fix */
 .bootstrap-datetimepicker-widget {
   display: block;
@@ -207,6 +210,21 @@ img[src=""] {
 }
 .splash-section #front-page-media{
 		background-image: url(/images/living-7.jpg);
+}
+.splash-section #about-media{
+		background-image: url(/images/dining-6-min.jpg);
+}
+.splash-section #blogs-media{
+		background-image: url(/images/living-2-min.jpg);
+}
+.splash-section #home-owners-media{
+		background-image: url(/images/living-3-min.jpg);
+}
+.splash-section #home-buyers-media{
+		background-image: url(/images/living-2-min.jpg);
+}
+.splash-section #services-media{
+		background-image: url(/images/dining-6-min.jpg);
 }
 .splash-section{
 	background: #000;
