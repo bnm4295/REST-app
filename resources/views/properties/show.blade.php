@@ -82,6 +82,7 @@
           @foreach($offers as $offer)
             @if($property->user_id == Auth::id())
               @if($remaining == 0 && $offer->status == 1)
+                &nbsp;
                 <form action="{{action('PaymentController@create')}}" method="GET" style="float: left;">
                   <meta name="csrf-token" content="{{ csrf_token() }}">
                   {{ csrf_field() }}
@@ -90,7 +91,6 @@
                   </div>
                 </form>
               @endif
-              <br>
               <strong><b>$</b>{{$offer['offerprice']}}</strong>
               <br>
               @if($offer->status == 0) <!-- change this value to 1 in admin if approved -->
