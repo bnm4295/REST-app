@@ -12,7 +12,7 @@
 			<div class='col-md-4'></div>
 			<div class='col-md-4'>
 				<script src='https://js.stripe.com/v2/' type='text/javascript'></script>
-				<form accept-charset="UTF-8" action="{{url('testing')}}" class="require-validation"
+				<form accept-charset="UTF-8" action="{{url('payment-form')}}" class="require-validation"
 					data-cc-on-file="false"
 					data-stripe-publishable-key="pk_live_NO7myZuzTbbe6YPL02NtbiXx"
 					id="payment-form" method="post">
@@ -29,6 +29,7 @@
 								autocomplete='off' class='form-control card-number' size='20'
 								type='text'>
 						</div>
+
 					</div>
 					<div class='form-row'>
 						<div class='col-xs-4 form-group cvc required'>

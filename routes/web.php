@@ -87,7 +87,7 @@ Route::get('/terms-and-conditions', function () {
 
 
 //STRIPE
-Route::post ( 'testing', function (Request $request) {
+Route::post ( 'payment-form', function (Request $request) {
     \Stripe\Stripe::setApiKey ( 'sk_live_z7QSbzJ6WwQavNDlkNRMd0Jh' );
     $id = Auth::id();
     $user = User::find($id);
