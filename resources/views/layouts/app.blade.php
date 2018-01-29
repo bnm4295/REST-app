@@ -176,13 +176,13 @@
                                                 </a>
                                             </div>
                                         </div>
-                                        @if(Auth::check() || (Auth::guard('admin')->check() == true ))
+
                                         <div class="form-group">
                                             <div class="col-md-8 col-md-offset-4">
                                               <a href="{{url('/redirect')}}" class="btn btn-primary">Login with Facebook</a>
                                             </div>
                                         </div>
-                                        @endif
+                                        
                                     </form>
 
                                   </div>
