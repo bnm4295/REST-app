@@ -104,7 +104,7 @@
           <!-- when countdown hits 0 all offers will stop and property owner can select -->
           <!-- disable the form -->
           <!-- Can select one approved offer -->
-          @if(Auth::check())
+          @if(Auth::check() && $remaining>0)
             <form id="offer-property" action="{{action('OfferController@store')}}" method="post" enctype="multipart/form-data">
               <meta name="csrf-token" content="{{ csrf_token() }}">
               {{ csrf_field() }}

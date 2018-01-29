@@ -89,7 +89,7 @@ $(document).ready(function () {
       $this.countdown(finalDate, function(event) {
         $this.html(event.strftime('%D days %H:%M:%S'));
         if(event.strftime('%D days %H:%M:%S') == "00 days 00:00:00"){
-          $this.html("Bidding is over, property owner will now select an offer");
+          $this.html("Bidding Is Over. <br>");
         }
       });
       $this.on('finish.countdown', function(event){
