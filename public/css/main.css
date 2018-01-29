@@ -24,6 +24,10 @@ img[src=""] {
 /* IMG END */
 
 /* FOOTER */
+.footer-bottom .foot-social p a{
+	font-size: 30px;
+
+}
 .footer {
    /*background-color: #33a0aa;*/
 	 background-color: #f5f8fa;

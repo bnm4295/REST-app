@@ -7,6 +7,7 @@
 
 <body>
 	<div class="container">
+		<h3>Payment to Finalize Offer</h3>
 		<div class='row'>
 			<div class='col-md-4'></div>
 			<div class='col-md-4'>
