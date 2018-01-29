@@ -82,7 +82,7 @@
           @foreach($offers as $offer)
             @if($property->user_id == Auth::id())
               @if($remaining == 0 && $offer->status == 1)
-                &nbsp;
+                <br>
                 <form action="{{action('PaymentController@create')}}" method="GET" style="float: left;">
                   <meta name="csrf-token" content="{{ csrf_token() }}">
                   {{ csrf_field() }}
@@ -97,7 +97,8 @@
                 <b>Status: Waiting for Approval</b>
               @else
                 <b>Approved</b>
-                &nbsp;
+                <br>
+                <br>
               @endif
             @endif
           @endforeach
