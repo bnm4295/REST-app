@@ -77,8 +77,13 @@ class PropertyController extends Controller
       $request->validate([
         'title' => 'required',
         'date' =>'required',
-        'price' => 'required|max:10',
+        'price' => 'required',
         'images' => 'required',
+        'details' => 'required',
+        'house_type' => 'required',
+        'number_of_beds' => 'required',
+        'number_of_baths' => 'required',
+        'city' => 'required',
       ]);
       $inputs = $request->all();
       $slug = strtolower($request->title);
@@ -193,6 +198,7 @@ class PropertyController extends Controller
       $request->validate([
         'title' => 'required',
         'details' => 'required',
+        'date' => 'required',
         'price' => 'required',
         'house_type' => 'required',
         'number_of_beds' => 'required',

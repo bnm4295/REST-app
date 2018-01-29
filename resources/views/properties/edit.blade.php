@@ -46,7 +46,7 @@
 
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>Price:</strong>
+                <strong>Area:</strong>
                 <input id="edit-area" type="string" name="area" placeholder="Area" class="form-control" value="{{$property->area}}">
             </div>
         </div>

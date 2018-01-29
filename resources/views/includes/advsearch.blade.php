@@ -59,13 +59,13 @@
                   </div>
               </div>
               <h2>Area Range</h2>
-              <div class="col-sm-6">
-                  <div class="range-slider">
+              <div class="col-sm-3">
+                  <div class="range-slider" style="margin-right: -20px;">
                     <input class="range-slider__range" type="range" value="0" min="0" max="50000" name="area_left">
                     <span class="range-slider__value">0</span>
                   </div>
               </div>
-              <div class="col-sm-6">
+              <div class="col-sm-3">
                   <div class="range-slider">
                     <input class="range-slider__range" type="range" value="25000" min="25000" max="50000" name="area_right">
                     <span class="range-slider__value">0</span>

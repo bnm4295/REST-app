@@ -22,7 +22,7 @@ class CreatePropertiesTable extends Migration
           $table->string('firstdate')->nullable();
           $table->string('seconddate')->nullable();
           $table->string('slug');
-          $table->integer('price');
+          $table->string('price');
           $table->string('area');
           $table->string('house_type')->nullable();
           $table->string('street_address')->nullable()->default("");
@@ -37,7 +37,7 @@ class CreatePropertiesTable extends Migration
           $table->integer('number_of_baths')->nullable();
           $table->boolean('hideshow')->default(0);
           $table->boolean('sold')->default(0);
-          $table->string('images')->nullable();
+          $table->string('images', 2058)->nullable();
           $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
           $table->timestamps();
         });
