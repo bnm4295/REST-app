@@ -80,8 +80,8 @@
             //echo $remaining;
            ?>
           @foreach($offers as $offer)
-            @if($property->id == $offer->prop_id)
-              @if($remaining == 0 && $offer->user_id == Auth::id() && $offer->status == 1)
+            @if($property->user_id == Auth::id())
+              @if($remaining == 0 && $offer->status == 1)
                 <form action="{{action('PaymentController@create')}}" method="GET" style="float: left;">
                   <meta name="csrf-token" content="{{ csrf_token() }}">
                   {{ csrf_field() }}
