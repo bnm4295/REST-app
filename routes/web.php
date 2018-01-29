@@ -47,7 +47,7 @@ Route::get('my-profile', function (){
     //$name = $user->name;
     return view('profile');
 });
-Route::get('/mailable', function () {
+/*Route::get('/mailable', function () {
 //    $property = Suuty\Property::find(171);
 //    return new Suuty\Mail\SaveSearch($property);
   $message=
@@ -57,7 +57,7 @@ Route::get('/mailable', function () {
     $message->from('david@suuty.com', 'Suuty');
     $message->to('bnm4295@hotmail.com');
   });
-});
+});*/
 Route::get('/home-buyer', function () {
     return view('resources-home-buyers');
 });
