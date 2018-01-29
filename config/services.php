@@ -35,4 +35,12 @@ return [
         'secret' => env('sk_live_z7QSbzJ6WwQavNDlkNRMd0Jh'),
     ],
 
+    // services.php
+
+    'facebook' => [
+        'client_id' => '1648163565245679',
+        'client_secret' => '1e22a88f8ff2e416aa90db4f7c721d41',
+        'redirect' => '/callback',
+    ],
+
 ];

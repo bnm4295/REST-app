@@ -17,6 +17,8 @@ use Suuty\User;
 //AUTH
 Auth::routes();
 
+Route::get('/redirect', 'SocialAuthFacebookController@redirect');
+Route::get('/callback', 'SocialAuthFacebookController@callback');
 //GET
 Route::get('/user/logout', 'Auth\LoginController@userLogout')->name('user.logout');
 //Route::get('/home', 'HomeController@index');
