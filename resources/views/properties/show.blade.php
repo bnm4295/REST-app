@@ -97,6 +97,7 @@
                 <b>Status: Waiting for Approval</b>
               @else
                 <b>Approved</b>
+                &nbsp;
               @endif
             @endif
           @endforeach
