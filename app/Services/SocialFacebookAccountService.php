@@ -30,7 +30,7 @@ class SocialFacebookAccountService
                     'email' => $providerUser->getEmail(),
                     'name' => $providerUser->getName(),
                     'password' => md5(rand(1,10000)),
-                    'verified' => 1,
+                    'verified' => true,
                 ]);
             }
 
