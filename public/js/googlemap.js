@@ -102,7 +102,7 @@
         marker.addListener('click', function() {
           infowindow.close();
           infowindow.setContent("<strong>"+name+"</strong>" + "<br>" +
-           "<a href='/properties/"+slug+"'>" + "<img src='/images/"+img+"' style='width:100px; height: 100px;'>" + "</a><br>"
+           "<a href='/properties/"+slug+"'>" + "<img src='/images/"+img+"' style='width:240px; height: 150px;'>" + "</a><br>"
           + "<strong>"+address+"</strong>");
           infowindow.open(map, marker);
 
