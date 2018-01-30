@@ -21,6 +21,9 @@ body {
 img[src=""] {
     display: none;
 }
+.fotorama__loaded .fotorama__img{
+	left: 0 !important;
+}
 
 /* IMG END */
 
