@@ -477,9 +477,9 @@ body.modal-open{
 .range-slider__range::-webkit-slider-thumb {
   -webkit-appearance: none;
           appearance: none;
-  width: 12px;
+  width: 10px;
   height: 25px;
-  border-radius: 35%;
+  border-radius: 30%;
 	/*#00a79d*/
   background: #000;
   cursor: pointer;
@@ -512,7 +512,7 @@ body.modal-open{
 .range-slider__value {
   display: inline-block;
   position: relative;
-  /*width: 60px;*/
+  width: 100px;
   color: #fff;
   line-height: 20px;
   text-align: center;
@@ -520,20 +520,19 @@ body.modal-open{
   background: #2c3e50;
   padding: 5px 10px;
   margin-left: 8px;
+	margin-top: 20px;
 }
 .range-slider__value:after {
-	/*
   position: absolute;
-  top: 8px;
-  left: -7px;
-  width: 0;
+  top: -8px;
+	left: 42%;
   height: 0;
-  border-top: 7px solid transparent;
-  border-right: 7px solid #2c3e50;
-  border-bottom: 7px solid transparent;
+  border-left: 7px solid transparent;
+  border-bottom: 7px solid #2c3e50;
+  border-right: 7px solid transparent;
   content: '';
-	*/
 }
+
 
 ::-moz-range-track {
   background: #d7dcdf;
