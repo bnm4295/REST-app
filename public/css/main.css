@@ -8,6 +8,7 @@ body {
   margin: 0px;
   padding: 0px;
 }
+
 #appname{
 	color: #00a79d;
 }
@@ -244,6 +245,12 @@ body.modal-open{
 /* SPLASH END */
 
 /* map */
+.gm-style-iw div{
+	width: 250px;
+	white-space: nowrap;
+	overflow-x: hidden !important;
+	text-overflow: ellipsis;
+}
 #showmap .gm-iv-address{
 	height: 55px;
 }
@@ -470,10 +477,11 @@ body.modal-open{
 .range-slider__range::-webkit-slider-thumb {
   -webkit-appearance: none;
           appearance: none;
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  background: #2c3e50;
+  width: 12px;
+  height: 25px;
+  border-radius: 35%;
+	/*#00a79d*/
+  background: #000;
   cursor: pointer;
   -webkit-transition: background .15s ease-in-out;
   transition: background .15s ease-in-out;
