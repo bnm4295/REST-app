@@ -16,11 +16,14 @@
     postal_code: 'short_name'
   };
   var customLabel = {
-    Single_Family_Home: {
+    SingleFamilyHome: {
       label: 'S'
     },
-    Apartment: {
-      label: 'A'
+    Townhouse: {
+      label: 'T'
+    },
+    Condo: {
+      label: 'C'
     }
   };
 
@@ -37,7 +40,7 @@
   function initMap() {
     map = new google.maps.Map(document.getElementById('map'), {
       center: new google.maps.LatLng(49.246292, -123.116226),
-      zoom: 10
+      zoom: 8
     });
     var infowindow = new google.maps.InfoWindow({
       content: "<img src=''>"

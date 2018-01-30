@@ -53,9 +53,13 @@
 
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>House Type:</strong>
-                <input type="text" name="house_type" placeholder="Type" class="form-control" value="{{$property->house_type}}">
-            </div>
+                <label class="filter-col" style="margin-right:0;" for="proptype">Property Type:</label>
+                <select id="proptype" class="form-control" name="house_type">
+                  <option value="SingleFamilyHome" selected>Single Family Home</option>
+                  <option value="Townhouse">Townhouse</option>
+                  <option value="Condo">Condo</option>
+                </select>
+            </div> <!-- form group [rows] -->
         </div>
 
         <div class='col-sm-6'>

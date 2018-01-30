@@ -29,8 +29,8 @@
               <div class="form-group">
                   <label class="filter-col" style="margin-right:0;" for="proptype">Property Type:</label>
                   <select id="proptype" class="form-control" name="house_type">
-                    <option value="Single Family Home">Single Family Home</option>
-                    <option value="Apartment">Apartment</option>
+                    <option value="SingleFamilyHome">Single Family Home</option>
+                    <option value="Townhouse">Townhouse</option>
                     <option value="Condo">Condo</option>
                   </select>
               </div> <!-- form group [rows] -->

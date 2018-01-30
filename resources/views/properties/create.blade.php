@@ -98,8 +98,8 @@
           <strong>House Type:</strong>
           <select class="form-control" name="house_type">
             <option value=""></option>
-            <option value="Single Family Home">Single Family Home</option>
-            <option value="Apartment">Apartment</option>
+            <option value="SingleFamilyHome">Single Family Home</option>
+            <option value="Townhouse">Townhouse</option>
             <option value="Condo">Condo</option>
           </select>
           <!--input type="text" name="house_type" placeholder="Type" class="form-control">-->
