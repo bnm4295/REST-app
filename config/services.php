@@ -31,8 +31,8 @@ return [
 
     'stripe' => [
         'model' => Suuty\User::class,
-        'key' => env('pk_test_jrelq9mh68g8VvgUbU45vtHI'),
-        'secret' => env('sk_test_KSSmMrMppIdQdSwCN1N1XHfx'),
+        'key' => env('pk_live_NO7myZuzTbbe6YPL02NtbiXx'),
+        'secret' => env('sk_live_z7QSbzJ6WwQavNDlkNRMd0Jh'),
     ],
 
     // services.php

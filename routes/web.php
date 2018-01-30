@@ -90,7 +90,7 @@ Route::get('/terms-and-conditions', function () {
 
 //check isset(get request), grab email of selected and stick it in description
 Route::post ( 'payment-form', function (Request $request) {
-    \Stripe\Stripe::setApiKey ( 'sk_test_KSSmMrMppIdQdSwCN1N1XHfx' );
+    \Stripe\Stripe::setApiKey ( 'sk_live_z7QSbzJ6WwQavNDlkNRMd0Jh' );
     $id = Auth::id();
     $user = User::find($id);
     $usersecond = User::find($request->get('findemail'));
