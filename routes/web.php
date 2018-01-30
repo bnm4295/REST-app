@@ -93,14 +93,20 @@ Route::post ( 'payment-form', function (Request $request) {
     \Stripe\Stripe::setApiKey ( 'sk_live_z7QSbzJ6WwQavNDlkNRMd0Jh' );
     $id = Auth::id();
     $user = User::find($id);
-    $usersecond = User::find($request->get('findemail'));
+    if($request->get('findemail') !== null ){
+      $usersecond = User::find($request->get('findemail'));
+      $email = $usersecond->email;
+    }
+    else{
+      $email = "";
+    }
     try {
         \Stripe\Charge::create ( array (
                 "amount" => 990 * 100,
                 "currency" => "cad",
                 "source" => $request->input ( 'stripeToken' ), // obtained with Stripe.js
                 "description" =>
-                  "Home Buyer Email: " . $usersecond->email . " and " . "Home Seller Email: " . $user->email,
+                  "Home Buyer Email: " . $email . " and " . "Home Seller Email: " . $user->email,
         ) );
         Session::flash ( 'success-message', 'Payment done successfully !' );
         return Redirect::back ();

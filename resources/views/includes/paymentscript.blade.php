@@ -4,9 +4,6 @@
 <meta charset="UTF-8">
 
 </head>
-<?php if(isset($_GET['select-email'])){
-	$findemail = $_GET['select-email'];
-} ?>
 <body>
 	<div class="container">
 		<h3>Payment to Finalize Offer</h3>
@@ -57,9 +54,11 @@
 							</div>
 						</div>
 					</div>
-
-					<input type="hidden" name="findemail" value="{{$findemail}}">
-
+					<?php if(isset($_GET['select-email'])){
+						$findemail = $_GET['select-email'];
+					 ?>
+						<input type="hidden" name="findemail" value="{{$findemail}}">
+					<?php }?>
 					<div class='form-row'>
 						<div class='col-md-12 form-group'>
 							<button class='form-control btn btn-primary submit-button'
