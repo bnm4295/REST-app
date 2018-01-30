@@ -22,7 +22,6 @@
           $counter = count($decodedarr);
           for ($i = 0 ; $i < $counter; $i++ ){
             $image = $decodedarr[$i];
-            //$image = $decodedarr[0];
             echo $decodedarr[$i];
         ?>
           <!--img class="img-rounded" style="height: 230px; width: 100%" src="{{ asset('/../images/') }}/{{$image}}"/>-->
@@ -55,8 +54,6 @@
                 <p><strong>Postal Code: {{$property->postal_code}}</strong></p>
               @endif
             </div>
-            <!--div class="panel-body" style="width: 500px; margin-right: auto; margin-left: auto;">
-          </div>-->
         </div>
           <hr>
           <h3>Description</h3>
@@ -68,24 +65,21 @@
             date_default_timezone_set('America/Los_Angeles');
             $date=strtotime($property->date);
             $remaining = $date - time();
-            /*
-            echo "<br>";
-            echo $date;
-            echo "<br>";
-            echo time();
-            echo "<br>";*/
+
             if($remaining < 0){
               $remaining = 0;
             }
-            //echo $remaining;
+
            ?>
           @foreach($offers as $offer)
-            @if($property->user_id == Auth::id())
-              @if($remaining == 0 && $offer->status == 1)
+              @if($remaining == 0 && $offer->status == 1 && $property->user_id == Auth::id())
                 <br>
                 <form action="{{action('PaymentController@create')}}" method="GET" style="float: left;">
                   <meta name="csrf-token" content="{{ csrf_token() }}">
                   {{ csrf_field() }}
+                  <div class="form-group">
+                      <input type="hidden" class="form-control" name="select-email" value="{{$offer->user_id}}">
+                  </div>
                   <div class="col-xs-12 col-sm-12 col-md-12 text-center">
                     <input id="payment-btn" value="Select" type="submit" name="submit" class="btn btn-primary"></input>
                   </div>
@@ -93,19 +87,16 @@
               @endif
               <strong><b>$</b>{{$offer['offerprice']}}</strong>
               <br>
-              @if($offer->status == 0) <!-- change this value to 1 in admin if approved -->
+              @if($offer->status == 0)
                 <b>Status: Waiting for Approval</b>
               @else
                 <b>Approved</b>
                 <br>
                 <br>
               @endif
-            @endif
           @endforeach
           <hr>
-          <!-- when countdown hits 0 all offers will stop and property owner can select -->
-          <!-- disable the form -->
-          <!-- Can select one approved offer -->
+
           @if(Auth::check() && $remaining>0)
             <form id="offer-property" action="{{action('OfferController@store')}}" method="post" enctype="multipart/form-data">
               <meta name="csrf-token" content="{{ csrf_token() }}">

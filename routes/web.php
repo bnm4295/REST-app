@@ -87,16 +87,20 @@ Route::get('/terms-and-conditions', function () {
 
 
 //STRIPE
+
+//check isset(get request), grab email of selected and stick it in description
 Route::post ( 'payment-form', function (Request $request) {
-    \Stripe\Stripe::setApiKey ( 'sk_live_z7QSbzJ6WwQavNDlkNRMd0Jh' );
+    \Stripe\Stripe::setApiKey ( 'sk_test_KSSmMrMppIdQdSwCN1N1XHfx' );
     $id = Auth::id();
     $user = User::find($id);
+    $usersecond = User::find($request->get('findemail'));
     try {
         \Stripe\Charge::create ( array (
                 "amount" => 990 * 100,
                 "currency" => "cad",
                 "source" => $request->input ( 'stripeToken' ), // obtained with Stripe.js
-                "description" => $user->email
+                "description" =>
+                  "Home Buyer Email: " . $usersecond->email . " and " . "Home Seller Email: " . $user->email,
         ) );
         Session::flash ( 'success-message', 'Payment done successfully !' );
         return Redirect::back ();
