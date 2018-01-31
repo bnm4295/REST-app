@@ -97,34 +97,38 @@
           @endforeach
           <hr>
 
-          @if(Auth::check() && $remaining>0)
-            <form id="offer-property" action="{{action('OfferController@store')}}" method="post" enctype="multipart/form-data">
-              <meta name="csrf-token" content="{{ csrf_token() }}">
-              {{ csrf_field() }}
-              <input type="hidden" name="prop_id" value="{{$property->id}}">
-              <div class="row">
-                  <div class="col-xs-12 col-sm-12 col-md-12">
-                      <div class="form-group">
-                        <strong>Name:</strong>
-                        <input type="text" name="name" placeholder="Your Name" class="form-control input-lg">
-                      </div>
-                  </div>
-                  <div class="col-xs-12 col-sm-12 col-md-12">
-                      <div class="form-group">
-                        <strong>Offer Amount:</strong>
-                        <input type="text" name="offerprice" placeholder="Enter the dollar amount of your offer for this property" class="form-control input-lg">
-                      </div>
-                  </div>
-                  <div class="col-xs-12 col-sm-12 col-md-12">
-                      <div class="form-group">
-                        <textarea rows="5" cols="5" name="comments" placeholder="Additional Comments or Notes" class="form-control"></textarea>
-                      </div>
-                  </div>
-                  <div class="col-xs-12 col-sm-12 col-md-12 text-center">
-                    <input id="submit-offer" type="submit" name="submit" class="btn btn-primary" onclick="return confirm('Your offer will be submitted. We will forward you an email for the next step to make this offer legitimate.')"></input>
-                  </div>
-              </div>
-            </form>
+          @if(Auth::check())
+            @if($remaining>0)
+              <form id="offer-property" action="{{action('OfferController@store')}}" method="post" enctype="multipart/form-data">
+                <meta name="csrf-token" content="{{ csrf_token() }}">
+                {{ csrf_field() }}
+                <input type="hidden" name="prop_id" value="{{$property->id}}">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12">
+                        <div class="form-group">
+                          <strong>Name:</strong>
+                          <input type="text" name="name" placeholder="Your Name" class="form-control input-lg">
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-12 col-md-12">
+                        <div class="form-group">
+                          <strong>Offer Amount:</strong>
+                          <input type="text" name="offerprice" placeholder="Enter the dollar amount of your offer for this property" class="form-control input-lg">
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-12 col-md-12">
+                        <div class="form-group">
+                          <textarea rows="5" cols="5" name="comments" placeholder="Additional Comments or Notes" class="form-control"></textarea>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-12 col-md-12 text-center">
+                      <input id="submit-offer" type="submit" name="submit" class="btn btn-primary" onclick="return confirm('Your offer will be submitted. We will forward you an email for the next step to make this offer legitimate.')"></input>
+                    </div>
+                </div>
+              </form>
+            @else
+              <h3>Offer Period is Over</h3>
+            @endif
           @else
             <h3>Please Login to Offer</h3>
           @endif
