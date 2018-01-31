@@ -79,7 +79,7 @@ drift.load('3zb8wvvu7pby');
     <div id="app">
         <nav id="stickynav" class="navbar navbar-default navbar-static-top">
             <div class="container">
-                <div class="navbar-header">
+                <div class="navbar-header" style="margin-right: 50px;">
 
                     <!-- Collapsed Hamburger -->
                     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#app-navbar-collapse" aria-expanded="false">
@@ -97,7 +97,7 @@ drift.load('3zb8wvvu7pby');
                 <div class="collapse navbar-collapse" id="app-navbar-collapse">
                     <!-- Left Side Of Navbar -->
 
-                    <ul class="nav navbar-nav" style="margin-left: 50px;">
+                    <ul class="nav navbar-nav">
                       <!--<div class="navbar-header">
                           <a class="navbar-brand" href="{{ URL::to('properties') }}">Listings</a>
                       </div>-->
