@@ -10,6 +10,7 @@ body {
 }
 
 #appname{
+	margin-top: -8px;
 	color: #00a79d;
 }
 /* jquery 3 hack fix */
@@ -107,9 +108,6 @@ img[src=""] {
 	color: #9d9d9d;
 	margin-right: 30px;
 	font-weight: 500;
-}
-.navbar-default .navbar-brand{
-	font-size: 22px;
 }
 
 .navbar-inverse{

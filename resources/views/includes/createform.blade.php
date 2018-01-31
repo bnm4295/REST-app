@@ -19,7 +19,7 @@
     </div>
   </div>
 
-  <div class="col-xs-4 col-sm-12 col-md-12">
+  <div class="col-xs-4 col-sm-12 col-md-6">
     <div id="checkboxform" class="checkbox">
       <label><input type="checkbox" name="provider[]" value="photography">Real Estate Photographers</label>
       <label><input type="checkbox" name="provider[]" value="broker">Morgage Brokers</label>
