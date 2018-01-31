@@ -20,6 +20,7 @@
     <div class="page-wrap">
       <div class="row">
         <div style="margin: 20px;">
+          <div class="container">
             <div class="col-md-4">
               <h4>Real Estate Photographers</h4>
               <a class="team-block-mobile" href="http://ishot.ca/"></a>
@@ -41,6 +42,7 @@
               <h4 class="team-name"><a href="http://beckrobinson.com">David B. Rally</a></h4>
               <p class="team-designation">Beck, Robinson &amp; Company</p>
             </div>
+          </div>
         </div>
       </div>
     </div>
