@@ -126,6 +126,7 @@
               </div>
             </form>
           @else
+            <h3>Please Login to Offer</h3>
           @endif
           <hr>
           <div class="row">
