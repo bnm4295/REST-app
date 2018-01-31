@@ -18,6 +18,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.css" rel="stylesheet"> <!-- 3 KB -->
     <link href="{{ asset('/../css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('/../css/main.css') }}" rel="stylesheet">
+    <link href="{{ asset('/../css/bootstrap-social.css') }}" rel="stylesheet">
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500|Oxygen:300,400,500" rel="stylesheet">
     <!--link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/css/datepicker.css" rel="stylesheet">-->
@@ -201,11 +202,12 @@ drift.load('3zb8wvvu7pby');
                                         </div>
 
                                         <div class="form-group">
-                                            <div class="col-md-8 col-md-offset-4">
-                                              <a href="{{url('/redirect')}}" class="btn btn-primary">Login with Facebook</a>
+                                            <div class="col-md-6 col-md-offset-4">
+                                              <a href="{{url('/redirect')}}" class="btn btn-block btn-social btn-facebook">
+                                                <span class="fa fa-facebook"></span> Sign in with Facebook
+                                              </a>
                                             </div>
                                         </div>
-
                                     </form>
 
                                   </div>
