@@ -16,7 +16,9 @@ body {
 .bootstrap-datetimepicker-widget {
   display: block;
 }
-
+#checkboxform label{
+	display: block;
+}
 /* IMG */
 img[src=""] {
     display: none;

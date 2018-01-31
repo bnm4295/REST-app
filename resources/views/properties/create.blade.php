@@ -46,7 +46,7 @@
     <div class="col-xs-12 col-sm-12 col-md-12">
         <div class="form-group">
           <strong>Price:</strong>
-          <input id="getprice" type="integer" name="price" placeholder="Price" class="form-control">
+          <input id="getprice" type="string" name="price" placeholder="Price" class="form-control">
         </div>
     </div>
 

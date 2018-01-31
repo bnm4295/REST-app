@@ -40,7 +40,7 @@
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Price:</strong>
-                <input id="edit-price" type="integer" name="price" placeholder="Price" class="form-control" value="{{$property->price}}">
+                <input id="edit-price" type="string" name="price" placeholder="Price" class="form-control" value="{{$property->price}}">
             </div>
         </div>
 
