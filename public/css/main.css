@@ -147,21 +147,32 @@ body.modal-open{
 /* Btns */
 
 .btn-group-lg>.btn, .btn-lg{
-	margin-top: 2px;
-  margin-right: 10px;
+  margin-right: 0.01em;
   font-weight: 500;
+	line-height: inherit;
+	border-radius: inherit;
 }
 
-/*#reg-btn{
-	color: white;
+#reg-btn{
+	background-color: #00a79d;
+	border-color: #00a79d;
 }
+
+#reg-btn:hover{
+	background-color: #00c1b6;
+}
+
 #login-btn{
-	color: white;
-}*/
-.btn-info{
-	color: white;
-	border-color: #777;
+	background-color: white;
+	color: #777;
+	border-color: white;
 }
+#login-btn:hover{
+	background-color: #f0f4f5;
+	border-color: #f0f4f5;
+}
+
+
 
 /* BTNS END */
 /* Pages */
