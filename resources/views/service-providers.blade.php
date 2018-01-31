@@ -2,6 +2,20 @@
 
 
 @section('content')
+@if (session('alert'))
+    <div class="alert alert-success" style="z-index: 2; text-align:center; position: absolute; width: 100%">
+        <h3>{{ session('alert') }}</h3>
+    </div>
+@endif
+@if ($errors->any())
+  <div class="alert alert-danger" style="z-index: 2; position: absolute; width: 100%">
+    <ul>
+      @foreach ($errors->all() as $error)
+        <li>{{ $error }}</li>
+      @endforeach
+    </ul>
+  </div>
+@endif
 <section class="splash-section">
   <div id="services-media" class="splash-inner-media"></div>
   <div class="splash-inner-content">
@@ -50,6 +64,7 @@
   <div class="row" style="padding-bottom:20px;">
     <div style="display:table; margin:0 auto; width: 50%">
       @include('includes.createform')
+      @include('includes.createformreview')
     </div>
   </div>
 </div>

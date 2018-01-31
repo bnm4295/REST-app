@@ -8,6 +8,10 @@ use Suuty\Form;
 class FormController extends Controller
 {
     public function store(Request $request){
+      $request->validate([
+        'name' => 'required',
+        'email' =>'required',
+      ]);
       $providerarr = array();
       if ($request->has('provider')) {
           $providers = $request->get('provider');
@@ -20,6 +24,6 @@ class FormController extends Controller
       $inputs = $request->all();
       $inputs['provider'] = $encodeprovider;
       $form = Form::Create($inputs);
-      return redirect()->back();
+      return redirect()->back()->with('alert','success');
     }
 }

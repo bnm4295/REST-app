@@ -381,11 +381,7 @@ drift.load('3zb8wvvu7pby');
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.js"></script> <!-- 16 KB -->
     <script type="text/javascript" src="https://www.ratehub.ca/assets/js/widget-loader.js"></script>
 
-    @if (count($errors) > 0)
-      <script type="text/javascript">
-        $('#mylogin').modal('show');
-      </script>
-    @endif
+  
 
     <!-- google api key: AIzaSyDnqGAnkOUEljrv7-gZUnvaZeikeK0wYdo -->
     <!--script src='https://api.mapbox.com/mapbox-gl-js/v0.40.0/mapbox-gl.js'></script>
