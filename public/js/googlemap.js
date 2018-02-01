@@ -94,9 +94,8 @@
             //  console.log($(this).attr('id'));
             //});
             //console.log(marker.id);
-            infowindow.setContent("<strong>"+name+"</strong>" + "<br>" +
-             "<a href='/properties/"+slug+"'>" + "<img src='/images/"+img+"' style='width:100%; height: 100%;'>" + "</a><br>"
-            + "<strong>"+address+"</strong>");
+            infowindow.setContent("<a href='/properties/"+slug+"'>" + "<img src='/images/"+img+"' style='width:100%; height: 100%;'>" + "</a><br>"
+            + "<strong style='font-size: 15px'>"+name+"</strong>" + "<br><br>" + "<strong>"+address+"</strong>" + "<h3><strong>$"+price+"</strong></h3>");
             infowindow.open(map, marker);
         });
         $('#'+marker.id).mouseout(function(){
