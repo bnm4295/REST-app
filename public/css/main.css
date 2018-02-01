@@ -149,6 +149,10 @@ body.modal-open{
 	line-height: inherit;
 	border-radius: inherit;
 }
+#profile-save{
+	line-height: 1.3333333;
+  border-radius: 6px;
+}
 
 #reg-btn{
 	background-color: #00a79d;

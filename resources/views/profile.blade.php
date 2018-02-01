@@ -29,7 +29,8 @@
     <img src="/images/{{$image}}" width="130px" height="130px">
     <h2><strong>Email: {{Auth::user()->email}}</strong></h2>
     <h2><strong>About Myself:</strong></h2>
-    <b><textarea style="font-size: 20px"rows="5" cols="5" name="aboutme" placeholder="Description" class="form-control">{{Auth::user()->aboutme}}</textarea></b>
+    <b><p style="font-size: 20px"rows="5" cols="5" name="aboutme" placeholder="Description">{{Auth::user()->aboutme}}</p></b>
+    <hr>
   </div>
     @include('includes.profileupdate')
 @else

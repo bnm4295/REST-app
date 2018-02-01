@@ -23,6 +23,8 @@
     </div>
 
     <div class="row">
-      <button class="btn btn-primary" type="submit">Save</button>
+      <div class="col-md-12 text-center" style="margin-bottom: 10px">
+        <button id="profile-save" class="btn btn-primary btn-lg" type="submit">Save</button>
+      </div>
     </div>
 </form>

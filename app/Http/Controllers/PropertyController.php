@@ -147,7 +147,7 @@ class PropertyController extends Controller
       /*fwrite($stream, '<marker id="12" name="Red Lantern" address="60 Riley Street, Darlinghurst, NSW" lat="{{$properties->latitude}}" lng="{{$properties->longitude}}" type="restaurant"/>
       </markers>');*/
       fwrite($stream, '<marker id="'.$properties->id.'" name="'.$properties->title.'" address="'.$properties->street_address.' '.$properties->route.' '.$properties->city.', '.$properties->state.'" lat="'.$properties->latitude.'" lng="'.$properties->longitude.'" type="'.$properties->house_type.'"
-      img="'.$imagepaths[0].'" slug="'.$properties->slug.'"/>
+      img="'.$imagepaths[0].'" slug="'.$properties->slug.'" price="'.$properties->price.'"/>
       </markers>');
       fclose($stream);
       }
@@ -299,6 +299,7 @@ class PropertyController extends Controller
           $post['img'] = $image;
           $post['lat'] = $property->latitude;
           $post['lng'] = $property->longitude;
+          $post['price'] = $property->price;
         }
         //echo htmlspecialchars( $post->asXML() ) ;
         //echo "<br>";
