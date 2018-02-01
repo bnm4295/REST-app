@@ -21,11 +21,11 @@
 @if (Auth::id() == $property->user_id || (Auth::guard('admin')->check() == true ))
 <div class="container">
   <form id="submit-edit" method="post" action="{{ action('PropertyController@update', $id )}}" enctype="multipart/form-data">
+    {{ csrf_field() }}
+    <input name="_method" type="hidden" value="PATCH">
     <div class="row">
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                {{ csrf_field() }}
-                <input name="_method" type="hidden" value="PATCH">
                 <strong>Title:</strong>
                 <input id="edit-title" type="text" name="title" placeholder="Title" class="form-control input-lg" value="{{$property->title}}">
             </div>

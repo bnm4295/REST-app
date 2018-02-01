@@ -9,10 +9,6 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>{{ config('app.name', 'Laravel') }}</title>
-    <!-- Styles -->
-    <!--link rel='stylesheet' href='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v2.1.1/mapbox-gl-geocoder.css' type='text/css' />
-    <link href='https://api.mapbox.com/mapbox-gl-js/v0.40.0/mapbox-gl.css' rel='stylesheet' />
-    -->
     <link rel="icon" href="/images/favicon.ico" type="image/ico">
     <!-- fotorama.css & fotorama.js. -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.css" rel="stylesheet"> <!-- 3 KB -->
@@ -21,13 +17,10 @@
     <link href="{{ asset('/../css/bootstrap-social.css') }}" rel="stylesheet">
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500|Oxygen:300,400,500" rel="stylesheet">
-    <!--link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/css/datepicker.css" rel="stylesheet">-->
     <link href="//cdn.rawgit.com/Eonasdan/bootstrap-datetimepicker/e8bddc60e73c1ec2475f827be36e1957af72e2ea/build/css/bootstrap-datetimepicker.css" rel="stylesheet">
 
     <!-- toastr -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" />
-    <!--link rel="stylesheet" href="{{ asset('/../public/css/iThing.css') }}" type="text/css" />-->
-    <!--link rel="stylesheet" href="{{ asset('/../public/css/jquery-ui-1.8.10.custom.css') }}" type="text/css" />-->
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-113127234-1"></script>
     <script>
@@ -42,15 +35,8 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment-with-locales.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
-<!--
--->
 <script src="{{ asset('/../js/googlemap.js')}}" ></script>
-<!--script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.9.2/jquery.ui.widget.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.9.2/jquery.ui.core.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.9.2/jquery.ui.mouse.min.js"></script>-->
-<!--script src="{{ asset('/../public/js/jquery-ui-1.8.16.custom.min.js')}}"></script>-->
-<!--script src="{{ asset('/../public/js/jQRangeSlider-min.js')}}"></script>-->
-<!-- scripts -->
+
 <!-- Start of Async Drift Code -->
 <script>
 !function() {
@@ -354,24 +340,12 @@ drift.load('3zb8wvvu7pby');
                 </div>
             </div>
         </nav>
-        <!--nav class="navbar navbar-inverse">
-            <div class="container">
 
-              <ul class="nav navbar-nav">
-
-                <li><a class="navbar-brand" href="{{ URL::to('properties') }}">Listings</a></li>
-                <li><a class="navbar-brand" href="{{ URL::to('about') }}">About</a></li>
-                <li><a class="navbar-brand" href="{{ URL::to('resources') }}">Resources</a></li>
-                <li><a class="navbar-brand" href="{{ URL::to('blogs') }}">Blogs</a></li>
-              </ul>
-            </div>
-        </nav>-->
         @yield('content')
     </div>
 
     <!-- Scripts -->
     <script src="{{ asset('/../js/app.js') }}"></script>
-    <!--script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/js/bootstrap-datepicker.js"></script>-->
     <script src="//cdn.rawgit.com/Eonasdan/bootstrap-datetimepicker/e8bddc60e73c1ec2475f827be36e1957af72e2ea/src/js/bootstrap-datetimepicker.js"></script>
     <script src="{{ asset('/../js/jquery.countdown.min.js') }}"></script>
     <script src="{{ asset('/../js/main.js') }}"></script>
@@ -381,21 +355,8 @@ drift.load('3zb8wvvu7pby');
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.js"></script> <!-- 16 KB -->
     <script type="text/javascript" src="https://www.ratehub.ca/assets/js/widget-loader.js"></script>
 
-  
 
-    <!-- google api key: AIzaSyDnqGAnkOUEljrv7-gZUnvaZeikeK0wYdo -->
-    <!--script src='https://api.mapbox.com/mapbox-gl-js/v0.40.0/mapbox-gl.js'></script>
-    <script src='https://unpkg.com/mapbox@1.0.0-beta7/dist/mapbox-sdk.min.js'></script>
-    <script src='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v2.1.1/mapbox-gl-geocoder.min.js'></script>
-    <script type="text/javascript" src="{{ asset('/../public/js/mapbox.js')}}"></script>-->
-    <!--
-    /satellite-streets-v10
-    /satellite-v9
-    /outdoors-v10
-    /light-v9
-    /dark-v9
-    /streets-v10
-     -->
+
      @if(Auth::check())
      <!-- check if pusher is allowed -->
          @if(config('chatmessenger.use_pusher')) {
