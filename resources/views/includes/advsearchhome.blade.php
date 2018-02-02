@@ -5,9 +5,9 @@
           <form action="{{url('/properties')}}" method="GET" class="form-inline" role="form">
 
               <div class="form-group">
-                  <label class="filter-col" style="margin-right:0;" for="numbeds">Beds:</label>
+                  <label class="filter-col" style="margin-right:0;" for="numbeds"></label>
                   <select id="numbeds"class="form-control" name="number_of_beds">
-                     <option value=""></option>
+                     <option value="" disabled selected>Beds</option>
                      <option value="1">1</option>
                      <option value="2">2</option>
                      <option value="3">3</option>
@@ -16,9 +16,9 @@
                 </select>
               </div> <!-- form group [rows] -->
               <div class="form-group">
-                  <label class="filter-col" style="margin-right:0;" for="numbaths">Baths:</label>
+                  <label class="filter-col" style="margin-right:0;" for="numbaths"></label>
                   <select id="numbaths"class="form-control" name="number_of_baths">
-                      <option value=""></option>
+                      <option value="" disabled selected>Baths</option>
                       <option value="1">1</option>
                       <option value="2">2</option>
                       <option value="3">3</option>
@@ -27,7 +27,7 @@
                   </select>
               </div> <!-- form group [rows] -->
               <div class="form-group">
-                  <label class="filter-col" style="margin-right:0;" for="proptype">Property Type:</label>
+                  <label class="filter-col" style="margin-right:0;" for="proptype"></label>
                   <select id="proptype" class="form-control" name="house_type">
                     <option value="SingleFamilyHome">Single Family Home</option>
                     <option value="Townhouse">Townhouse</option>

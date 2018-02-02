@@ -1,4 +1,4 @@
-h1, h2, h3, h4, p, ul, a, input, label, button{
+h1, h2, h3, h4, p, ul, a, input, label, button, select{
 	font-family: 'Oxygen', serif !important;
 }
 html{
@@ -8,7 +8,32 @@ body {
   margin: 0px;
   padding: 0px;
 }
+select{
+	text-align-last: center;
+}
+#advsearchbody .form-control{
+	width: 100% !important;
+}
+.col-border:after{
+	content: "";
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	border-left: 1px solid #eeeeee;
+}
+.col-border{
+	padding: 1px;
+	position: static;
+}
+.row-relative {
+	padding-left: 10px;
+	position: relative;
+	border-bottom: 1px solid #eeeeee;
+	/*border-top: 1px solid #eeeeee;*/
+}
+.col-border-padding {
 
+}
 #appname{
 	margin-top: -8px;
 	color: #00a79d;
@@ -208,7 +233,7 @@ body.modal-open{
 }
 #filter-panel-home{
 	position: relative;
-	width: 85%;
+	width: 80%;
 	top: 40%;
 }
 #home-container div {
@@ -494,11 +519,11 @@ body.modal-open{
 .range-slider__range::-webkit-slider-thumb {
   -webkit-appearance: none;
           appearance: none;
-  width: 10px;
+  width: 15px;
   height: 25px;
   border-radius: 30%;
 	/*#00a79d*/
-  background: #000;
+  background: #00a79d;
   cursor: pointer;
   -webkit-transition: background .15s ease-in-out;
   transition: background .15s ease-in-out;
@@ -527,18 +552,19 @@ body.modal-open{
 }
 
 .range-slider__value {
-  display: inline-block;
+  /*display: inline-block;*/
   position: relative;
   width: 100px;
   color: #fff;
   line-height: 20px;
   text-align: center;
   border-radius: 3px;
-  background: #2c3e50;
+  background: #007784;
   padding: 5px 10px;
   margin-left: 8px;
 	margin-top: 20px;
 }
+/*
 .range-slider__value:after {
   position: absolute;
   top: -8px;
@@ -549,7 +575,7 @@ body.modal-open{
   border-right: 7px solid transparent;
   content: '';
 }
-
+*/
 
 ::-moz-range-track {
   background: #d7dcdf;
@@ -641,9 +667,6 @@ and (max-width: 849px){
 	#prop-fix{
 		margin-right: -10px;
 	}
-	#map-fix{
-
-	}
 	.panel-default .img-rounded{
 		margin-top: 20px !important;
 		width: 50% !important;
@@ -678,10 +701,6 @@ and (max-width: 950px){
 	}
 	.fotorama img{
 		width: 100% !important;
-	}
-	.navbar-right{
-		position: absolute;
-		right: 50px;
 	}
 	.navbar-nav{
 		margin-right: -20px !important;
@@ -745,6 +764,10 @@ and (max-width: 1400px){
 	#moveloc #autocomplete{
 			margin-left: initial;
 			width: initial;
+	}
+	.input-lg{
+		font-size: 12px;
+		font-weight: bold;
 	}
 }
 

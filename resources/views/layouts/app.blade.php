@@ -64,7 +64,7 @@ drift.load('3zb8wvvu7pby');
 <body>
     <div id="app">
         <nav id="stickynav" class="navbar navbar-default navbar-static-top">
-            <div class="container">
+            <div class="container-fluid">
                 <div class="navbar-header" style="margin-right: 50px;">
 
                     <!-- Collapsed Hamburger -->
@@ -122,7 +122,7 @@ drift.load('3zb8wvvu7pby');
                         @guest
                             <!-- <li id="logroute"><a href="{{ route('login') }}">Login</a></li> -->
                             <!-- <li id="regroute"><a href="{{ route('register') }}">Register</a></li> -->
-
+                            <li><a class="navbar-brand" href="{{ URL::to('/properties/create') }}">Create Free Listing</a></li>
                             <li><button type="button" id="login-btn" class="btn btn-info btn-lg" data-toggle="modal" data-target="#mylogin">Login</button></li>
                             <li><button type="button" id="reg-btn" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myreg">Register</button></li>
 

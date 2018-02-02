@@ -15,6 +15,11 @@
       <div class="col-xs-12 col-sm-12 col-md-12">
         <strong>Email</strong>
         <input name="email" class="form-control"></input>
+        @if ($errors->has('email'))
+            <span class="help-block">
+                <strong>{{ $errors->first('email') }}</strong>
+            </span>
+        @endif
       </div>
     </div>
   </div>
