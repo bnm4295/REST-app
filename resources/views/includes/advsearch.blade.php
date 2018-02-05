@@ -60,14 +60,14 @@
               </div>
             </div>
             <div class="row">
-              <div class="col-sm-6" style="margin-top: -25px;">
+              <div class="col-sm-6">
                   <div class="range-slider">
                     <label class="filter-col" style="margin-right:0;" for="price-left">Price MIN</label>
                     <input class="range-slider__range" type="range" value="0" min="0" max="5000000" name="price_left">
                     <span class="range-slider__value">0</span>
                   </div>
               </div>
-              <div class="col-sm-6" style="margin-top: -25px;">
+              <div class="col-sm-6">
                   <div class="range-slider">
                     <label class="filter-col" style="margin-right:0;" for="price-right">Price MAX</label>
                     <input class="range-slider__range" type="range" value="2500000" min="2500000" max="5000000" name="price_right">
@@ -76,14 +76,14 @@
               </div>
             </div>
             <div class="row">
-              <div class="col-sm-6" style="margin-top: -25px;">
+              <div class="col-sm-6">
                   <div class="range-slider">
                     <label class="filter-col" style="margin-right:0;" for="price-right">Area MIN</label>
                     <input class="range-slider__range" type="range" value="0" min="0" max="50000" name="area_left">
                     <span class="range-slider__value">0</span>
                   </div>
               </div>
-              <div class="col-sm-6" style="margin-top: -25px;">
+              <div class="col-sm-6">
                   <div class="range-slider">
                     <label class="filter-col" style="margin-right:0;" for="price-right">Area MAX</label>
                     <input class="range-slider__range" type="range" value="25000" min="25000" max="50000" name="area_right">

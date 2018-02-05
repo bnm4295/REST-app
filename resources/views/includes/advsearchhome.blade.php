@@ -29,6 +29,7 @@
               <div class="form-group">
                   <label class="filter-col" style="margin-right:0;" for="proptype"></label>
                   <select id="proptype" class="form-control" name="house_type">
+                    <option value="" disabled selected>Property Type</option>
                     <option value="SingleFamilyHome">Single Family Home</option>
                     <option value="Townhouse">Townhouse</option>
                     <option value="Condo">Condo</option>

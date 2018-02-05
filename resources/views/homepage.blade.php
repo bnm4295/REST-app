@@ -21,9 +21,11 @@
   <div class="splash-inner-content">
     <div id="home-container" class="container">
       <div class="splash-title">
-        <h3 style="font-size: 60px;">Your Next Move</h3>
-        <h2 style="font-size: 35px;">Simple. Fair. Revolutionary.</h2>
-        <h1 style="font-size: 20px;">#DIYREALTY #REALESTATEREVOLUTION</h1>
+        <h1 style="font-size: 48px; line-height: 56px;"><span>Your Next Move</span>
+          <div><span>Simple. Fair. Revolutionary.</span>
+          </div>
+        </h1>
+        <h4 style="font-size: 15px;">#DIYREALTY #REALESTATEREVOLUTION</h4>
       </div>
       <div class="row" style="height: 500px">
           @include('includes.advsearchhome')

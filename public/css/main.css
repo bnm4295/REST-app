@@ -1,5 +1,8 @@
 h1, h2, h3, h4, p, ul, a, input, label, button, select{
-	font-family: 'Oxygen', serif !important;
+	font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif !important;
+}
+#app{
+	border-top: 5px solid #00a79d;
 }
 html{
 	overflow-x: hidden;
@@ -231,7 +234,6 @@ body.modal-open{
 
 /* splash section */
 .splash-title{
-	text-align: center;
 	color: white;
 	position: relative;
 	top: 200px;
@@ -248,7 +250,6 @@ body.modal-open{
 }
 #filter-panel-home{
 	position: relative;
-	width: 80%;
 	top: 40%;
 }
 #home-container div {
