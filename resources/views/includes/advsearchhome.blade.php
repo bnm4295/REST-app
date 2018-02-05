@@ -35,8 +35,8 @@
                   </select>
               </div> <!-- form group [rows] -->
               <div class="form-group">
-                  <label class="filter-col" style="margin-right:0;" for="pref-search">City:</label>
-                  <input type="text" class="form-control" id="pref-search" name="addr">
+                  <label class="filter-col" style="margin-right:0;" for="pref-search"></label>
+                  <input type="text" class="form-control" id="pref-search" name="addr" placeholder="City or Address">
               </div>
               <!-- form group [search] -->
               <!--div class="form-group">
@@ -47,7 +47,7 @@
               </div>  form group [order by] -->
               <div class="form-group">
                 <div class="checkbox" style="margin-left:10px; margin-right:10px;">
-                  <label><input type="checkbox" name="mempar">Save Search</label>
+                  <label id="ssbox"><input type="checkbox" name="mempar">Save Search</label>
                 </div>
               </div>
               <button type="submit" class="btn btn-default filter-col">

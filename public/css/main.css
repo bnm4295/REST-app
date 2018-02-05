@@ -11,6 +11,21 @@ body {
 select{
 	text-align-last: center;
 }
+#pref-search::-webkit-input-placeholder {
+    font-weight: bold;
+}
+#proptype, #numbaths, #numbeds, #ssbox{
+	font-weight: bold;
+}
+.element::-moz-placeholder {
+    font-weight: bold;
+}
+.element:-ms-input-placeholder {
+    font-weight: bold;
+}
+.element:-o-input-placeholder {
+    font-weight: bold;
+}
 #advsearchbody .form-control{
 	width: 100% !important;
 }
@@ -297,7 +312,7 @@ body.modal-open{
 	height: 55px;
 }
 #map{
-	height: 880px;
+	height: 900px;
 	width: 900px;
 }
 #moveloc #autocomplete{

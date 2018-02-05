@@ -14,6 +14,7 @@
   @endif
 
   <strong><h2>{{$property->title}}</h2></strong>
+  <strong><h2>${{$property->price}}</h2></strong>
   <div class="row">
     <div class="col-md-6 col-sm-6 col-xs-12 no-padding" style="float: left;">
       <div class="fotorama" data-nav="thumbs">
@@ -31,36 +32,30 @@
       <!-- PANEL START -->
       <div class ="panel panel-default">
         <div class="panel-heading">
-          <div class="row justify-content-md-center">
-            <div class="col col-sm-6">
-              <p><strong>Price: ${{$property->price}}</strong></p>
-              <p><strong>Area(sqft): {{$property->area}}</strong></p>
-              <p><strong>Type: {{$property->house_type}}</strong></p>
-              <p><strong>Beds: {{$property->number_of_beds}}</strong></p>
-              <p><strong>Baths: {{$property->number_of_baths}}</strong></p>
+          <h2>Details</h2>
+          <div class="row">
+            <div class="col-md-6">
+              <h4>Area(sqft): {{$property->area}}</h4>
+              <h4>House Type: {{$property->house_type}}</h4>
+              <h4>Beds: {{$property->number_of_beds}} | Baths: {{$property->number_of_baths}}</h4>
             </div>
-            <div class="col col-sm-6">
-              @if($property->street_address && $property->route == NULL)
-                <p><strong>Address: Not Provided</strong></p>
-              @else
-                <p><strong>Address: {{$property->street_address}} {{$property->route}}</strong></p>
-              @endif
-              <p><strong>City: {{$property->city}}</strong></p>
-              <p><strong>Province: {{$property->state}}</strong></p>
-              <p><strong>Country: {{$property->country}}</strong></p>
+            <div class="col-md-6">
+              <h4><p>Address: {{$property->street_address}} {{$property->route}} {{$property->city}} {{$property->state}}</p></h4>
+              <h4><p>Country: {{$property->country}}</p></h4>
               @if($property->postal_code == NULL)
-                <p><strong>Postal Code: N/A</strong></p>
+                <h4><p>Postal Code: N/A</p></h4>
               @else
-                <p><strong>Postal Code: {{$property->postal_code}}</strong></p>
+                <h4><p>Postal Code: {{$property->postal_code}}</p></h4>
               @endif
             </div>
-        </div>
+          </div>
           <hr>
-          <h3>Description</h3>
-          <strong><p style="text-indent: 2em; line-height: 200%;">{{$property->details}}</p></strong>
+          <h2>Description</h2>
+          <b><p style="text-indent: 2em; line-height: 200%;">{{$property->details}}</p></b>
           <hr>
+          <h2>Ending Date</h2>
           <p style="text-align: right;"><b>ENDING DATE: {{$property->date}}</b></p>
-          <strong><div data-countdown= "{{$property->date}}" style="font-size: 50px; text-align: center;"></div></strong>
+          <div data-countdown= "{{$property->date}}" style="font-size: 50px;"></div>
           <?php
             date_default_timezone_set('America/Los_Angeles');
             $date=strtotime($property->date);
@@ -85,7 +80,7 @@
                   </div>
                 </form>
               @endif
-              <strong><b>$</b>{{$offer['offerprice']}}</strong>
+              <b><b>$</b>{{$offer['offerprice']}}</b>
               <br>
               @if($offer->status == 0)
                 <b>Status: Waiting for Approval</b>
@@ -106,13 +101,13 @@
                 <div class="row">
                     <div class="col-xs-12 col-sm-12 col-md-12">
                         <div class="form-group">
-                          <strong>Name:</strong>
+                          <b>Name:</b>
                           <input type="text" name="name" placeholder="Your Name" class="form-control input-lg">
                         </div>
                     </div>
                     <div class="col-xs-12 col-sm-12 col-md-12">
                         <div class="form-group">
-                          <strong>Offer Amount:</strong>
+                          <b>Offer Amount:</b>
                           <input type="text" name="offerprice" placeholder="Enter the dollar amount of your offer for this property" class="form-control input-lg">
                         </div>
                     </div>

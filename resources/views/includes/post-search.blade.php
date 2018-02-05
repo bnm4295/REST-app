@@ -121,9 +121,9 @@ if(isset($_GET['area_right']) || isset($_GET['area_left']) || isset($_GET['price
 else{
   //update later ADV SEARCH
   $search = $_GET['addr'];
-  $numbeds = $_GET['number_of_beds'];
-  $numbaths = $_GET['number_of_baths'];
-  $proptype = $_GET['house_type'];
+  //$numbeds = $_GET['number_of_beds'];
+  //$numbaths = $_GET['number_of_baths'];
+  //$proptype = $_GET['house_type'];
 
   //Cron event for emailing
 
@@ -131,14 +131,14 @@ else{
   if($_GET['addr'] == ""){
     //echo "made it";
     $searchprop = DB::table('properties')
-             ->where('house_type', 'LIKE' , "%$proptype%")
+             //->where('house_type', 'LIKE' , "%$proptype%")
              //->where('city', 'LIKE', "%$search%")
              //->orwhere('route', 'LIKE', "%$search%")
              //->where('state', 'LIKE', "%$search%")
              //->where('postal_code', 'LIKE', "%$search%")
              //->where('country', 'LIKE', "%$search%")
-             ->where('number_of_beds', 'LIKE', "%$numbeds%")
-             ->where('number_of_baths', 'LIKE', "%$numbaths%")
+             //->where('number_of_beds', 'LIKE', "%$numbeds%")
+             //->where('number_of_baths', 'LIKE', "%$numbaths%")
              //->where([
               // ['area', '>=', $area_left],
               // ['area', '<=', $area_right ]
@@ -148,14 +148,14 @@ else{
   else{
     //echo "rip";
     $searchprop = DB::table('properties')
-             ->where('house_type', 'LIKE' , "%$proptype%")
+             //->where('house_type', 'LIKE' , "%$proptype%")
              ->where('city', 'LIKE', "%$search%")
              ->orwhere('route', 'LIKE', "%$search%")
              ->orwhere('state', 'LIKE', "%$search%")
              ->orwhere('postal_code', 'LIKE', "%$search%")
              ->orwhere('country', 'LIKE', "%$search%")
-             ->where('number_of_beds', 'LIKE', "%$numbeds%")
-             ->where('number_of_baths', 'LIKE', "%$numbaths%")
+             //->where('number_of_beds', 'LIKE', "%$numbeds%")
+             //->where('number_of_baths', 'LIKE', "%$numbaths%")
              ->get();
   }
   foreach($searchprop as $post){
