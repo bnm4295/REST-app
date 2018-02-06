@@ -1,26 +1,4 @@
 <?php
-if(isset($_GET['mempar'])){
-  if(Auth::check()){
-    $mempar = $_GET['mempar'];
-    $email = Auth::user()->email;
-    $id = Auth::id();
-    $today = date("Y-m-d H:i:s");
-    $linkurl = $_SERVER['REQUEST_URI'];
-    $checkURL = DB::table('savesearch')->selectRaw('url')->where('url', '=', $linkurl)->get();
-    //echo $checkURL;
-    if($checkURL == '[]')
-    {
-      $savesearch = DB::table('savesearch')->insertGetId(
-        ['email' => $email, 'user_id' => $id, 'url' => $linkurl, 'created_at' => $today, 'updated_at' => $today]
-      );
-    }
-    //echo $mempar;
-  }
-}
-
-//Search on Listings
-
-//addr
 if(isset($_GET['addr'])){
   $search = $_GET['addr'];
 }
@@ -51,6 +29,30 @@ if(isset($_GET['area_left'])){
 if(isset($_GET['area_right'])){
   $area_right = $_GET['area_right'];
 }else{$area_right="noarearight";}
+
+if(isset($_GET['mempar'])){
+  if(Auth::check()){
+    $mempar = $_GET['mempar'];
+    $email = Auth::user()->email;
+    $id = Auth::id();
+    $today = date("Y-m-d H:i:s");
+    $linkurl = $_SERVER['REQUEST_URI'];
+    $checkURL = DB::table('savesearch')->selectRaw('url')->where('url', '=', $linkurl)->get();
+    //echo $checkURL;
+    if($checkURL == '[]')
+    {
+      $savesearch = DB::table('savesearch')->insertGetId(
+        ['email' => $email, 'user_id' => $id, 'url' => $linkurl, 'created_at' => $today, 'updated_at' => $today,
+          'price_left' => $price_left, 'price_right' => $price_right, 'area_left' => $area_left, 'area_right' => $area_right ]
+      );
+    }
+    //echo $mempar;
+  }
+}
+
+//Search on Listings
+
+//addr
 
 //Homepage Adv Search
 if($price_left == "nopriceleft" && $price_right == "nopriceright"

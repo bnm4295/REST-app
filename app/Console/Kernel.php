@@ -86,20 +86,58 @@ class Kernel extends ConsoleKernel
             $remaining = time() - $testing;
             if($remaining < $diff && $remaining > -1){
 
-              echo "This property was created recently (Today)";
-
-              echo $checkcity = $check->city;
+              $checkcity = $check->city;
+              $checkroute = $check->route;
+              $checkstate = $check->state;
+              $checkpostal = $check->postal_code;
+              $checkcountry = $check->country;
+              $checknumbeds = $check->number_of_beds;
+              $checknumbaths = $check->number_of_baths;
+              $checkproptype = $check->house_type;
+              $checkprice = $check->price;
+              $checkarea = $check->area;
 
               $messages = "";
-              $savesearch = DB::table('savesearch')->where('url', 'LIKE', "%$checkcity%")->get();
+              /*
+              if (preg_match('/area_left=(\d+)/', $post->url, $area_left)) {
+                  echo ( $area_left[1] ); // pid value
+              }
+              if (preg_match('/area_right=(\d+)/', $post->url, $area_right)) {
+                  echo ( $area_right[1] ); // pid value
+              }
+              if (preg_match('/price_left=(\d+)/', $post->url, $price_left)) {
+                  echo ( $price_left[1] ); // pid value
+              }
+              if (preg_match('/price_right=(\d+)/', $post->url, $price_right)) {
+                  echo ( $price_right[1] ); // pid value
+              }
+              */
+              //dd($testsearch->url);
+              $savesearch = DB::table('savesearch')
+                ->where(function($query) use ($checkcity,$checkroute,$checkstate,$checkcountry,$checkpostal){
+                  $query->where('url', 'LIKE', "%$checkcity%")
+                  ->orwhere('url', 'LIKE', "%$checkroute%")
+                  ->orwhere('url', 'LIKE', "%$checkstate%")
+                  ->orwhere('url', 'LIKE', "%$checkpostal%")
+                  ->orwhere('url', 'LIKE', "%$checkcountry%");
+                })
+                ->where([
+                  ['price_left', '<=', (int)$checkprice],
+                  ['price_right', '>=', (int)$checkprice]
+                ])
+                ->where([
+                  ['area_left', '<=', (int)$checkarea],
+                  ['area_right', '>=', (int)$checkarea]
+                ])
+                ->get();
+
               foreach($savesearch as $post){
-
+                $url = $post->url;
                 $messages .= $post->id . " " . $post->email . " " . $post->url;
-
               }
               foreach($savesearch as $post){
-                if ($messages != ""){
-                  Mail::raw($messages, function($message)
+                if($messages != ""){
+                  Mail::raw($messages, function($message) use ($post)
                   {
                     $message->subject('Suuty Save Search Match!');
                     $message->from('david@suuty.com', 'Suuty');
@@ -107,14 +145,12 @@ class Kernel extends ConsoleKernel
                   });
                 }
               }
+            //dd($testsearch);
 
             }
-            //echo "<br>";
           }
         });
         //$schedule->command('inspire')
-          //->everyMinute()
-          //->emailOutputTo('jhso@sfu.ca');
 
     }
 

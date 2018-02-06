@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateSavedSearch extends Migration
+class AddToSaveSearch extends Migration
 {
     /**
      * Run the migrations.
@@ -13,17 +13,11 @@ class CreateSavedSearch extends Migration
      */
     public function up()
     {
-        Schema::create('savesearch', function (Blueprint $table) {
-            $table->increments('id');
-            $table->integer('user_id')->unsigned()->index();
-            $table->string('email');
-            $table->string('url');
+        Schema::table('savesearch', function (Blueprint $table) {
             $table->string('price_left');
             $table->string('price_right');
             $table->string('area_left');
             $table->string('area_right');
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
-            $table->timestamps();
         });
     }
 
@@ -34,6 +28,8 @@ class CreateSavedSearch extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('savesearch');
+        Schema::table('savesearch', function (Blueprint $table) {
+            //
+        });
     }
 }

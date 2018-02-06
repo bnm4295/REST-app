@@ -18,6 +18,10 @@ class SaveSearch extends Model
     'email',
     'url',
     'user_id',
-  ];
+    'price_left',
+    'price_right',
+    'area_left',
+    'area_right',
+    ];
 
 }

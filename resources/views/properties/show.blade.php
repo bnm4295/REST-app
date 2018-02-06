@@ -188,6 +188,4 @@
   <!-- ROW END -->
 </div>
 
-
-
 @endsection
