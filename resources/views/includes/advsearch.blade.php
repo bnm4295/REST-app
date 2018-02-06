@@ -106,7 +106,3 @@
       </div>
   </div>
 </div>
-
-    <!--button type="button" class="btn btn-primary" data-toggle="collapse" data-target="#filter-panel">
-        <span class="glyphicon glyphicon-cog"></span> Advanced Search
-    </button>-->

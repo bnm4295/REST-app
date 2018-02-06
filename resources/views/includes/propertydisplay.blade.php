@@ -33,5 +33,5 @@
     </div>
     @endforeach
   </div>
-{!! $properties->render() !!}
+  <div style="margin: 0 auto; width: 140px;">{!! $properties->render() !!}</div>
 </section>
