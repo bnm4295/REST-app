@@ -53,27 +53,27 @@
       </div>
       <div class="row">
         <div class="col-sm-4">
-          <h3 style="text-align: center;"><img class="aligncenter size-medium wp-image-1057" src="{{ asset('/../images/') }}/male-user-min.png" alt="male-user" width="60" height="60" /></h3>
-          <h3 style="text-align: center;"><span style="color: #ffffff;">Connect Home Owners and Buyers</span></h3>
+          <h3 style="text-align: center;"><img src="{{ asset('/../images/') }}/male-user-min.png" alt="male-user" width="60" height="60" /></h3>
+          <h4 style="text-align: center;"><span style="color: #ffffff;">Connect Home Owners and Buyers</span></h4>
           <p style="text-align: center; font-size: 18px; line-height: 24px; font-weight: 400;"><span style="color: #ffffff;">Suuty gives home buyers the opportunity to learn about their investment from the person that knows best, the home owner.</span></p>
-          <h3 style="text-align: center;"><img class="aligncenter size-medium wp-image-1055" src="{{ asset('/../images/') }}/picture-min.png" alt="picture" width="60" height="60" /></h3>
-          <h3 style="text-align: center;"><span style="color: #ffffff;">Show Off Your House</span></h3>
+          <h3 style="text-align: center;"><img src="{{ asset('/../images/') }}/picture-min.png" alt="picture" width="60" height="60" /></h3>
+          <h4 style="text-align: center;"><span style="color: #ffffff;">Show Off Your House</span></h4>
           <p style="font-size: 18px; line-height: 24px; font-weight: 400; text-align: center;"><span style="color: #ffffff;">Suuty listings are equipped with all the features you won't have on Craigslist and Kijiji, so you can show off your home. </span></p>
         </div>
         <div class="col-sm-4">
-          <h3 style="text-align: center;"><img class="aligncenter size-medium wp-image-1056" src="{{ asset('/../images/') }}/opened-book-min.png" alt="opened-book" width="60" height="60" /></h3>
-          <h3 style="text-align: center;"><span style="color: #ffffff;">We Take Care of Paperwork</span></h3>
+          <h3 style="text-align: center;"><img src="{{ asset('/../images/') }}/opened-book-min.png" alt="opened-book" width="60" height="60" /></h3>
+          <h4 style="text-align: center;"><span style="color: #ffffff;">We Take Care of Paperwork</span></h4>
           <h4 style="text-align: center; font-size: 18px; line-height: 24px; font-weight: 400;"><span style="color: #ffffff;">Suuty has an easy to use legal document workflow that enables you to submit and accept legal offers through the site</span></h4>
-          <h3 style="text-align: center;"><img class="aligncenter size-medium wp-image-1053" src="{{ asset('/../images/') }}/magnifier-min.png" alt="search" width="60" height="60" /></h3>
-          <h3 style="text-align: center;"><span style="color: #ffffff;">Get Notified for Listings You Like</span></h3>
+          <h3 style="text-align: center;"><img src="{{ asset('/../images/') }}/magnifier-min.png" alt="search" width="60" height="60" /></h3>
+          <h4 style="text-align: center;"><span style="color: #ffffff;">Get Notified for Listings You Like</span></h4>
           <h4 style="text-align: center; font-size: 18px; line-height: 24px; font-weight: 400;"><span style="color: #ffffff;">Save search filters and receive an email notification when new listings match your criteria or if your favorited properties are updated</span></h4>
         </div>
         <div class="col-sm-4">
-          <h3 style="text-align: center;"><img class="aligncenter size-medium wp-image-1054" src="{{ asset('/../images/') }}/layers-1-min.png" alt="money" width="60" height="60" /></h3>
-          <h3 style="text-align: center;"><span style="color: #ffffff;">Save the Commission</span></h3>
+          <h3 style="text-align: center;"><img src="{{ asset('/../images/') }}/layers-1-min.png" alt="money" width="60" height="60" /></h3>
+          <h4 style="text-align: center;"><span style="color: #ffffff;">Save the Commission</span></h4>
           <h4 style="text-align: center; font-size: 18px; line-height: 24px; font-weight: 400;"><span style="color: #ffffff;">Suuty charges a flat fee of $990 upon offer acceptance. A no risk way of selling your home that will save you thousands.</span></h4>
-          <h3 style="text-align: center;"><img class="aligncenter size-medium wp-image-784" src="{{ asset('/../images/') }}/heart-min.png" width="60" height="52" /></h3>
-          <h3 style="text-align: center;"><span style="color: #ffffff;">Supporting Local Charities</span></h3>
+          <h3 style="text-align: center;"><img src="{{ asset('/../images/') }}/heart-min.png" width="60" height="52" /></h3>
+          <h4 style="text-align: center;"><span style="color: #ffffff;">Supporting Local Charities</span></h4>
           <h4 style="text-align: center; font-size: 18px; line-height: 24px; font-weight: 400;"><span style="color: #ffffff;">We believe in supporting affordable housing initiatives. 25% of all proceeds will be donated to Habitat for Humanity</span></h4>
         </div>
       </div>

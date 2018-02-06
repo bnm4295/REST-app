@@ -78,14 +78,14 @@
             <div class="row">
               <div class="col-sm-6">
                   <div class="range-slider">
-                    <label class="filter-col" style="margin-right:0;" for="price-right">Area MIN</label>
+                    <label class="filter-col" style="margin-right:0;" for="area-left">Area MIN</label>
                     <input class="range-slider__range" type="range" value="0" min="0" max="50000" name="area_left">
                     <span class="range-slider__value">0</span>
                   </div>
               </div>
               <div class="col-sm-6">
                   <div class="range-slider">
-                    <label class="filter-col" style="margin-right:0;" for="price-right">Area MAX</label>
+                    <label class="filter-col" style="margin-right:0;" for="area-right">Area MAX</label>
                     <input class="range-slider__range" type="range" value="25000" min="25000" max="50000" name="area_right">
                     <span class="range-slider__value">0</span>
                   </div>

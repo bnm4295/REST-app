@@ -1,4 +1,4 @@
-h1, h2, h3, h4, p, ul, a, input, label, button, select{
+h1, h2, h3, h4, p, ul, a, input, label, button, select, body{
 	font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif !important;
 }
 #app{
