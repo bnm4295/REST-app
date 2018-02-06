@@ -4,6 +4,9 @@ h1, h2, h3, h4, p, ul, a, input, label, button, select, body{
 #app{
 	border-top: 5px solid #00a79d;
 }
+#appname{
+	margin-right: 50px;
+}
 html{
 	overflow-x: hidden;
 }
@@ -656,7 +659,12 @@ and (max-width: 767px){
 	}
 	.navbar-nav{
 		margin: 7px -15px !important;
-
+	}
+	#home-search-btn{
+		margin-top: 15px;
+	}
+	.colstyle{
+		margin-left: initial;
 	}
 }
 

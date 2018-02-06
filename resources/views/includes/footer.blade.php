@@ -26,12 +26,12 @@
   <div class="footer-bottom">
     <div class="container">
       <div class="row">
-        <div class="col-md-3 col-sm-3">
+        <div class="col-md-3 col-sm-3 col-xs-12">
           <div class="footer-col">
             <p>Suuty Technologies - All rights reserved </p>
           </div>
         </div>
-        <div class="col-md-6 col-sm-6">
+        <div class="col-md-6 col-sm-6 col-xs-12">
           <div class="footer-col">
             <div class="navi">
               <ul id="footer-menu">
@@ -43,7 +43,7 @@
             </div>
           </div>
         </div>
-        <div class="col-md-3 col-sm-3">
+        <div class="col-md-3 col-sm-3 col-xs-12">
           <div class="footer-col foot-social">
             <p>
               Follow us

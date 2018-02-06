@@ -38,7 +38,7 @@
                   <label class="filter-col" style="margin-right:0;" for="pref-search"></label>
                   <input type="text" class="form-control" id="pref-search" name="addr" placeholder="City or Address">
               </div>
-              <button type="submit" class="btn btn-default filter-col">
+              <button id="home-search-btn" type="submit" class="btn btn-default filter-col">
                 <i class="fa fa-search" aria-hidden="true"></i> Search
               </button>
           </form>
