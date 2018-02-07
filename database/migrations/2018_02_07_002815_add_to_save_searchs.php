@@ -16,7 +16,7 @@ class AddToSaveSearchs extends Migration
         Schema::table('savesearch', function (Blueprint $table) {
           $table->integer('number_of_beds')->nullable();
           $table->integer('number_of_baths')->nullable();
-          $table->string('addr')-nullable();
+          $table->string('addr')->nullable();
           $table->string('house_type')->nullable();
         });
     }

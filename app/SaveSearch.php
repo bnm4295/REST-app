@@ -25,6 +25,7 @@ class SaveSearch extends Model
     'number_of_beds',
     'number_of_baths',
     'addr',
+    'house_type',
     ];
 
 }
