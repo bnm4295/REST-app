@@ -69,7 +69,7 @@ class Kernel extends ConsoleKernel
                 ->orwhere('addr', 'LIKE', "%$checkpostal%")
                 ->orwhere('addr', 'LIKE', "%$checkcountry%");
               })
-              ->orwhere('url', 'LIKE', "%$checkproptype%")
+              ->where('house_type', 'LIKE', "%$checkproptype%")
               ->orwhere('number_of_beds', 'LIKE', "%$numbeds%")
               ->orwhere('number_of_baths', 'LIKE', "%$numbaths%")
               ->get();

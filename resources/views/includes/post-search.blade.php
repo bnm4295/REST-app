@@ -44,7 +44,7 @@ if(isset($_GET['mempar'])){
       $savesearch = DB::table('savesearch')->insertGetId(
         ['email' => $email, 'user_id' => $id, 'url' => $linkurl,
           'price_left' => $price_left, 'price_right' => $price_right, 'area_left' => $area_left, 'area_right' => $area_right,
-          'addr' => $search, 'number_of_beds' => (int)$numbeds, 'number_of_baths' => (int)$numbaths, 'created_at' => $today, 'updated_at' => $today,
+          'addr' => $search, 'number_of_beds' => (int)$numbeds, 'number_of_baths' => (int)$numbaths, 'house_type' => $proptype, 'created_at' => $today, 'updated_at' => $today,
          ]
       );
     }

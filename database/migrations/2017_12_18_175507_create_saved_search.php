@@ -22,6 +22,7 @@ class CreateSavedSearch extends Migration
             $table->string('price_right');
             $table->string('area_left');
             $table->string('area_right');
+            $table->string('house_type')->nullable();
             $table->integer('number_of_beds')->nullable();
             $table->integer('number_of_baths')->nullable();
             $table->string('addr')-nullable();
