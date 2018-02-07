@@ -22,6 +22,9 @@ class SaveSearch extends Model
     'price_right',
     'area_left',
     'area_right',
+    'number_of_beds',
+    'number_of_baths',
+    'addr',
     ];
 
 }

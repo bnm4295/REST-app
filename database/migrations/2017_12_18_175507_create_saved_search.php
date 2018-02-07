@@ -22,6 +22,9 @@ class CreateSavedSearch extends Migration
             $table->string('price_right');
             $table->string('area_left');
             $table->string('area_right');
+            $table->integer('number_of_beds')->nullable();
+            $table->integer('number_of_baths')->nullable();
+            $table->string('addr')-nullable();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
         });

@@ -14,10 +14,9 @@ class AddToSaveSearch extends Migration
     public function up()
     {
         Schema::table('savesearch', function (Blueprint $table) {
-            $table->string('price_left');
-            $table->string('price_right');
-            $table->string('area_left');
-            $table->string('area_right');
+            $table->string('addr')-nullable();
+            $table->integer('number_of_beds')->nullable();
+            $table->integer('number_of_baths')->nullable();
         });
     }
 
