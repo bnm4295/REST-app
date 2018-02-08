@@ -1,5 +1,6 @@
 @extends('layouts.app')
 
+@include('includes.socialshare')
 @section('content')
 
 @if (session('alert'))

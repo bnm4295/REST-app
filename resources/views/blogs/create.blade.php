@@ -11,7 +11,7 @@
     </ul>
   </div>
 @endif
-@if (Auth::guard('admin')->check() == true || auth('admin') )
+@if (Auth::guard('admin')->check() == true )
   <form id="create-blog" method="post" action="{{url('blogs')}}" enctype="multipart/form-data">
     <meta name="csrf-token" content="{{csrf_token()}}">
     {{ csrf_field() }}

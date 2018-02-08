@@ -1,5 +1,5 @@
 @extends('layouts.app')
-
+@include('includes.socialshare')
 @section('content')
 <?php
 $decodedarr = json_decode( $blog->images , true);

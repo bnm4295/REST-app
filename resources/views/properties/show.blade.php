@@ -1,5 +1,5 @@
 @extends('layouts.app')
-
+@include('includes.socialshare')
 @section('content')
 
 <div class="container">
@@ -84,6 +84,8 @@
               <br>
               @if($offer->status == 0)
                 <b>Status: Waiting for Approval</b>
+                <br>
+                <br>
               @else
                 <b>Approved</b>
                 <br>

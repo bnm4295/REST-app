@@ -1,5 +1,5 @@
 @extends('layouts.app')
-
+@include('includes.socialshare')
 @section('content')
 <section class="splash-section">
   <div id="about-media" class="splash-inner-media"></div>
