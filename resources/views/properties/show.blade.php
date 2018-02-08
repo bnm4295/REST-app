@@ -49,7 +49,7 @@
           <h4>Description of Property</h4>
         </div>
         <div class="row">
-          <div class="col-md-6">
+          <div class="col-md-12">
             <div class="panel-heading">
               <b><p style="line-height: 200%;">{{$property->details}}</p></b>
             </div>
