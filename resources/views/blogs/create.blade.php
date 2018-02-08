@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-
+<div class="container">
 @if ($errors->any())
   <div class="alert alert-danger">
     <ul>
@@ -45,8 +45,9 @@
 
   </form>
 @else
+@endif
+</div>
 <script>
   window.location.href = "/";
 </script>
-@endauth
 @endsection

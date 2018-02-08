@@ -13,8 +13,9 @@
     </div>
   @endif
 
-  <strong><h2>{{$property->title}}</h2></strong>
-  <strong><h2>${{$property->price}}</h2></strong>
+  <h1 style="color: #111; font-family: 'Helvetica Neue', sans-serif; font-size: 40px; font-weight: bold; letter-spacing: -1px; line-height: 1;">{{$property->title}}</h1>
+  <h5>{{$property->street_address}} {{$property->route}} {{$property->city}} {{$property->state}}, {{$property->postal_code}} {{$property->country}}</h5>
+  <h2 style="color: #111; font-family: 'Helvetica Neue', sans-serif; font-size: 40px; font-weight: bold; letter-spacing: -1px; line-height: 1;">${{$property->price}}</h2>
   <div class="row">
     <div class="col-md-6 col-sm-6 col-xs-12 no-padding" style="float: left;">
       <div class="fotorama" data-nav="thumbs">
@@ -26,36 +27,43 @@
             echo $decodedarr[$i];
         ?>
           <!--img class="img-rounded" style="height: 230px; width: 100%" src="{{ asset('/../images/') }}/{{$image}}"/>-->
-          <img src="{{ asset('/../images/') }}/{{$image}}">
+          <img src="{{ asset('/../images/') }}/{{$image}}" alt="property-images">
         <?php } ?>
       </div>
       <!-- PANEL START -->
       <div class ="panel panel-default">
-        <div class="panel-heading">
-          <h2>Details</h2>
-          <div class="row">
-            <div class="col-md-6">
+        <div class="panel-title">
+          <h4>Details of Property</h4>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <div class="panel-heading" style="text-align: center">
               <h4>Area(sqft): {{$property->area}}</h4>
               <h4>House Type: {{$property->house_type}}</h4>
               <h4>Beds: {{$property->number_of_beds}} | Baths: {{$property->number_of_baths}}</h4>
             </div>
-            <div class="col-md-6">
-              <h4><p>Address: {{$property->street_address}} {{$property->route}} {{$property->city}} {{$property->state}}</p></h4>
-              <h4><p>Country: {{$property->country}}</p></h4>
-              @if($property->postal_code == NULL)
-                <h4><p>Postal Code: N/A</p></h4>
-              @else
-                <h4><p>Postal Code: {{$property->postal_code}}</p></h4>
-              @endif
+          </div>
+        </div>
+        &nbsp;
+        <div class="panel-title">
+          <h4>Description of Property</h4>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="panel-heading">
+              <b><p style="line-height: 200%;">{{$property->details}}</p></b>
             </div>
           </div>
-          <hr>
-          <h2>Description</h2>
-          <b><p style="text-indent: 2em; line-height: 200%;">{{$property->details}}</p></b>
-          <hr>
-          <h2>Ending Date</h2>
-          <p style="text-align: right;"><b>ENDING DATE: {{$property->date}}</b></p>
-          <div data-countdown= "{{$property->date}}" style="font-size: 50px;"></div>
+        </div>
+        &nbsp;
+        <div class="panel-title">
+          <h4>Ending Date</h4>
+        </div>
+        <div class="panel-heading">
+          <h4 style="text-align: right;">ENDING DATE: {{$property->date}}</h4>
+          <div data-countdown= "{{$property->date}}" style="text-align: center; font-size: 50px; background-color: #00a79d;
+            color: white; border-bottom-left-radius: 20px; border-top-right-radius: 20px; margin-bottom: 20px;">
+          </div>
           <?php
             date_default_timezone_set('America/Los_Angeles');
             $date=strtotime($property->date);
@@ -67,27 +75,26 @@
 
            ?>
           @foreach($offers as $offer)
+          &nbsp;
+          <form action="{{action('PaymentController@create')}}" method="GET" style="float: left;">
+            <meta name="csrf-token" content="{{ csrf_token() }}">
+            {{ csrf_field() }}
+            <div class="form-group">
+              <input type="hidden" class="form-control" name="select-email" value="{{$offer->user_id}}">
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-12 text-center">
+              <input style="position: relative; top: 16px;" id="payment-btn" value="Select" type="submit" name="submit" class="btn btn-primary"></input>
+            </div>
+          </form>
               @if($remaining == 0 && $offer->status == 1 && $property->user_id == Auth::id())
-                <br>
-                <form action="{{action('PaymentController@create')}}" method="GET" style="float: left;">
-                  <meta name="csrf-token" content="{{ csrf_token() }}">
-                  {{ csrf_field() }}
-                  <div class="form-group">
-                      <input type="hidden" class="form-control" name="select-email" value="{{$offer->user_id}}">
-                  </div>
-                  <div class="col-xs-12 col-sm-12 col-md-12 text-center">
-                    <input id="payment-btn" value="Select" type="submit" name="submit" class="btn btn-primary"></input>
-                  </div>
-                </form>
               @endif
-              <b><b>$</b>{{$offer['offerprice']}}</b>
-              <br>
+              <h4><b>Bid Price: ${{$offer['offerprice']}}</b></h4>
               @if($offer->status == 0)
-                <b>Status: Waiting for Approval</b>
+                <h5><b>Status: Waiting for Approval</b></h5>
                 <br>
                 <br>
               @else
-                <b>Approved</b>
+                <h5><b>Status: Approved</b></h5>
                 <br>
                 <br>
               @endif
@@ -96,6 +103,7 @@
 
           @if(Auth::check())
             @if($remaining>0)
+              <h4 style="color: #111; font-family: 'Helvetica Neue', sans-serif; font-size: 20px; font-weight: bold; letter-spacing: -1px; line-height: 1; text-align: center;">Send an Offer</h4>
               <form id="offer-property" action="{{action('OfferController@store')}}" method="post" enctype="multipart/form-data">
                 <meta name="csrf-token" content="{{ csrf_token() }}">
                 {{ csrf_field() }}
@@ -119,7 +127,7 @@
                         </div>
                     </div>
                     <div class="col-xs-12 col-sm-12 col-md-12 text-center">
-                      <input id="submit-offer" type="submit" name="submit" class="btn btn-primary" onclick="return confirm('Your offer will be submitted. We will forward you an email for the next step to make this offer legitimate.')"></input>
+                      <input id="submit-offer" type="submit" name="submit" class="btn btn-primary form-control" onclick="return confirm('Your offer will be submitted. We will forward you an email for the next step to make this offer legitimate.')"></input>
                     </div>
                 </div>
               </form>
@@ -131,7 +139,7 @@
           @endif
           <hr>
           <div class="row">
-            <h1 style="text-align: center">Send a Message</h1>
+            <h3 style=" color: #111; font-family: 'Helvetica Neue', sans-serif; font-size: 20px; font-weight: bold; letter-spacing: -1px; line-height: 1; text-align: center;">Send a Message</h3>
             <form action="{{ route('messages.store') }}" method="post">
               {{ csrf_field() }}
               <div class="col-xs-12 col-sm-12 col-md-12">
@@ -145,7 +153,7 @@
                 <!-- Message Form Input -->
                 <div class="form-group">
                   <label class="control-label">Message</label>
-                  <textarea name="message" class="form-control">{{ old('message') }}</textarea>
+                  <textarea name="message"  placeholder="Your Message" class="form-control">{{ old('message') }}</textarea>
                 </div>
 
                 <div class="checkbox">

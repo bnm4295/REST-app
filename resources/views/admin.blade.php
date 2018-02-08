@@ -33,24 +33,24 @@
                       Name: {{$offer['name']}} | Price: ${{$offer['offerprice']}}
                       <br>
                       Comments: {{$offer['comments']}}</strong>
-                      <form id="approve-offer" method="post" action="{{ action('OfferController@update', $offer['id'] )}}" enctype="multipart/form-data">
+                      <form method="post" action="{{ action('OfferController@update', $offer['id'] )}}" enctype="multipart/form-data">
                         {{csrf_field()}}
                         <input name="_method" type="hidden" value="PATCH">
                         <input type="hidden" name="status" class="form-control input-lg" value="1">
                         <input type="hidden" name="name" class="form-control input-lg" value="{{$offer->name}}">
                         <input type="hidden" name="offerprice" class="form-control input-lg" value="{{$offer->offerprice}}">
                         <input type="hidden" name="comments" class="form-control input-lg" value="{{$offer->comments}}">
-                        <button id="approvebtn" class="btn btn-success" type="submit">Approve</button>
+                        <button class="btn btn-success approvebtn" type="submit">Approve</button>
                       </form>
 
-                      <form id="approve-offer" method="post" action="{{ action('OfferController@update', $offer['id'] )}}" enctype="multipart/form-data">
+                      <form method="post" action="{{ action('OfferController@update', $offer['id'] )}}" enctype="multipart/form-data">
                         {{csrf_field()}}
                         <input name="_method" type="hidden" value="PATCH">
                         <input type="hidden" name="status" class="form-control input-lg" value="0">
                         <input type="hidden" name="name" class="form-control input-lg" value="{{$offer->name}}">
                         <input type="hidden" name="offerprice" class="form-control input-lg" value="{{$offer->offerprice}}">
                         <input type="hidden" name="comments" class="form-control input-lg" value="{{$offer->comments}}">
-                        <button id="disprovebtn" class="btn btn-success" type="submit">Disprove</button>
+                        <button class="btn btn-success disapprovebtn" type="submit">Status Off</button>
                       </form>
 
                       <form id="delete-offer" action="{{action('OfferController@destroy', $offer['id'])}}" method="post">
@@ -60,14 +60,6 @@
                           Delete
                         </button>
                       </form>
-                      <script>
-                        if({{$offer['status']}} == '1'){
-                          $('#approvebtn').css({"display": "none"});
-                        }
-                        if({{$offer['status']}} == '0'){
-                          $('#disprovebtn').css({"display": "none"});
-                        }
-                      </script>
                     @endforeach
                 </div>
             </div>

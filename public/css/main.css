@@ -1,6 +1,8 @@
-h1, h2, h3, h4, p, ul, a, input, label, button, select, body{
+h1, h2, h3, h4, h5, p, ul, a, input, label, button, select, body{
 	font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif !important;
 }
+/*font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif !important;
+ color: #111; font-family: 'Helvetica Neue', sans-serif; font-size: 275px; font-weight: bold; letter-spacing: -1px; line-height: 1; text-align: center;*/
 #app{
 	border-top: 5px solid #00a79d;
 }
@@ -74,6 +76,13 @@ img[src=""] {
 	left: 0 !important;
 }
 
+/* PANELS */
+.panel-title{
+	color: #777;
+	background-color: #e5e5e5;
+	padding: 12px;
+}
+/* */
 /* IMG END */
 
 /* FOOTER */
@@ -188,7 +197,10 @@ body.modal-open{
 /* MODAL END */
 
 /* Btns */
-
+.btn-primary{
+	background-color: #00a79d;
+	border-color: #00a79d;
+}
 .btn-group-lg>.btn, .btn-lg{
   margin-right: 0.01em;
   font-weight: 500;
