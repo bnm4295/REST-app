@@ -75,18 +75,18 @@
 
            ?>
           @foreach($offers as $offer)
-          &nbsp;
-          <form action="{{action('PaymentController@create')}}" method="GET" style="float: left;">
-            <meta name="csrf-token" content="{{ csrf_token() }}">
-            {{ csrf_field() }}
-            <div class="form-group">
-              <input type="hidden" class="form-control" name="select-email" value="{{$offer->user_id}}">
-            </div>
-            <div class="col-xs-12 col-sm-12 col-md-12 text-center">
-              <input style="position: relative; top: 16px;" id="payment-btn" value="Select" type="submit" name="submit" class="btn btn-primary"></input>
-            </div>
-          </form>
-              @if($remaining == 0 && $offer->status == 1 && $property->user_id == Auth::id())
+             @if($remaining == 0 && $offer->status == 1 && $property->user_id == Auth::id())
+                &nbsp;
+                <form action="{{action('PaymentController@create')}}" method="GET" style="float: left;">
+                  <meta name="csrf-token" content="{{ csrf_token() }}">
+                  {{ csrf_field() }}
+                  <div class="form-group">
+                    <input type="hidden" class="form-control" name="select-email" value="{{$offer->user_id}}">
+                  </div>
+                  <div class="col-xs-12 col-sm-12 col-md-12 text-center">
+                    <input style="position: relative; top: 16px;" id="payment-btn" value="Select" type="submit" name="submit" class="btn btn-primary"></input>
+                  </div>
+                </form>
               @endif
               <h4><b>Bid Price: ${{$offer['offerprice']}}</b></h4>
               @if($offer->status == 0)
