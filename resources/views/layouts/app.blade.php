@@ -13,7 +13,7 @@
     <!-- fotorama.css & fotorama.js. -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.css" rel="stylesheet"> <!-- 3 KB -->
     <link href="{{ asset('/../css/app.css') }}" rel="stylesheet">
-    <link href="{{ asset('/../css/main.css?ver=1.3') }}" rel="stylesheet">
+    <link href="{{ asset('/../css/main.css?ver=1.4') }}" rel="stylesheet">
     <link href="{{ asset('/../css/bootstrap-social.css') }}" rel="stylesheet">
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500|Oxygen:300,400,500" rel="stylesheet">
@@ -352,7 +352,7 @@ drift.load('3zb8wvvu7pby');
     <script src="{{ asset('/../js/app.js') }}"></script>
     <script src="//cdn.rawgit.com/Eonasdan/bootstrap-datetimepicker/e8bddc60e73c1ec2475f827be36e1957af72e2ea/src/js/bootstrap-datetimepicker.js"></script>
     <script src="{{ asset('/../js/jquery.countdown.min.js') }}"></script>
-    <script src="{{ asset('/../js/main.js?ver=1.0') }}"></script>
+    <script src="{{ asset('/../js/main.js?ver=1.1') }}"></script>
     @yield('script')
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCCMiNb2ZO_OOM16aU9xTwC3m0fa0Xq6NY&libraries=places&callback=initialize"
     async defer></script>
