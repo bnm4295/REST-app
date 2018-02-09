@@ -19,6 +19,16 @@ body {
 select{
 	text-align-last: center;
 }
+.loginattempt{
+	text-align: center;
+ 	z-index: 2;
+	position: absolute;
+	width: 100%;
+}
+.loginattempt h3{
+	font-size: 15px;
+	font-weight: bold;
+}
 #pref-search::-webkit-input-placeholder {
     font-weight: bold;
 }

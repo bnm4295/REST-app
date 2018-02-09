@@ -3,7 +3,7 @@
 @section('content')
 
 @if (session('alert'))
-    <div class="alert alert-success" style="z-index: 1; text-align:center; position: absolute; width: 100%">
+    <div class="alert alert-success successmsg" style="z-index: 2; text-align:center; position: absolute; width: 100%">
         <h3>{{ session('alert') }}</h3>
     </div>
 @endif

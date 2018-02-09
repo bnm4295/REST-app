@@ -10,7 +10,7 @@
 @endif
 
 @if (Session::has('danger'))
-	<div id="danger-notification" class="alert alert-danger"  style="z-index: 2; text-align:center; position: absolute; width: 100%">{{ Session::get('danger') }}</div>
+	<div class="alert alert-danger danger-notification"  style="z-index: 2; text-align:center; position: absolute; width: 100%">{{ Session::get('danger') }}</div>
 @endif
 
 @if (Session::has('success'))

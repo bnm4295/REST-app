@@ -100,7 +100,10 @@
               @endif
           @endforeach
           <hr>
-
+          <h3>In-House Visit Times</h3>
+          <h4>{{$property->firstdate}}</h4>
+          <h4>{{$property->seconddate}}</h4>
+          <hr>
           @if(Auth::check())
             @if($remaining>0)
               <h4 style="color: #111; font-family: 'Helvetica Neue', sans-serif; font-size: 20px; font-weight: bold; letter-spacing: -1px; line-height: 1; text-align: center;">Send an Offer</h4>
@@ -139,7 +142,8 @@
           @endif
           <hr>
           <div class="row">
-            <h3 style=" color: #111; font-family: 'Helvetica Neue', sans-serif; font-size: 20px; font-weight: bold; letter-spacing: -1px; line-height: 1; text-align: center;">Send a Message</h3>
+            <h3 style=" color: #111; font-family: 'Helvetica Neue', sans-serif; font-size: 20px; font-weight: bold; letter-spacing: -1px; line-height: 1; text-align: center;">
+              Send a Message</h3>
             <form action="{{ route('messages.store') }}" method="post">
               {{ csrf_field() }}
               <div class="col-xs-12 col-sm-12 col-md-12">

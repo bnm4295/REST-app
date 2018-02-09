@@ -54,7 +54,8 @@ $(document).ready(function () {
 
     setTimeout(function(){
       $(".alert-success").fadeOut().empty();
-      $("#danger-notification").fadeOut().empty();
+      $(".danger-notification").fadeOut().empty();
+      $(".loginattempt").fadeOut().empty();
     },4000);
     //$('#171').mouseover(function(){
       //google.maps.event.trigger(markers.id, "click");

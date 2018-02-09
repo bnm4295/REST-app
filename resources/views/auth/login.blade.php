@@ -1,6 +1,11 @@
 @extends('layouts.app')
 
 @section('content')
+@if (session('maxAttempts'))
+<div class="alert alert-danger" style="text-align: center;">
+  <h3>{{ session('maxAttempts') }}</h3>
+</div>
+@endif
 <div class="container">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
