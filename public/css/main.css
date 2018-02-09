@@ -325,12 +325,14 @@ body.modal-open{
 /* SPLASH END */
 
 /* map */
+.gm-style-iw{
+	text-align: center;
+}
 .gm-style-iw div{
 	width: 250px;
 	white-space: nowrap;
 	overflow-x: hidden !important;
 	text-overflow: ellipsis;
-	text-align: center;
 }
 #showmap .gm-iv-address{
 	height: 55px;
