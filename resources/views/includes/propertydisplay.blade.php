@@ -1,6 +1,6 @@
 <section class="properties endless-pagination" data-next-page="{{ $properties->nextPageUrl() }}">
   <div class="container-fluid">
-    <h3 style="text-align: center">New Listings</h3>
+    <h3 style="font-family: 'Helvetica Neue', sans-serif; font-size: 30px; font-weight: bold; letter-spacing: -1px; text-indent: 15px;">New Listings</h3>
     @foreach($properties as $property)
     <?php
     $decodedarr = json_decode( $property->images , true);

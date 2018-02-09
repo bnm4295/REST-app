@@ -22,7 +22,7 @@ select{
 #pref-search::-webkit-input-placeholder {
     font-weight: bold;
 }
-#proptype, #numbaths, #numbeds, #ssbox{
+#proptype, #numbaths, #numbeds, #ssbox, #housetype{
 	font-weight: bold;
 }
 .element::-moz-placeholder {
@@ -106,9 +106,6 @@ img[src=""] {
 }
 .footer-col a{
 	padding-left: 5px;
-}
-.footer-bottom .foot-social{
-	text-align: right;
 }
 .footer-bottom .navi ul {
     text-align: center;

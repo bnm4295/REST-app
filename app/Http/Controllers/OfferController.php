@@ -45,7 +45,7 @@ class OfferController extends Controller
     {
       $request->validate([
         'name' => 'required',
-        'offerprice' => 'required',
+        'offerprice' => 'required|numeric',
         'comments' => 'required',
       ]);
       $inputs = $request->all();

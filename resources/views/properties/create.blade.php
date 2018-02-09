@@ -50,7 +50,7 @@
         </div>
     </div>
 
-    <div class='col-sm-6'>
+    <div class="col-xs-12 col-sm-12 col-md-12">
         <div class="form-group">
           <strong>Offer Closing Time:</strong>
           <div class='input-group date' id='closingtime'>
@@ -62,7 +62,7 @@
         </div>
     </div>
 
-    <div class='col-sm-6'>
+    <div class="col-xs-6 col-sm-6 col-md-6">
         <div class="form-group">
           <strong>First Open House</strong>
           <div class='input-group date' id='firstdate'>
@@ -74,7 +74,7 @@
         </div>
     </div>
 
-    <div class='col-sm-6'>
+    <div class="col-xs-6 col-sm-6 col-md-6">
         <div class="form-group">
           <strong>Second Open House</strong>
           <div class='input-group date' id='seconddate'>
@@ -96,8 +96,8 @@
     <div class="col-xs-12 col-sm-12 col-md-12">
         <div class="form-group">
           <strong>House Type:</strong>
-          <select class="form-control" name="house_type">
-            <option value=""></option>
+          <select id="housetype" class="form-control" name="house_type">
+            <option value="" disabled selected>House Type</option>
             <option value="SingleFamilyHome">Single Family Home</option>
             <option value="Townhouse">Townhouse</option>
             <option value="Condo">Condo</option>
