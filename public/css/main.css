@@ -330,6 +330,7 @@ body.modal-open{
 	white-space: nowrap;
 	overflow-x: hidden !important;
 	text-overflow: ellipsis;
+	text-align: center;
 }
 #showmap .gm-iv-address{
 	height: 55px;
