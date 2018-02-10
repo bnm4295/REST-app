@@ -61,12 +61,9 @@
       </div>
     </div>
     <hr>
-  <div class="row" style="padding-bottom:20px;">
-    <div style="display:table; margin:0 auto; width: 50%">
       @include('includes.createform')
+      &nbsp;
       @include('includes.createformreview')
-    </div>
-  </div>
 </div>
 @endsection
 @section('footer')
