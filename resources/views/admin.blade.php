@@ -27,7 +27,11 @@
                             {{ session('status') }}
                         </div>
                     @endif
+                    <div class="row">
+                      <h3 style="text-align: center">Property Offers</h3>
+                    </div>
                     @foreach($offers as $offer)
+                    <div class="col-md-4 text-center">
                       <strong>PropertyID: {{$offer['prop_id']}} | UserID: {{$offer['user_id']}} | Status: {{$offer['status']}}
                       <br>
                       Name: {{$offer['name']}} | Price: ${{$offer['offerprice']}}
@@ -60,42 +64,47 @@
                           Delete
                         </button>
                       </form>
+                    </div>
                     @endforeach
                 </div>
             </div>
         </div>
     </div>
-  <a href="{{ asset('/../blogs/create') }}" >Create a Blog</a>
-  <div class="row">
-    <div class="col-md-3 col-sm-6 col-xs-12 no-padding">
+    <div class="row">
+      <h3 style="text-align: center">Blog Posts</h3>
+    </div>
+      <h3><a href="{{ asset('/../blogs/create') }}" >Create a Blog</a></h3>
 
       @foreach($blogs as $blog)
-        {{$blog->title}}
-        <form action="{{action('BlogController@show', $blog['id'])}}" method="get">
-          <!--input name="_method" type="hidden" value="show">-->
-          @if($blog['images'] != "")
-            <?php
-              $decodedarr = json_decode( $blog->images , true);
-              $counter = count($decodedarr);
-              //$image = $decodedarr[$i];
-              $image = $decodedarr[0];
-            ?>
-            <input class="img-rounded" value="" type="submit" style="border: solid 0px #000000; height: 200px; width: 100%;
-             background-image: url({{ asset('/../images/') }}/{{$image}});
-              background-size: 300px; background-repeat: no-repeat;"/>
-            <!--img class="img-rounded" style="height: 230px; width: 100%" src="{{ asset('/../images/') }}/{{$image}}"/>
-            <button class="btn btn-success" type="submit">Show</button>-->
-          @endif
-        </form>
-        <form id="delete-blog" action="{{action('BlogController@destroy', $blog['id'])}}" method="post">
-          {{csrf_field()}}
-          <input name="_method" type="hidden" value="delete">
-          <button class="btn btn-danger" type="submit" onclick="return confirm('Do you really want to delete this blog?')">
-            Delete
-          </button>
-        </form>
+        <div class="col-md-4 text-center">
+          {{$blog->title}}
+          <div class ="panel panel-default">
+              <form action="{{action('BlogController@show', $blog['id'])}}" method="get">
+                @if($blog['images'] != "")
+                  <?php
+                    $decodedarr = json_decode( $blog->images , true);
+                    $counter = count($decodedarr);
+                    //$image = $decodedarr[$i];
+                    $image = $decodedarr[0];
+                  ?>
+                  <input class="img-rounded" value="" type="submit" style="border: solid 0px #000000; height: 200px; width: 100%;
+                   background-image: url({{ asset('/../images/') }}/{{$image}});
+                   background-size: 300px; background-repeat: no-repeat;"/>
+                @endif
+              </form>
+              <form id="delete-blog" action="{{action('BlogController@destroy', $blog['id'])}}" method="post">
+                {{csrf_field()}}
+                <input name="_method" type="hidden" value="delete">
+                <button class="btn btn-danger" type="submit" onclick="return confirm('Do you really want to delete this blog?')">
+                  Delete
+                </button>
+              </form>
+            </div>
+          </div>
         @endforeach
-    </div>
-  </div>
 </div>
+@endsection
+
+@section('footer')
+@include('includes.footer')
 @endsection
