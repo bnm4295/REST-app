@@ -77,7 +77,7 @@ class PropertyController extends Controller
       $request->validate([
         'title' => 'required',
         'date' =>'required',
-        'price' => 'required',
+        'price' => 'required|numeric',
         'images' => 'required',
         'details' => 'required',
         'house_type' => 'required',
@@ -315,7 +315,7 @@ class PropertyController extends Controller
       )));
       fwrite($stream, $save);
       fclose($stream);
-      
+
       return redirect('/properties')->with('alert','success');
   }
 

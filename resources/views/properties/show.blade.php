@@ -138,7 +138,10 @@
               <h3>Offer Period is Over</h3>
             @endif
           @else
-            <h3>Please Login to Offer</h3>
+          <div class="col-md-12 col-sm-12 col-xs-12">
+            <button style="width:100%;"type="button" id="login-btn" class="btn btn-info btn-lg" data-toggle="modal" data-target="#mylogin"><h3>Login to Offer</h3></button>
+          </div>
+          &nbsp;
           @endif
           <hr>
           <div class="row">
@@ -177,13 +180,13 @@
       <!-- COL END -->
     </div>
     <!-- Widget START -->
-    <div class="col-md-6 col-sm-6 col-xs-12 no-padding" style="margin: 20px width: 300px;">
+    <div class="col-md-6 col-sm-6 col-xs-12 no-padding" style="margin: 20px width: 100%;">
         <input id="showmaplat" type="hidden" value="{{$property->latitude}}">
         <input id="showmaplong" type="hidden" value="{{$property->longitude}}">
         <div id="floating-panel">
           <input class="btn btn-primary" type="button" value="Toggle Street View" onclick="toggleStreetView();"></input>
         </div>
-        <div id="showmap" style="width: 500px; height: 500px;">
+        <div id="showmap" style="width: 100%; height: 500px;">
         </div>
         <!--div style="margin-left: 30px;">
           <h2 style="font-family:stagsans,arial,helvetica,sans-serif;font-size:1.6em;font-weight:400;margin-top:0">
@@ -197,6 +200,70 @@
           </div>
         </div>-->
     </div>
+    &nbsp;
+    @if(Auth::check())
+    <div class="col-md-6 col-sm-6 col-xs-12">
+      <div class="container reviewform">
+        <form method="post" action="{{url('post-booking')}}" enctype="multipart/form-data">
+          <meta name="csrf-token" content="{{ csrf_token() }}">
+          {{ csrf_field() }}
+          <input type="hidden" name="prop_id" value="{{$property->id}}">
+            <div class="form-group">
+              <div class="col-xs-12 col-sm-12 col-md-12">
+                <h3>Book Your Open-House Time</h3>
+                <strong>Name</strong>
+                <input name="name" class="form-control" value="{{Auth::user()->name}}"></input>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="col-xs-12 col-sm-12 col-md-12">
+                <strong>Email</strong>
+                <input name="email" class="form-control" value="{{Auth::user()->email}}"></input>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="form-group">
+                  <strong>Message:</strong>
+                  <textarea rows="5" cols="5" name="description" placeholder="Description" class="form-control"></textarea>
+                </div>
+              </div>
+            </div>
+            <div class="col-xs-6 col-sm-6 col-md-6">
+                <div class="form-group">
+                  <strong>First Open House</strong>
+                  <div class='input-group date' id='openfirst'>
+                      <input id="get_firstdate" type="text" name="openfirst" placeholder="Date" class="form-control">
+                      <span class="input-group-addon">
+                          <span class="glyphicon glyphicon-calendar"></span>
+                      </span>
+                  </div>
+                </div>
+            </div>
+            <div class="col-xs-6 col-sm-6 col-md-6">
+                <div class="form-group">
+                  <strong>Second Open House</strong>
+                  <div class='input-group date' id='opensecond'>
+                      <input id="get_firstdate" type="text" name="opensecond" placeholder="Date" class="form-control">
+                      <span class="input-group-addon">
+                          <span class="glyphicon glyphicon-calendar"></span>
+                      </span>
+                  </div>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-12" style="text-align: right">
+              <input type="submit" name="submit" class="btn btn-primary"></input>
+            </div>
+        </form>
+      </div>
+    </div>
+    @else
+    <div class="col-md-6 col-sm-6 col-xs-12">
+      <button style="width:100%;"type="button" id="login-btn" class="btn btn-info btn-lg" data-toggle="modal" data-target="#mylogin"><h3>Login to Book Time</h3></button>
+    </div>
+    @endif
      <!-- Widget END -->
   </div>
   <!-- ROW END -->

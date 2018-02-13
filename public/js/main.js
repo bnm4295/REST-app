@@ -84,6 +84,12 @@ $(document).ready(function () {
       $('#seconddate').datetimepicker({
         format: 'MM/DD/YYYY HH:mm',
       });
+      $('#openfirst').datetimepicker({
+        format: 'MM/DD/YYYY HH:mm',
+      });
+      $('#opensecond').datetimepicker({
+        format: 'MM/DD/YYYY HH:mm',
+      });
     });
     $('[data-countdown]').each(function() {
       var $this = $(this), finalDate = $(this).data('countdown');

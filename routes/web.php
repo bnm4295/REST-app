@@ -86,6 +86,7 @@ Route::get('/terms-and-conditions', function () {
 
 
 Route::post('post-form', 'FormController@store')->name('forms.store');
+Route::post('post-booking', 'BookingController@store')->name('bookings.store');
 Route::match(array('PUT','PATCH'),'/my-profile/{id}','ProfileController@update')->name('users.update');
 //STRIPE
 //check isset(get request), grab email of selected and stick it in description

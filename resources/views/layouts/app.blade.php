@@ -341,9 +341,9 @@ drift.load('3zb8wvvu7pby');
             </div>
         </nav>
         @if (session('maxAttempts'))
-        <div class="alert alert-danger loginattempt">
-          <h3>{{ session('maxAttempts') }}</h3>
-        </div>
+          <div class="alert alert-danger loginattempt">
+            <h3>{{ session('maxAttempts') }}</h3>
+          </div>
         @endif
         @yield('content')
     </div>

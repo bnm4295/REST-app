@@ -9,6 +9,7 @@ use Lexx\ChatMessenger\Models\Message;
 use Lexx\ChatMessenger\Models\Participant;
 use Lexx\ChatMessenger\Models\Thread;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Session;
@@ -89,10 +90,13 @@ class MessagesController extends Controller
      *
      * @return mixed
      */
-    public function store()
+    public function store(Request $request)
     {
+        $request->validate([
+          'subject' => 'required',
+          'message' => 'required',
+        ]);
         $input = Input::all();
-
         $thread = Thread::create([
             'subject' => $input['subject'],
         ]);
