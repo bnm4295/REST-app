@@ -87,7 +87,7 @@
                   ?>
                   <input class="img-rounded" value="" type="submit" style="border: solid 0px #000000; height: 200px; width: 100%;
                    background-image: url({{ asset('/../images/') }}/{{$image}});
-                   background-size: 300px; background-repeat: no-repeat;"/>
+                   background-size: 375px; background-repeat: no-repeat;"/>
                 @endif
               </form>
               <form id="delete-blog" action="{{action('BlogController@destroy', $blog['id'])}}" method="post">
