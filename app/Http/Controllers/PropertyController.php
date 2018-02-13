@@ -309,13 +309,13 @@ class PropertyController extends Controller
       $stream = fopen('s3://suutybucket/suuty-properties.xml', 'w', false, stream_context_create(array(
         's3' => array (
           'CacheControl' => 'no-cache',
-          'ACL' => 'private',
+          'ACL' => 'public-read',
           'ContentType' => 'text/xml',
         )
       )));
       fwrite($stream, $save);
       fclose($stream);
-
+      
       return redirect('/properties')->with('alert','success');
   }
 
