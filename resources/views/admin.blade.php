@@ -31,7 +31,6 @@
                       <h3 style="text-align: center">Property Offers</h3>
                     </div>
                     @foreach($offers as $offer)
-                    <div class="col-md-4 text-center">
                       <strong>PropertyID: {{$offer['prop_id']}} | UserID: {{$offer['user_id']}} | Status: {{$offer['status']}}
                       <br>
                       Name: {{$offer['name']}} | Price: ${{$offer['offerprice']}}
@@ -64,7 +63,6 @@
                           Delete
                         </button>
                       </form>
-                    </div>
                     @endforeach
                 </div>
             </div>
@@ -104,7 +102,6 @@
         @endforeach
 </div>
 @endsection
-
 @section('footer')
 @include('includes.footer')
 @endsection
