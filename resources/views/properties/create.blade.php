@@ -102,29 +102,9 @@
             <option value="Townhouse">Townhouse</option>
             <option value="Condo">Condo</option>
           </select>
-          <!--input type="text" name="house_type" placeholder="Type" class="form-control">-->
         </div>
     </div>
 
-
-
-    <!--
-    <div class="col-xs-12 col-sm-12 col-md-12">
-        <div class="form-group">
-          <input type="text" name="postalcode" placeholder="postalcode" class="form-control">
-        </div>
-    </div>
-    <div class="col-xs-12 col-sm-12 col-md-12">
-        <div class="form-group">
-          <input type="text" name="country" placeholder="country" class="form-control">
-        </div>
-    </div>
-    <div class="col-xs-12 col-sm-12 col-md-12">
-        <div class="form-group">
-          <input type="text" name="city" placeholder="city" class="form-control">
-        </div>
-    </div>
-    -->
     <br>
     <div class="col-xs-12 col-sm-12 col-md-12">
         <div class="form-group">
