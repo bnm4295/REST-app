@@ -45,9 +45,9 @@
 
   </form>
 @else
+<script>
+window.location.href = "/";
+</script>
 @endif
 </div>
-<script>
-  window.location.href = "/";
-</script>
 @endsection

@@ -68,7 +68,7 @@ $(document).ready(function () {
     var sticky = header.offsetTop;
     //header.classList.add("sticky");
     function sticknav() {
-      if (window.pageYOffset > sticky) {
+      if (window.pageYOffset > 30) {
         header.classList.add("sticky");
       } else {
         header.classList.remove("sticky");
