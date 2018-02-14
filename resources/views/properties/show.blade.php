@@ -17,7 +17,7 @@
   @endif
   <h1 style="color: #111; font-family: 'Helvetica Neue', sans-serif; font-size: 40px; font-weight: bold; letter-spacing: -1px; line-height: 1;">{{$property->title}}</h1>
   <h5>{{$property->street_address}} {{$property->route}} {{$property->city}} {{$property->state}}, {{$property->postal_code}} {{$property->country}}</h5>
-  <h2 style="color: #111; font-family: 'Helvetica Neue', sans-serif; font-size: 40px; font-weight: bold; letter-spacing: -1px; line-height: 1;">${{$property->price}}</h2>
+  <h2 id="pricenum" style="color: #111; font-family: 'Helvetica Neue', sans-serif; font-size: 40px; font-weight: bold; letter-spacing: -1px; line-height: 1;">${{$property->price}}</h2>
   <div class="row">
     <div class="col-md-6 col-sm-6 col-xs-12 no-padding" style="float: left;">
       <div class="fotorama" data-nav="thumbs">
@@ -59,12 +59,10 @@
         </div>
         &nbsp;
         <div class="panel-title">
-          <h4>Ending Date</h4>
+          <h4>Ending Date - {{$property->date}}</h4>
         </div>
-
-        <h4 style="text-align: right;">ENDING DATE: {{$property->date}}</h4>
         <div data-countdown= "{{$property->date}}" style="text-align: center; font-size: 50px; background-color: #00a79d;
-          color: white; border-bottom-left-radius: 20px; border-top-right-radius: 20px; margin-bottom: 20px;">
+          color: white; margin-bottom: 20px;">
         </div>
         <?php
           date_default_timezone_set('America/Los_Angeles');
@@ -109,49 +107,45 @@
         <div class="panel-heading">
           <h4>{{$property->firstdate}}</h4>
           <h4>{{$property->seconddate}}</h4>
+        @if(($property->firstdate && $property->seconddate) == NULL)
+          <h4>No Open-House Dates</h4>
+        @endif
         </div>
         <div class="panel-title">
           <h4>Offer Form</h4>
         </div>
         <div class="panel-heading">
-          @if(Auth::check())
-            @if($remaining>0)
-                <h4 style="color: #111; font-family: 'Helvetica Neue', sans-serif; font-size: 20px; font-weight: bold; letter-spacing: -1px; line-height: 1; text-align: center;">Send an Offer</h4>
-                <form id="offer-property" action="{{action('OfferController@store')}}" method="post" enctype="multipart/form-data">
-                  <meta name="csrf-token" content="{{ csrf_token() }}">
-                  {{ csrf_field() }}
-                  <input type="hidden" name="prop_id" value="{{$property->id}}">
-                  <div class="row">
-                      <div class="col-xs-12 col-sm-12 col-md-12">
-                          <div class="form-group">
-                            <b>Name:</b>
-                            <input type="text" name="name" placeholder="Your Name" class="form-control input-lg">
-                          </div>
-                      </div>
-                      <div class="col-xs-12 col-sm-12 col-md-12">
-                          <div class="form-group">
-                            <b>Offer Amount:</b>
-                            <input type="text" name="offerprice" placeholder="Enter the dollar amount of your offer for this property" class="form-control input-lg">
-                          </div>
-                      </div>
-                      <div class="col-xs-12 col-sm-12 col-md-12">
-                          <div class="form-group">
-                            <textarea rows="5" cols="5" name="comments" placeholder="Additional Comments or Notes" class="form-control"></textarea>
-                          </div>
-                      </div>
-                      <div class="col-xs-12 col-sm-12 col-md-12 text-center">
-                        <input id="submit-offer" type="submit" name="submit" class="btn btn-primary form-control" onclick="return confirm('Your offer will be submitted. We will forward you an email for the next step to make this offer legitimate.')"></input>
-                      </div>
-                  </div>
-                </form>
-              @else
-                <h3>Offer Period is Over</h3>
-              @endif
+          @if($remaining>0)
+              <h4 style="color: #111; font-family: 'Helvetica Neue', sans-serif; font-size: 20px; font-weight: bold; letter-spacing: -1px; line-height: 1; text-align: center;">Send an Offer</h4>
+              <form id="offer-property" action="{{action('OfferController@store')}}" method="post" enctype="multipart/form-data">
+                <meta name="csrf-token" content="{{ csrf_token() }}">
+                {{ csrf_field() }}
+                <input type="hidden" name="prop_id" value="{{$property->id}}">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12">
+                        <div class="form-group">
+                          <b>Name:</b>
+                          <input type="text" name="name" placeholder="Your Name" class="form-control input-lg">
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-12 col-md-12">
+                        <div class="form-group">
+                          <b>Offer Amount:</b>
+                          <input type="text" name="offerprice" placeholder="Enter the dollar amount of your offer for this property" class="form-control input-lg">
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-12 col-md-12">
+                        <div class="form-group">
+                          <textarea rows="5" cols="5" name="comments" placeholder="Additional Comments or Notes" class="form-control"></textarea>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-12 col-md-12 text-center">
+                      <input id="submit-offer" type="submit" name="submit" class="btn btn-primary form-control" onclick="return confirm('Your offer will be submitted. We will forward you an email for the next step to make this offer legitimate.')"></input>
+                    </div>
+                </div>
+              </form>
             @else
-              <div class="col-md-12 col-sm-12 col-xs-12">
-                <button style="width:100%;"type="button" id="login-btn" class="btn btn-info btn-lg" data-toggle="modal" data-target="#mylogin"><h3>Login to Offer</h3></button>
-              </div>
-              &nbsp;
+              <h4>Offer Period is Over</h4>
             @endif
           </div>
           <div class="panel-title">
@@ -272,15 +266,16 @@
             </div>
         </form>
       </div>
-    </div>
-    @else
-    <div class="col-md-6 col-sm-6 col-xs-12">
-      <button style="width:100%;"type="button" id="login-btn" class="btn btn-info btn-lg" data-toggle="modal" data-target="#mylogin"><h3>Login to Book Time</h3></button>
+      &nbsp;
     </div>
     @endif
+    <div class="col-md-6 col-sm-6 col-xs-12">
+      <div class="container">
+        @include('includes.walkscore')
+      </div>
+    </div>
      <!-- Widget END -->
   </div>
   <!-- ROW END -->
 </div>
-
 @endsection
