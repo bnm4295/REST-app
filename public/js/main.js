@@ -51,10 +51,9 @@ $(document).ready(function () {
             return $(this).length;
         }
     });
-    console.log(commafy(parseFloat(document.getElementById("pricenum").innerHTML)));
     //commafy(parseFloat(document.getElementById("pricenum").innerHTML));
     var pricenum = parseFloat(document.getElementById("pricenum").innerHTML);
-    commafy(pricenum);
+    document.getElementById('pricenum').innerHTML = '$' + commafy(pricenum);
     setTimeout(function(){
       $(".alert-success").fadeOut().empty();
       $(".danger-notification").fadeOut().empty();
