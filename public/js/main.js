@@ -51,9 +51,10 @@ $(document).ready(function () {
             return $(this).length;
         }
     });
-    //commafy(parseFloat(document.getElementById("pricenum").innerHTML));
-    var pricenum = parseFloat(document.getElementById("pricenum").innerHTML);
-    document.getElementById('pricenum').innerHTML = '$' + commafy(pricenum);
+    if (document.getElementById('pricenum') == ""){
+      var pricenum = parseFloat(document.getElementById("pricenum").innerHTML);
+      document.getElementById('pricenum').innerHTML = '$' + commafy(pricenum);
+    }
     setTimeout(function(){
       $(".alert-success").fadeOut().empty();
       $(".danger-notification").fadeOut().empty();

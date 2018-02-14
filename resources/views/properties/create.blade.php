@@ -125,22 +125,11 @@
             <input class="form-control" id="country" disabled="true" name="country" placeholder="Country"></input>
             <input class="form-control" id="postal_code" disabled="true" name="postal_code" placeholder="Postal Code"></input>
             <input class="form-control" id="administrative_area_level_1" disabled="true" name="state" placeholder="State"></input>
-          <!--input id="address" type="text" name="address" placeholder="address" class="form-control">-->
         </div>
     </div>
-    <div class="col-xs-12 col-sm-12 col-md-12">
-        <div class="form-group">
-          <strong>Latitude:</strong>
-          <input id="getlat" type="text" name="latitude" placeholder="latitude" class="form-control" readonly>
-        </div>
-    </div>
+          <input id="getlat" type="hidden" name="latitude" placeholder="latitude" class="form-control" readonly>
+          <input id="getlong" type="hidden" name="longitude" placeholder="longitude" class="form-control" readonly>
 
-    <div class="col-xs-12 col-sm-12 col-md-12">
-        <div class="form-group">
-          <strong>Longitude:</strong>
-          <input id="getlong" type="text" name="longitude" placeholder="longitude" class="form-control" readonly>
-        </div>
-    </div>
 
     <div class="col-xs-12 col-sm-12 col-md-12">
         <div class="form-group">
