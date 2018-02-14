@@ -4,6 +4,7 @@ namespace Suuty\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Suuty\Booking;
+use Session;
 
 class BookingController extends Controller
 {
@@ -15,6 +16,7 @@ class BookingController extends Controller
       ]);
       $inputs = $request->all();
       $offers = Booking::Create($inputs);
+      Session::flash('success', 'Request Successful!');
       return redirect()->back();
     }
 }

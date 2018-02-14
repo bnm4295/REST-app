@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Suuty\Offer;
 use Suuty\User;
+use Session;
 class OfferController extends Controller
 {
 
@@ -52,6 +53,7 @@ class OfferController extends Controller
       $inputs['user_id'] = Auth::id();
 
       $offers = Offer::Create($inputs);
+      Session::flash('success', 'Your Bid has been Placed. We will forward you an official document to sign to make your offer legitimate! Please Check Your Email in 24hours.');
       return redirect()->back();
 
     }
