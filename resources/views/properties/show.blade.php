@@ -59,21 +59,22 @@
         <div class="panel-title">
           <h4>Ending Date</h4>
         </div>
+
+        <h4 style="text-align: right;">ENDING DATE: {{$property->date}}</h4>
+        <div data-countdown= "{{$property->date}}" style="text-align: center; font-size: 50px; background-color: #00a79d;
+          color: white; border-bottom-left-radius: 20px; border-top-right-radius: 20px; margin-bottom: 20px;">
+        </div>
+        <?php
+          date_default_timezone_set('America/Los_Angeles');
+          $date=strtotime($property->date);
+          $remaining = $date - time();
+
+          if($remaining < 0){
+            $remaining = 0;
+          }
+
+         ?>
         <div class="panel-heading">
-          <h4 style="text-align: right;">ENDING DATE: {{$property->date}}</h4>
-          <div data-countdown= "{{$property->date}}" style="text-align: center; font-size: 50px; background-color: #00a79d;
-            color: white; border-bottom-left-radius: 20px; border-top-right-radius: 20px; margin-bottom: 20px;">
-          </div>
-          <?php
-            date_default_timezone_set('America/Los_Angeles');
-            $date=strtotime($property->date);
-            $remaining = $date - time();
-
-            if($remaining < 0){
-              $remaining = 0;
-            }
-
-           ?>
           @foreach($offers as $offer)
              @if($remaining == 0 && $offer->status == 1 && $property->user_id == Auth::id())
                 &nbsp;
@@ -99,82 +100,93 @@
                 <br>
               @endif
           @endforeach
-          <hr>
-          <h3>In-House Visit Times</h3>
+        </div>
+        <div class="panel-title">
+          <h4>Open-House Times</h4>
+        </div>
+        <div class="panel-heading">
           <h4>{{$property->firstdate}}</h4>
           <h4>{{$property->seconddate}}</h4>
-          <hr>
+        </div>
+        <div class="panel-title">
+          <h4>Offer Form</h4>
+        </div>
+        <div class="panel-heading">
           @if(Auth::check())
             @if($remaining>0)
-              <h4 style="color: #111; font-family: 'Helvetica Neue', sans-serif; font-size: 20px; font-weight: bold; letter-spacing: -1px; line-height: 1; text-align: center;">Send an Offer</h4>
-              <form id="offer-property" action="{{action('OfferController@store')}}" method="post" enctype="multipart/form-data">
-                <meta name="csrf-token" content="{{ csrf_token() }}">
+                <h4 style="color: #111; font-family: 'Helvetica Neue', sans-serif; font-size: 20px; font-weight: bold; letter-spacing: -1px; line-height: 1; text-align: center;">Send an Offer</h4>
+                <form id="offer-property" action="{{action('OfferController@store')}}" method="post" enctype="multipart/form-data">
+                  <meta name="csrf-token" content="{{ csrf_token() }}">
+                  {{ csrf_field() }}
+                  <input type="hidden" name="prop_id" value="{{$property->id}}">
+                  <div class="row">
+                      <div class="col-xs-12 col-sm-12 col-md-12">
+                          <div class="form-group">
+                            <b>Name:</b>
+                            <input type="text" name="name" placeholder="Your Name" class="form-control input-lg">
+                          </div>
+                      </div>
+                      <div class="col-xs-12 col-sm-12 col-md-12">
+                          <div class="form-group">
+                            <b>Offer Amount:</b>
+                            <input type="text" name="offerprice" placeholder="Enter the dollar amount of your offer for this property" class="form-control input-lg">
+                          </div>
+                      </div>
+                      <div class="col-xs-12 col-sm-12 col-md-12">
+                          <div class="form-group">
+                            <textarea rows="5" cols="5" name="comments" placeholder="Additional Comments or Notes" class="form-control"></textarea>
+                          </div>
+                      </div>
+                      <div class="col-xs-12 col-sm-12 col-md-12 text-center">
+                        <input id="submit-offer" type="submit" name="submit" class="btn btn-primary form-control" onclick="return confirm('Your offer will be submitted. We will forward you an email for the next step to make this offer legitimate.')"></input>
+                      </div>
+                  </div>
+                </form>
+              @else
+                <h3>Offer Period is Over</h3>
+              @endif
+            @else
+              <div class="col-md-12 col-sm-12 col-xs-12">
+                <button style="width:100%;"type="button" id="login-btn" class="btn btn-info btn-lg" data-toggle="modal" data-target="#mylogin"><h3>Login to Offer</h3></button>
+              </div>
+              &nbsp;
+            @endif
+          </div>
+          <div class="panel-title">
+            <h4>Contact Form</h4>
+          </div>
+          <div class="panel-heading">
+            <div class="row">
+              <h3 style=" color: #111; font-family: 'Helvetica Neue', sans-serif; font-size: 20px; font-weight: bold; letter-spacing: -1px; line-height: 1; text-align: center;">
+                Send a Message</h3>
+              <form action="{{ route('messages.store') }}" method="post">
                 {{ csrf_field() }}
-                <input type="hidden" name="prop_id" value="{{$property->id}}">
-                <div class="row">
-                    <div class="col-xs-12 col-sm-12 col-md-12">
-                        <div class="form-group">
-                          <b>Name:</b>
-                          <input type="text" name="name" placeholder="Your Name" class="form-control input-lg">
-                        </div>
-                    </div>
-                    <div class="col-xs-12 col-sm-12 col-md-12">
-                        <div class="form-group">
-                          <b>Offer Amount:</b>
-                          <input type="text" name="offerprice" placeholder="Enter the dollar amount of your offer for this property" class="form-control input-lg">
-                        </div>
-                    </div>
-                    <div class="col-xs-12 col-sm-12 col-md-12">
-                        <div class="form-group">
-                          <textarea rows="5" cols="5" name="comments" placeholder="Additional Comments or Notes" class="form-control"></textarea>
-                        </div>
-                    </div>
-                    <div class="col-xs-12 col-sm-12 col-md-12 text-center">
-                      <input id="submit-offer" type="submit" name="submit" class="btn btn-primary form-control" onclick="return confirm('Your offer will be submitted. We will forward you an email for the next step to make this offer legitimate.')"></input>
-                    </div>
+                <div class="col-xs-12 col-sm-12 col-md-12">
+                  <!-- Subject Form Input -->
+                  <div class="form-group">
+                    <label class="control-label">Subject</label>
+                    <input type="text" class="form-control" name="subject" placeholder="Subject"
+                    value="{{ old('subject') }}">
+                  </div>
+
+                  <!-- Message Form Input -->
+                  <div class="form-group">
+                    <label class="control-label">Message</label>
+                    <textarea name="message"  placeholder="Your Message" class="form-control">{{ old('message') }}</textarea>
+                  </div>
+
+                  <div class="checkbox">
+                    <input type="hidden" name="recipients[]" value="{{ $owner->id }}" checked>
+                  </div>
+
+                  <!-- Submit Form Input -->
+                  <div class="form-group">
+                    <button type="submit" class="btn btn-primary form-control" onclick="return confirm('Message will be submitted. Check your message box for further conversation.')">Submit</button>
+                  </div>
                 </div>
               </form>
-            @else
-              <h3>Offer Period is Over</h3>
-            @endif
-          @else
-          <div class="col-md-12 col-sm-12 col-xs-12">
-            <button style="width:100%;"type="button" id="login-btn" class="btn btn-info btn-lg" data-toggle="modal" data-target="#mylogin"><h3>Login to Offer</h3></button>
+            </div>
           </div>
-          &nbsp;
-          @endif
-          <hr>
-          <div class="row">
-            <h3 style=" color: #111; font-family: 'Helvetica Neue', sans-serif; font-size: 20px; font-weight: bold; letter-spacing: -1px; line-height: 1; text-align: center;">
-              Send a Message</h3>
-            <form action="{{ route('messages.store') }}" method="post">
-              {{ csrf_field() }}
-              <div class="col-xs-12 col-sm-12 col-md-12">
-                <!-- Subject Form Input -->
-                <div class="form-group">
-                  <label class="control-label">Subject</label>
-                  <input type="text" class="form-control" name="subject" placeholder="Subject"
-                  value="{{ old('subject') }}">
-                </div>
-
-                <!-- Message Form Input -->
-                <div class="form-group">
-                  <label class="control-label">Message</label>
-                  <textarea name="message"  placeholder="Your Message" class="form-control">{{ old('message') }}</textarea>
-                </div>
-
-                <div class="checkbox">
-                  <input type="hidden" name="recipients[]" value="{{ $owner->id }}" checked>
-                </div>
-
-                <!-- Submit Form Input -->
-                <div class="form-group">
-                  <button type="submit" class="btn btn-primary form-control" onclick="return confirm('Message will be submitted. Check your message box for further conversation.')">Submit</button>
-                </div>
-              </div>
-            </form>
-          </div>
-        </div>
       </div>
       <!-- PANEL END-->
       <!-- COL END -->
@@ -210,7 +222,7 @@
           <input type="hidden" name="prop_id" value="{{$property->id}}">
             <div class="form-group">
               <div class="col-xs-12 col-sm-12 col-md-12">
-                <h3>Book Your Open-House Time</h3>
+                <h3>Request a Viewing Time</h3>
                 <strong>Name</strong>
                 <input name="name" class="form-control" value="{{Auth::user()->name}}"></input>
               </div>
