@@ -209,7 +209,6 @@
         </div>-->
     </div>
     &nbsp;
-    @if(Auth::check())
     <div class="col-md-6 col-sm-6 col-xs-12">
       <div class="container reviewform">
         <form method="post" action="{{url('post-booking')}}" enctype="multipart/form-data">
@@ -220,14 +219,22 @@
               <div class="col-xs-12 col-sm-12 col-md-12">
                 <h3>Request a Viewing Time</h3>
                 <strong>Name</strong>
-                <input name="name" class="form-control" value="{{Auth::user()->name}}"></input>
+                  @if(Auth::check())
+                    <input name="name" class="form-control" value="{{Auth::user()->name}}"></input>
+                  @else
+                    <input name="name" class="form-control"></input>
+                  @endif
               </div>
             </div>
 
             <div class="form-group">
               <div class="col-xs-12 col-sm-12 col-md-12">
                 <strong>Email</strong>
-                <input name="email" class="form-control" value="{{Auth::user()->email}}"></input>
+                @if(Auth::check())
+                  <input name="email" class="form-control" value="{{Auth::user()->email}}"></input>
+                @else
+                  <input name="email" class="form-control"></input>
+                @endif
               </div>
             </div>
 
@@ -268,7 +275,6 @@
       </div>
       &nbsp;
     </div>
-    @endif
     <div class="col-md-6 col-sm-6 col-xs-12">
       <div class="container">
         @include('includes.walkscore')

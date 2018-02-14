@@ -8,6 +8,11 @@ use Session;
 
 class BookingController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+        $this->middleware('isVerified');
+    }
     public function store(Request $request){
       $request->validate([
         'name' => 'required',
