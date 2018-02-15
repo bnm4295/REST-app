@@ -10,9 +10,8 @@
     <div>
         <div class="col-md-4 text-center">
             <div class ="panel panel-default">
-              <a href="{{ url('properties')}}/{{$property->slug}}"><input class="img-rounded" value="" type="submit" style="border: solid 0px #000000; height: 200px; width: 100%;
-                background-image: url({{ asset('/../images/') }}/{{$image}});
-                background-size: 350px; background-repeat: no-repeat;"/></a>
+                <a href="{{ url('properties')}}/{{$property->slug}}"><img src="{{ asset('/../images/') }}/{{$image}}" style="border: solid 0px #000000; height: 200px; width: 100%;
+                  background-size: 350px; background-repeat: no-repeat;"></a>
               <div class="panel-heading">
                 <div style="text-align: left;">
                   <h3><p><strong>{{$property->title}}</strong></p></h3>
