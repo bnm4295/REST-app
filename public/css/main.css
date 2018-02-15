@@ -100,7 +100,7 @@ img[src=""] {
 	background-color: #e5e5e5;
 	padding: 12px;
 }
-#listings-row p{
+#panel-heading p{
 	width: 350px;
 	white-space: nowrap;
 	overflow: hidden;
