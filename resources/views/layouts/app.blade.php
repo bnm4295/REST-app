@@ -13,10 +13,10 @@
     <!-- fotorama.css & fotorama.js. -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.css" rel="stylesheet"> <!-- 3 KB -->
     <link href="{{ asset('/../css/app.css') }}" rel="stylesheet">
-    <link href="{{ asset('/../css/main.css?ver=2.0') }}" rel="stylesheet">
+    <link href="{{ asset('/../css/main.css?ver=2.1') }}" rel="stylesheet">
     <link href="{{ asset('/../css/bootstrap-social.css') }}" rel="stylesheet">
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500|Oxygen:300,400,500" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500|Oxygen:300,400,500|Helvetica%20Neue:300,400,500" rel="stylesheet">
     <link href="//cdn.rawgit.com/Eonasdan/bootstrap-datetimepicker/e8bddc60e73c1ec2475f827be36e1957af72e2ea/build/css/bootstrap-datetimepicker.css" rel="stylesheet">
 
     <!-- toastr -->
@@ -89,7 +89,7 @@ drift.load('3zb8wvvu7pby');
                       </div>-->
 
                         <!--<li class="active"><a href="#">Home</a></li>-->
-                        <li><a class="navbar-brand" href="{{ URL::to('properties') }}">Listings</a></li>
+                        <li><a class="navbar-brand" href="{{ URL::to('properties') }}">Listings</a></b></li>
                         <li><a class="navbar-brand" href="{{ URL::to('about') }}">About</a></li>
 
                         <li><a class="navbar-brand" href="{{ URL::to('blogs') }}">Blogs</a></li>
@@ -122,7 +122,7 @@ drift.load('3zb8wvvu7pby');
                         @guest
                             <!-- <li id="logroute"><a href="{{ route('login') }}">Login</a></li> -->
                             <!-- <li id="regroute"><a href="{{ route('register') }}">Register</a></li> -->
-                            <li><a class="navbar-brand" href="{{ URL::to('/properties/create') }}">Create Free Listing</a></li>
+                            <li><a id="create_propbtn" class="navbar-brand" href="{{ URL::to('/properties/create') }}">Create Free Listing</a></li>
                             <li><button type="button" id="login-btn" class="btn btn-info btn-lg" data-toggle="modal" data-target="#mylogin">Login</button></li>
                             <li><button type="button" id="reg-btn" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myreg">Register</button></li>
 
@@ -297,9 +297,9 @@ drift.load('3zb8wvvu7pby');
                           @endif
                         @endauth
                         <!-- -->
-                            <li><a href="{{ asset('/../properties/create') }}" >Create Free Listing</a></li>
+                            <li><a class="navbar-brand" href="{{ asset('/../properties/create') }}" >Create Free Listing</a></li>
                             <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">
+                                <a href="#" class="dropdown-toggle navbar-brand" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">
                                     {{ Auth::user()->name }} <span class="caret"></span>
                                 </a>
 

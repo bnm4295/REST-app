@@ -1,5 +1,5 @@
-h1, h2, h3, h4, h5, p, ul, a, input, label, button, select, body{
-	font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif !important;
+h1, h2, h3, h4, h5, p, ul, a, input, label, button, select, body, section{
+	font-family: 'Helvetica Neue', sans-serif;
 }
 /*font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif !important;
  color: #111; font-family: 'Helvetica Neue', sans-serif; font-size: 275px; font-weight: bold; letter-spacing: -1px; line-height: 1; text-align: center;*/
@@ -8,6 +8,7 @@ h1, h2, h3, h4, h5, p, ul, a, input, label, button, select, body{
 }
 #appname{
 	margin-right: 50px;
+	border: initial !important;
 }
 html{
 	overflow-x: hidden;
@@ -272,7 +273,7 @@ body.modal-open{
 .splash-title{
 	color: white;
 	position: relative;
-	top: 200px;
+	top: 150px;
 }
 #listings-row{
 	margin-right: -28px;
@@ -286,10 +287,13 @@ body.modal-open{
 }
 #filter-panel-home{
 	position: relative;
-	top: 40%;
+	top: 30%;
 }
 #home-container div {
     margin: 0 auto;
+}
+#home-container{
+	height: 700px;
 }
 .splash-section .splash-inner-content{
 	position: relative;
@@ -405,6 +409,13 @@ body.modal-open{
 /* ANIMATION END */
 
 /* NAV SIDE BAR */
+#create_propbtn{
+	border-bottom: 2px solid #2cace3;
+}
+.navbar-brand:hover, .navbar-brand:focus{
+	border-bottom: 2px solid #2cace3;
+	color: #2cace3 !important;
+}
 .nav-side-menu {
   overflow: auto;
   font-family: verdana;

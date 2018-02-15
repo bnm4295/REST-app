@@ -20,7 +20,7 @@ class PropertyController extends Controller
 {
   public function __construct()
   {
-      $this->middleware('auth', ['except'=> ['index', 'show']] );
+      $this->middleware('auth', ['except'=> ['create', 'index', 'show']] );
       $this->middleware('isVerified');
   }
   /**

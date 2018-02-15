@@ -22,16 +22,14 @@
   <div class="splash-inner-content">
     <div id="home-container" class="container">
       <div class="splash-title">
-        <h1 style="font-family: 'Helvetica Neue', sans-serif; font-size: 50px; font-weight: bold; letter-spacing: -1px; line-height: 1;">
+        <h1 style="font-family: 'Helvetica Neue', sans-serif; font-size: 70px; font-weight: bold; letter-spacing: -1px; line-height: 1;">
           <span>Your Next Move</span>
           <div><span>Simple. Fair. Revolutionary.</span>
           </div>
         </h1>
         <h4 style="font-size: 15px;">#DIYREALTY #REALESTATEREVOLUTION</h4>
       </div>
-      <div class="row" style="height: 500px">
-          @include('includes.advsearchhome')
-      </div>
+      @include('includes.advsearchhome')
     </div>
   </div>
 </section>

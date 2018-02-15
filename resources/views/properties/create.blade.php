@@ -10,7 +10,6 @@
     </div>
 </nav>
 -->
-@if (Auth::check())
 
 @if ($errors->any())
   <div class="alert alert-danger">
@@ -153,13 +152,12 @@
     </div>
 
     <div class="col-xs-12 col-sm-12 col-md-12 text-center">
-        <input id="submit-property-btn" type="submit" name="submit" class="btn btn-primary"></input>
+      <div class="form-group">
+        <button id="submit-property-btn" type="submit" name="submit" class="btn btn-primary form-control" onclick="return confirm('We will be sending an electronic Non-Disclosure document for you to sign shortly after your submission. Would you like to submit your property?')">Submit Your Property</button>
+      </div>
     </div>
   </form>
 </div>
-@else
-  Log in Please!
-@endif
 </div>
 </body>
 </html>
