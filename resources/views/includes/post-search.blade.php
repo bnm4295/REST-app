@@ -63,36 +63,42 @@ if($price_left == "nopriceleft" && $price_right == "nopriceright"
     //$search = explode(',',$search);
     //$data = array_map('intval', $search);
     //dd($data);
+
     /**
     * @param $string
     * @return mixed
     */
-    /*if (! function_exists('escape_like')) {
+    if (! function_exists('escape_like')) {
       function escape_like($string)
       {
-          $search = array(',', '_');
+          $search = array(' ', '_');
           $replace   = array('', '\_');
           return str_replace($search, $replace, $string);
       }
 
-    }*/
-
+    }
+    //$string = "1030 dkqowdk";
+    //$string = escape_like($string);
     //$esc_commas = escape_like($search);
+    $search = array_map('trim', explode(',', $search));
+
     //$search = preg_split('/\s+/', $esc_commas, -1, PREG_SPLIT_NO_EMPTY);
-    $search = explode(',',$search);
     //dd($test);
     //dd($teststuff);
-    //$testprop = DB::table('properties')->where('city', 'LIKE', '%'. $teststuff. '%')->get();
-    //dd($search);
+    //$testprop = DB::table('properties')->where(DB::raw('CONCAT_WS(" ", street_address, route)'), 'LIKE', "%1055 Canada Place%")->get();
+    //dd($testprop);
     $searchprop = DB::table('properties')->where(function ($q) use ($search) {
       foreach ($search as $value) {
+          //dd($search);
         $q->where('city', 'LIKE', "%{$value}%")
-          ->orwhere('route', 'LIKE', "%{$value}%")
+          ->orwhere(DB::raw('CONCAT_WS(" ", street_address, route)'), 'LIKE', "%{$value}%")
           ->orwhere('postal_code', 'LIKE', "%{$value}%")
           ->where('state', 'LIKE', "%{$value}%")
           ->where('country', 'LIKE', "%{$value}%");
       }
+      //dd($q);
     })->get();
+    //dd($searchprop);
     //dd($testprop);
     //$searchprop = DB::table('properties')
     //->where(function($query) use ($search){
