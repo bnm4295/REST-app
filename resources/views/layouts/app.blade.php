@@ -35,7 +35,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment-with-locales.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
-<script src="{{ asset('/../js/googlemap.js')}}" ></script>
+<script src="{{ asset('/../js/googlemap.js?ver=1.0')}}" ></script>
 
 <!-- Start of Async Drift Code -->
 <script>
