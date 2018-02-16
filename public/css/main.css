@@ -10,6 +10,9 @@ h1, h2, h3, h4, h5, p, ul, a, input, label, button, select, body, section{
 	margin-right: 50px;
 	border: initial !important;
 }
+#appname:hover{
+	color: #00a79d !important;
+}
 html{
 	overflow-x: hidden;
 }
@@ -241,16 +244,18 @@ body.modal-open{
 
 #reg-btn:hover{
 	background-color: #00c1b6;
+	border-color: #00c1b6;
 }
 
 #login-btn{
-	background-color: white;
-	color: #777;
-	border-color: white;
+	background-color: #00a79d;
+	color: white;
+	border-color: #00a79d;
 }
 #login-btn:hover{
-	background-color: #f0f4f5;
-	border-color: #f0f4f5;
+	background-color: #00c1b6;
+	border-color: #00c1b6;
+	color: white;
 }
 
 
@@ -260,6 +265,7 @@ body.modal-open{
 .sticky {
   position: fixed;
   top: 0;
+	/*opacity: 0;*/
   width: 100%;
 }
 /* End Pages */
@@ -273,7 +279,10 @@ body.modal-open{
 .splash-title{
 	color: white;
 	position: relative;
-	top: 150px;
+	top: 200px;
+	display: block;
+	width: 800px;
+	max-width: 100%;
 }
 #listings-row{
 	margin-right: -28px;
@@ -410,11 +419,18 @@ body.modal-open{
 
 /* NAV SIDE BAR */
 #create_propbtn{
-	border-bottom: 2px solid #2cace3;
+	background-color: #fff;
+	color: #777;
+	border-color: #fff;
+}
+#create_propbtn:hover{
+	background-color: #00c1b6;
+	color: white;
+	border-color: #00c1b6;
 }
 .navbar-brand:hover, .navbar-brand:focus{
-	border-bottom: 2px solid #2cace3;
-	color: #2cace3 !important;
+	border-bottom: 2px solid #00c1b6;
+	color: #00c1b6 !important;
 }
 .nav-side-menu {
   overflow: auto;
@@ -684,9 +700,6 @@ and (max-width: 767px){
 		position: relative;
 		left: 0px;
 	}
-	.splash-title{
-			top: initial !important;
-	}
 	#listings-row .filter-panel{
 		width: 100%;
 	}
@@ -715,6 +728,10 @@ and (max-width: 767px){
 	}
 	.panel-heading p{
 		width: 200px;
+	}
+	.nav > li{
+		display: inline-block;
+		margin: -7px;
 	}
 }
 

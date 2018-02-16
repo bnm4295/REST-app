@@ -13,12 +13,12 @@
     <!-- fotorama.css & fotorama.js. -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.css" rel="stylesheet"> <!-- 3 KB -->
     <link href="{{ asset('/../css/app.css') }}" rel="stylesheet">
-    <link href="{{ asset('/../css/main.css?ver=2.1') }}" rel="stylesheet">
+    <link href="{{ asset('/../css/main.css?ver=2.2') }}" rel="stylesheet">
     <link href="{{ asset('/../css/bootstrap-social.css') }}" rel="stylesheet">
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500|Oxygen:300,400,500|Helvetica%20Neue:300,400,500" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500|Oxygen:300,400,500|Helvetica%20Neue:300,400,500|Noto+Sans:400,700" rel="stylesheet">
     <link href="//cdn.rawgit.com/Eonasdan/bootstrap-datetimepicker/e8bddc60e73c1ec2475f827be36e1957af72e2ea/build/css/bootstrap-datetimepicker.css" rel="stylesheet">
-
+    <link href="//cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.0/animate.min.css" rel=stylesheet>
     <!-- toastr -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" />
     <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -122,7 +122,7 @@ drift.load('3zb8wvvu7pby');
                         @guest
                             <!-- <li id="logroute"><a href="{{ route('login') }}">Login</a></li> -->
                             <!-- <li id="regroute"><a href="{{ route('register') }}">Register</a></li> -->
-                            <li><a id="create_propbtn" class="navbar-brand" href="{{ URL::to('/properties/create') }}">Create Free Listing</a></li>
+                            <li><button id="create_propbtn" class="btn btn-info btn-lg" onclick="window.location.href='{{ URL::to('/properties/create') }}'">Create Free Listing</button></li>
                             <li><button type="button" id="login-btn" class="btn btn-info btn-lg" data-toggle="modal" data-target="#mylogin">Login</button></li>
                             <li><button type="button" id="reg-btn" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myreg">Register</button></li>
 
