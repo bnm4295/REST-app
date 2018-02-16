@@ -58,18 +58,50 @@ if(isset($_GET['mempar'])){
 
 //Homepage Adv Search
 if($price_left == "nopriceleft" && $price_right == "nopriceright"
-|| $area_left == "noarealeft" && $area_right == "noarearight"){
-    $searchprop = DB::table('properties')
-    ->where(function($query) use ($search){
-        $query->where('city', 'LIKE', "%$search%")
-              ->orwhere('route', 'LIKE', "%$search%")
-              ->orwhere('state', 'LIKE', "%$search%")
-              ->orwhere('postal_code', 'LIKE', "%$search%")
-              ->orwhere('country', 'LIKE', "%$search%");
-    })->where('number_of_beds', 'LIKE', "%$numbeds%")
-    ->where('number_of_baths', 'LIKE', "%$numbaths%")
-    ->where('house_type', 'LIKE' , "%$proptype%")
-    ->get();
+|| $area_left == "noarealeft" && $area_right == "noarearight" && $numbeds == "" && $numbaths == ""
+   && $proptype == "" ){
+    //$search = explode(',',$search);
+    //$data = array_map('intval', $search);
+    //dd($data);
+    /**
+    * @param $string
+    * @return mixed
+    */
+    /*if (! function_exists('escape_like')) {
+      function escape_like($string)
+      {
+          $search = array(',', '_');
+          $replace   = array('', '\_');
+          return str_replace($search, $replace, $string);
+      }
+
+    }*/
+
+    //$esc_commas = escape_like($search);
+    //$search = preg_split('/\s+/', $esc_commas, -1, PREG_SPLIT_NO_EMPTY);
+    $search = explode(',',$search);
+    //dd($test);
+    //dd($teststuff);
+    //$testprop = DB::table('properties')->where('city', 'LIKE', '%'. $teststuff. '%')->get();
+    //dd($search);
+    $searchprop = DB::table('properties')->where(function ($q) use ($search) {
+      foreach ($search as $value) {
+        $q->where('city', 'LIKE', "%{$value}%")
+          ->orwhere('route', 'LIKE', "%{$value}%")
+          ->orwhere('postal_code', 'LIKE', "%{$value}%")
+          ->where('state', 'LIKE', "%{$value}%")
+          ->where('country', 'LIKE', "%{$value}%");
+      }
+    })->get();
+    //dd($testprop);
+    //$searchprop = DB::table('properties')
+    //->where(function($query) use ($search){
+    //    $query->where('city', 'LIKE', "%".escape_like($search)."%")
+    //          ->orwhere('route', 'LIKE', "%$search%")
+    //          ->orwhere('state', 'LIKE', "%$search%")
+    //          ->orwhere('postal_code', 'LIKE', "%$search%")
+    //          ->orwhere('country', 'LIKE', "%$search%");
+    //})->get();
 }else{
   $searchprop = DB::table('properties')
   ->where(function($query) use ($search){

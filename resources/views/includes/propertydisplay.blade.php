@@ -14,7 +14,7 @@
                   background-size: 350px; background-repeat: no-repeat;"></a>
               <div class="panel-heading">
                 <div style="text-align: left;">
-                  <h3><p><strong>{{$property->title}}</strong></p></h3>
+                  <h3 class="proptitle"><strong>{{$property->title}}</strong></h3>
                   <h4><strong>${{$property->price}}</strong></h4>
                   <hr>
                   <p><b>Beds: {{$property->number_of_beds}} | Baths: {{$property->number_of_baths}} </b></p>

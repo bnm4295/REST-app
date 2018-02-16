@@ -59,7 +59,7 @@
                       background-size: 450px; background-repeat: no-repeat;"></a>
                   <div class="panel-heading">
                     <div style="text-align: left;">
-                      <h3><p><strong>{{$post->title}}</strong></p></h3>
+                      <h3 class="proptitle"><strong>{{$post->title}}</strong></h3>
                       <h4><strong>${{$post->price}}</strong></h4>
                       <hr>
                       <p><b>Beds: {{$post->number_of_beds}} | Baths: {{$post->number_of_baths}} </b></p>

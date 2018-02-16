@@ -33,7 +33,7 @@ select{
 	font-size: 15px;
 	font-weight: bold;
 }
-#pref-search::-webkit-input-placeholder {
+.pref-search::-webkit-input-placeholder {
     font-weight: bold;
 }
 #proptype, #numbaths, #numbeds, #ssbox, #housetype{
@@ -104,7 +104,7 @@ img[src=""] {
 	background-color: #e5e5e5;
 	padding: 12px;
 }
-.panel-heading p{
+.proptitle{
 	width: 350px;
 	white-space: nowrap;
 	overflow: hidden;
@@ -128,9 +128,6 @@ img[src=""] {
 }
 .footer-section{
 	width: 100%;
-}
-.colstyle{
-	margin-left: 45px;
 }
 .footer-col a{
 	padding-left: 5px;
@@ -419,14 +416,14 @@ body.modal-open{
 
 /* NAV SIDE BAR */
 #create_propbtn{
-	background-color: #fff;
+	background-color: white;
 	color: #777;
-	border-color: #fff;
+	border-color: white;
 }
 #create_propbtn:hover{
-	background-color: #00c1b6;
-	color: white;
-	border-color: #00c1b6;
+	border-bottom: 2px solid #00c1b6;
+	color: #00c1b6 !important;
+	margin-bottom: -2px;
 }
 .navbar-brand:hover, .navbar-brand:focus{
 	border-bottom: 2px solid #00c1b6;
@@ -723,7 +720,7 @@ and (max-width: 767px){
 	.colstyle{
 		margin-left: initial;
 	}
-	.panel-heading p{
+	.proptitle{
 		width: 200px;
 	}
 	.nav > li{
@@ -766,7 +763,7 @@ and (max-width: 849px){
 		margin-right: -20px !important;
 
 	}
-	.panel-heading p{
+	.proptitle{
 		width: 200px;
 	}
 }
@@ -800,7 +797,7 @@ and (max-width: 950px){
 		margin-top: 20px !important;
 		width: 50% !important;
 	}
-	.panel-heading p{
+	.proptitle{
 		width: 200px;
 	}
 }
@@ -835,7 +832,7 @@ and (max-width: 1100px){
 		margin-right: -20px !important;
 
 	}
-	.panel-heading p{
+	.proptitle{
 		width: 200px;
 	}
 }
@@ -866,7 +863,7 @@ and (max-width: 1400px){
 		font-size: 12px;
 		font-weight: bold;
 	}
-	.panel-heading p{
+	.proptitle{
 		width: 200px;
 	}
 }
