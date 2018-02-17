@@ -151,7 +151,7 @@ foreach($searchprop as $post){
   ?>
   <div class="col-lg-6 text-center">
     <div class ="panel panel-default">
-      <a href="{{ url('properties')}}/{{$post->slug}}"><img src="{{ asset('/../images/') }}/{{$image}}" style="border: solid 0px #000000; height: 200px; width: 100%;
+      <a id="{{$post->id}}" href="{{ url('properties')}}/{{$post->slug}}"><img src="{{ asset('/../images/') }}/{{$image}}" style="border: solid 0px #000000; height: 200px; width: 100%;
         background-size: 350px; background-repeat: no-repeat;"></a>
       <div class="panel-heading">
         <div style="text-align: left;">

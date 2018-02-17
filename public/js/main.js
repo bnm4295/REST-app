@@ -60,11 +60,6 @@ $(document).ready(function () {
       $(".danger-notification").fadeOut().empty();
       $(".loginattempt").fadeOut().empty();
     },4000);
-    //$('#171').mouseover(function(){
-      //google.maps.event.trigger(markers.id, "click");
-      //alert("hello");
-    //});
-
 
     window.onscroll = function() {sticknav()};
     var header = document.getElementById("stickynav");
