@@ -18,7 +18,7 @@
   <h1 style="color: #111; font-family: 'Helvetica Neue', sans-serif; font-size: 40px; font-weight: bold; letter-spacing: -1px; line-height: 1;">{{$property->title}}</h1>
   <h5>{{$property->street_address}} {{$property->route}} {{$property->city}} {{$property->state}}, {{$property->postal_code}} {{$property->country}}</h5>
   <h2 id="pricenum" style="color: #111; font-family: 'Helvetica Neue', sans-serif; font-size: 40px; font-weight: bold; letter-spacing: -1px; line-height: 1;">
-    {{$property->price}}</h2>
+    ${{$property->price}}</h2>
   <div class="row">
     <div class="col-md-6 col-sm-6 col-xs-12 no-padding" style="float: left;">
       <div class="fotorama" data-nav="thumbs">

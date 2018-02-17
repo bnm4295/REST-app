@@ -52,8 +52,8 @@ $(document).ready(function () {
         }
     });
     if (document.getElementById('pricenum') == ""){
-      var pricenum = parseFloat(document.getElementById("pricenum").innerHTML);
-      document.getElementById('pricenum').innerHTML = '$' + commafy(pricenum);
+      //var pricenum = parseFloat(document.getElementById("pricenum").innerHTML);
+      //document.getElementById('pricenum').innerHTML = '$' + commafy(pricenum);
     }
     setTimeout(function(){
       $(".alert-success").fadeOut().empty();
@@ -66,7 +66,7 @@ $(document).ready(function () {
     var sticky = header.offsetTop;
     //header.classList.add("sticky");
     function sticknav() {
-      if (window.pageYOffset > 100) {
+      if (window.pageYOffset > 30) {
         header.classList.add("sticky");
       } else {
         header.classList.remove("sticky");
