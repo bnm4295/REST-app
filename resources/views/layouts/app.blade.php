@@ -30,6 +30,7 @@
 
       gtag('config', 'UA-113127234-1');
     </script>
+    <script id="mcjs">!function(c,h,i,m,p){m=c.createElement(h),p=c.getElementsByTagName(h)[0],m.async=1,m.src=i,p.parentNode.insertBefore(m,p)}(document,"script","https://chimpstatic.com/mcjs-connected/js/users/ea0d25ee59744abded2618f79/9f2e00d1ffa8bcb826b5cf357.js");</script>
 </head>
 <!-- scripts -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -37,7 +38,6 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
 <script src="{{ asset('/../js/googlemap.js?ver=1.0')}}" ></script>
 
-<script id="mcjs">!function(c,h,i,m,p){m=c.createElement(h),p=c.getElementsByTagName(h)[0],m.async=1,m.src=i,p.parentNode.insertBefore(m,p)}(document,"script","https://chimpstatic.com/mcjs-connected/js/users/ea0d25ee59744abded2618f79/9f2e00d1ffa8bcb826b5cf357.js");</script>
 <!-- Start of Async Drift Code -->
 <script>
 !function() {
