@@ -25,7 +25,7 @@
           <h1><p style="text-align: center; font-size: 50px; color: white">Service Providers</p></h1>
         </div>
       </div>
-      <div class="row" style="height: 500px">
+      <div class="row">
       </div>
     </div>
   </div>

@@ -62,14 +62,14 @@ $(document).ready(function () {
     },4000);
 
     window.onscroll = function() {sticknav()};
-    var header = document.getElementById("stickynav");
-    var sticky = header.offsetTop;
+    //var sticky = header.offsetTop;
     //header.classList.add("sticky");
     function sticknav() {
       if (window.pageYOffset > 30) {
-        header.classList.add("sticky");
+        $(".stickynav").addClass("sticky");
+        $(".stickysecond").appendTo($(".stickynav"));
       } else {
-        header.classList.remove("sticky");
+        $(".stickynav").removeClass("sticky");
       }
     }
     $(function () {

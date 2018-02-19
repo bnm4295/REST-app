@@ -11,7 +11,7 @@
           <p style="text-align: center; font-size: 25px; color: white">Welcome to the New Home of Real Estate</p>
         </div>
       </div>
-      <div class="row" style="height: 500px">
+      <div class="row">
       </div>
     </div>
   </div>

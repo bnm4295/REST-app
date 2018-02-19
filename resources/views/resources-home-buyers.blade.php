@@ -11,7 +11,7 @@
           <h1><p style="text-align: center; font-size: 50px; color: white">Resources for Home Buyers</p></h1>
         </div>
       </div>
-      <div class="row" style="height: 500px">
+      <div class="row">
       </div>
     </div>
   </div>

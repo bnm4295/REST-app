@@ -13,6 +13,9 @@ h1, h2, h3, h4, h5, p, ul, a, input, label, button, select, body, section{
 #appname:hover{
 	color: #00a79d !important;
 }
+.Column{
+	display: table-cell;
+}
 html{
 	overflow-x: hidden;
 }
@@ -361,7 +364,7 @@ body.modal-open{
 	height: 55px;
 }
 #map{
-	height: 900px;
+	height: 840px;
 	width: 900px;
 }
 #moveloc #autocomplete{

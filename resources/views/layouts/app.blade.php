@@ -63,7 +63,7 @@ drift.load('3zb8wvvu7pby');
 <!-- End of Async Drift Code -->
 <body>
     <div id="app">
-        <nav id="stickynav" class="navbar navbar-default navbar-static-top">
+        <nav class="navbar navbar-default navbar-static-top stickynav">
             <div class="container-fluid">
                 <div class="navbar-header">
 
@@ -352,6 +352,7 @@ drift.load('3zb8wvvu7pby');
             <h3>{{ session('maxAttempts') }}</h3>
           </div>
         @endif
+        @yield('advsearchbar')
         @yield('content')
     </div>
 
