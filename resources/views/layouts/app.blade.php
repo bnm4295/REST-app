@@ -365,17 +365,19 @@ drift.load('3zb8wvvu7pby');
     <script src="{{ asset('/../js/app.js') }}"></script>
     <script src="//cdn.rawgit.com/Eonasdan/bootstrap-datetimepicker/e8bddc60e73c1ec2475f827be36e1957af72e2ea/src/js/bootstrap-datetimepicker.js"></script>
     <script src="{{ asset('/../js/jquery.countdown.min.js') }}"></script>
-    <script src="{{ asset('/../js/main.js?ver=1.9') }}"></script>
+    <script src="{{ asset('/../js/main.js?ver=2.0') }}"></script>
     @yield('script')
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCCMiNb2ZO_OOM16aU9xTwC3m0fa0Xq6NY&libraries=places&callback=initialize"
     async defer></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.js"></script> <!-- 16 KB -->
     <script type="text/javascript" src="https://www.ratehub.ca/assets/js/widget-loader.js"></script>
     <script type="text/javascript">
-      createEditableSelect(document.forms['propsearch'].price_left);
-      createEditableSelect(document.forms['propsearch'].price_right);
-      createEditableSelect(document.forms['propsearch'].area_left);
-      createEditableSelect(document.forms['propsearch'].area_right);
+      if(document.forms['propsearch']){
+        createEditableSelect(document.forms['propsearch'].price_left);
+        createEditableSelect(document.forms['propsearch'].price_right);
+        createEditableSelect(document.forms['propsearch'].area_left);
+        createEditableSelect(document.forms['propsearch'].area_right);
+      }
     </script>
 
 
