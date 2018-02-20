@@ -12,6 +12,16 @@
   </div>
 @endif
 
+@if ($errors->any())
+  <div class="alert alert-danger danger-notification"  style="z-index: 2; position: absolute; width: 100%">
+    <ul>
+      @foreach ($errors->all() as $error)
+        <li>{{ $error }}</li>
+      @endforeach
+    </ul>
+  </div>
+@endif
+
 @if (Session::has('danger'))
 	<div class="alert alert-danger danger-notification"  style="z-index: 2; text-align:center; position: absolute; width: 100%">{{ Session::get('danger') }}</div>
 @endif

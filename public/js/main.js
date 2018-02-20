@@ -52,7 +52,6 @@ $(document).ready(function () {
         }
     });
     $(document).on('click', '#advsearch .dropdown-menu', function (e) {
-      editableSelect.hideOptions();
       e.stopPropagation();
     });
 

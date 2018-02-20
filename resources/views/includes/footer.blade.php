@@ -2,6 +2,8 @@
   <div class="footer footerfirst">
     <div class="container">
       <div class="row">
+        @include('includes.subscribe')
+        <hr>
         <div class="col-md-3 col-sm-6 col-xs-12">
           <h3>About Suuty</h3>
           <p>We are redefining real estate in the 21st century, creating a transparent peer to peer platform for home buyers and sellers.</p>
@@ -15,11 +17,6 @@
               <li><i class="fa fa-envelope-o"></i> <a href="mailto:connect@suuty.com">connect@suuty.com</a></li>
             </ul>
   	    </div>
-
-        <div class="col-md-6 col-sm-6 col-xs-12">
-            <h3>Subscribe</h3>
-            @include('includes.subscribe')
-        </div>
       </div>
     </div>
   </div>
