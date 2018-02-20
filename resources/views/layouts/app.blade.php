@@ -13,12 +13,14 @@
     <!-- fotorama.css & fotorama.js. -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.css" rel="stylesheet"> <!-- 3 KB -->
     <link href="{{ asset('/../css/app.css') }}" rel="stylesheet">
-    <link href="{{ asset('/../css/main.css?ver=2.5') }}" rel="stylesheet">
+    <link href="{{ asset('/../css/main.css?ver=2.6') }}" rel="stylesheet">
     <link href="{{ asset('/../css/bootstrap-social.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500|Oxygen:300,400,500|Helvetica%20Neue:300,400,500|Noto+Sans:400,700" rel="stylesheet">
     <link href="//cdn.rawgit.com/Eonasdan/bootstrap-datetimepicker/e8bddc60e73c1ec2475f827be36e1957af72e2ea/build/css/bootstrap-datetimepicker.css" rel="stylesheet">
     <link href="//cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.0/animate.min.css" rel=stylesheet>
+
     <!-- toastr -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" />
     <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -30,12 +32,15 @@
 
       gtag('config', 'UA-113127234-1');
     </script>
+    <!-- scripts -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.4/jquery-ui.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment-with-locales.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+    <script src="{{ asset('/../js/googlemap.js?ver=1.0')}}" ></script>
+    <script src="{{ asset('/../js/combobox.js')}}"></script>
 </head>
-<!-- scripts -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment-with-locales.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
-<script src="{{ asset('/../js/googlemap.js?ver=1.0')}}" ></script>
 
 <!-- Start of Async Drift Code -->
 <script>
@@ -360,13 +365,18 @@ drift.load('3zb8wvvu7pby');
     <script src="{{ asset('/../js/app.js') }}"></script>
     <script src="//cdn.rawgit.com/Eonasdan/bootstrap-datetimepicker/e8bddc60e73c1ec2475f827be36e1957af72e2ea/src/js/bootstrap-datetimepicker.js"></script>
     <script src="{{ asset('/../js/jquery.countdown.min.js') }}"></script>
-    <script src="{{ asset('/../js/main.js?ver=1.7') }}"></script>
+    <script src="{{ asset('/../js/main.js?ver=1.8') }}"></script>
     @yield('script')
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCCMiNb2ZO_OOM16aU9xTwC3m0fa0Xq6NY&libraries=places&callback=initialize"
     async defer></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.js"></script> <!-- 16 KB -->
     <script type="text/javascript" src="https://www.ratehub.ca/assets/js/widget-loader.js"></script>
-
+    <script type="text/javascript">
+      createEditableSelect(document.forms['propsearch'].price_left);
+      createEditableSelect(document.forms['propsearch'].price_right);
+      createEditableSelect(document.forms['propsearch'].area_left);
+      createEditableSelect(document.forms['propsearch'].area_right);
+    </script>
 
 
      @if(Auth::check())

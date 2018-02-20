@@ -35,6 +35,9 @@
     if(document.getElementById("autocomplete") && document.getElementById("home-container")){
       autocomplete();
     }
+    //if(document.getElementById("autocomplete") && document.getElementById("advsearch")){
+    //  autocomplete();
+    //}
     if(document.getElementById("showmap") != null){
       initMapShow();
     }

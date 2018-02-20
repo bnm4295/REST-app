@@ -51,6 +51,11 @@ $(document).ready(function () {
             return $(this).length;
         }
     });
+    $(document).on('click', '#advsearch .dropdown-menu', function (e) {
+      editableSelect.hideOptions();
+      e.stopPropagation();
+    });
+
     if (document.getElementById('pricenum') == ""){
       //var pricenum = parseFloat(document.getElementById("pricenum").innerHTML);
       //document.getElementById('pricenum').innerHTML = '$' + commafy(pricenum);

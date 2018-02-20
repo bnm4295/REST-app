@@ -52,6 +52,33 @@ if(isset($_GET['mempar'])){
   }
 }
 
+//$search = explode(',',$search);
+//$data = array_map('intval', $search);
+//dd($data);
+
+/**
+* @param $string
+* @return mixed
+*/
+if (! function_exists('escape_like')) {
+  function escape_like($string)
+  {
+      $search = array(' ', '_');
+      $replace   = array('', '\_');
+      return str_replace($search, $replace, $string);
+  }
+
+}
+//$string = "1030 dkqowdk";
+//$string = escape_like($string);
+//$esc_commas = escape_like($search);
+$search = array_map('trim', explode(',', $search));
+
+//$search = preg_split('/\s+/', $esc_commas, -1, PREG_SPLIT_NO_EMPTY);
+//dd($test);
+//dd($teststuff);
+//$testprop = DB::table('properties')->where(DB::raw('CONCAT_WS(" ", street_address, route)'), 'LIKE', "%1055 Canada Place%")->get();
+//dd($testprop);
 //Search on Listings
 
 //addr
@@ -60,43 +87,15 @@ if(isset($_GET['mempar'])){
 if($price_left == "nopriceleft" && $price_right == "nopriceright"
 || $area_left == "noarealeft" && $area_right == "noarearight" && $numbeds == "" && $numbaths == ""
    && $proptype == "" ){
-    //$search = explode(',',$search);
-    //$data = array_map('intval', $search);
-    //dd($data);
 
-    /**
-    * @param $string
-    * @return mixed
-    */
-    if (! function_exists('escape_like')) {
-      function escape_like($string)
-      {
-          $search = array(' ', '_');
-          $replace   = array('', '\_');
-          return str_replace($search, $replace, $string);
-      }
-
-    }
-    //$string = "1030 dkqowdk";
-    //$string = escape_like($string);
-    //$esc_commas = escape_like($search);
-    $search = array_map('trim', explode(',', $search));
-
-    //$search = preg_split('/\s+/', $esc_commas, -1, PREG_SPLIT_NO_EMPTY);
-    //dd($test);
-    //dd($teststuff);
-    //$testprop = DB::table('properties')->where(DB::raw('CONCAT_WS(" ", street_address, route)'), 'LIKE', "%1055 Canada Place%")->get();
-    //dd($testprop);
     $searchprop = DB::table('properties')->where(function ($q) use ($search) {
       foreach ($search as $value) {
-          //dd($search);
         $q->where('city', 'LIKE', "%{$value}%")
           ->orwhere(DB::raw('CONCAT_WS(" ", street_address, route)'), 'LIKE', "%{$value}%")
           ->orwhere('postal_code', 'LIKE', "%{$value}%")
           ->where('state', 'LIKE', "%{$value}%")
           ->where('country', 'LIKE', "%{$value}%");
       }
-      //dd($q);
     })->get();
     //dd($searchprop);
     //dd($testprop);
@@ -109,13 +108,14 @@ if($price_left == "nopriceleft" && $price_right == "nopriceright"
     //          ->orwhere('country', 'LIKE', "%$search%");
     //})->get();
 }else{
-  $searchprop = DB::table('properties')
-  ->where(function($query) use ($search){
-      $query->where('city', 'LIKE', "%$search%")
-            ->orwhere('route', 'LIKE', "%$search%")
-            ->orwhere('state', 'LIKE', "%$search%")
-            ->orwhere('postal_code', 'LIKE', "%$search%")
-            ->orwhere('country', 'LIKE', "%$search%");
+  $searchprop = DB::table('properties')->where(function ($q) use ($search) {
+    foreach ($search as $value) {
+      $q->where('city', 'LIKE', "%{$value}%")
+        ->orwhere(DB::raw('CONCAT_WS(" ", street_address, route)'), 'LIKE', "%{$value}%")
+        ->orwhere('postal_code', 'LIKE', "%{$value}%")
+        ->where('state', 'LIKE', "%{$value}%")
+        ->where('country', 'LIKE', "%{$value}%");
+    }
   })->where('number_of_beds', 'LIKE', "%$numbeds%")
   ->where('number_of_baths', 'LIKE', "%$numbaths%")
   ->where('house_type', 'LIKE' , "%$proptype%")
@@ -155,7 +155,7 @@ foreach($searchprop as $post){
         background-size: 350px; background-repeat: no-repeat;"></a>
       <div class="panel-heading">
         <div style="text-align: left;">
-          <h3><strong>{{$post->title}}</strong></h3>
+          <h3 class="proptitle"><strong>{{$post->title}}</strong></h3>
           <strong>${{$post->price}}</strong>
           <hr>
           <strong>Number of Beds: {{$post->number_of_beds}} </strong>

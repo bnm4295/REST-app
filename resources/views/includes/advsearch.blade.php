@@ -106,16 +106,21 @@
       </div>
   </div>
 </div-->
-<div class="container">
-  <form action="{{url('/properties')}}" method="GET" class="form-inline" role="form">
+<div id="advsearch" class="container-fluid">
+  <form id="propsearch" action="{{url('/properties')}}" method="GET" class="form-inline" role="form">
     <div class="row">
         <select id="numbeds"class="form-control input-md" name="number_of_beds" style="margin-right:5px;">
-             <option value="" disabled selected>Beds</option>
-             <option value="1">1</option>
-             <option value="2">2</option>
-             <option value="3">3</option>
-             <option value="4">4</option>
-             <option value="5">5</option>
+          <option value="" disabled selected>Beds</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+          <option value="9">9</option>
+          <option value="10">10</option>
         </select>
         <select id="numbaths"class="form-control input-md" name="number_of_baths" style="margin-right: 5px;">
           <option value="" disabled selected>Baths</option>
@@ -124,17 +129,53 @@
           <option value="3">3</option>
           <option value="4">4</option>
           <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+          <option value="9">9</option>
+          <option value="10">10</option>
         </select>
-        <label class="filter-col" style="margin-right:0;" for="proptype">Property Type</label>
-        <select id="proptype" class="form-control input-md" name="house_type">
+        <!--housetype-->
+        <select id="proptype" class="form-control input-md" name="house_type" style="margin-right: 5px;">
           <option value="" disabled selected>Property Type</option>
           <option value="SingleFamilyHome">Single Family Home</option>
           <option value="Townhouse">Townhouse</option>
           <option value="Condo">Condo</option>
         </select>
-        <label class="filter-col" style="margin-right:0;" for="pref-search">City</label>
-        <input type="text" class="form-control input-md" id="pref-search" name="addr" placeholder="City">
+        <!-- city -->
+        <input type="text" class="form-control input-md" id="autocomplete" name="addr" placeholder="City">
+
+        <!-- prices -->
+        <div class="dropdown" style="float:left; margin-left: 10px;">
+          <a href="#" class="dropdown-toggle form-control input-md" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">
+            <b>Price Range</b><span class="caret"></span>
+          </a>
+          <div class="dropdown-menu" style="min-width: 350px;" role="menu">
+            <div style="margin: 20px">
+              <h3>Price MIN</h3>
+              <input type="text" name="price_left" value="0" selectBoxOptions="200000;300000;400000;500000;600000;700000;800000;900000;1000000;2000000;3000000;4000000;5000000">
+              <hr>
+              <h3>Price MAX</h3>
+              <input type="text" name="price_right" value="0" selectBoxOptions="200000;300000;400000;500000;600000;700000;800000;900000;1000000;2000000;3000000;4000000;5000000">
+            </div>
+          </div>
+        </div>
         <div class="dropdown" style="float:left; margin-left: 10px; margin-right: 10px;">
+          <a href="#" class="dropdown-toggle form-control input-md" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">
+            <b>Area Range</b><span class="caret"></span>
+          </a>
+          <div class="dropdown-menu" style="min-width: 350px;" role="menu">
+            <div style="margin: 20px;">
+              <h3>Area MIN</h3>
+              <input type="text" name="area_left" value="0" selectBoxOptions="2000;3000;4000;5000;6000;7000;8000;9000;10000;20000;30000;40000;50000">
+              <hr>
+              <h3>Area MAX</h3>
+              <input type="text" name="area_right" value="0" selectBoxOptions="2000;3000;4000;5000;6000;7000;8000;9000;10000;20000;30000;40000;50000">
+            </div>
+          </div>
+        </div>
+
+        <!--div class="dropdown" style="float:left; margin-left: 10px; margin-right: 10px;">
           <a href="#" class="dropdown-toggle form-control input-md" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">
             <b>Prices</b><span class="caret"></span>
           </a>
@@ -179,7 +220,7 @@
               </div>
             </div>
           </div>
-        </div>
+        </div>-->
         <div class="checkbox" style="margin-left:10px; margin-right:10px;">
           <label><input type="checkbox" name="mempar">Save Search</label>
         </div>

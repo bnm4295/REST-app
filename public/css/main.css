@@ -13,9 +13,6 @@ h1, h2, h3, h4, h5, p, ul, a, input, label, button, select, body, section{
 #appname:hover{
 	color: #00a79d !important;
 }
-.Column{
-	display: table-cell;
-}
 html{
 	overflow-x: hidden;
 }
@@ -25,6 +22,12 @@ body {
 }
 select{
 	text-align-last: center;
+}
+.form-control{
+	border: 1px solid #777;
+}
+.stickysecond form{
+	margin: 10px;
 }
 .loginattempt{
 	text-align: center;
@@ -84,6 +87,50 @@ select{
 }
 #checkboxform label{
 	display: block;
+}
+/* combobox */
+
+.selectBoxArrow{
+	margin-top:1px;
+	float:left;
+	position:absolute;
+	right:1px;
+}
+.selectBoxInput{
+	border:0px;
+	padding-left:1px;
+	height:16px;
+	position:absolute;
+  border: 1px solid #777;
+	top:0px;
+	left:0px;
+}
+.selectBox{
+	height:20px;
+}
+.selectBoxOptionContainer{
+	position:absolute;
+	border:1px solid #7f9db9;
+	height:100px;
+	background-color:#FFF;
+	top:20px;
+	visibility:hidden;
+	overflow:auto;
+	overflow-x: hidden;
+}
+.selectBoxAnOption{
+	font-family:arial;
+	font-size:12px;
+	cursor:default;
+	margin:1px;
+	overflow:hidden;
+	white-space:nowrap;
+}
+.selectBoxIframe{
+	position:absolute;
+	background-color:#FFF;
+	border:0px;
+	z-index:999;
 }
 /* IMG */
 img[src=""] {
@@ -247,7 +294,7 @@ body.modal-open{
 }
 
 #login-btn{
-	background-color: #00a79d;
+	background-color: #777;
 	color: white;
 	border-color: #00a79d;
 }

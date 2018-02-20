@@ -15,10 +15,10 @@
   <div id="listings-row" class="row">
     <div id="map-fix" class="col-md-6 col-sm-6 col-xs-12 no-padding" style="position: fixed; top:106px; left:-15px; bottom: 0;">
         <div id="locationField">
-          <div id="moveloc">
+          <!--div id="moveloc">
             <input class="form-control" id="autocomplete" placeholder="Enter your address"
             onFocus="geolocate()" type="text"></input>
-          </div>
+          </div-->
         </div>
         <div id='map'></div>
         <div id="infowindow-content">
