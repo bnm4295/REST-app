@@ -299,7 +299,7 @@ body.modal-open{
 #login-btn{
 	background-color: #777;
 	color: white;
-	border-color: #00a79d;
+	border-color: #777;
 }
 #login-btn:hover{
 	background-color: #00c1b6;
@@ -778,6 +778,12 @@ and (max-width: 767px){
 	}
 	.stickysecond{
 		display: none;
+	}
+	#ws-walkscore-tile iframe{
+		width: 380px;
+	}
+	.reviewform{
+		width: 380px;
 	}
 }
 

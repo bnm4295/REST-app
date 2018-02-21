@@ -19,16 +19,28 @@ if(isset($_GET['house_type'])){
 //area & price
 if(isset($_GET['price_left'])){
   $price_left = $_GET['price_left'];
-}else{$price_left="nopriceleft";}
+  if($price_left == 0){
+    $price_left="nopriceleft";
+  }
+}
 if(isset($_GET['price_right'])){
   $price_right = $_GET['price_right'];
-}else{$price_right="nopriceright";}
+  if($price_right == 0){
+    $price_right="nopriceright";
+  }
+}
 if(isset($_GET['area_left'])){
   $area_left = $_GET['area_left'];
-}else{$area_left="noarealeft";}
+  if($area_left==0){
+    $area_left="noarealeft";
+  }
+}
 if(isset($_GET['area_right'])){
   $area_right = $_GET['area_right'];
-}else{$area_right="noarearight";}
+  if($area_right==0){
+    $area_right="noarearight";
+  }
+}
 
 if(isset($_GET['mempar'])){
   if(Auth::check()){

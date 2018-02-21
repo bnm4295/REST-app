@@ -15,7 +15,9 @@
       </ul>
     </div>
   @endif
-  <h1 style="color: #111; font-family: 'Helvetica Neue', sans-serif; font-size: 40px; font-weight: bold; letter-spacing: -1px; line-height: 1;">{{$property->title}}</h1>
+  <h1 style="color: #111; white-space: nowrap; overflow: hidden;
+  text-overflow: ellipsis;font-size: 40px; font-weight:
+  bold; letter-spacing: -1px; line-height: 1;">{{$property->title}}</h1>
   <h5>{{$property->street_address}} {{$property->route}} {{$property->city}} {{$property->state}}, {{$property->postal_code}} {{$property->country}}</h5>
   <h2 id="pricenum" style="color: #111; font-family: 'Helvetica Neue', sans-serif; font-size: 40px; font-weight: bold; letter-spacing: -1px; line-height: 1;">
     ${{$property->price}}</h2>
@@ -90,7 +92,12 @@
                   </div>
                 </form>
               @endif
-                <b><h4 id="bidprice">Bid Price: ${{$offer['offerprice']}}</h4></b>
+              <?php
+                $user = DB::table('users')->where('id', $offer->user_id)->first();
+                $decodedarr = json_decode( $user->profileimg , true);
+                $image = $decodedarr[0];
+              ?>
+              <b><h4 id="bidprice"><img src="/images/{{$image}}" width="20px" height="20px"> Bid Price: ${{$offer['offerprice']}}</h4></b>
               @if($offer->status == 0)
                 <h5><b>Status: Waiting for Approval</b></h5>
                 <br>
