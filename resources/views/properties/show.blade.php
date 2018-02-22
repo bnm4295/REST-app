@@ -5,7 +5,7 @@
 @if (Session::has('success'))
   <div class="alert alert-success"  style="z-index: 2; text-align:center; position: absolute; width: 100%">{{ Session::get('success') }}</div>
 @endif
-<div class="container">
+<div class="container singleprop">
   @if ($errors->any())
     <div class="alert alert-danger">
       <ul>
@@ -22,7 +22,7 @@
   <h2 id="pricenum" style="color: #111; font-family: 'Helvetica Neue', sans-serif; font-size: 40px; font-weight: bold; letter-spacing: -1px; line-height: 1;">
     ${{$property->price}}</h2>
   <div class="row">
-    <div class="col-md-6 col-sm-6 col-xs-12 no-padding" style="float: left;">
+    <div class="col-md-6 col-sm-12 col-xs-12 no-padding fixcol" style="float: left;">
       <div class="fotorama" data-nav="thumbs">
         <?php
           $decodedarr = json_decode( $property->images , true);
@@ -43,9 +43,32 @@
         <div class="row">
           <div class="col-md-12">
             <div class="panel-heading" style="text-align: center">
-              <h4>Area(sqft): {{$property->area}}</h4>
-              <h4>House Type: {{$property->house_type}}</h4>
-              <h4>Beds: {{$property->number_of_beds}} | Baths: {{$property->number_of_baths}}</h4>
+              <div style="text-align:center">
+                <div style="display:inline-block; margin: 5px;">
+                  <div style="font-size: 20px">
+                    <i class="fas fa-chart-area"></i>
+                    <p>{{$property->area}}sqft&sup2;</p>
+                  </div>
+                </div>
+                <div style="display:inline-block; margin: 5px;">
+                  <div style="font-size: 20px">
+                    <i class="fas fa-home"></i>
+                    <p>{{$property->house_type}}</p>
+                  </div>
+                </div>
+                <div style="display:inline-block; margin: 5px;">
+                  <div style="font-size: 20px">
+                    <i class="fas fa-bed"></i>
+                    <p>{{$property->number_of_beds}} Beds</p>
+                  </div>
+                </div>
+                <div style="display:inline-block; margin: 5px;">
+                  <div style="font-size: 20px">
+                    <i class="fas fa-bath"></i>
+                    <p>{{$property->number_of_baths}} Baths</p>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -113,8 +136,13 @@
           <h4>Open-House Times</h4>
         </div>
         <div class="panel-heading">
-          <h4>{{$property->firstdate}}</h4>
-          <h4>{{$property->seconddate}}</h4>
+          <h4>First Date</h4>
+          <hr>
+          <div id="openfirstdate" data-date="{{$property->firstdate}}"></div>
+          <br>
+          <h4>Second Date</h4>
+          <hr>
+          <div id="openseconddate" data-date="{{$property->seconddate}}"></div>
         @if(($property->firstdate && $property->seconddate) == NULL)
           <h4>No Open-House Dates</h4>
         @endif
@@ -202,7 +230,7 @@
       <!-- COL END -->
     </div>
     <!-- Widget START -->
-    <div class="col-md-6 col-sm-6 col-xs-12 no-padding" style="margin: 20px width: 100%;">
+    <div class="col-md-6 col-sm-12 col-xs-12 no-padding" style="margin: 20px width: 100%;">
         <input id="showmaplat" type="hidden" value="{{$property->latitude}}">
         <input id="showmaplong" type="hidden" value="{{$property->longitude}}">
         <div id="floating-panel">
@@ -223,8 +251,8 @@
         </div>-->
     </div>
     &nbsp;
-    <div class="col-md-6 col-sm-6 col-xs-12">
-      <div class="container reviewform">
+    <div class="col-md-6 col-sm-12 col-xs-12">
+      <div class="container requestform">
         <form method="post" action="{{url('post-booking')}}" enctype="multipart/form-data">
           <meta name="csrf-token" content="{{ csrf_token() }}">
           {{ csrf_field() }}
@@ -264,7 +292,7 @@
                 <div class="form-group">
                   <strong>First Open House</strong>
                   <div class='input-group date' id='openfirst'>
-                      <input id="get_firstdate" type="text" name="openfirst" placeholder="Date" class="form-control">
+                      <input type="text" name="openfirst" placeholder="Date" class="form-control">
                       <span class="input-group-addon">
                           <span class="glyphicon glyphicon-calendar"></span>
                       </span>
@@ -275,7 +303,7 @@
                 <div class="form-group">
                   <strong>Second Open House</strong>
                   <div class='input-group date' id='opensecond'>
-                      <input id="get_firstdate" type="text" name="opensecond" placeholder="Date" class="form-control">
+                      <input type="text" name="opensecond" placeholder="Date" class="form-control">
                       <span class="input-group-addon">
                           <span class="glyphicon glyphicon-calendar"></span>
                       </span>

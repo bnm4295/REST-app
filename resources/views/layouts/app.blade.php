@@ -16,7 +16,7 @@
     <link href="{{ asset('/../css/main.css?ver=2.9') }}" rel="stylesheet">
     <link href="{{ asset('/../css/bootstrap-social.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500|Oxygen:300,400,500|Helvetica%20Neue:300,400,500|Noto+Sans:400,700" rel="stylesheet">
     <link href="//cdn.rawgit.com/Eonasdan/bootstrap-datetimepicker/e8bddc60e73c1ec2475f827be36e1957af72e2ea/build/css/bootstrap-datetimepicker.css" rel="stylesheet">
     <link href="//cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.0/animate.min.css" rel=stylesheet>
@@ -38,6 +38,7 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment-with-locales.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
     <script src="{{ asset('/../js/googlemap.js?ver=1.0')}}" ></script>
     <script src="{{ asset('/../js/combobox.js')}}"></script>
 </head>
