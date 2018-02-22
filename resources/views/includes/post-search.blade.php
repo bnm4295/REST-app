@@ -50,6 +50,21 @@ if(isset($_GET['mempar'])){
           'addr' => $search, 'number_of_beds' => (int)$numbeds, 'number_of_baths' => (int)$numbaths, 'house_type' => $proptype, 'created_at' => $today, 'updated_at' => $today,
          ]
       );
+      if(empty($savesearch)){
+      ?>
+        <div class="alert alert-danger" style="z-index: 2; text-align:center; position: absolute; width: 100%">ERROR</div>
+      <?php
+      }
+      else{
+      ?>
+        <div class="alert alert-success"  style="z-index: 2; text-align:center; position: absolute; width: 100%">Success</div>
+      <?php
+      }
+    }
+    else{
+      ?>
+      <div class="alert alert-danger danger-notification" style="z-index: 2; text-align:center; position: absolute; width: 100%">Search has already been saved</div>
+      <?php
     }
     //echo $mempar;
   }
@@ -85,7 +100,6 @@ $search = array_map('trim', explode(',', $search));
 //Search on Listings
 
 //addr
-
 //Homepage Adv Search
 if($price_left == "nopriceleft" && $price_right == "nopriceright"
 && ($area_left == "noarealeft" && $area_right == "noarearight") && $numbeds == "" && $numbaths == ""
