@@ -54,7 +54,6 @@ $(document).ready(function () {
     $(document).on('click', '#advsearch .dropdown-menu', function (e) {
       e.stopPropagation();
     });
-
     if (document.getElementById('pricenum') == ""){
       //var pricenum = parseFloat(document.getElementById("pricenum").innerHTML);
       //document.getElementById('pricenum').innerHTML = '$' + commafy(pricenum);

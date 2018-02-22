@@ -27,7 +27,7 @@
           <span id="place-address"></span>
         </div>
     </div>
-    <div id="prop-fix" class="col-md-6 col-sm-6 col-xs-12 no-padding" style="position: absolute; top: 90px; right:0;">
+    <div id="prop-fix" class="col-md-6 col-sm-6 col-xs-12 no-padding" style="position: absolute; top: 110px; right:0;">
       <div id="property-listings">
         <div class="col-md-10 col-md-offset-0">
           <h2>Property Listings</h2>
@@ -43,7 +43,7 @@
         {
 
         ?>
-        @include('includes.post-search');
+        @include('includes.post-search')
         <?php }
         else{ ?>
         @foreach($properties as $post)

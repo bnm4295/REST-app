@@ -19,28 +19,19 @@ if(isset($_GET['house_type'])){
 //area & price
 if(isset($_GET['price_left'])){
   $price_left = $_GET['price_left'];
-  if($price_left == 0){
-    $price_left="nopriceleft";
-  }
-}
+}else{$price_left="nopriceleft";}
+
 if(isset($_GET['price_right'])){
   $price_right = $_GET['price_right'];
-  if($price_right == 0){
-    $price_right="nopriceright";
-  }
-}
+}else{$price_right="nopriceright";}
+
 if(isset($_GET['area_left'])){
   $area_left = $_GET['area_left'];
-  if($area_left==0){
-    $area_left="noarealeft";
-  }
-}
+}else{$area_left="noarealeft";}
+
 if(isset($_GET['area_right'])){
   $area_right = $_GET['area_right'];
-  if($area_right==0){
-    $area_right="noarearight";
-  }
-}
+}else{$area_right="noarearight";}
 
 if(isset($_GET['mempar'])){
   if(Auth::check()){
@@ -97,7 +88,7 @@ $search = array_map('trim', explode(',', $search));
 
 //Homepage Adv Search
 if($price_left == "nopriceleft" && $price_right == "nopriceright"
-|| $area_left == "noarealeft" && $area_right == "noarearight" && $numbeds == "" && $numbaths == ""
+&& ($area_left == "noarealeft" && $area_right == "noarearight") && $numbeds == "" && $numbaths == ""
    && $proptype == "" ){
 
     $searchprop = DB::table('properties')->where(function ($q) use ($search) {
@@ -110,7 +101,6 @@ if($price_left == "nopriceleft" && $price_right == "nopriceright"
       }
     })->get();
     //dd($searchprop);
-    //dd($testprop);
     //$searchprop = DB::table('properties')
     //->where(function($query) use ($search){
     //    $query->where('city', 'LIKE', "%".escape_like($search)."%")
@@ -119,7 +109,22 @@ if($price_left == "nopriceleft" && $price_right == "nopriceright"
     //          ->orwhere('postal_code', 'LIKE', "%$search%")
     //          ->orwhere('country', 'LIKE', "%$search%");
     //})->get();
-}else{
+}
+elseif($search[0] == "" && $numbeds != "" && $numbaths != "" && $proptype != ""){
+  $searchprop = DB::table('properties')->where('number_of_beds', 'LIKE', "%$numbeds%")
+  ->where('number_of_baths', 'LIKE', "%$numbaths%")
+  ->where('house_type', 'LIKE' , "%$proptype%")
+  ->where([
+     ['price', '>=', (int)$price_left],
+     ['price', '<=', (int)$price_right ]
+   ])
+   ->where([
+     ['area', '>=', (int)$area_left],
+     ['area', '<=', (int)$area_right ]
+   ])
+  ->get();
+}
+else{
   $searchprop = DB::table('properties')->where(function ($q) use ($search) {
     foreach ($search as $value) {
       $q->where('city', 'LIKE', "%{$value}%")

@@ -109,7 +109,7 @@
 <div id="advsearch" class="container-fluid">
   <form id="propsearch" action="{{url('/properties')}}" method="GET" class="form-inline" role="form">
     <div class="row">
-        <select id="numbeds"class="form-control input-md" name="number_of_beds" style="margin-right:5px;">
+        <select id="numbeds" class="btn form-control" name="number_of_beds" style="margin-right:5px;">
           <option value="" disabled selected>Beds</option>
           <option value="1">1</option>
           <option value="2">2</option>
@@ -122,7 +122,7 @@
           <option value="9">9</option>
           <option value="10">10</option>
         </select>
-        <select id="numbaths"class="form-control input-md" name="number_of_baths" style="margin-right: 5px;">
+        <select id="numbaths" class="btn form-control" name="number_of_baths" style="margin-right: 5px;">
           <option value="" disabled selected>Baths</option>
           <option value="1">1</option>
           <option value="2">2</option>
@@ -136,7 +136,7 @@
           <option value="10">10</option>
         </select>
         <!--housetype-->
-        <select id="proptype" class="form-control input-md" name="house_type" style="margin-right: 5px;">
+        <select id="proptype" class="btn form-control" name="house_type" style="margin-right: 5px;">
           <option value="" disabled selected>Property Type</option>
           <option value="SingleFamilyHome">Single Family Home</option>
           <option value="Townhouse">Townhouse</option>
@@ -147,30 +147,30 @@
 
         <!-- prices -->
         <div class="dropdown" style="float:left; margin-left: 10px;">
-          <a href="#" class="dropdown-toggle form-control input-md" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">
+          <button href="#" class="dropdown-toggle form-control input-md" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">
             <b>Price Range</b><span class="caret"></span>
-          </a>
+          </button>
           <div class="dropdown-menu" style="min-width: 350px;" role="menu">
             <div style="margin: 20px">
               <h3>Price MIN</h3>
               <input type="text" name="price_left" value="0" selectBoxOptions="200000;300000;400000;500000;600000;700000;800000;900000;1000000;2000000;3000000;4000000;5000000">
               <hr>
               <h3>Price MAX</h3>
-              <input type="text" name="price_right" value="0" selectBoxOptions="200000;300000;400000;500000;600000;700000;800000;900000;1000000;2000000;3000000;4000000;5000000">
+              <input type="text" name="price_right" value="5000000" selectBoxOptions="200000;300000;400000;500000;600000;700000;800000;900000;1000000;2000000;3000000;4000000;5000000">
             </div>
           </div>
         </div>
         <div class="dropdown" style="float:left; margin-left: 10px; margin-right: 10px;">
-          <a href="#" class="dropdown-toggle form-control input-md" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">
+          <button href="#" class="dropdown-toggle form-control input-md" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">
             <b>Area Range</b><span class="caret"></span>
-          </a>
+          </button>
           <div class="dropdown-menu" style="min-width: 350px;" role="menu">
             <div style="margin: 20px;">
               <h3>Area MIN</h3>
               <input type="text" name="area_left" value="0" selectBoxOptions="2000;3000;4000;5000;6000;7000;8000;9000;10000;20000;30000;40000;50000">
               <hr>
               <h3>Area MAX</h3>
-              <input type="text" name="area_right" value="0" selectBoxOptions="2000;3000;4000;5000;6000;7000;8000;9000;10000;20000;30000;40000;50000">
+              <input type="text" name="area_right" value="50000" selectBoxOptions="2000;3000;4000;5000;6000;7000;8000;9000;10000;20000;30000;40000;50000">
             </div>
           </div>
         </div>
@@ -221,11 +221,25 @@
             </div>
           </div>
         </div>-->
-        <div class="checkbox" style="margin-left:10px; margin-right:10px;">
-          <label><input type="checkbox" name="mempar">Save Search</label>
-        </div>
 
-        <button type="submit" class="btn btn-default filter-col">
+        <div class="dropdown" style="margin-left: 5px; margin-right: 5px; display: inline">
+          <button href="#" type="button" class="dropdown-toggle form-control input-md" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">
+            <b>Save Search</b>
+          </button>
+          <div class="dropdown-menu" style="min-width: 350px;" role="menu">
+            <div style="margin: 20px">
+              <h3 style="text-align:center">Save Your Current Search</h3>
+              @if(Auth::check())
+                <button type="submit" style="width:100%" class="btn btn-primary btn-lg" name="mempar" value="1">
+                  <span>Save Search</span>
+                </button>
+              @else
+                <button type="button" style="width:100%" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#mylogin">Sign In to Save Search</button>
+              @endif
+            </div>
+          </div>
+        </div>
+        <button type="submit" class="btn btn-default filter-col form-control">
           <i class="fa fa-search" aria-hidden="true"></i>Update
         </button>
       </div>
