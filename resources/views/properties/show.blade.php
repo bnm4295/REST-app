@@ -5,7 +5,7 @@
 @if (Session::has('success'))
   <div class="alert alert-success"  style="z-index: 2; text-align:center; position: absolute; width: 100%">{{ Session::get('success') }}</div>
 @endif
-<div class="container singleprop">
+<div class="container-fluid fluidpadding">
   @if ($errors->any())
     <div class="alert alert-danger">
       <ul>
@@ -22,7 +22,7 @@
   <h2 id="pricenum" style="color: #111; font-family: 'Helvetica Neue', sans-serif; font-size: 40px; font-weight: bold; letter-spacing: -1px; line-height: 1;">
     ${{$property->price}}</h2>
   <div class="row">
-    <div class="col-md-6 col-sm-12 col-xs-12 no-padding fixcol" style="float: left;">
+    <div class="col-md-6 col-sm-12 col-xs-12 no-padding" style="float: left;">
       <div class="fotorama" data-nav="thumbs">
         <?php
           $decodedarr = json_decode( $property->images , true);

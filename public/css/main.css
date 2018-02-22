@@ -23,6 +23,10 @@ body {
 select{
 	text-align-last: center;
 }
+.fluidpadding{
+	padding-right: 50px;
+	padding-left: 50px;
+}
 .form-control{
 	border: 1px solid #777;
 }
@@ -946,21 +950,6 @@ and (max-width: 1750px){
 		width: initial;
 	}
 }
-@media (min-width: 1200px){
-.singleprop{
-    width: 1500px !important;
-	}
-}
 
-@media (min-width: 992px) and (max-width: 1199px){
-.singleprop{
-    width: 970px !important;
-	}
-}
-@media (min-width: 768px) and (max-width: 991px){
-.singleprop{
-    width: 750px !important;
-	}
-}
 
 /* MOBILE END */
