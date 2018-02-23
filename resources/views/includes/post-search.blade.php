@@ -63,7 +63,7 @@ if(isset($_GET['mempar'])){
     }
     else{
       ?>
-      <div class="alert alert-danger danger-notification" style="z-index: 2; text-align:center; position: absolute; width: 100%">Search has already been saved</div>
+
       <?php
     }
     //echo $mempar;
