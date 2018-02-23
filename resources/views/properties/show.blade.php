@@ -290,9 +290,8 @@
             </div>
             <div class="col-xs-6 col-sm-6 col-md-6">
                 <div class="form-group">
-                  <strong>First Open House</strong>
                   <div class='input-group date' id='openfirst'>
-                      <input type="text" name="openfirst" placeholder="Date" class="form-control">
+                      <input type="text" name="openfirst" placeholder="First Date" class="form-control">
                       <span class="input-group-addon">
                           <span class="glyphicon glyphicon-calendar"></span>
                       </span>
@@ -301,9 +300,8 @@
             </div>
             <div class="col-xs-6 col-sm-6 col-md-6">
                 <div class="form-group">
-                  <strong>Second Open House</strong>
                   <div class='input-group date' id='opensecond'>
-                      <input type="text" name="opensecond" placeholder="Date" class="form-control">
+                      <input type="text" name="opensecond" placeholder="Second Date" class="form-control">
                       <span class="input-group-addon">
                           <span class="glyphicon glyphicon-calendar"></span>
                       </span>
