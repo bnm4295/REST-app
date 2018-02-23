@@ -147,6 +147,12 @@ img[src=""] {
 .fotorama__loaded .fotorama__img{
 	left: 0 !important;
 }
+.fotorama{
+	width: 100% !important;
+}
+.fotorama img{
+	width: 100% !important;
+}
 /* CONTAINERS */
 .reviewform{
 	width: 500px;
@@ -903,12 +909,6 @@ and (max-width: 1400px){
 	#showmap{
 		width: 100% !important;
 	}
-	.fotorama{
-		width: 100% !important;
-	}
-	.fotorama img{
-		width: 100% !important;
-	}
 	#listings-row #filter-panel{
 		width: initial;
 	}
@@ -930,12 +930,6 @@ and (max-width: 1750px){
 		width: 750px;
 	}
 	#showmap{
-		width: 100% !important;
-	}
-	.fotorama{
-		width: 100% !important;
-	}
-	.fotorama img{
 		width: 100% !important;
 	}
 	#listings-row #filter-panel{

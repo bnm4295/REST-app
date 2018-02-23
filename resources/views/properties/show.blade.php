@@ -5,7 +5,7 @@
 @if (Session::has('success'))
   <div class="alert alert-success"  style="z-index: 2; text-align:center; position: absolute; width: 100%">{{ Session::get('success') }}</div>
 @endif
-<div class="container-fluid fluidpadding">
+<div class="container">
   @if ($errors->any())
     <div class="alert alert-danger">
       <ul>
@@ -22,7 +22,7 @@
   <h2 id="pricenum" style="color: #111; font-family: 'Helvetica Neue', sans-serif; font-size: 40px; font-weight: bold; letter-spacing: -1px; line-height: 1;">
     ${{$property->price}}</h2>
   <div class="row">
-    <div class="col-md-6 col-sm-12 col-xs-12 no-padding" style="float: left;">
+    <div class="col-md-7 col-sm-12 col-xs-12 no-padding" style="float: left;">
       <div class="fotorama" data-nav="thumbs">
         <?php
           $decodedarr = json_decode( $property->images , true);
@@ -230,7 +230,7 @@
       <!-- COL END -->
     </div>
     <!-- Widget START -->
-    <div class="col-md-6 col-sm-12 col-xs-12 no-padding" style="margin: 20px width: 100%;">
+    <div class="col-md-5 col-sm-12 col-xs-12 no-padding" style="margin: 20px width: 100%;">
         <input id="showmaplat" type="hidden" value="{{$property->latitude}}">
         <input id="showmaplong" type="hidden" value="{{$property->longitude}}">
         <div id="floating-panel">
@@ -251,7 +251,7 @@
         </div>-->
     </div>
     &nbsp;
-    <div class="col-md-6 col-sm-12 col-xs-12">
+    <div class="col-md-5 col-sm-12 col-xs-12">
       <div class="container requestform">
         <form method="post" action="{{url('post-booking')}}" enctype="multipart/form-data">
           <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -314,6 +314,15 @@
         </form>
       </div>
       &nbsp;
+      <div><h2 style="font-family:stagsans,arial,helvetica,sans-serif;font-size:1.6em;font-weight:400;margin-top:0"><a href="/best-mortgage-rates" style="text-decoration:none;color:#A3C139;">Mortgage rate comparison</a></h2><div class="widget" data-widget="mtg-table" data-home_price="{{$property->price}}"data-purchase="true" data-lang="en"></div><div style="text-align:right;">  <a href="https://www.ratehub.ca/" style="display:inline-block;width:80px;margin-top:.5em;margin-top:-1em"><img src="https://www.ratehub.ca/assets/images/widget-logo.png" style="width:100%;" alt="RateHub logo">
+      </a></div>
+      </div>
+      <div class ="panel panel-default" style="text-align:center">
+        <div class="panel-heading" style="display: inline-block">
+          <div class="fb-page" data-href="https://www.facebook.com/realsuuty/" data-tabs="messages, timeline, events" data-width="400" data-small-header="false" data-adapt-container-width="false" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/realsuuty/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/realsuuty/">Suuty</a></blockquote>
+          </div>
+        </div>
+      </div>
     </div>
      <!-- Widget END -->
   </div>

@@ -76,29 +76,30 @@ $(document).ready(function () {
       }
     }
     $(function () {
-      curr = moment($('#openfirstdate').data("date"), 'MM/DD/YYYY HH:mm');
-      currsecond =  moment($('#openseconddate').data("date"), 'MM/DD/YYYY HH:mm');
-      //console.log( moment($('#openfirstdate').data("date"), 'MM/DD/YYYY HH:mm').format('HH:mm'))
-      $('#openfirstdate').datetimepicker({
-        inline: true,
-        sideBySide: true,
-        defaultDate: curr,
-        enabledDates: [curr],
-      });
-      $('#openfirstdate').data("DateTimePicker").minDate(curr).maxDate(curr).disabledTimeIntervals([curr]);
-      $('#openfirstdate .timepicker-minute').removeAttr('data-action');
-      $('#openfirstdate .timepicker-hour').removeAttr('data-action');
-      //$('#openfirstdate').data("DateTimePicker").enabledDates([$('#openfirstdate').data("date")]);
-      $('#openseconddate').datetimepicker({
-        inline: true,
-        sideBySide: true,
-        defaultDate: moment(currsecond, 'MM/DD/YYYY HH:mm'),
-        enabledDates: [moment(currsecond, 'MM/DD/YYYY HH:mm')],
-      });
-      $('#openseconddate').data("DateTimePicker").minDate(currsecond).maxDate(currsecond).disabledTimeIntervals([currsecond]);
-      $('#openseconddate .timepicker-minute').removeAttr('data-action');
-      $('#openseconddate .timepicker-hour').removeAttr('data-action');
-
+      if(document.getElementById('#openfirstdate') != null){
+        curr = moment($('#openfirstdate').data("date"), 'MM/DD/YYYY HH:mm');
+        currsecond =  moment($('#openseconddate').data("date"), 'MM/DD/YYYY HH:mm');
+        //console.log( moment($('#openfirstdate').data("date"), 'MM/DD/YYYY HH:mm').format('HH:mm'))
+        $('#openfirstdate').datetimepicker({
+          inline: true,
+          sideBySide: true,
+          defaultDate: curr,
+          enabledDates: [curr],
+        });
+        $('#openfirstdate').data("DateTimePicker").minDate(curr).maxDate(curr).disabledTimeIntervals([curr]);
+        $('#openfirstdate .timepicker-minute').removeAttr('data-action');
+        $('#openfirstdate .timepicker-hour').removeAttr('data-action');
+        //$('#openfirstdate').data("DateTimePicker").enabledDates([$('#openfirstdate').data("date")]);
+        $('#openseconddate').datetimepicker({
+          inline: true,
+          sideBySide: true,
+          defaultDate: moment(currsecond, 'MM/DD/YYYY HH:mm'),
+          enabledDates: [moment(currsecond, 'MM/DD/YYYY HH:mm')],
+        });
+        $('#openseconddate').data("DateTimePicker").minDate(currsecond).maxDate(currsecond).disabledTimeIntervals([currsecond]);
+        $('#openseconddate .timepicker-minute').removeAttr('data-action');
+        $('#openseconddate .timepicker-hour').removeAttr('data-action');
+      }
       $('#closingtime').datetimepicker({
         format: 'MM/DD/YYYY HH:mm',
       });
@@ -180,4 +181,10 @@ $(document).ready(function () {
         //endDate: '+1d',
         //autoclose: true
     //});
+    jQuery.fn.load = function(callback){ $(window).on("load", callback) };
 });
+$(window).on("load" , (function(){
+   // PAGE IS FULLY LOADED
+   // FADE OUT YOUR OVERLAYING DIV
+   $('.wrap').fadeOut();
+}));

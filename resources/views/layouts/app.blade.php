@@ -17,7 +17,7 @@
     <link href="{{ asset('/../css/bootstrap-social.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500|Oxygen:300,400,500|Helvetica%20Neue:300,400,500|Noto+Sans:400,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500|Oxygen:300,400,500|Helvetica%20Neue:300,400,500" rel="stylesheet">
     <link href="//cdn.rawgit.com/Eonasdan/bootstrap-datetimepicker/e8bddc60e73c1ec2475f827be36e1957af72e2ea/build/css/bootstrap-datetimepicker.css" rel="stylesheet">
     <link href="//cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.0/animate.min.css" rel=stylesheet>
 
@@ -67,7 +67,21 @@ drift.SNIPPET_VERSION = '0.3.1';
 drift.load('3zb8wvvu7pby');
 </script>
 <!-- End of Async Drift Code -->
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.12&appId=1648163565245679&autoLogAppEvents=1';
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
 <body>
+  <!--div class="wrap">
+    <div class="loading">
+      <div class="bounceball"></div>
+      <div class="text">NOW LOADING</div>
+    </div>
+  </div-->
     <div id="app">
         <nav class="navbar navbar-default navbar-static-top stickynav">
             <div class="container-fluid">
