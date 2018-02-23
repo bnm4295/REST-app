@@ -45,10 +45,10 @@
             <h4>
               <p>
                 Follow us<br>
-                <a target="_blank" href="http://facebook.com/realsuuty"><i class="fa fa-facebook-square"></i></a>
-                <a target="_blank" href="http://twitter.com/realsuuty"><i class="fa fa-twitter-square"></i></a>
-                <a target="_blank" href="https://www.linkedin.com/company-beta/18123110/"><i class="fa fa-linkedin-square"></i></a>
-                <a target="_blank" href="http://instagram.com/realsuuty"><i class="fa fa-instagram"></i></a>
+                <a target="_blank" href="http://facebook.com/realsuuty"><i class="fab fa-facebook-square"></i></a>
+                <a target="_blank" href="http://twitter.com/realsuuty"><i class="fab fa-twitter-square"></i></a>
+                <a target="_blank" href="https://www.linkedin.com/company-beta/18123110/"><i class="fab fa-linkedin"></i></a>
+                <a target="_blank" href="http://instagram.com/realsuuty"><i class="fab fa-instagram"></i></a>
               </p>
             </h4>
           </div>
