@@ -25,7 +25,7 @@ class CreateSavedSearch extends Migration
             $table->string('house_type')->nullable();
             $table->integer('number_of_beds')->nullable();
             $table->integer('number_of_baths')->nullable();
-            $table->string('addr')-nullable();
+            $table->string('addr')->nullable();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
         });
