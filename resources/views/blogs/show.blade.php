@@ -25,9 +25,6 @@ $image = $decodedarr[0];
     </div>
   </div>
 </div>
-<div class="col-md-8">
-  @include('includes.createformreview')
-</div>
 @endsection
 
 @section('footer')
