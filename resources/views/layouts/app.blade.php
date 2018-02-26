@@ -24,6 +24,7 @@
     <!-- toastr -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" />
     <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-113127234-1"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -210,7 +211,7 @@ drift.load('3zb8wvvu7pby');
                                         <div class="form-group">
                                             <div class="col-md-6 col-md-offset-4">
                                               <a href="{{url('/redirect')}}" class="btn btn-block btn-social btn-facebook">
-                                                <span class="fa fa-facebook"></span> Sign in with Facebook
+                                                 <span class="fab fa-facebook-f" style="margin:5px;"></span>Sign in with Facebook
                                               </a>
                                             </div>
                                         </div>
@@ -301,7 +302,7 @@ drift.load('3zb8wvvu7pby');
                                           <div class="form-group">
                                               <div class="col-md-6 col-md-offset-4">
                                                 <a href="{{url('/redirect')}}" class="btn btn-block btn-social btn-facebook">
-                                                  <span class="fa fa-facebook"></span> Sign in with Facebook
+                                                  <span class="fab fa-facebook-f" style="margin:5px;"></span> Sign in with Facebook
                                                 </a>
                                               </div>
                                           </div>

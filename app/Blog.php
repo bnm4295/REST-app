@@ -27,4 +27,8 @@ class Blog extends Model
     */
     protected $hidden = [
     ];
+    public function getRouteKeyName()
+    {
+        return 'slug';
+    }
 }

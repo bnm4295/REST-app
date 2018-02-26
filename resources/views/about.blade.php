@@ -43,7 +43,7 @@
     </div>
     <div class="row row-fluid">
       <div class="col-sm-6">
-          <span style="font-size: 30px" class="fa fa-usd"></span>
+          <span style="font-size: 30px" class="fas fa-dollar-sign"></span>
         	<div>
         		<div>
             <p style="text-align: left;"><b>How does selling my home on Suuty work?&nbsp;</b></p>
