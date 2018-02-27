@@ -5,7 +5,6 @@ h1, h2, h3, h4, h5, p, ul, a, input, label, button, select, body, section{
  color: #111; font-family: 'Helvetica Neue', sans-serif; font-size: 275px; font-weight: bold; letter-spacing: -1px; line-height: 1; text-align: center;*/
 #app{
 	border-top: 5px solid #00a79d;
-	overflow-x: hidden;
 }
 #appname{
 	margin-right: 50px;
