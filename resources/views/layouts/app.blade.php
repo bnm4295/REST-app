@@ -13,8 +13,8 @@
     <!-- fotorama.css & fotorama.js. -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.css" rel="stylesheet"> <!-- 3 KB -->
     <!-- MAIN -->
-    <link href="{{ asset('/../css/app.css?ver=1.0') }}" rel="stylesheet">
-    <link href="{{ asset('/../css/main.css?ver=3.3') }}" rel="stylesheet">
+    <link href="{{ asset('/../css/app.css?ver=1.1') }}" rel="stylesheet">
+    <link href="{{ asset('/../css/main.css?ver=3.4') }}" rel="stylesheet">
     <link href="{{ asset('/../css/bootstrap-social.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
