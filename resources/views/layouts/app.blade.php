@@ -12,8 +12,9 @@
     <link rel="icon" href="/images/favicon.ico" type="image/ico">
     <!-- fotorama.css & fotorama.js. -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.css" rel="stylesheet"> <!-- 3 KB -->
-    <link href="{{ asset('/../css/app.css') }}" rel="stylesheet">
-    <link href="{{ asset('/../css/main.css?ver=3.2') }}" rel="stylesheet">
+    <!-- MAIN -->
+    <link href="{{ asset('/../css/app.css?ver=1.0') }}" rel="stylesheet">
+    <link href="{{ asset('/../css/main.css?ver=3.3') }}" rel="stylesheet">
     <link href="{{ asset('/../css/bootstrap-social.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
@@ -378,10 +379,10 @@ drift.load('3zb8wvvu7pby');
     </div>
 
     <!-- Scripts -->
-    <script src="{{ asset('/../js/app.js') }}"></script>
+    <script src="{{ asset('/../js/app.js?ver=1.0') }}"></script>
     <script src="//cdn.rawgit.com/Eonasdan/bootstrap-datetimepicker/e8bddc60e73c1ec2475f827be36e1957af72e2ea/src/js/bootstrap-datetimepicker.js"></script>
     <script src="{{ asset('/../js/jquery.countdown.min.js') }}"></script>
-    <script src="{{ asset('/../js/main.js?ver=2.2') }}"></script>
+    <script src="{{ asset('/../js/main.js?ver=2.3') }}"></script>
     @yield('script')
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCCMiNb2ZO_OOM16aU9xTwC3m0fa0Xq6NY&libraries=places&callback=initialize"
     async defer></script>
