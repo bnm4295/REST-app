@@ -13,7 +13,7 @@
     <!-- fotorama.css & fotorama.js. -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.css" rel="stylesheet"> <!-- 3 KB -->
     <!-- MAIN -->
-    <link href="{{ asset('/../css/app.css?ver=1.1') }}" rel="stylesheet">
+    <link href="{{ mix('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('/../css/main.css?ver=3.4') }}" rel="stylesheet">
     <link href="{{ asset('/../css/bootstrap-social.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
@@ -41,7 +41,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment-with-locales.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
     <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
-    <script src="{{ asset('/../js/googlemap.js?ver=1.0')}}" ></script>
+    <script src="{{ mix('js/googlemap.js')}}" ></script>
     <script src="{{ asset('/../js/combobox.js')}}"></script>
 </head>
 
@@ -379,7 +379,7 @@ drift.load('3zb8wvvu7pby');
     </div>
 
     <!-- Scripts -->
-    <script src="{{ asset('/../js/app.js?ver=1.0') }}"></script>
+    <script src="{{ mix('js/app.js') }}"></script>
     <script src="//cdn.rawgit.com/Eonasdan/bootstrap-datetimepicker/e8bddc60e73c1ec2475f827be36e1957af72e2ea/src/js/bootstrap-datetimepicker.js"></script>
     <script src="{{ asset('/../js/jquery.countdown.min.js') }}"></script>
     <script src="{{ asset('/../js/main.js?ver=2.3') }}"></script>
