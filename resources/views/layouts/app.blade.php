@@ -384,8 +384,7 @@ drift.load('3zb8wvvu7pby');
     <script src="{{ asset('/../js/jquery.countdown.min.js') }}"></script>
     <script src="{{ asset('/../js/main.js?ver=2.3') }}"></script>
     @yield('script')
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCCMiNb2ZO_OOM16aU9xTwC3m0fa0Xq6NY&libraries=places&callback=initialize"
-    async defer></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCCMiNb2ZO_OOM16aU9xTwC3m0fa0Xq6NY&libraries=places&callback=initialize" async defer></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.js"></script> <!-- 16 KB -->
     <script type="text/javascript" src="https://www.superbrokers.ca/api/widgets/mortgage-rates/ratebox-calc.js.php"></script>
     <script type="text/javascript">
