@@ -76,13 +76,13 @@ drift.load('3zb8wvvu7pby');
   js.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.12&appId=1648163565245679&autoLogAppEvents=1';
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
+<div class="wrap">
+  <div class="loading">
+    <div class="bounceball"></div>
+    <div class="text">NOW LOADING</div>
+  </div>
+</div>
 <body>
-  <!--div class="wrap">
-    <div class="loading">
-      <div class="bounceball"></div>
-      <div class="text">NOW LOADING</div>
-    </div>
-  </div-->
     <div id="app">
         <nav class="navbar navbar-default navbar-static-top stickynav">
             <div class="container-fluid">

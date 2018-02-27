@@ -136,13 +136,24 @@
           <h4>Open-House Times</h4>
         </div>
         <div class="panel-heading">
+          <?php
+          $firstdatemonth = date("M", strtotime($property->firstdate));
+          $firstdateday = date("d", strtotime($property->firstdate));
+          $firstdatetime = date('g:h A', strtotime($property->firstdate));
+          $secdatemonth = date("M", strtotime($property->seconddate));
+          $secdateday = date("d", strtotime($property->seconddate));
+          $secdatetime = date('g:h A', strtotime($property->seconddate));
+          ?>
           <h4>First Date</h4>
           <hr>
-          <div id="openfirstdate" data-date="{{$property->firstdate}}"></div>
+          <p class="calendar">{{$firstdateday}}<em>{{$firstdatemonth}}</em></p>
+          <h3>{{$firstdatetime}}</h3>
           <br>
           <h4>Second Date</h4>
+          <p class="calendar">{{$secdateday}}<em>{{$secdatemonth}}</em></p>
+          <h3>{{$secdatetime}}</h3>
           <hr>
-          <div id="openseconddate" data-date="{{$property->seconddate}}"></div>
+
         @if(($property->firstdate && $property->seconddate) == NULL)
           <h4>No Open-House Dates</h4>
         @endif

@@ -76,6 +76,7 @@ $(document).ready(function () {
       }
     }
     $(function () {
+      /*
       if(document.getElementById('#openfirstdate') != null){
         curr = moment($('#openfirstdate').data("date"), 'MM/DD/YYYY HH:mm');
         currsecond =  moment($('#openseconddate').data("date"), 'MM/DD/YYYY HH:mm');
@@ -100,6 +101,7 @@ $(document).ready(function () {
         $('#openseconddate .timepicker-minute').removeAttr('data-action');
         $('#openseconddate .timepicker-hour').removeAttr('data-action');
       }
+      */
       $('#closingtime').datetimepicker({
         format: 'MM/DD/YYYY HH:mm',
       });
@@ -181,10 +183,9 @@ $(document).ready(function () {
         //endDate: '+1d',
         //autoclose: true
     //});
-    jQuery.fn.load = function(callback){ $(window).on("load", callback) };
 });
-$(window).on("load" , (function(){
-   // PAGE IS FULLY LOADED
-   // FADE OUT YOUR OVERLAYING DIV
-   $('.wrap').fadeOut();
-}));
+$(window).on('load', function() {
+    $(".wrap").fadeOut();
+    $("body").css("overflow-x","initial");
+    $("body").css("overflow-y","initial");
+});
