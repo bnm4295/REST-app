@@ -145,9 +145,9 @@
           <h3>{{$firstdatetime}}</h3>
           <br>
           <h4>Second Date</h4>
+          <hr>
           <p class="calendar">{{$secdateday}}<em>{{$secdatemonth}}</em></p>
           <h3>{{$secdatetime}}</h3>
-          <hr>
 
         @if(($property->firstdate && $property->seconddate) == NULL)
           <h4>No Open-House Dates</h4>
