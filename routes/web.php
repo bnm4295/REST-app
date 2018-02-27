@@ -32,9 +32,7 @@ Route::get('/about', function () {
 Route::get('/resources', function () {
     return view('resources');
 });
-Route::get('/blogs', function () {
-    return view('blogs');
-});
+
 Route::get('/my-profile/savesearch', function(){
     return view('save-search');
 });

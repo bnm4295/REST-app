@@ -72,7 +72,6 @@
             </div>
           </div>
         </div>
-        &nbsp;
         <div class="panel-title">
           <h4>Description of Property</h4>
         </div>
@@ -100,36 +99,32 @@
           }
 
          ?>
-        <div class="panel-heading">
+        <div class="panel-heading" style="text-align:center">
           @foreach($offers as $offer)
-             @if($remaining == 0 && $offer->status == 1 && $property->user_id == Auth::id())
-                &nbsp;
-                <form action="{{action('PaymentController@create')}}" method="GET" style="float: left;">
-                  <meta name="csrf-token" content="{{ csrf_token() }}">
-                  {{ csrf_field() }}
-                  <div class="form-group">
-                    <input type="hidden" class="form-control" name="select-email" value="{{$offer->user_id}}">
-                  </div>
-                  <div class="col-xs-12 col-sm-12 col-md-12 text-center">
-                    <input style="position: relative; top: 16px;" id="payment-btn" value="Select" type="submit" name="submit" class="btn btn-primary"></input>
-                  </div>
-                </form>
-              @endif
               <?php
                 $user = DB::table('users')->where('id', $offer->user_id)->first();
                 $decodedarr = json_decode( $user->profileimg , true);
                 $image = $decodedarr[0];
               ?>
-              <b><h4 id="bidprice"><img src="/images/{{$image}}" width="20px" height="20px"> Bid Price: ${{$offer['offerprice']}}</h4></b>
+              <h4 id="bidprice"><img src="/images/{{$image}}" width="20px" height="20px"><b> Bid Price: ${{$offer['offerprice']}}</b></h4>
               @if($offer->status == 0)
                 <h5><b>Status: Waiting for Approval</b></h5>
-                <br>
-                <br>
               @else
                 <h5><b>Status: Approved</b></h5>
-                <br>
-                <br>
               @endif
+              @if($remaining == 0 && $offer->status == 1 && $property->user_id == Auth::id())
+                 <form action="{{action('PaymentController@create')}}" method="GET">
+                   <meta name="csrf-token" content="{{ csrf_token() }}">
+                   {{ csrf_field() }}
+                   <div class="form-group">
+                     <input type="hidden" class="form-control" name="select-email" value="{{$offer->user_id}}">
+                   </div>
+                   <div class="form-group">
+                     <input id="payment-btn" style="width:50%" value="Select" type="submit" name="submit" class="btn btn-primary form-control"></input>
+                   </div>
+                 </form>
+               @endif
+               <hr style="width: 200px; border-color:black">
           @endforeach
         </div>
         <div class="panel-title">
