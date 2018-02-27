@@ -48,8 +48,8 @@ select{
 	font-weight: bold;
 }
 .wrap{
-	position: fixed; height: 100%; width: 100%; z-index:100001;
-	 text-align: center; padding-top: 200px; background-color: #fff;
+	position: fixed; height: 100%; width: 100%; z-index:100001; font-size: 20px;
+	 text-align: center; padding-top: 300px; background-color: #fff;
   transform: translate(-50%, -50%);
 }
 .pref-search::-webkit-input-placeholder {

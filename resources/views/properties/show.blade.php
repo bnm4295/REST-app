@@ -323,10 +323,16 @@
       <!--div><h2 style="font-family:stagsans,arial,helvetica,sans-serif;font-size:1.6em;font-weight:400;margin-top:0"><a href="/best-mortgage-rates" style="text-decoration:none;color:#A3C139;">Mortgage rate comparison</a></h2><div class="widget" data-widget="mtg-table" data-home_price="{{$property->price}}"data-purchase="true" data-lang="en"></div><div style="text-align:right;">  <a href="https://www.ratehub.ca/" style="display:inline-block;width:80px;margin-top:.5em;margin-top:-1em"><img src="https://www.ratehub.ca/assets/images/widget-logo.png" style="width:100%;" alt="RateHub logo">
       </a></div>
     </div-->
-      <div class ="panel panel-default" style="text-align:center">
-        <div class="panel-heading" style="display: inline-block">
+      <div style="text-align:center">
+        <div style="display: inline-block">
           <div class="fb-page" data-href="https://www.facebook.com/realsuuty/" data-tabs="messages, timeline, events" data-width="400" data-small-header="false" data-adapt-container-width="false" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/realsuuty/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/realsuuty/">Suuty</a></blockquote>
           </div>
+        </div>
+      </div>
+      &nbsp;
+      <div style="text-align:center">
+        <div style="display: inline-block">
+          <div class="sbwidget-container" data-colors="#FEFEFE,#7B6F4B,#9F8F7F,#FEFEFE,#F9F9F9,#F9F9F9,#F4F4F4,#DDDDDD,#FF0000"></div>
         </div>
       </div>
     </div>
