@@ -271,7 +271,7 @@ function geolocate() {
   }
 }
 
-function toggleStreetView() {
+window.toggleStreetView = function toggleStreetView() {
         var toggle = panorama.getVisible();
         if (toggle == false) {
           panorama.setVisible(true);
