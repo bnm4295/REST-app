@@ -559,6 +559,9 @@ body.modal-open{
   text-overflow: ellipsis;
   width: 400px;
 }
+#floating-panel{
+	position: relative; float: right; top: 50px; z-index: 99; height: 4px;
+}
 /* MAP END */
 
 

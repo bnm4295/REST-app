@@ -255,7 +255,7 @@
         <input id="showmaplat" type="hidden" value="{{$property->latitude}}">
         <input id="showmaplong" type="hidden" value="{{$property->longitude}}">
         <div id="floating-panel">
-          <input class="btn btn-primary" type="button" value="Toggle Street View" onclick="toggleStreetView();"></input>
+          <input type="image" src="{{ asset('/../images/') }}/Street_View_logo.png" value="Show Street View" width="60" height="60" onclick="toggleStreetView();"></input>
         </div>
         <div id="showmap" style="width: 100%; height: 500px;">
         </div>
