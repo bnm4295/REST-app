@@ -13,6 +13,8 @@ h1, h2, h3, h4, h5, p, ul, a, input, label, button, select, body, section{
 #appname:hover{
 	color: #00a79d !important;
 }
+/* Custom Fade in*/
+
 html{
 	overflow-x: hidden;
 }
@@ -22,6 +24,10 @@ body {
 }
 select{
 	text-align-last: center;
+}
+.modal-backdrop.fade.in {
+	opacity: 0.5;
+	filter: alpha(opacity=50);
 }
 .fluidpadding{
 	padding-right: 50px;

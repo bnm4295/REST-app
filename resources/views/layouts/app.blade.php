@@ -14,7 +14,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.css" rel="stylesheet"> <!-- 3 KB -->
     <!-- MAIN -->
     <link href="{{ mix('css/app.css') }}" rel="stylesheet">
-    <link href="{{ asset('/../css/main.css?ver=3.5') }}" rel="stylesheet">
+    <link href="{{ asset('/../css/main.css?ver=3.6') }}" rel="stylesheet">
     <link href="{{ asset('/../css/bootstrap-social.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
@@ -150,8 +150,7 @@ drift.load('3zb8wvvu7pby');
 
                             <!-- Modal -->
                             <div class="modal fade" id="mylogin" role="dialog">
-                             <div class="modal-dialog">
-
+                              <div class="modal-dialog">
                                 <!-- Modal content-->
                                 <div class="modal-content">
                                   <div class="modal-header">
@@ -386,6 +385,10 @@ drift.load('3zb8wvvu7pby');
     @yield('script')
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCCMiNb2ZO_OOM16aU9xTwC3m0fa0Xq6NY&libraries=places&callback=initialize" async defer></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.js"></script> <!-- 16 KB -->
+    <script type="text/javascript" src="https://www.ratehub.ca/assets/js/widget-loader.js">
+      //$("[href$='widgets.css']").remove();
+      $.noConflict();
+    </script>
     <script type="text/javascript">
       if(document.forms['propsearch']){
         createEditableSelect(document.forms['propsearch'].price_left);

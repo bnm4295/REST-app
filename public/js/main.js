@@ -51,6 +51,8 @@ $(document).ready(function () {
             return $(this).length;
         }
     });
+    jQuery.fn.load = function(callback){ $(window).on("load", callback) };
+
     $(document).on('click', '#advsearch .dropdown-menu', function (e) {
       e.stopPropagation();
     });
@@ -188,4 +190,30 @@ $(window).on('load', function() {
     $(".wrap").fadeOut();
     $("body").css("overflow-x","initial");
     $("body").css("overflow-y","initial");
+    //var linkNode = document.querySelector('link[href*="widget.css"]');
+    //var stylesheet = linkNode.sheet || linkNode.styleSheet || linkNode.styleDeclaration;
+    //stylesheet.disabled = false;
+    //console.log($("#mylogin .fade .in"));
+    //$(".fade.in").css('opacity', '0')
 });
+function Anim(x) {
+  $('.modal .modal-dialog').attr('class', 'modal-dialog  ' + x + '  animated');
+};
+$('#mylogin').on('show.bs.modal', function (e) {
+  var anim = 'bounceinDown';
+      Anim(anim);
+});
+$('#mylogin').on('hide.bs.modal', function (e) {
+  var anim = 'flipOutX';
+      Anim(anim);
+});
+$('#myreg').on('show.bs.modal', function (e) {
+  var anim = 'bounceinDown';
+      Anim(anim);
+});
+$('#myreg').on('hide.bs.modal', function (e) {
+  var anim = 'flipOutX';
+      Anim(anim);
+});
+
+//stylesheet.disabled = true;
