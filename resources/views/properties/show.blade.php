@@ -23,17 +23,29 @@
     ${{$property->price}}</h2>
   <div class="row">
     <div class="col-md-7 col-sm-12 col-xs-12 no-padding" style="float: left;">
-      <div class="fotorama" data-nav="thumbs">
+      <!--div class="fotorama" data-nav="thumbs">-->
+      <div class="parent-container">
         <?php
           $decodedarr = json_decode( $property->images , true);
           $counter = count($decodedarr);
-          for ($i = 0 ; $i < $counter; $i++ ){
-            $image = $decodedarr[$i];
-            echo $decodedarr[$i];
+          $firstimg = $decodedarr[0];
         ?>
+        <a href="{{ asset('/../images/') }}/{{$firstimg}}" class="image-link">
+          <img class="prop_thumb" src="{{ asset('/../images/') }}/{{$firstimg}}" style="width: 100%; height: 400px; margin-bottom: 2px;" alt="property-images"/>
+        </a>
+        <div style="text-align:center">
+          <div style="display: inline-block">
+          <?php
+            for ($i = 1 ; $i < $counter; $i++ ){
+              $image = $decodedarr[$i];
+          ?>
           <!--img class="img-rounded" style="height: 230px; width: 100%" src="{{ asset('/../images/') }}/{{$image}}"/>-->
-          <img src="{{ asset('/../images/') }}/{{$image}}" alt="property-images">
+              <a href="{{ asset('/../images/') }}/{{$image}}" class="image-link">
+                <img class="prop_thumb" src="{{ asset('/../images/') }}/{{$image}}" style="width: 50px; height: 50px;" alt="property-images"/>
+              </a>
         <?php } ?>
+          </div>
+        </div>
       </div>
       <!-- PANEL START -->
       <div class ="panel panel-default">
@@ -139,19 +151,22 @@
           $secdateday = date("d", strtotime($property->seconddate));
           $secdatetime = date('g:h A', strtotime($property->seconddate));
           ?>
-          <h4>First Date</h4>
-          <hr>
-          <p class="calendar">{{$firstdateday}}<em>{{$firstdatemonth}}</em></p>
-          <h3>{{$firstdatetime}}</h3>
-          <br>
-          <h4>Second Date</h4>
-          <hr>
-          <p class="calendar">{{$secdateday}}<em>{{$secdatemonth}}</em></p>
-          <h3>{{$secdatetime}}</h3>
-
-        @if(($property->firstdate && $property->seconddate) == NULL)
-          <h4>No Open-House Dates</h4>
-        @endif
+          @if($property->firstdate != NULL)
+            <h4>First Date</h4>
+            <hr>
+            <p class="calendar">{{$firstdateday}}<em>{{$firstdatemonth}}</em></p>
+            <h3>{{$firstdatetime}}</h3>
+            <br>
+          @endif
+          @if($property->seconddate != NULL)
+            <h4>Second Date</h4>
+            <hr>
+            <p class="calendar">{{$secdateday}}<em>{{$secdatemonth}}</em></p>
+            <h3>{{$secdatetime}}</h3>
+          @endif
+          @if(($property->firstdate && $property->seconddate) == NULL)
+            <h4>No Open-House Dates</h4>
+          @endif
         </div>
         <div class="panel-title">
           <h4>Offer Form</h4>
@@ -330,8 +345,12 @@
         </div>
       </div>
       &nbsp;
-      <div><h2 style="font-family:stagsans,arial,helvetica,sans-serif;font-size:1.6em;font-weight:400;margin-top:0"><a href="/best-mortgage-rates" style="text-decoration:none;color:#A3C139;">Mortgage rate comparison</a></h2><div class="widget" data-widget="mtg-table" data-home_price="{{$property->price}}" data-purchase="true" data-lang="en"></div><div style="text-align:right;">  <a href="https://www.ratehub.ca/" style="display:inline-block;width:80px;margin-top:.5em;margin-top:-1em"><img src="https://www.ratehub.ca/assets/images/widget-logo.png" style="width:100%; opacity: initial !important" alt="RateHub logo">
-      </a></div>
+      <div style="text-align:center">
+        <div style="display: inline-block">
+          <div><h2 style="font-family:stagsans,arial,helvetica,sans-serif;font-size:1.6em;font-weight:400;margin-top:0"><a href="/best-mortgage-rates" style="text-decoration:none;color:#A3C139;">Mortgage rate comparison</a></h2><div class="widget" data-widget="mtg-table" data-home_price="{{$property->price}}" data-purchase="true" data-lang="en"></div><div style="text-align:right;">  <a href="https://www.ratehub.ca/" style="display:inline-block;width:80px;margin-top:.5em;margin-top:-1em"><img src="https://www.ratehub.ca/assets/images/widget-logo.png" style="width:100%; opacity: initial !important" alt="RateHub logo">
+          </a></div>
+          </div>
+        </div>
       </div>
       &nbsp;
     </div>
@@ -339,4 +358,8 @@
   </div>
   <!-- ROW END -->
 </div>
+@endsection
+
+@section('footer')
+@include('includes.footer')
 @endsection

@@ -10,22 +10,42 @@
 
     <title>{{ config('app.name', 'Laravel') }}</title>
     <link rel="icon" href="/images/favicon.ico" type="image/ico">
-    <!-- fotorama.css & fotorama.js. -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.css" rel="stylesheet"> <!-- 3 KB -->
-    <!-- MAIN -->
+
+    <!-- appcss -->
     <link href="{{ mix('css/app.css') }}" rel="stylesheet">
-    <link href="{{ asset('/../css/main.css?ver=3.7') }}" rel="stylesheet">
+
+    <!-- main style -->
+    <link href="{{ asset('/../css/main.css?ver=3.8') }}" rel="stylesheet">
+
+    <!-- bootstrap social -->
     <link href="{{ asset('/../css/bootstrap-social.css') }}" rel="stylesheet">
+
+    <!-- jquery ui style -->
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+    <!-- fontawesome style -->
     <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+
+    <!-- fonts -->
     <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500|Oxygen:300,400,500|Helvetica+Neue:300,400,500" rel="stylesheet">
+
+    <!-- datetimepicker style -->
     <link href="//cdn.rawgit.com/Eonasdan/bootstrap-datetimepicker/e8bddc60e73c1ec2475f827be36e1957af72e2ea/build/css/bootstrap-datetimepicker.css" rel="stylesheet">
+
+    <!-- animate -->
     <link href="//cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.0/animate.min.css" rel=stylesheet>
 
-    <!-- toastr -->
+    <!-- magnific-popup style -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.css">
+
+    <!-- toastr style -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" />
-    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+    <!-- fontawesome -->
     <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/v4-shims.js"></script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-113127234-1"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -34,14 +54,21 @@
 
       gtag('config', 'UA-113127234-1');
     </script>
-    <!-- scripts -->
+
+    <!-- jquery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.4/jquery-ui.min.js"></script>
 
+    <!-- moment -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment-with-locales.js"></script>
+
+    <!-- toastr js -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
-    <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+
+    <!-- googlemap js -->
     <script src="{{ mix('js/googlemap.js')}}" ></script>
+
+    <!-- combobox -->
     <script src="{{ asset('/../js/combobox.js')}}"></script>
 </head>
 
@@ -69,6 +96,7 @@ drift.SNIPPET_VERSION = '0.3.1';
 drift.load('3zb8wvvu7pby');
 </script>
 <!-- End of Async Drift Code -->
+<!-- start of fbsdk -->
 <div id="fb-root"></div>
 <script>(function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];
@@ -77,12 +105,15 @@ drift.load('3zb8wvvu7pby');
   js.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.12&appId=1648163565245679&autoLogAppEvents=1';
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
+<!-- end of fbsdk -->
+<!-- loader -->
 <div class="wrap">
   <div class="loading">
     <div class="bounceball"></div>
     <div class="text">NOW LOADING</div>
   </div>
 </div>
+<!-- end loader -->
 <body>
     <div id="app">
         <nav class="navbar navbar-default navbar-static-top stickynav">
@@ -377,18 +408,44 @@ drift.load('3zb8wvvu7pby');
         @yield('content')
     </div>
 
-    <!-- Scripts -->
+    <!-- Scripts that require appjs and main -->
+    <!-- app js -->
     <script src="{{ mix('js/app.js') }}"></script>
+    <!-- main js -->
+    <script src="{{ asset('/../js/main.js?ver=2.5') }}"></script>
+    <!-- datetimepicker js -->
     <script src="//cdn.rawgit.com/Eonasdan/bootstrap-datetimepicker/e8bddc60e73c1ec2475f827be36e1957af72e2ea/src/js/bootstrap-datetimepicker.js"></script>
+    <!-- jquery countdown time -->
     <script src="{{ asset('/../js/jquery.countdown.min.js') }}"></script>
-    <script src="{{ asset('/../js/main.js?ver=2.4') }}"></script>
     @yield('script')
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCCMiNb2ZO_OOM16aU9xTwC3m0fa0Xq6NY&libraries=places&callback=initialize" async defer></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.js"></script> <!-- 16 KB -->
+
+    <!-- magnific-popup js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
+    <script>
+    $.extend(true, $.magnificPopup.defaults, {
+      tClose: 'Close (Esc)', // Alt text on close button
+      tLoading: 'Loading...', // Text that is displayed during loading. Can contain %curr% and %total% keys
+      gallery: {
+        tPrev: 'Previous (Left arrow key)', // Alt text on left arrow
+        tNext: 'Next (Right arrow key)', // Alt text on right arrow
+        tCounter: '%curr% of %total%' // Markup for "1 of 7" counter
+      },
+      image: {
+        tError: '<a href="%url%">The image</a> could not be loaded.' // Error message when image could not be loaded
+      },
+      ajax: {
+        tError: '<a href="%url%">The content</a> could not be loaded.' // Error message when ajax request failed
+      }
+    });
+    </script>
+
+    <!-- ratehub -->
     <script type="text/javascript" src="https://www.ratehub.ca/assets/js/widget-loader.js">
-      //$("[href$='widgets.css']").remove();
       $.noConflict();
     </script>
+
+    <!-- price range script -->
     <script type="text/javascript">
       if(document.forms['propsearch']){
         createEditableSelect(document.forms['propsearch'].price_left);
@@ -398,7 +455,7 @@ drift.load('3zb8wvvu7pby');
       }
     </script>
 
-
+<!-- pusher -->
      @if(Auth::check())
      <!-- check if pusher is allowed -->
          @if(config('chatmessenger.use_pusher')) {
@@ -497,5 +554,7 @@ drift.load('3zb8wvvu7pby');
          @endif
      @endif
 </body>
+<!-- end body -->
+<!-- footer -->
 @yield('footer')
 </html>
