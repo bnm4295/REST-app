@@ -412,7 +412,7 @@ drift.load('3zb8wvvu7pby');
     <!-- app js -->
     <script src="{{ mix('js/app.js') }}"></script>
     <!-- main js -->
-    <script src="{{ asset('/../js/main.js?ver=2.6') }}"></script>
+    <script src="{{ mix('js/main.js') }}"></script>
     <!-- datetimepicker js -->
     <script src="//cdn.rawgit.com/Eonasdan/bootstrap-datetimepicker/e8bddc60e73c1ec2475f827be36e1957af72e2ea/src/js/bootstrap-datetimepicker.js"></script>
     <!-- jquery countdown time -->

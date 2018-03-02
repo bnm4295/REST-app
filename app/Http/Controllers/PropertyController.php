@@ -74,8 +74,30 @@ class PropertyController extends Controller
           'secret' => 'o/0CdAv/q4eTEOQTbosTjKiHQH+Vo2Eok/Ty91e+'
         ]
       ]);
+
+/*
+      'title',
+      'area',
+      'slug',
+      'date',
+      'firstdate',
+      'seconddate',
+      'details',
+      'price',
+      'house_type',
+      'street_address',
+      'route',
+      'city',
+      'state',
+      'country',
+      'postal_code',
+      'number_of_beds',
+      'number_of_baths',
+      'sold',
+*/
       $request->validate([
         'title' => 'required',
+        'area' => 'required|numeric',
         'date' =>'required',
         'price' => 'required|numeric',
         'images' => 'required',
