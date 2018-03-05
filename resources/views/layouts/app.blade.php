@@ -70,7 +70,7 @@
     <script src="{{ mix('js/googlemap.js')}}" ></script>
 
     <!-- combobox -->
-    <script src="{{ asset('/../js/combobox.js')}}"></script>
+    <script src="{{ asset('/../js/combobox.js?ver=1.0')}}"></script>
 
     <!-- sweetalert -->
     <script src="{{ asset('/../js/sweetalert.min.js')}}"></script>
