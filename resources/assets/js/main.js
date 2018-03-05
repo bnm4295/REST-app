@@ -217,12 +217,6 @@ $(document).ready(function () {
               closeOnCancel: false
               },
            function (isConfirm) {
-             if(document.getElementsByName('offerprice').value == null){
-              //add more validation?
-              swal("Cancelled", "Fill in all mandatory inputs", "error");
-              //swal("Cancelled", "Your message has not been submitted.", "error");
-              return false;
-             }
               if (isConfirm) {
                   swal({
                       title: 'Confirmed!',
@@ -253,12 +247,6 @@ $(document).ready(function () {
               closeOnCancel: false
               },
            function (isConfirm) {
-              if(document.getElementsByName('description').value == null){
-               //add more validation?
-               swal("Cancelled", "Fill in all mandatory inputs", "error");
-               //swal("Cancelled", "Your message has not been submitted.", "error");
-               return false;
-              }
               if (isConfirm) {
                   swal({
                       title: 'Confirmed!',
