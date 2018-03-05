@@ -182,22 +182,22 @@
                     <div class="col-xs-12 col-sm-12 col-md-12">
                         <div class="form-group">
                           <b>Name:</b>
-                          <input type="text" name="name" placeholder="Your Name" class="form-control input-lg">
+                          <input type="text" name="name" placeholder="Your Name" class="form-control input-lg" required>
                         </div>
                     </div>
                     <div class="col-xs-12 col-sm-12 col-md-12">
                         <div class="form-group">
                           <b>Offer Amount:</b>
-                          <input type="text" name="offerprice" placeholder="Enter the dollar amount of your offer for this property" class="form-control input-lg">
+                          <input type="text" name="offerprice" placeholder="Enter the dollar amount of your offer for this property" class="form-control input-lg" required>
                         </div>
                     </div>
                     <div class="col-xs-12 col-sm-12 col-md-12">
                         <div class="form-group">
-                          <textarea rows="5" cols="5" name="comments" placeholder="Additional Comments or Notes" class="form-control"></textarea>
+                          <textarea rows="5" cols="5" name="comments" placeholder="Additional Comments or Notes" class="form-control" required></textarea>
                         </div>
                     </div>
-                    <div class="col-xs-12 col-sm-12 col-md-12 text-center">
-                      <input id="submit-offer" type="submit" name="submit" class="btn btn-primary form-control"></input>
+                    <div class="col-xs-12 col-sm-12 col-md-12">
+                      <button type="submit" class="btn btn-primary form-control">Submit</button>
                     </div>
                 </div>
               </form>
@@ -219,13 +219,13 @@
                   <div class="form-group">
                     <label class="control-label">Subject</label>
                     <input type="text" class="form-control" name="subject" placeholder="Subject"
-                    value="{{ old('subject') }}">
+                    value="{{ old('subject') }}" required>
                   </div>
 
                   <!-- Message Form Input -->
                   <div class="form-group">
                     <label class="control-label">Message</label>
-                    <textarea name="message"  placeholder="Your Message" class="form-control">{{ old('message') }}</textarea>
+                    <textarea name="message" placeholder="Your Message" class="form-control" required>{{ old('message') }}</textarea>
                   </div>
 
                   <div class="checkbox">

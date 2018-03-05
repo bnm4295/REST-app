@@ -218,13 +218,9 @@ $(document).ready(function () {
               },
            function (isConfirm) {
               if (isConfirm) {
-                  swal({
-                      title: 'Confirmed!',
-                      text: 'Your offer has been submitted.',
-                      type: 'success'
-                  }, function() {
-                      form.submit();
-                  });
+                swal("Confirmed!", "Your offer has been submitted.", "success", function () {
+                  form.submit();
+                });
               } else {
                   swal("Cancelled", "Your offer has not been submitted.", "error");
               }
@@ -248,13 +244,9 @@ $(document).ready(function () {
               },
            function (isConfirm) {
               if (isConfirm) {
-                  swal({
-                      title: 'Confirmed!',
-                      text: 'Your message has been submitted.',
-                      type: 'success'
-                  }, function() {
-                      form.submit();
-                  });
+                swal("Confirmed!", "Your message has been submitted.", "success", function () {
+                  form.submit();
+                });
               } else {
                   swal("Cancelled", "Your message has not been submitted.", "error");
               }

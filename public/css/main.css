@@ -25,6 +25,13 @@ body {
 select{
 	text-align-last: center;
 }
+.sweet-alert h2{
+	font-weight: 300;
+	color: #555;
+	margin-top: 32px;
+	margin-bottom: 32px;
+	text-align: center;
+}
 .selectBox img{
 	cursor: pointer;
 }
