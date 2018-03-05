@@ -12,7 +12,18 @@
       }
     ?>
     @foreach($savedsearch as $post)
-      <a href="{{url('/') .$post->url}}">{{$post->url}}</a>
+      <a href="{{url('/') .$post->url}}">
+        @if($post->addr != "")
+          City: {{$post->addr}} |
+        @endif
+        PriceMIN: ${{$post->price_left}} | PriceMAX: ${{$post->price_right}} |
+        AreaMIN: {{$post->area_left}}sqft | AreaMAX: {{$post->area_right}}sqft
+        @if($post->number_of_beds != 0)
+          Beds: {{$post->number_of_beds}}
+        @endif
+        @if($post->number_of_baths != 0)
+          Baths: {{$post->number_of_baths}}
+        @endif</a>
       <form id="delete-offer" action="{{action('SaveSearchController@destroy', $post->id ) }}" method="post">
         {{csrf_field()}}
         <input name="_method" type="hidden" value="delete">

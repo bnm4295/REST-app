@@ -41,6 +41,7 @@
     <!-- toastr style -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" />
 
+    <link rel="stylesheet" href="{{ asset('/../css/sweetalert.css')}}" />
     <!-- fontawesome -->
     <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
     <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/v4-shims.js"></script>
@@ -70,6 +71,9 @@
 
     <!-- combobox -->
     <script src="{{ asset('/../js/combobox.js')}}"></script>
+
+    <!-- sweetalert -->
+    <script src="{{ asset('/../js/sweetalert.min.js')}}"></script>
 </head>
 
 <!-- Start of Async Drift Code -->

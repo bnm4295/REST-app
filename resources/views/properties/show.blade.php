@@ -197,7 +197,7 @@
                         </div>
                     </div>
                     <div class="col-xs-12 col-sm-12 col-md-12 text-center">
-                      <input id="submit-offer" type="submit" name="submit" class="btn btn-primary form-control" onclick="return confirm('Your offer will be submitted. We will forward you an email for the next step to make this offer legitimate.')"></input>
+                      <input id="submit-offer" type="submit" name="submit" class="btn btn-primary form-control"></input>
                     </div>
                 </div>
               </form>
@@ -212,7 +212,7 @@
             <div class="row">
               <h3 style=" color: #111; font-family: 'Helvetica Neue', sans-serif; font-size: 20px; font-weight: bold; letter-spacing: -1px; line-height: 1; text-align: center;">
                 Send a Message</h3>
-              <form action="{{ route('messages.store') }}" method="post">
+              <form id="message-form" action="{{ route('messages.store') }}" method="post">
                 {{ csrf_field() }}
                 <div class="col-xs-12 col-sm-12 col-md-12">
                   <!-- Subject Form Input -->
@@ -234,7 +234,7 @@
 
                   <!-- Submit Form Input -->
                   <div class="form-group">
-                    <button type="submit" class="btn btn-primary form-control" onclick="return confirm('Message will be submitted. Check your message box for further conversation.')">Submit</button>
+                    <button type="submit" class="btn btn-primary form-control">Submit</button>
                   </div>
                 </div>
               </form>

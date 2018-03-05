@@ -52,7 +52,13 @@ $(document).ready(function () {
         }
     });
     jQuery.fn.load = function(callback){ $(window).on("load", callback) };
-
+    jQuery.fn.exists = function(){ return this.length > 0; }
+    $('form').submit(function(){
+      if($('input[name=price_left]').exists()){
+        $('input[name=price_left]').val($('input[name=price_left]').val().replace('$', ''));
+        $('input[name=price_right]').val($('input[name=price_right]').val().replace('$', ''));
+      }
+    })
     $(document).on('click', '#advsearch .dropdown-menu', function (e) {
       e.stopPropagation();
     });
@@ -195,6 +201,78 @@ $(document).ready(function () {
         //endDate: '+1d',
         //autoclose: true
     //});
+    if($('#offer-property').exists()){
+      document.querySelector('#offer-property').addEventListener('submit', function(e) {
+          var form = this;
+          e.preventDefault();
+          swal({
+              title: "Are you sure?",
+              text: 'Your offer will be submitted. We will forward you an email for the next step to make this offer legitimate.',
+              type: "warning",
+              showCancelButton: true,
+              confirmButtonClass: 'btn-info',
+              confirmButtonText: 'Yes',
+              cancelButtonText: "No",
+              closeOnConfirm: false,
+              closeOnCancel: false
+              },
+           function (isConfirm) {
+             if(document.getElementsByName('offerprice').value == null){
+              //add more validation?
+              swal("Cancelled", "Fill in all mandatory inputs", "error");
+              //swal("Cancelled", "Your message has not been submitted.", "error");
+              return false;
+             }
+              if (isConfirm) {
+                  swal({
+                      title: 'Confirmed!',
+                      text: 'Your offer has been submitted.',
+                      type: 'success'
+                  }, function() {
+                      form.submit();
+                  });
+              } else {
+                  swal("Cancelled", "Your offer has not been submitted.", "error");
+              }
+              });
+      });
+    }
+    if($("#message-form").exists()){
+      document.querySelector('#message-form').addEventListener('submit', function(e) {
+          var form = this;
+          e.preventDefault();
+          swal({
+              title: "Are you sure?",
+              text: 'Message will be submitted. Check your message box for further conversation.',
+              type: "warning",
+              showCancelButton: true,
+              confirmButtonClass: 'btn-info',
+              confirmButtonText: 'Yes',
+              cancelButtonText: "No",
+              closeOnConfirm: false,
+              closeOnCancel: false
+              },
+           function (isConfirm) {
+              if(document.getElementsByName('description').value == null){
+               //add more validation?
+               swal("Cancelled", "Fill in all mandatory inputs", "error");
+               //swal("Cancelled", "Your message has not been submitted.", "error");
+               return false;
+              }
+              if (isConfirm) {
+                  swal({
+                      title: 'Confirmed!',
+                      text: 'Your message has been submitted.',
+                      type: 'success'
+                  }, function() {
+                      form.submit();
+                  });
+              } else {
+                  swal("Cancelled", "Your message has not been submitted.", "error");
+              }
+              });
+          });
+    }
     $('.image-link').magnificPopup({
       type: 'image',
        mainClass: 'mfp-with-zoom', // this class is for CSS animation below

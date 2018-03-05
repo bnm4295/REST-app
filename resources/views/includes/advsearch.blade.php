@@ -147,16 +147,16 @@
 
         <!-- prices -->
         <div class="dropdown" style="float:left; margin-left: 10px;">
-          <button href="#" class="dropdown-toggle form-control input-md" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">
+          <button id="price-dropdown" href="#" class="dropdown-toggle form-control input-md" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">
             <b>Price Range</b><span class="caret"></span>
           </button>
           <div class="dropdown-menu" style="min-width: 350px;" role="menu">
-            <div style="margin: 20px">
+            <div style="margin:20px;">
               <h3>Price MIN</h3>
-              <input type="text" name="price_left" value="0" selectBoxOptions="200000;300000;400000;500000;600000;700000;800000;900000;1000000;2000000;3000000;4000000;5000000">
+              <input type="text" name="price_left" value="$0" selectBoxOptions="200000;300000;400000;500000;600000;700000;800000;900000;1000000;2000000;3000000;4000000;5000000">
               <hr>
               <h3>Price MAX</h3>
-              <input type="text" name="price_right" value="5000000" selectBoxOptions="200000;300000;400000;500000;600000;700000;800000;900000;1000000;2000000;3000000;4000000;5000000">
+              <input type="text" name="price_right" value="$5000000" selectBoxOptions="200000;300000;400000;500000;600000;700000;800000;900000;1000000;2000000;3000000;4000000;5000000">
             </div>
           </div>
         </div>

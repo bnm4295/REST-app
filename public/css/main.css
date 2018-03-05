@@ -25,6 +25,25 @@ body {
 select{
 	text-align-last: center;
 }
+.selectBox img{
+	cursor: pointer;
+}
+.selectBoxAnOption{
+	 font-family: 'Helvetica Neue', sans-serif;
+	 font-weight: bold;
+	 padding: 5px 8px;
+	 width: 130%;
+	 border: none;
+	 box-shadow: none;
+	 background: transparent;
+	 background-image: none;
+	 -webkit-appearance: none;
+	 border: 1px solid #ccc;
+	 width: 100%;
+	 border-radius: 3px;
+	 overflow: hidden;
+	 background: #fafafa;
+}
 /* mfp container magnificPopup*/
 .prop_thumb{
 	border: 1px solid #ddd;
@@ -546,8 +565,8 @@ body.modal-open{
 	height: 55px;
 }
 #map{
-	height: 840px;
-	width: 900px;
+	height: 100%;
+	width: 100%;
 }
 #moveloc #autocomplete{
 	background-color: #fff;
@@ -861,7 +880,7 @@ input::-moz-focus-outer {
 and (min-width: 300px)
 and (max-width: 767px){
 	#map{
-		width: 100%;
+		height: 500px;
 	}
 	#showmap{
 		width: 100% !important;
@@ -922,10 +941,6 @@ and (max-width: 767px){
 @media only screen
 and (min-width: 768px)
 and (max-width: 849px){
-	#map{
-		height: 450px;
-		width: 400px;
-	}
 	#showmap{
 		width: 100% !important;
 	}
@@ -957,10 +972,6 @@ and (max-width: 849px){
 @media only screen
 and (min-width: 850px)
 and (max-width: 950px){
-	#map{
-		height: 522px;
-		width: 400px;
-	}
 	#listings-row #filter-panel{
 		width: initial;
 	}
@@ -988,10 +999,6 @@ and (max-width: 950px){
 @media only screen
 and (min-width: 951px)
 and (max-width: 1100px){
-	#map{
-		height: 522px;
-		width: 480px;
-	}
 	#showmap{
 		width: 100% !important;
 	}
@@ -1019,10 +1026,6 @@ and (max-width: 1100px){
 @media only screen
 and (min-width: 1101px)
 and (max-width: 1400px){
-	#map{
-		height: 522px;
-		width: 550px;
-	}
 	#showmap{
 		width: 100% !important;
 	}
@@ -1042,10 +1045,6 @@ and (max-width: 1400px){
 @media only screen
 and (min-width: 1405px)
 and (max-width: 1750px){
-	#map{
-		height: 900px;
-		width: 750px;
-	}
 	#showmap{
 		width: 100% !important;
 	}

@@ -1,7 +1,7 @@
 // Path to arrow images
 var arrowImage = '/images/select_arrow.png';	// Regular arrow
-var arrowImageOver = '/images/select_arrow_over.gif';	// Mouse over
-var arrowImageDown = '/images/select_arrow_down.gif';	// Mouse down
+var arrowImageOver = '/images/select_arrow.png';	// Mouse over
+var arrowImageDown = '/images/select_arrow.png';	// Mouse down
 
 
 var selectBoxIds = 0;
@@ -28,7 +28,6 @@ editableSelect_activeArrow.src = arrowImage;
 
 }
 editableSelect_activeArrow = this;
-
 var numId = this.id.replace(/[^\d]/g,'');
 var optionDiv = document.getElementById('selectBoxOptions' + numId);
 if(optionDiv.style.display=='block'){
@@ -42,6 +41,12 @@ this.src = arrowImageDown;
 if(currentlyOpenedOptionBox && currentlyOpenedOptionBox!=optionDiv)currentlyOpenedOptionBox.style.display='none';
 currentlyOpenedOptionBox= optionDiv;
 }
+$(document).on('click', '#advsearch .dropdown-menu', function (){
+    currentlyOpenedOptionBox.style.display='none';
+});
+$(window).click(function() {
+    currentlyOpenedOptionBox.style.display='none';
+});
 e.stopPropagation();
 }
 
@@ -51,6 +56,9 @@ function selectOptionValue()
 var parentNode = this.parentNode.parentNode;
 var textInput = parentNode.getElementsByTagName('INPUT')[0];
 textInput.value = this.innerHTML;
+if(textInput.getAttribute('name') == ('price_left' || 'price_right')){
+  textInput.value = '$' + this.innerHTML;
+}
 this.parentNode.style.display='none';
 document.getElementById('arrowSelectBox' + parentNode.id.replace(/[^\d]/g,'')).src = arrowImageOver;
 
@@ -80,11 +88,12 @@ function createEditableSelect(dest)
 {
 
 dest.className='form-control selectBoxInput input-lg';
+dest.style.width = 100 + '%'
 var div = document.createElement('DIV');
 div.style.styleFloat = 'left';
 div.style.width = dest.offsetWidth + 16 + 'px';
 if(dest.offsetWidth == 0){
-  div.style.width = 210 + 'px';
+  div.style.width = 100 + '%';
 }
 div.style.position = 'relative';
 div.id = 'selectBox' + selectBoxIds;
@@ -110,7 +119,7 @@ optionDiv.id = 'selectBoxOptions' + selectBoxIds;
 optionDiv.className='selectBoxOptionContainer';
 optionDiv.style.width = div.offsetWidth-2 + 'px';
 if(dest.offsetWidth == 0){
-  optionDiv.style.width = 210 + 'px';
+  optionDiv.style.width = 100 + '%';
 }
 div.appendChild(optionDiv);
 
