@@ -18,7 +18,7 @@
 </section>
 
 <div class="container">
-  <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 container-contentbar">
+  <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 container-contentbar">
     <div class="page-wrap">
       <div class="row row-fluid">
         <div class="col-sm-12">
@@ -69,7 +69,7 @@
      <div class="row row-fluid">
        <div class="col-sm-12">
          <div>
-  			      <h1 class="p1" style="margin-bottom: 5px; text-align: center;">Our Commitment to Affordable Housing</h1>
+  			    <h1 class="p1" style="margin-bottom: 5px; text-align: center;">Our Commitment to Affordable Housing</h1>
             <p style="text-align: center;">Affordable housing is an important issue to Suuty and we recognize that it is also an issue that is more relevant than ever to Canada and to Canadians. That’s why we are pledging to donate 25% of our proceeds from each transaction to Habitat for Humanity. Join us in support of housing for all.</p>
   		   </div>
        </div>
@@ -81,6 +81,15 @@
        </div>
     </div>
     <hr style="border-top: 1px solid black">
+ </div>
+ <div class="col-md-4 col-sm-12 col-xs-12" style="float:right; margin-top: 22px;">
+    <div class="row">
+      <div style="text-align:center; background-color:white">
+        <div style="display: inline-block">
+          @include('includes.commcalc')
+        </div>
+      </div>
+    </div>
  </div>
 </div>
 
