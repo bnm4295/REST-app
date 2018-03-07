@@ -5,7 +5,7 @@
 @if (Session::has('success'))
   <div class="alert alert-success"  style="z-index: 2; text-align:center; position: absolute; width: 100%">{{ Session::get('success') }}</div>
 @endif
-<div class="container">
+<div class="container showprop">
   @if ($errors->any())
     <div class="alert alert-danger">
       <ul>
@@ -22,7 +22,7 @@
   <h2 id="pricenum" style="color: #111; font-family: 'Helvetica Neue', sans-serif; font-size: 40px; font-weight: bold; letter-spacing: -1px; line-height: 1;">
     ${{$property->price}}</h2>
   <div class="row">
-    <div class="col-md-7 col-sm-12 col-xs-12 no-padding" style="float: left;">
+    <div class="col-md-6 col-sm-12 col-xs-12 no-padding" style="float: left;">
       <!--div class="fotorama" data-nav="thumbs">-->
       <div class="parent-container">
         <?php
@@ -251,7 +251,7 @@
       <!-- COL END -->
     </div>
     <!-- Widget START -->
-    <div class="col-md-5 col-sm-12 col-xs-12 no-padding" style="margin: 20px width: 100%;">
+    <div class="col-md-5 col-sm-12 col-xs-12 no-padding" style="margin: 20px width: 100%; float:right">
         <input id="showmaplat" type="hidden" value="{{$property->latitude}}">
         <input id="showmaplong" type="hidden" value="{{$property->longitude}}">
         <div id="floating-panel">
@@ -272,7 +272,7 @@
         </div>-->
     </div>
     &nbsp;
-    <div class="col-md-5 col-sm-12 col-xs-12">
+    <div class="col-md-5 col-sm-12 col-xs-12" style="float:right">
       <div class="container requestform">
         <form method="post" action="{{url('post-booking')}}" enctype="multipart/form-data">
           <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -358,6 +358,35 @@
   </div>
   <!-- ROW END -->
 </div>
+
+<section class="splash-section">
+  <?php
+  $link = $_SERVER['PHP_SELF'];
+  $link_array = explode('/',$link);
+  $currslug = end($link_array);
+  $searchprop = DB::table('properties')->where(function ($q) use ($property) {
+    $q->where('city', 'LIKE', "%{$property->city}%")
+    ->orwhere(DB::raw('CONCAT_WS(" ", street_address, route)'), 'LIKE', "%{$property->street_address} {$property->route}%")
+    ->orwhere('postal_code', 'LIKE', "%{$property->postal_code}%")
+    ->where('state', 'LIKE', "%{$property->state}%")
+    ->where('country', 'LIKE', "%{$property->country}%");
+  })->where('slug', '!=', "$currslug")->paginate(4);
+  ?>
+  <div id="footer-media" class="splash-inner-media"></div>
+    <div class="splash-inner-content" style="height: 500px">
+      <div class="container">
+        <div class="splash-title">
+          <p style="text-align: left; font-size: 50px; color: white; font-weight: bold">Similar Properties</p>
+          <!--p style="text-align: center; font-size: 25px; color: white">Welcome to the New Home of Real Estate</p>-->
+        </div>
+        <div id="similar-prop" class="col-xs-2 col-sm-2 col-md-2" style="float:right; overflow: hidden; text-overflow: ellipsis;">
+          @foreach($searchprop as $property)
+            <a style="display:inline-block; font-weight: bold; font-size: 25px; margin: 20px;" href="{{ url('properties')}}/{{$property->slug}}">{{$property->slug}}</a>
+          @endforeach
+        </div>
+      </div>
+    </div>
+</section>
 @endsection
 
 @section('footer')

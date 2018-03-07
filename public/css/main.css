@@ -19,6 +19,7 @@ html{
 	overflow-x: hidden;
 }
 body {
+	background-color: white;
   margin: 0px;
   padding: 0px;
 }
@@ -310,7 +311,20 @@ img[src=""] {
 }
 /**/
 /* PANELS */
-.panel-title{
+.panel-collapse{
+	margin-top: 22px;
+	background-color: white;
+}
+.panel-collapse .panel-heading{
+	background-color: #00a79d;
+}
+.panel-collapse .panel-title{
+	color: white;
+}
+.panel-collapse a:hover, a:focus {
+  text-decoration: none;
+}
+.showprop .panel-title{
 	color: #777;
 	background-color: #e5e5e5;
 	padding: 12px;
@@ -330,7 +344,8 @@ img[src=""] {
 }
 .footer {
    /*background-color: #33a0aa;*/
-	 background-color: #f5f8fa;
+	 /*background-color: #f5f8fa;*/
+	 background-color: white;
    line-height: 20px;
 	 /*color: black;*/
 	 padding: 80px 0 50px;
@@ -483,6 +498,12 @@ body.modal-open{
 /* PROPERTY END */
 
 /* splash section */
+#similar-prop a{
+	color: white;
+}
+#similar-prop a:visited, a:hover, a:focus{
+	color: #3097d1;
+}
 .splash-title{
 	color: white;
 	position: relative;
@@ -535,6 +556,9 @@ body.modal-open{
 }
 .splash-section #about-media{
 		background-image: url(/images/dining-6-min.jpg);
+}
+.splash-section #footer-media{
+		background-image: url(/images/vancouver-1920x1080.jpg);
 }
 .splash-section #blogs-media{
 		background-image: url(/images/living-2-min.jpg);
