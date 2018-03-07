@@ -370,7 +370,7 @@
     ->orwhere('postal_code', 'LIKE', "%{$property->postal_code}%")
     ->where('state', 'LIKE', "%{$property->state}%")
     ->where('country', 'LIKE', "%{$property->country}%");
-  })->where('slug', '!=', "$currslug")->paginate(4);
+  })->where('id', '!=', "$property->id")->paginate(4);
   ?>
   <div id="footer-media" class="splash-inner-media"></div>
     <div class="splash-inner-content" style="height: 500px">
