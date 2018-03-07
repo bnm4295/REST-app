@@ -501,7 +501,7 @@ body.modal-open{
 #similar-prop a{
 	color: white;
 }
-#similar-prop a:visited, a:hover, a:focus{
+#similar-prop a:hover, a:focus{
 	color: #3097d1;
 }
 .splash-title{

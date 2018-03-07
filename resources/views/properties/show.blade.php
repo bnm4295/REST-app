@@ -379,10 +379,12 @@
           <p style="text-align: left; font-size: 50px; color: white; font-weight: bold">Similar Properties</p>
           <!--p style="text-align: center; font-size: 25px; color: white">Welcome to the New Home of Real Estate</p>-->
         </div>
-        <div id="similar-prop" class="col-xs-2 col-sm-2 col-md-2" style="float:right; overflow: hidden; text-overflow: ellipsis;">
-          @foreach($searchprop as $property)
-            <a style="display:inline-block; font-weight: bold; font-size: 25px; margin: 20px;" href="{{ url('properties')}}/{{$property->slug}}">{{$property->slug}}</a>
-          @endforeach
+        <div id="similar-prop" class="col-xs-2 col-sm-2 col-md-2" style="float:right;">
+          <div>
+            @foreach($searchprop as $property)
+              <a style="display:inline-block; font-weight: bold; font-size: 25px; margin: 20px;" href="{{ url('properties')}}/{{$property->slug}}">{{$property->slug}}</a>
+            @endforeach
+          </div>
         </div>
       </div>
     </div>
