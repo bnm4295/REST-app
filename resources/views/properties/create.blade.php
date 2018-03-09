@@ -118,12 +118,12 @@
               <input class="form-control" id="autocomplete" placeholder="Enter your address"
               onFocus="geolocate()" type="text"></input>
             </div>
-            <input class="form-control" id="street_number" disabled="true" name="street_address" placeholder="Street Number"></input>
-            <input class="form-control" id="route" disabled="true" name="route" placeholder="Street"></input>
-            <input class="form-control" id="locality" disabled="true" name="city" placeholder="City"></input>
-            <input class="form-control" id="country" disabled="true" name="country" placeholder="Country"></input>
+            <input class="form-control" id="street_number" disabled="true" name="street_address" placeholder="Street Number" readonly></input>
+            <input class="form-control" id="route" disabled="true" name="route" placeholder="Street Name" readonly></input>
+            <input class="form-control" id="locality" disabled="true" name="city" placeholder="City" readonly></input>
+            <input class="form-control" id="country" disabled="true" name="country" placeholder="Country" readonly></input>
             <input class="form-control" id="postal_code" disabled="true" name="postal_code" placeholder="Postal Code"></input>
-            <input class="form-control" id="administrative_area_level_1" disabled="true" name="state" placeholder="State"></input>
+            <input class="form-control" id="administrative_area_level_1" disabled="true" name="state" placeholder="Province" readonly></input>
         </div>
     </div>
           <input id="getlat" type="hidden" name="latitude" placeholder="latitude" class="form-control" readonly>

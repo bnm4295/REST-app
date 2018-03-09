@@ -1,6 +1,7 @@
 <section class="properties endless-pagination" data-next-page="{{ $properties->nextPageUrl() }}">
   <div class="container-fluid">
-    <h3 style="font-family: 'Helvetica Neue', sans-serif; font-size: 30px; font-weight: bold; letter-spacing: -1px; text-indent: 15px;">New Listings</h3>
+    <h3 style="font-family: 'Helvetica Neue', sans-serif; font-size: 30px; font-weight: bold; letter-spacing: -1px; text-indent: 15px;">Featured Listings</h3>
+    <hr>
     @foreach($properties as $property)
     <?php
     $decodedarr = json_decode( $property->images , true);
@@ -17,8 +18,8 @@
                   <h3 class="proptitle"><strong>{{$property->title}}</strong></h3>
                   <h4><strong>${{$property->price}}</strong></h4>
                   <hr>
-                  <p><b>Beds: {{$property->number_of_beds}} | Baths: {{$property->number_of_baths}} </b></p>
-                  <p><strong>Sqft: {{$property->area}}</strong></p>
+                  <p><i class="fas fa-bed"></i><b> {{$property->number_of_beds}}</b> | <i class="fas fa-bath"></i><b> {{$property->number_of_baths}} </b></p>
+                  <p><i class="fas fa-chart-area"></i><b> {{$property->area}}sqft&sup2;</b></p>
                   <strong>
                     {{$property->street_address}}
                     {{$property->route}}

@@ -15,7 +15,7 @@
     <link href="{{ mix('css/app.css') }}" rel="stylesheet">
 
     <!-- main style -->
-    <link href="{{ asset('/../css/main.css?ver=4.2') }}" rel="stylesheet">
+    <link href="{{ asset('/../css/main.css?ver=4.3') }}" rel="stylesheet">
 
     <!-- bootstrap social -->
     <link href="{{ asset('/../css/bootstrap-social.css') }}" rel="stylesheet">
@@ -146,26 +146,32 @@ drift.load('3zb8wvvu7pby');
                       </div>-->
 
                         <!--<li class="active"><a href="#">Home</a></li>-->
-                        <li><a class="navbar-brand" href="{{ URL::to('properties') }}">Listings</a></b></li>
-                        <li><a class="navbar-brand" href="{{ URL::to('about') }}">About</a></li>
+                        <li><a class="navbar-brand" href="{{ URL::to('/') }}">Home</a></li>
+                        <li><a class="navbar-brand" href="{{ URL::to('properties') }}">Properties</a></li>
+                        <li><a class="navbar-brand" href="{{ URL::to('/questions') }}">How it Works</a></li>
+                        <li><a class="navbar-brand" href="{{ URL::to('properties/create') }}">List Your Home</a></li>
 
-                        <li><a class="navbar-brand" href="{{ URL::to('blogs') }}">Blogs</a></li>
                         <li class="dropdown"><!--href="{{ URL::to('resources') }}"-->
                           <a href="#" class="dropdown-toggle navbar-brand" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">
                             Resources<span class="caret"></span>
                           </a>
                           <ul class="dropdown-menu">
                             <li>
-                              <a href="/questions">FAQs</a>
+                              <a href="{{ URL::to('about') }}">About Us</a>
+                              <a href="/">Contact Us</a>
+                              <a href="{{ URL::to('blogs') }}">Blog Posts</a>
                             </li>
                             <li>
-                              <a href="/service">Service Providers</a>
                             </li>
                             <li>
-                              <a href="/home-owner">Resources for Home Owners</a>
+                              <a href="{{ URL::to('questions') }}">Support/FAQs</a>
+                              <a href="{{ URL::to('privacy') }}">Privacy</a>
+                              <a href="{{ URL::to('terms-and-conditions') }}">Terms of Use</a>
                             </li>
                             <li>
-                              <a href="/home-buyer">Resources for Home Buyers</a>
+                              <a href="{{ URL::to('service') }}">Service Providers</a>
+                              <a href="{{ URL::to('home-owner') }}">Resources for Home Owners</a>
+                              <a href="{{ URL::to('home-buyer') }}">Resources for Home Buyers</a>
                             </li>
                           </ul>
                         </li>
@@ -179,9 +185,9 @@ drift.load('3zb8wvvu7pby');
                         @guest
                             <!-- <li id="logroute"><a href="{{ route('login') }}">Login</a></li> -->
                             <!-- <li id="regroute"><a href="{{ route('register') }}">Register</a></li> -->
-                            <li><button id="create_propbtn" class="btn btn-info btn-lg" onclick="window.location.href='{{ URL::to('/properties/create') }}'">Create Free Listing</button></li>
+                            <!--li><button id="create_propbtn" class="btn btn-info btn-lg" onclick="window.location.href='{{ URL::to('/properties/create') }}'">List Your Home</button></li>-->
                             <li><button type="button" id="login-btn" class="btn btn-info btn-lg" data-toggle="modal" data-target="#mylogin">Login</button></li>
-                            <li><button type="button" id="reg-btn" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myreg">Register</button></li>
+                            <li><button type="button" id="reg-btn" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myreg">Sign Up</button></li>
 
                             <!-- Modal -->
                             <div class="modal fade" id="mylogin" role="dialog">

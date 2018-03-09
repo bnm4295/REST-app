@@ -3,9 +3,6 @@ h1, h2, h3, h4, h5, p, ul, a, input, label, button, select, body, section{
 }
 /*font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif !important;
  color: #111; font-family: 'Helvetica Neue', sans-serif; font-size: 275px; font-weight: bold; letter-spacing: -1px; line-height: 1; text-align: center;*/
-#app{
-	border-top: 5px solid #00a79d;
-}
 #appname{
 	margin-right: 50px;
 	border: initial !important;
@@ -26,6 +23,9 @@ body {
 select{
 	text-align-last: center;
 }
+/*.dropdown:hover .dropdown-menu {
+		display: block;
+}*/
 .sweet-alert h2{
 	font-weight: 300;
 	color: #555;
@@ -401,9 +401,19 @@ img[src=""] {
 /* FOOTER END */
 
 /* NAV BAR */
+.nav > li.dropdown.open {
+    position: static;
+}
+.nav > li.dropdown.open .dropdown-menu {
+    display:table; width: 80%; text-align: center; left:10%; font-size: 16px;
+}
+.dropdown-menu>li {
+    display: table-cell;
+}
 .navbar{
   margin-bottom: inherit;
   border: none;
+  border-top: 7px solid #00a79d;
 	background-color: #fff;
 }
 .nav>li>a{
@@ -472,6 +482,7 @@ body.modal-open{
 #login-btn{
 	background-color: #777;
 	color: white;
+	margin-right:-1px;
 	border-color: #777;
 }
 #login-btn:hover{

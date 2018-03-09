@@ -36,23 +36,55 @@
     <div id="home-container" class="container">
       <div class="splash-title">
         <h1 style="font-family: 'Helvetica Neue', sans-serif; font-size: 48px; font-weight: bold; letter-spacing: -1px; line-height: 1;">
-          <span>Your Next Move</span>
-          <div><span>Simple. Fair. Revolutionary.</span>
+          <span>Buy or Sell Your Home Online,</span>
+          <div>
+            <span>NO Realtor's Fees.</span>
           </div>
         </h1>
-        <h4 style="font-size: 15px;">#DIYREALTY #REALESTATEREVOLUTION</h4>
+        <h4 style="font-size: 15px;">List your home, find a home, schedule showings, make offers, accept offers, and transfer documents, all on Suuty.</h4>
       </div>
       @include('includes.advsearchhome')
     </div>
   </div>
 </section>
 
-
-
 <div class="container">
-  <div id="results">@include('includes.propertydisplay')</div>
-</div>
+  <h3 style="font-family: 'Helvetica Neue', sans-serif; font-size: 30px; font-weight: bold; letter-spacing: -1px;">How It Works</h3>
+  <h4 style="font-family: 'Helvetica Neue', sans-serif; font-weight: bold; letter-spacing: -1px;">Suuty makes it easy to buy or sell your home online, with no realtor's fees</h4>
+  <hr>
+  <h3><strong>For Sellers</strong></h3>
+  <h4>
+    <ul>
+      <li><b>List Your Home</b> - Suuty’s easy and complete listing features let you show off your home.</li>
 
+      <li><b>Market Your Home</b> - Schedule open houses or private showings at times that work for you.</li>
+
+      <li><b>Transparent Process</b> - View all offers, negotiate, and accept offers with buyers directly through Suuty.</li>
+
+      <li><b>Secure & Legal Paperwork</b> - Suuty creates and transfers the legal documents required, so buyers and sellers can make and accept legal offers through our secure platform.</li>
+
+      <li><b>Save Money</b> - No realtor’s fees, just a flat $990 when you accept an offer. A portion of Suuty’s revenues support Habitat For Humanity.</li>
+    </ul>
+    <button class="btn btn-primary btn-lg" style="border-radius: 5px" onclick="window.location.href='{{ URL::to('home-owner') }}'">Find Out More</button>
+    <button class="btn btn-primary btn-lg" style="border-radius: 5px" onclick="window.location.href='{{ URL::to('properties/create') }}'">List Your Home</button>
+  </h4>
+  <hr style="border-color: black;">
+  <h3><strong>For Buyers</strong></h3>
+  <h4>
+    <ul>
+      <li><b>Find Your Home</b> - Find the perfect property with our powerful browse, search and filter features, or be notified for new listings you’ll like.</li>
+
+      <li><b>Transparent Process</b> - No more hidden bids! View all other offers on a property, so you can decide if you want to make an offer, and for how much. (Only offer amounts are visible to other users, not your personal information.)</li>
+
+      <li><b>Secure & Legal Paperwork</b> - Suuty creates and transfers the legal documents required, so buyers and sellers can make and accept legal offers through our secure platform.</li>
+
+      <li><b>Housing for Everyone</b> - A portion of the $990 flat fee a seller pays when an offer is accepted goes to support Habitat For Humanity.</li>
+    </ul>
+    <button class="btn btn-primary btn-lg" style="border-radius: 5px" onclick="window.location.href='{{ URL::to('home-buyer') }}'">Find Out More</button>
+    <button class="btn btn-primary btn-lg" style="border-radius: 5px" onclick="window.location.href='{{ URL::to('properties') }}'">Find Your Home</button>
+  </h4>
+</div>
+&nbsp;
 <section class="splash-section">
   <div class="splash-inner-media" style="background-image: url(/images/living-7.jpg);"></div>
   <div class="splash-inner-content">
@@ -93,6 +125,20 @@
     </div>
   </div>
 </section>
+<div class="container">
+  <div id="results">@include('includes.propertydisplay')</div>
+</div>
+<div class="container">
+  <h4 style="text-align: center; line-height: 200%; font-weight: bold">At Suuty, we believe in housing for all. That’s we give a percentage of our revenues (the $990 flat fee sellers pay when they accept an offer on their home) to Habitat for Humanity.
+
+    Find out more about Habitat for Humanity <a href="{{URL::to('about')}}">HERE</a> and other ways you can get involved supporting housing for all in your local community.
+    <img style="display: block; margin-left: auto; margin-right: auto;" src="/images/Teal-Large.png" alt="logo" width="160px" height="80px"></img>
+  <!--p>
+    <button class="btn btn-primary btn-lg" style="border-radius: 5px" onclick="window.location.href='{{ URL::to('properties') }}'">View More Listings</button>
+    <button class="btn btn-primary btn-lg" style="border-radius: 5px" onclick="window.location.href='{{ URL::to('properties/create') }}'">List Your Home</button>
+  </p>-->
+</h4>
+</div>
 
 
 @endsection
