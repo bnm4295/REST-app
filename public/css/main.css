@@ -509,6 +509,7 @@ body.modal-open{
 /* PROPERTY END */
 
 /* splash section */
+
 #similar-prop a{
 	color: white;
 }
@@ -919,7 +920,92 @@ input::-moz-focus-outer {
 }
 /* Mobile */
 @media only screen
-and (min-width: 300px)
+and (min-width: 0px)
+and (max-width: 339px){
+	#map{
+		height: 500px;
+	}
+	#showmap{
+		width: 100% !important;
+	}
+	.fotorama{
+		width: 100% !important;
+	}
+	.fotorama img{
+		width: 100% !important;
+	}
+	#map-fix{
+		position: relative !important;
+		top: initial !important;
+		left: 0px !important;
+	}
+	#prop-fix{
+		position: initial !important;
+	}
+	#property-listings{
+		position: relative;
+		left: 0px;
+	}
+	#listings-row .filter-panel{
+		width: 100%;
+	}
+	#listings-row{
+		margin-right: initial !important;
+	}
+	#moveloc #autocomplete{
+			margin-left: initial;
+			width: initial;
+	}
+	.panel-default .img-rounded{
+		margin-top: 20px !important;
+		width: 50% !important;
+	}
+	.navbar-nav{
+		margin: 7px -15px !important;
+	}
+	#home-search-btn{
+		margin-top: 15px;
+	}
+	.colstyle{
+		margin-left: initial;
+	}
+	.nav > li{
+		display: inline-block;
+		margin: -7px;
+	}
+	.stickysecond{
+		display: none;
+	}
+	.reviewform{
+		width: 380px;
+	}
+	.marginfix .btn-lg{
+		padding: 6px;
+		font-size: inherit;
+	}
+	.splash-title{
+		top: 20px;
+	}
+	.splash-title p{
+		text-align:center !important;
+	}
+	#results .container-fluid h3{
+		text-indent: initial !important;
+	}
+	#filter-panel-home{
+		top: 20%;
+	}
+	#similar-prop{
+		float: initial;
+		top: 100px;
+		width: 100%;
+	}
+	#fb-widget{
+		display:none;
+	}
+}
+@media only screen
+and (min-width: 340px)
 and (max-width: 767px){
 	#map{
 		height: 500px;
@@ -977,6 +1063,27 @@ and (max-width: 767px){
 	}
 	.reviewform{
 		width: 380px;
+	}
+	.marginfix .btn-lg{
+		padding: 6px;
+		font-size: inherit;
+	}
+	.splash-title{
+		top: 20px;
+	}
+	.splash-title p{
+		text-align:center !important;
+	}
+	#results .container-fluid h3{
+		text-indent: initial !important;
+	}
+	#filter-panel-home{
+		top: 20%;
+	}
+	#similar-prop{
+		float: initial;
+		top: 100px;
+		width: 100%;
 	}
 }
 

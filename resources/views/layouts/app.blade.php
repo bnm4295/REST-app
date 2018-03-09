@@ -15,7 +15,7 @@
     <link href="{{ mix('css/app.css') }}" rel="stylesheet">
 
     <!-- main style -->
-    <link href="{{ asset('/../css/main.css?ver=4.3') }}" rel="stylesheet">
+    <link href="{{ asset('/../css/main.css?ver=4.4') }}" rel="stylesheet">
 
     <!-- bootstrap social -->
     <link href="{{ asset('/../css/bootstrap-social.css') }}" rel="stylesheet">

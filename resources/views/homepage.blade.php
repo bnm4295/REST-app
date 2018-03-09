@@ -35,13 +35,13 @@
   <div class="splash-inner-content">
     <div id="home-container" class="container">
       <div class="splash-title">
-        <h1 style="font-family: 'Helvetica Neue', sans-serif; font-size: 48px; font-weight: bold; letter-spacing: -1px; line-height: 1;">
-          <span>Buy or Sell Your Home Online,</span>
-          <div>
-            <span>NO Realtor's Fees.</span>
-          </div>
+        <h1 style="font-size: 48px; font-weight: bold; letter-spacing: -1px; line-height: 1;">
+          <span>Your Next Move.</span>
         </h1>
-        <h4 style="font-size: 15px;">List your home, find a home, schedule showings, make offers, accept offers, and transfer documents, all on Suuty.</h4>
+        <h3 style="font-weight: bold; letter-spacing: -1px; line-height: 1;">
+          <span>Buy or Sell Your Home Online, NO Realtor's Fees.</span>
+        </h3>
+        <h4 style="font-size: 15px; letter-spacing: -1px; line-height: 1;">List your home, find a home, schedule showings, make offers, accept offers, and transfer documents, all on Suuty.</h4>
       </div>
       @include('includes.advsearchhome')
     </div>
