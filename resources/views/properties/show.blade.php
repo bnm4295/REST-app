@@ -366,7 +366,7 @@
   $currslug = end($link_array);
   $searchprop = DB::table('properties')->where(function ($q) use ($property) {
     $q->where('city', 'LIKE', "%{$property->city}%")
-    ->orwhere(DB::raw('CONCAT_WS(" ", street_address, route)'), 'LIKE', "%{$property->street_address} {$property->route}%")
+    ->orwhere(DB::raw('CONCAT_WS(" ", street_address, route)'), 'LIKE', "%{$property->route}%")
     ->orwhere('postal_code', 'LIKE', "%{$property->postal_code}%")
     ->where('state', 'LIKE', "%{$property->state}%")
     ->where('country', 'LIKE', "%{$property->country}%");

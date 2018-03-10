@@ -48,41 +48,150 @@
   </div>
 </section>
 
-<div class="container">
-  <h3 style="font-family: 'Helvetica Neue', sans-serif; font-size: 30px; font-weight: bold; letter-spacing: -1px;">How It Works</h3>
-  <h4 style="font-family: 'Helvetica Neue', sans-serif; font-weight: bold; letter-spacing: -1px;">Suuty makes it easy to buy or sell your home online, with no realtor's fees</h4>
-  <hr>
-  <h3><strong>For Sellers</strong></h3>
-  <h4>
-    <ul>
-      <li><b>List Your Home</b> - Suuty’s easy and complete listing features let you show off your home.</li>
+<div class="container panel-collapse">
+  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 container-contentbar">
+    <h3 style="font-family: 'Helvetica Neue', sans-serif; font-size: 30px; font-weight: bold; letter-spacing: -1px;">How It Works</h3>
+    <h4 style="font-family: 'Helvetica Neue', sans-serif; font-weight: bold; letter-spacing: -1px;">Suuty makes it easy to buy or sell your home online, with no realtor's fees</h4>
+    <hr>
+    <h3><strong>For Buyers</strong></h3>
+    <div class="panel-group">
+      <div class="panel panel-default">
+        <a data-toggle="collapse" data-parent="#accordion" href="#home1">
+          <div class="panel-heading">
+            <div class="panel-title">
+                <h3><b>List Your Home</b></h3>
+            </div>
+          </div>
+        </a>
+        <div id="home1" class="panel-collapse collapse">
+          <div class="panel-body"><h4>Suuty’s easy and complete listing features let you show off your home.</h4>
+          </div>
+        </div>
+      </div>
+      <div class="panel panel-default">
+        <a data-toggle="collapse" data-parent="#accordion" href="#home2">
+          <div class="panel-heading">
+            <div class="panel-title">
+              <h3><b>Market Your Home</b></h3>
+            </div>
+          </div>
+        </a>
+        <div id="home2" class="panel-collapse collapse">
+          <div class="panel-body">
+            <h4>Schedule open houses or private showings at times that work for you.</h4>
+          </div>
+        </div>
+      </div>
+      <div class="panel panel-default">
+        <a data-toggle="collapse" data-parent="#accordion" href="#home3">
+          <div class="panel-heading">
+            <div class="panel-title">
+              <h3><b>Transparent Process</b></h3>
+            </div>
+          </div>
+        </a>
+        <div id="home3" class="panel-collapse collapse">
+          <div class="panel-body">
+            <h4>View all offers, negotiate, and accept offers with buyers directly through Suuty.</h4>
+          </div>
+        </div>
+      </div>
+      <div class="panel panel-default">
+        <a data-toggle="collapse" data-parent="#accordion" href="#home4">
+          <div class="panel-heading">
+            <div class="panel-title">
+              <h3><b>Secure & Legal Paperwork</b></h3>
+            </div>
+          </div>
+        </a>
+        <div id="home4" class="panel-collapse collapse">
+          <div class="panel-body">
+            <h4>Suuty creates and transfers the legal documents required, so buyers and sellers can make and accept legal offers through our secure platform.</h4>
+          </div>
+        </div>
+      </div>
+      <div class="panel panel-default">
+        <a data-toggle="collapse" data-parent="#accordion" href="#home5">
+          <div class="panel-heading">
+            <div class="panel-title">
+              <h3><b>Save Money</b></h3>
+            </div>
+          </div>
+        </a>
+        <div id="home5" class="panel-collapse collapse">
+          <div class="panel-body">
+            <h4>No realtor’s fees, just a flat $990 when you accept an offer. A portion of Suuty’s revenues support Habitat For Humanity.</h4>
+          </div>
+        </div>
+      </div>
+      <!-- END PANEL COLLAPSE -->
+    </div>
+  </div>
+</div>
 
-      <li><b>Market Your Home</b> - Schedule open houses or private showings at times that work for you.</li>
-
-      <li><b>Transparent Process</b> - View all offers, negotiate, and accept offers with buyers directly through Suuty.</li>
-
-      <li><b>Secure & Legal Paperwork</b> - Suuty creates and transfers the legal documents required, so buyers and sellers can make and accept legal offers through our secure platform.</li>
-
-      <li><b>Save Money</b> - No realtor’s fees, just a flat $990 when you accept an offer. A portion of Suuty’s revenues support Habitat For Humanity.</li>
-    </ul>
-    <button class="btn btn-primary btn-lg" style="border-radius: 5px" onclick="window.location.href='{{ URL::to('home-owner') }}'">Find Out More</button>
-    <button class="btn btn-primary btn-lg" style="border-radius: 5px" onclick="window.location.href='{{ URL::to('properties/create') }}'">List Your Home</button>
-  </h4>
-  <hr style="border-color: black;">
-  <h3><strong>For Buyers</strong></h3>
-  <h4>
-    <ul>
-      <li><b>Find Your Home</b> - Find the perfect property with our powerful browse, search and filter features, or be notified for new listings you’ll like.</li>
-
-      <li><b>Transparent Process</b> - No more hidden bids! View all other offers on a property, so you can decide if you want to make an offer, and for how much. (Only offer amounts are visible to other users, not your personal information.)</li>
-
-      <li><b>Secure & Legal Paperwork</b> - Suuty creates and transfers the legal documents required, so buyers and sellers can make and accept legal offers through our secure platform.</li>
-
-      <li><b>Housing for Everyone</b> - A portion of the $990 flat fee a seller pays when an offer is accepted goes to support Habitat For Humanity.</li>
-    </ul>
-    <button class="btn btn-primary btn-lg" style="border-radius: 5px" onclick="window.location.href='{{ URL::to('home-buyer') }}'">Find Out More</button>
-    <button class="btn btn-primary btn-lg" style="border-radius: 5px" onclick="window.location.href='{{ URL::to('properties') }}'">Find Your Home</button>
-  </h4>
+<div class="container panel-collapse">
+  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 container-contentbar">
+    <h3><strong>For Sellers</strong></h3>
+    <div class="panel-group">
+      <div class="panel panel-default">
+        <a data-toggle="collapse" data-parent="#accordion" href="#home6">
+          <div class="panel-heading">
+            <div class="panel-title">
+              <h3><b>Find Your Home</b></h3>
+            </div>
+          </div>
+        </a>
+        <div id="home6" class="panel-collapse collapse">
+          <div class="panel-body">
+            <h4>Find the perfect property with our powerful browse, search and filter features, or be notified for new listings you'll like.</h4>
+          </div>
+        </div>
+      </div>
+      <div class="panel panel-default">
+        <a data-toggle="collapse" data-parent="#accordion" href="#home7">
+          <div class="panel-heading">
+            <div class="panel-title">
+              <h3><b>Transparent Process</b></h3>
+            </div>
+          </div>
+        </a>
+        <div id="home7" class="panel-collapse collapse">
+          <div class="panel-body">
+            <h4>No more hidden bids! View all other offers on a property, so you can decide if you want to make an offer, and for how much.</h4>
+          </div>
+        </div>
+      </div>
+      <div class="panel panel-default">
+        <a data-toggle="collapse" data-parent="#accordion" href="#home8">
+          <div class="panel-heading">
+            <div class="panel-title">
+              <h3><b>Secure & Legal Paperwork</b></h3>
+            </div>
+          </div>
+        </a>
+        <div id="home8" class="panel-collapse collapse">
+          <div class="panel-body">
+            <h4>Suuty creates and transfers the legal documents required, so buyers and sellers can make and accept legal offers through our secure platform.</h4>
+          </div>
+        </div>
+      </div>
+      <div class="panel panel-default">
+        <a data-toggle="collapse" data-parent="#accordion" href="#home9">
+          <div class="panel-heading">
+            <div class="panel-title">
+              <h3><b>Housing for Everyone</b></h3>
+            </div>
+          </div>
+        </a>
+        <div id="home9" class="panel-collapse collapse">
+          <div class="panel-body">
+            <h4>A portion of the $990 flat fee a seller pays when an offer is accepted goes to support Habitat for Humanity</h4>
+          </div>
+        </div>
+      </div>
+      <!-- END PANEL COLLAPSE -->
+    </div>
+  </div>
 </div>
 &nbsp;
 <section class="splash-section">
