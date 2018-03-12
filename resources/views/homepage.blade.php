@@ -35,7 +35,7 @@
   <div class="splash-inner-content">
     <div id="home-container" class="container">
       <div class="splash-title">
-        <h1 style="font-size: 48px; font-weight: bold; letter-spacing: -1px; line-height: 1;">
+        <h1 style="font-size: 48px; font-weight: bold; text-indent: 35px; letter-spacing: -1px; line-height: 1;">
           <span>Your Next Move.</span>
         </h1>
         <h3 style="font-weight: bold; letter-spacing: -1px; line-height: 1;">

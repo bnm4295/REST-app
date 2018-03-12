@@ -15,7 +15,7 @@
     <link href="{{ mix('css/app.css') }}" rel="stylesheet">
 
     <!-- main style -->
-    <link href="{{ asset('/../css/main.css?ver=4.5') }}" rel="stylesheet">
+    <!--link href="{{ asset('/../css/main.css?ver=4.5') }}" rel="stylesheet">-->
 
     <!-- bootstrap social -->
     <link href="{{ asset('/../css/bootstrap-social.css') }}" rel="stylesheet">
@@ -25,9 +25,6 @@
 
     <!-- fontawesome style -->
     <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
-
-    <!-- fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500|Oxygen:300,400,500|Helvetica+Neue:300,400,500" rel="stylesheet">
 
     <!-- datetimepicker style -->
     <link href="//cdn.rawgit.com/Eonasdan/bootstrap-datetimepicker/e8bddc60e73c1ec2475f827be36e1957af72e2ea/build/css/bootstrap-datetimepicker.css" rel="stylesheet">
@@ -120,7 +117,7 @@ drift.load('3zb8wvvu7pby');
 <!-- end loader -->
 <body>
     <div id="app">
-        <nav class="navbar navbar-default navbar-static-top stickynav">
+        <nav id="main-nav" class="navbar navbar-default navbar-static-top stickynav">
             <div class="container-fluid">
                 <div class="navbar-header">
 

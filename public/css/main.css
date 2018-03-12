@@ -409,10 +409,12 @@ img[src=""] {
 .dropdown-menu>li {
     display: table-cell;
 }
+#main-nav{
+	border-top: 7px solid #00a79d;
+}
 .navbar{
   margin-bottom: inherit;
   border: none;
-  border-top: 7px solid #00a79d;
 	background-color: #fff;
 }
 .nav>li>a{
