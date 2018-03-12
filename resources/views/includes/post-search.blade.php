@@ -186,7 +186,7 @@ foreach($searchprop as $post){
         background-size: 350px; background-repeat: no-repeat;"></a>
       <div class="panel-heading">
         <div style="text-align: left;">
-          <h3 class="proptitle"><strong>{{$post->title}}</strong></h3>
+          <h3 class="add-ellipsis"><strong>{{$post->title}}</strong></h3>
           <strong>${{$post->price}}</strong>
           <hr>
           <strong>Number of Beds: {{$post->number_of_beds}} </strong>
@@ -195,12 +195,12 @@ foreach($searchprop as $post){
           <br>
           <strong>Sqft: {{$post->area}}</strong>
           <br>
-          <strong>
+          <p class="add-ellipsis"><strong>
             {{$post->street_address}}
             {{$post->route}}
             {{$post->city}}
             {{$post->state}}
-          </strong>
+          </strong></p>
         </div>
       </div>
     </div>

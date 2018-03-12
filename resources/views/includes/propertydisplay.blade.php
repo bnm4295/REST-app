@@ -15,17 +15,17 @@
                   background-size: 350px; background-repeat: no-repeat;"></a>
               <div class="panel-heading">
                 <div style="text-align: left;">
-                  <h3 class="proptitle"><strong>{{$property->title}}</strong></h3>
+                  <h3 class="add-ellipsis"><strong>{{$property->title}}</strong></h3>
                   <h4><strong>${{$property->price}}</strong></h4>
                   <hr>
                   <p><i class="fas fa-bed"></i><b> {{$property->number_of_beds}}</b> | <i class="fas fa-bath"></i><b> {{$property->number_of_baths}} </b></p>
                   <p><i class="fas fa-chart-area"></i><b> {{$property->area}}sqft&sup2;</b></p>
-                  <strong>
+                  <p class="add-ellipsis"><strong>
                     {{$property->street_address}}
                     {{$property->route}}
                     {{$property->city}}
                     {{$property->state}}
-                  </strong>
+                  </strong></p>
                 </div>
               </div>
             </div>
