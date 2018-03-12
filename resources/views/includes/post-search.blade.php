@@ -2,6 +2,7 @@
 if(isset($_GET['addr'])){
   $search = $_GET['addr'];
 }
+else{$search = "";}
 
 //baths&beds
 if(isset($_GET['number_of_beds'])){
@@ -103,7 +104,7 @@ $search = array_map('trim', explode(',', $search));
 //Homepage Adv Search
 if($price_left == "nopriceleft" && $price_right == "nopriceright"
 && ($area_left == "noarealeft" && $area_right == "noarearight") && $numbeds == "" && $numbaths == ""
-   && $proptype == "" ){
+   && $proptype == ""){
 
     $searchprop = DB::table('properties')->where(function ($q) use ($search) {
       foreach ($search as $value) {
@@ -113,7 +114,7 @@ if($price_left == "nopriceleft" && $price_right == "nopriceright"
           ->where('state', 'LIKE', "%{$value}%")
           ->where('country', 'LIKE', "%{$value}%");
       }
-    })->get();
+    })->paginate(4);
     //dd($searchprop);
     //$searchprop = DB::table('properties')
     //->where(function($query) use ($search){
@@ -136,7 +137,7 @@ elseif($search[0] == "" && $numbeds != "" && $numbaths != "" && $proptype != "")
      ['area', '>=', (int)$area_left],
      ['area', '<=', (int)$area_right ]
    ])
-  ->get();
+  ->paginate(4);
 }
 else{
   $searchprop = DB::table('properties')->where(function ($q) use ($search) {
@@ -158,7 +159,7 @@ else{
      ['area', '>=', (int)$area_left],
      ['area', '<=', (int)$area_right ]
    ])
-  ->get();
+  ->paginate(4);
 }
 
 /*  ->where([
@@ -171,7 +172,11 @@ else{
   ])
   */
 
-           //dd($search);
+  //dd($search);
+
+?>
+<section class="properties endless-pagination" data-next-page="{{ $searchprop->nextPageUrl() }}">
+<?php
 foreach($searchprop as $post){
   //for ($i = 0 ; $i < $counter; $i++ ){
   $decodedarr = json_decode( $post->images , true);
@@ -186,15 +191,13 @@ foreach($searchprop as $post){
         background-size: 350px; background-repeat: no-repeat;"></a>
       <div class="panel-heading">
         <div style="text-align: left;">
-          <h3 class="add-ellipsis"><strong>{{$post->title}}</strong></h3>
-          <strong>${{$post->price}}</strong>
+          <a style="color: black" href="{{ url('properties')}}/{{$post->slug}}">
+            <h3 class="add-ellipsis"><strong>{{$post->title}}</strong></h3>
+            <h4><strong>${{$post->price}}</strong></h4>
+          </a>
           <hr>
-          <strong>Number of Beds: {{$post->number_of_beds}} </strong>
-          <br>
-          <strong>Number of Baths: {{$post->number_of_baths}} </strong>
-          <br>
-          <strong>Sqft: {{$post->area}}</strong>
-          <br>
+          <p><i class="fas fa-bed"></i><b> {{$post->number_of_beds}}</b> | <i class="fas fa-bath"></i><b> {{$post->number_of_baths}} </b></p>
+          <p><i class="fas fa-chart-area"></i><b> {{$post->area}}sqft&sup2;</b></p>
           <p class="add-ellipsis"><strong>
             {{$post->street_address}}
             {{$post->route}}
@@ -204,5 +207,11 @@ foreach($searchprop as $post){
         </div>
       </div>
     </div>
-  </div>
+</div>
 <?php } ?>
+<div class="col-md-12" style="text-align:center">
+  <div style="display: inline-block">
+    <div>{!! $searchprop->appends(Request::except('page'))->render() !!}</div>
+  </div>
+</div>
+</section>

@@ -96,10 +96,15 @@
         </div>
         &nbsp;
         <div class="panel-title">
+          <h4>Walkscore</h4>
+        </div>
+        <div class="panel-heading">
+            @include('includes.walkscore')
+        </div>
+        <div class="panel-title">
           <h4>Ending Date - {{$property->date}}</h4>
         </div>
-        <div data-countdown= "{{$property->date}}" style="text-align: center; font-size: 50px; background-color: #00a79d;
-          color: white; margin-bottom: 20px;">
+        <div data-countdown= "{{$property->date}}" style="text-align: center; font-size: 50px; color: black; margin-bottom: 20px; font-weight: bold">
         </div>
         <?php
           date_default_timezone_set('America/Los_Angeles');
@@ -168,8 +173,37 @@
             <h4>No Open-House Dates</h4>
           @endif
         </div>
-        <div class="panel-title">
-          <h4>Offer Form</h4>
+        <div class="panel-heading">
+          <div class="row">
+            <h3 style=" color: #111; font-family: 'Helvetica Neue', sans-serif; font-size: 20px; font-weight: bold; letter-spacing: -1px; line-height: 1; text-align: center;">
+              Send a Message</h3>
+            <form id="message-form" action="{{ route('messages.store') }}" method="post">
+              {{ csrf_field() }}
+              <div class="col-xs-12 col-sm-12 col-md-12">
+                <!-- Subject Form Input -->
+                <div class="form-group">
+                  <label class="control-label">Subject</label>
+                  <input type="text" class="form-control" name="subject" placeholder="Subject"
+                  value="{{ old('subject') }}" required>
+                </div>
+
+                <!-- Message Form Input -->
+                <div class="form-group">
+                  <label class="control-label">Message</label>
+                  <textarea name="message" placeholder="Your Message" class="form-control" required>{{ old('message') }}</textarea>
+                </div>
+
+                <div class="checkbox">
+                  <input type="hidden" name="recipients[]" value="{{ $owner->id }}" checked>
+                </div>
+
+                <!-- Submit Form Input -->
+                <div class="form-group">
+                  <button type="submit" class="btn btn-primary form-control">Submit</button>
+                </div>
+              </div>
+            </form>
+          </div>
         </div>
         <div class="panel-heading">
           @if($remaining>0)
@@ -204,47 +238,6 @@
             @else
               <h4>Offer Period is Over</h4>
             @endif
-          </div>
-          <div class="panel-title">
-            <h4>Contact Form</h4>
-          </div>
-          <div class="panel-heading">
-            <div class="row">
-              <h3 style=" color: #111; font-family: 'Helvetica Neue', sans-serif; font-size: 20px; font-weight: bold; letter-spacing: -1px; line-height: 1; text-align: center;">
-                Send a Message</h3>
-              <form id="message-form" action="{{ route('messages.store') }}" method="post">
-                {{ csrf_field() }}
-                <div class="col-xs-12 col-sm-12 col-md-12">
-                  <!-- Subject Form Input -->
-                  <div class="form-group">
-                    <label class="control-label">Subject</label>
-                    <input type="text" class="form-control" name="subject" placeholder="Subject"
-                    value="{{ old('subject') }}" required>
-                  </div>
-
-                  <!-- Message Form Input -->
-                  <div class="form-group">
-                    <label class="control-label">Message</label>
-                    <textarea name="message" placeholder="Your Message" class="form-control" required>{{ old('message') }}</textarea>
-                  </div>
-
-                  <div class="checkbox">
-                    <input type="hidden" name="recipients[]" value="{{ $owner->id }}" checked>
-                  </div>
-
-                  <!-- Submit Form Input -->
-                  <div class="form-group">
-                    <button type="submit" class="btn btn-primary form-control">Submit</button>
-                  </div>
-                </div>
-              </form>
-            </div>
-          </div>
-          <div class="panel-title">
-            <h4>Walkscore</h4>
-          </div>
-          <div class="panel-heading">
-              @include('includes.walkscore')
           </div>
       </div>
       <!-- PANEL END-->

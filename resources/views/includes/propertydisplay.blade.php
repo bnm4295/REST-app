@@ -15,8 +15,10 @@
                   background-size: 350px; background-repeat: no-repeat;"></a>
               <div class="panel-heading">
                 <div style="text-align: left;">
-                  <h3 class="add-ellipsis"><strong>{{$property->title}}</strong></h3>
-                  <h4><strong>${{$property->price}}</strong></h4>
+                  <a style="color: black" href="{{ url('properties')}}/{{$property->slug}}">
+                    <h3 class="add-ellipsis"><strong>{{$property->title}}</strong></h3>
+                    <h4><strong>${{$property->price}}</strong></h4>
+                  </a>
                   <hr>
                   <p><i class="fas fa-bed"></i><b> {{$property->number_of_beds}}</b> | <i class="fas fa-bath"></i><b> {{$property->number_of_baths}} </b></p>
                   <p><i class="fas fa-chart-area"></i><b> {{$property->area}}sqft&sup2;</b></p>
@@ -33,5 +35,9 @@
     </div>
     @endforeach
   </div>
-  <div style="margin: 0 auto; width: 140px;">{!! $properties->render() !!}</div>
+  <div class="col-md-12" style="text-align:center">
+    <div style="display: inline-block">
+      <div>{!! $properties->render() !!}</div>
+    </div>
+  </div>
 </section>

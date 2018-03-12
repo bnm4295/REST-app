@@ -29,7 +29,6 @@
     </div>
     <div id="prop-fix" class="col-md-6 col-sm-6 col-xs-12 no-padding" style="position: absolute; top: 110px; right:0;">
       <div id="property-listings">
-        <section class="properties endless-pagination" data-next-page="{{ $properties->nextPageUrl() }}">
         <div class="col-md-10 col-md-offset-0">
           <h2>Property Listings</h2>
           <!-- <a href="{{ asset('/../server.php/properties/create') }}" >Create New Listing</a> -->
@@ -40,13 +39,14 @@
         </div>
         @endif
         <?php
-        if(isset($_GET['addr']))
+        if(isset($_GET['addr']) || isset($_GET['page']))
         {
 
         ?>
         @include('includes.post-search')
         <?php }
         else{ ?>
+        <section class="properties endless-pagination" data-next-page="{{ $properties->nextPageUrl() }}">
         @foreach($properties as $post)
         <?php
         //for ($i = 0 ; $i < $counter; $i++ ){
@@ -63,8 +63,10 @@
                       background-size: 450px; background-repeat: no-repeat;"></a>
                   <div class="panel-heading">
                     <div style="text-align: left;">
-                      <h3 class="add-ellipsis"><strong>{{$post->title}}</strong></h3>
-                      <h4><strong>${{$post->price}}</strong></h4>
+                      <a style="color: black" href="{{ url('properties')}}/{{$post->slug}}">
+                        <h3 class="add-ellipsis"><strong>{{$post->title}}</strong></h3>
+                        <h4><strong>${{$post->price}}</strong></h4>
+                      </a>
                       <hr>
                       <p><i class="fas fa-bed"></i><b> {{$post->number_of_beds}}</b> | <i class="fas fa-bath"></i><b> {{$post->number_of_baths}} </b></p>
                       <p><i class="fas fa-chart-area"></i><b> {{$post->area}}sqft&sup2;</b></p>
@@ -101,9 +103,13 @@
                 </div>
               </div>
       @endforeach
+      <div class="col-md-12" style="text-align:center">
+        <div style="display: inline-block">
+          <div>{!! $properties->render() !!}</div>
+        </div>
+      </div>
+      </section>
       <?php } ?>
-      <div style="margin: 0 auto; width: 140px;">{!! $properties->render() !!}</div>
-        </section>
       </div>
     </div>
   </div>
