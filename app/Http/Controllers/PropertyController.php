@@ -23,6 +23,7 @@ class PropertyController extends Controller
       $this->middleware('auth', ['except'=> ['create', 'index', 'show']] );
       $this->middleware('isVerified');
   }
+  protected $properties_per_page = 6;
   /**
    * Display a listing of the resource.
    *
@@ -30,12 +31,13 @@ class PropertyController extends Controller
    */
   public function index(Request $request)
   {
+    $properties = Property::paginate($this->properties_per_page);
     /*
     $property = Property::find(165);
     Mail::to($request->user())
     ->send(new SaveSearch($property));
     */
-    $properties = Property::all();
+    //$properties = Property::all();
     //$title = $request->input('title');
     //$properties = Property::->search($title);
     //$search = $request->input('title');
@@ -229,7 +231,22 @@ class PropertyController extends Controller
       ]);
 
       $property = Property::find($id);
-      $property->title = $request->get('title');
+      if($property->title == $request->get('title')){
+        ///dd($property->title . " " . $request->get('title'));
+        //dd($request->get('slug'));
+        $property->slug = $request->get('slug');
+      }
+      else{
+        $property->title = $request->get('title');
+        $slug = strtolower($property->title);
+
+        //$property->slug = $slug;
+        if ($count = Property::where('slug', 'like', "$slug%")->count()){
+          $slug = str_finish($slug, "-$count");
+        }
+        $property->slug = preg_replace('/\s+/', '-', $slug);
+
+      }
       $property->details = $request->get('details');
       $property->price = $request->get('price');
       $property->date = $request->get('date');
@@ -248,12 +265,7 @@ class PropertyController extends Controller
       $property->number_of_baths = $request->get('number_of_baths');
       $property->sold = $request->get('sold');
 
-      $slug = strtolower($property->title);
-      //$property->slug = $slug;
-      if ($count = Property::where('slug', 'like', "$slug%")->count()){
-        $slug = str_finish($slug, "-$count");
-      }
-      $property->slug = preg_replace('/\s+/', '-', $slug);
+
 
       $imagepaths = array();
       $picture = '';
@@ -392,6 +404,9 @@ class PropertyController extends Controller
       $count = Conversation::whereRaw("slug RLIKE '^{$slug}(-[0-9]+)?$'")->count();
 
       return $count ? "{$slug}-{$count}" : $slug;
+  }
+  public function fetchNextPropertySet($page){
+
   }
 
 

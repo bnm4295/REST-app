@@ -29,6 +29,7 @@
     </div>
     <div id="prop-fix" class="col-md-6 col-sm-6 col-xs-12 no-padding" style="position: absolute; top: 110px; right:0;">
       <div id="property-listings">
+        <section class="properties endless-pagination" data-next-page="{{ $properties->nextPageUrl() }}">
         <div class="col-md-10 col-md-offset-0">
           <h2>Property Listings</h2>
           <!-- <a href="{{ asset('/../server.php/properties/create') }}" >Create New Listing</a> -->
@@ -101,6 +102,8 @@
               </div>
       @endforeach
       <?php } ?>
+      <div style="margin: 0 auto; width: 140px;">{!! $properties->render() !!}</div>
+        </section>
       </div>
     </div>
   </div>

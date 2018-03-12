@@ -476,13 +476,13 @@ img[src=""] {
 /* FOOTER END */
 
 /* NAV BAR */
-.nav > li.dropdown.open {
+#resources-menu.dropdown.open {
     position: static;
 }
-.nav > li.dropdown.open .dropdown-menu {
+#resources-menu.dropdown.open .dropdown-menu {
     display:table; width: 80%; text-align: center; left:10%; font-size: 16px;
 }
-.dropdown-menu>li {
+#resources-menu .dropdown-menu>li {
     display: table-cell;
 }
 #main-nav{

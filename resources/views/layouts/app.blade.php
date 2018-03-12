@@ -148,7 +148,7 @@ drift.load('3zb8wvvu7pby');
                         <li><a class="navbar-brand" href="{{ URL::to('/questions') }}">How it Works</a></li>
                         <li><a class="navbar-brand" href="{{ URL::to('properties/create') }}">List Your Home</a></li>
 
-                        <li class="dropdown"><!--href="{{ URL::to('resources') }}"-->
+                        <li id="resources-menu" class="dropdown"><!--href="{{ URL::to('resources') }}"-->
                           <a href="#" class="dropdown-toggle navbar-brand" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">
                             Resources<span class="caret"></span>
                           </a>

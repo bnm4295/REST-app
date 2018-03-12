@@ -28,6 +28,7 @@
             <div class="form-group">
                 <strong>Title:</strong>
                 <input id="edit-title" type="text" name="title" placeholder="Title" class="form-control input-lg" value="{{$property->title}}">
+                <input name="slug" type="hidden" value="{{$property->slug}}">
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
