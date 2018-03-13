@@ -21,8 +21,8 @@
   <h5>{{$property->street_address}} {{$property->route}} {{$property->city}} {{$property->state}}, {{$property->postal_code}} {{$property->country}}</h5>
   <h2 id="pricenum" style="color: #111; font-family: 'Helvetica Neue', sans-serif; font-size: 40px; font-weight: bold; letter-spacing: -1px; line-height: 1;">
     ${{$property->price}}</h2>
-  <h2 id="pricenum-second" style="color: #111; font-family: 'Helvetica Neue', sans-serif; font-size: 20px; font-weight: bold; letter-spacing: -1px; line-height: 1;">
-    ${{$property->bidprice}}</h2>
+  <!--h2 id="pricenum-second" style="color: #111; font-family: 'Helvetica Neue', sans-serif; font-size: 20px; font-weight: bold; letter-spacing: -1px; line-height: 1;">
+    ${{$property->bidprice}}</h2>-->
   <div class="row">
     <div class="col-md-6 col-sm-12 col-xs-12 no-padding" style="float: left;">
       <!--div class="fotorama" data-nav="thumbs">-->
@@ -119,6 +119,9 @@
 
          ?>
         <div class="panel-heading" style="text-align:center">
+          @if($offers->isEmpty() && $remaining != 0)
+            <h3>There are currently no offers provided!</h3>
+          @endif
           @foreach($offers as $offer)
               <?php
                 $user = DB::table('users')->where('id', $offer->user_id)->first();
@@ -165,7 +168,7 @@
           $fourthdatetime = date('g:h A', strtotime($property->fourthdate));
           ?>
           @if($property->firstdate != NULL && $property->seconddate)
-            <h4>First Date</h4>
+            <h3><b>First Date</b></h3>
             <hr>
             <div class="row">
              <div class="col-md-6" style="display: inline-block;">
@@ -186,7 +189,7 @@
             &nbsp;
           @endif
           @if($property->thirddate != NULL && $property->fourthdate)
-            <h4>Second Date</h4>
+            <h3><b>Second Date</b></h3>
             <hr>
             <div class="row">
               <div class="col-md-6" style="display: inline-block;">
