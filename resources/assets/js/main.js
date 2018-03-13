@@ -122,19 +122,64 @@ $(document).ready(function () {
       */
       $('#closingtime').datetimepicker({
         format: 'MM/DD/YYYY HH:mm',
+        ignoreReadonly: true,
+        defaultDate: moment(),
+        minDate: moment()-1,
       });
       $('#firstdate').datetimepicker({
         format: 'MM/DD/YYYY HH:mm',
+        ignoreReadonly: true,
+        useCurrent: false,
       });
       $('#seconddate').datetimepicker({
         format: 'MM/DD/YYYY HH:mm',
+        ignoreReadonly: true,
+        useCurrent: false,
       });
+      $('#thirddate').datetimepicker({
+        format: 'MM/DD/YYYY HH:mm',
+        ignoreReadonly: true,
+        useCurrent: false,
+      });
+      $('#fourthdate').datetimepicker({
+        format: 'MM/DD/YYYY HH:mm',
+        ignoreReadonly: true,
+        useCurrent: false,
+      });
+      if($("#firstdate").exists() && $("#seconddate").exists() ){
+        $("#firstdate").on("dp.change", function (e) {
+          $('#seconddate').data("DateTimePicker").minDate(e.date);
+        });
+        $("#seconddate").on("dp.change", function (e) {
+          $('#firstdate').data("DateTimePicker").maxDate(e.date);
+        });
+      }
+      if($("#thirddate").exists() && $("#fourthdate").exists()){
+        $("#thirddate").on("dp.change", function (e) {
+          $('#fourthdate').data("DateTimePicker").minDate(e.date);
+        });
+        $("#fourthdate").on("dp.change", function (e) {
+          $('#thirddate').data("DateTimePicker").maxDate(e.date);
+        });
+      }
       $('#openfirst').datetimepicker({
         format: 'MM/DD/YYYY HH:mm',
+        ignoreReadonly: true,
+        useCurrent: false,
       });
       $('#opensecond').datetimepicker({
         format: 'MM/DD/YYYY HH:mm',
+        ignoreReadonly: true,
+        useCurrent: false,
       });
+      if($("#openfirst").exists() && $("#opensecond").exists()){
+        $("#openfirst").on("dp.change", function (e) {
+          $('#opensecond').data("DateTimePicker").minDate(e.date);
+        });
+        $("#opensecond").on("dp.change", function (e) {
+          $('#openfirst').data("DateTimePicker").maxDate(e.date);
+        });
+      }
     });
     $('[data-countdown]').each(function() {
       var $this = $(this), finalDate = $(this).data('countdown');

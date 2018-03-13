@@ -22,22 +22,23 @@
     <div class="col-md-5 col-sm-6 col-xs-12 no-padding">
       <div id="property-listings">
           <div class ="panel panel-default">
-              <a id="{{$post->id}}" href="{{ url('properties')}}/{{$post->slug}}"><input class="img-rounded" value="" type="submit" style="border: solid 0px #000000; height: 200px; width: 100%;
-                background-image: url({{ asset('/../images/') }}/{{$image}});
-                background-size: 450px; background-repeat: no-repeat;"/></a>
+              <a id="{{$post->id}}" href="{{ url('properties')}}/{{$post->slug}}"><img src="{{ asset('/../images/') }}/{{$image}}" style="border: solid 0px #000000; height: 200px; width: 100%;
+                background-size: 450px; background-repeat: no-repeat;"></a>
               <div class="panel-heading">
                 <div style="text-align: left;">
-                  <h3><p><strong>{{$post->title}}</strong></p></h3>
-                  <h4><strong>${{$post->price}}</strong></h4>
+                  <a style="color: black" href="{{ url('properties')}}/{{$post->slug}}">
+                    <h3 class="add-ellipsis"><strong>{{$post->title}}</strong></h3>
+                    <h4><strong>${{$post->price}}</strong></h4>
+                  </a>
                   <hr>
-                  <p><b>Beds: {{$post->number_of_beds}} | Baths: {{$post->number_of_baths}} </b></p>
-                  <p><strong>Sqft: {{$post->area}}</strong></p>
-                  <strong>
+                  <p><i class="fas fa-bed"></i><b> {{$post->number_of_beds}}</b> | <i class="fas fa-bath"></i><b> {{$post->number_of_baths}} </b></p>
+                  <p><i class="fas fa-chart-area"></i><b> {{$post->area}}sqft&sup2;</b></p>
+                  <p class="add-ellipsis"><strong>
                     {{$post->street_address}}
                     {{$post->route}}
                     {{$post->city}}
                     {{$post->state}}
-                  </strong>
+                  </strong></p>
                   <form action="{{action('PropertyController@edit', $post->id )}}" method="get">
                     {{csrf_field()}}
                     <input type="hidden" name="_method" value="EDIT">
@@ -57,6 +58,10 @@
         </div>
       </div>
     @endforeach
-  </div>`
+  </div>
+@else
+<script>
+window.location.href = "/login";
+</script>
 @endif
 @endsection

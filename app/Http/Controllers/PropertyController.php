@@ -102,6 +102,7 @@ class PropertyController extends Controller
         'area' => 'required|numeric',
         'date' =>'required',
         'price' => 'required|numeric',
+        'bidprice' => 'numeric',
         'images' => 'required',
         'details' => 'required',
         'house_type' => 'required',
@@ -252,6 +253,11 @@ class PropertyController extends Controller
       $property->date = $request->get('date');
       $property->firstdate = $request->get('firstdate');
       $property->seconddate = $request->get('seconddate');
+      $property->thirddate = $request->get('thirddate');
+      $property->fourthdate = $request->get('fourthdate');
+      $property->unit = $request->get('unit');
+      $property->bidprice = $request->get('bidprice');
+      $property->address_opt = $request->get('address_opt');
       $property->street_address = $request->get('street_address');
       $property->route = $request->get('route');
       $property->city = $request->get('city');

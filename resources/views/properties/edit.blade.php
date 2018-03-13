@@ -41,7 +41,14 @@
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Price:</strong>
-                <input id="edit-price" type="string" name="price" placeholder="Price" class="form-control" value="{{$property->price}}">
+                <input id="edit-price" type="string" name="price" placeholder="Target Price" class="form-control" value="{{$property->price}}">
+            </div>
+        </div>
+
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <strong>Starting Price:</strong>
+                <input type="string" name="bidprice" placeholder="Starting Bid Price *Optional" class="form-control" value="{{$property->bidprice}}">
             </div>
         </div>
 
@@ -68,7 +75,7 @@
             <div class="form-group">
               <strong>Offer Closing Time:</strong>
               <div class='input-group date' id='closingtime'>
-                  <input id="get_closingtime" type="text" name="date" placeholder="Date" class="form-control" value="{{$property->date}}">
+                  <input id="get_closingtime" type="text" name="date" placeholder="Date" class="form-control" value="{{$property->date}}" readonly="readonly">
                   <span class="input-group-addon">
                       <span class="glyphicon glyphicon-calendar"></span>
                   </span>
@@ -78,9 +85,9 @@
 
         <div class="col-xs-6 col-sm-6 col-md-6">
             <div class="form-group">
-              <strong>First Open House</strong>
+              <strong>First Open House From</strong>
               <div class='input-group date' id='firstdate'>
-                  <input id="get_firstdate" type="text" name="firstdate" placeholder="Date" class="form-control" value="{{$property->firstdate}}">
+                  <input id="get_firstdate" type="text" name="firstdate" placeholder="Date" class="form-control" value="{{$property->firstdate}}" readonly="readonly">
                   <span class="input-group-addon">
                       <span class="glyphicon glyphicon-calendar"></span>
                   </span>
@@ -90,9 +97,33 @@
 
         <div class="col-xs-6 col-sm-6 col-md-6">
             <div class="form-group">
-              <strong>Second Open House</strong>
+              <strong>First Open House To</strong>
               <div class='input-group date' id='seconddate'>
-                  <input id="get_seconddate" type="text" name="seconddate" placeholder="Date" class="form-control" value="{{$property->seconddate}}">
+                  <input id="get_seconddate" type="text" name="seconddate" placeholder="Date" class="form-control" value="{{$property->seconddate}}" readonly="readonly">
+                  <span class="input-group-addon">
+                      <span class="glyphicon glyphicon-calendar"></span>
+                  </span>
+              </div>
+            </div>
+        </div>
+
+        <div class="col-xs-6 col-sm-6 col-md-6">
+            <div class="form-group">
+              <strong>Second Open House From</strong>
+              <div class='input-group date' id='thirddate'>
+                  <input id="get_thirddate" type="text" name="firstdate" placeholder="Date" class="form-control" value="{{$property->thirddate}}" readonly="readonly">
+                  <span class="input-group-addon">
+                      <span class="glyphicon glyphicon-calendar"></span>
+                  </span>
+              </div>
+            </div>
+        </div>
+
+        <div class="col-xs-6 col-sm-6 col-md-6">
+            <div class="form-group">
+              <strong>Second Open House To</strong>
+              <div class='input-group date' id='fourthdate'>
+                  <input id="get_fourthdate" type="text" name="seconddate" placeholder="Date" class="form-control" value="{{$property->fourthdate}}" readonly="readonly">
                   <span class="input-group-addon">
                       <span class="glyphicon glyphicon-calendar"></span>
                   </span>
@@ -102,13 +133,13 @@
 
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-              <div id="map" style="width:400px; height:300px;"></div>
-              <div id="infowindow-content">
-                <img src="" width="16" height="16" id="place-icon">
-                <span id="place-name" class="title"></span><br>
-                <span id="place-address"></span>
-              </div>
-              <strong>Address:</strong>
+                <div id="map" style="width:400px; height:300px;"></div>
+                <div id="infowindow-content">
+                  <img src="" width="16" height="16" id="place-icon">
+                  <span id="place-name" class="title"></span><br>
+                  <span id="place-address"></span>
+                </div>
+                <strong>Address:</strong>
                 <div id="locationField">
                   <input class="form-control" id="autocomplete" placeholder="Enter your address"
                   onFocus="geolocate()" type="text"></input>
@@ -120,6 +151,10 @@
                 <input class="form-control" id="country" disabled="true" name="country" placeholder="Country" value="{{$property->country}}"></input>
                 <input class="form-control" id="postal_code" disabled="true" name="postal_code" placeholder="Postal Code" value="{{$property->postal_code}}"></input>
                 <input class="form-control" id="administrative_area_level_1" disabled="true" name="state" placeholder="State" value="{{$property->state}}"></input>
+                <strong>Optional:</strong>
+                <input class="form-control" id="unit" name="unit" placeholder="Unit *Not Required" value="{{$property->unit}}"></input>
+                <input class="form-control" id="address_opt" name="address_opt" placeholder="Optional Address *Not Required" value="{{$property->address_opt}}"></input>
+
               <!--input id="address" type="text" name="address" placeholder="address" class="form-control">-->
             </div>
         </div>

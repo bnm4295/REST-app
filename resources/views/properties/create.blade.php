@@ -45,7 +45,14 @@
     <div class="col-xs-12 col-sm-12 col-md-12">
         <div class="form-group">
           <strong>Target Price:</strong>
-          <input id="getprice" type="string" name="price" placeholder="Price" class="form-control">
+          <input id="getprice" type="string" name="price" placeholder="Buyout/Target Price" class="form-control">
+        </div>
+    </div>
+
+    <div class="col-xs-12 col-sm-12 col-md-12">
+        <div class="form-group">
+          <strong>Starting Bid Price:</strong>
+          <input type="string" name="bidprice" placeholder="Starting Price *Optional" class="form-control">
         </div>
     </div>
 
@@ -53,7 +60,7 @@
         <div class="form-group">
           <strong>Offer Closing Time:</strong>
           <div class='input-group date' id='closingtime'>
-              <input id="get_closingtime" type="text" name="date" placeholder="Date" class="form-control">
+              <input id="get_closingtime" type="text" name="date" placeholder="Date" class="form-control" readonly="readonly">
               <span class="input-group-addon">
                   <span class="glyphicon glyphicon-calendar"></span>
               </span>
@@ -63,9 +70,9 @@
 
     <div class="col-xs-6 col-sm-6 col-md-6">
         <div class="form-group">
-          <strong>First Open House</strong>
+          <strong>First Open House From</strong>
           <div class='input-group date' id='firstdate'>
-              <input id="get_firstdate" type="text" name="firstdate" placeholder="Date" class="form-control">
+              <input id="get_firstdate" type="text" name="firstdate" placeholder="Date" class="form-control" readonly="readonly">
               <span class="input-group-addon">
                   <span class="glyphicon glyphicon-calendar"></span>
               </span>
@@ -75,9 +82,33 @@
 
     <div class="col-xs-6 col-sm-6 col-md-6">
         <div class="form-group">
-          <strong>Second Open House</strong>
+          <strong>First Open House To</strong>
           <div class='input-group date' id='seconddate'>
-              <input id="get_seconddate" type="text" name="seconddate" placeholder="Date" class="form-control">
+              <input id="get_seconddate" type="text" name="seconddate" placeholder="Date" class="form-control" readonly="readonly">
+              <span class="input-group-addon">
+                  <span class="glyphicon glyphicon-calendar"></span>
+              </span>
+          </div>
+        </div>
+    </div>
+
+    <div class="col-xs-6 col-sm-6 col-md-6">
+        <div class="form-group">
+          <strong>Second Open House From</strong>
+          <div class='input-group date' id='thirddate'>
+              <input id="get_thirddate" type="text" name="thirddate" placeholder="Date" class="form-control" readonly="readonly">
+              <span class="input-group-addon">
+                  <span class="glyphicon glyphicon-calendar"></span>
+              </span>
+          </div>
+        </div>
+    </div>
+
+    <div class="col-xs-6 col-sm-6 col-md-6">
+        <div class="form-group">
+          <strong>Second Open House To</strong>
+          <div class='input-group date' id='fourthdate'>
+              <input id="get_fourthdate" type="text" name="fourthdate" placeholder="Date" class="form-control" readonly="readonly">
               <span class="input-group-addon">
                   <span class="glyphicon glyphicon-calendar"></span>
               </span>
@@ -113,7 +144,7 @@
             <span id="place-name" class="title"></span><br>
             <span id="place-address"></span>
           </div>
-          <strong>Address:</strong>
+            <strong>Address:</strong>
             <div id="locationField">
               <input class="form-control" id="autocomplete" placeholder="Enter your address"
               onFocus="geolocate()" type="text"></input>
@@ -124,6 +155,9 @@
             <input class="form-control" id="country" disabled="true" name="country" placeholder="Country" readonly></input>
             <input class="form-control" id="postal_code" disabled="true" name="postal_code" placeholder="Postal Code"></input>
             <input class="form-control" id="administrative_area_level_1" disabled="true" name="state" placeholder="Province" readonly></input>
+          <strong>Optional:</strong>
+            <input class="form-control" id="unit" name="unit" placeholder="Unit *Not Required"></input>
+            <input class="form-control" id="address_opt" name="address_opt" placeholder="Optional Address *Not Required"></input>
         </div>
     </div>
           <input id="getlat" type="hidden" name="latitude" placeholder="latitude" class="form-control" readonly>

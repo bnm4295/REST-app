@@ -21,10 +21,15 @@ class CreatePropertiesTable extends Migration
           $table->string('date');
           $table->string('firstdate')->nullable();
           $table->string('seconddate')->nullable();
+          $table->string('thirddate')->nullable();
+          $table->string('fourthdate')->nullable();
           $table->string('slug');
           $table->string('price');
+          $table->string('bidprice')->nullable();
           $table->string('area');
           $table->string('house_type')->nullable();
+          $table->string('unit')->nullable();
+          $table->string('address_opt')->nullable();
           $table->string('street_address')->nullable()->default("");
           $table->string('route')->nullable()->default("");
           $table->string('city')->nullable()->default("");

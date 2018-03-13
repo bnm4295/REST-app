@@ -155,19 +155,53 @@
           $secdatemonth = date("M", strtotime($property->seconddate));
           $secdateday = date("d", strtotime($property->seconddate));
           $secdatetime = date('g:h A', strtotime($property->seconddate));
+          $thirddatemonth = date("M", strtotime($property->thirddate));
+          $thirddateday = date("d", strtotime($property->thirddate));
+          $thirddatetime = date('g:h A', strtotime($property->thirddate));
+          $fourthdatemonth = date("M", strtotime($property->fourthdate));
+          $fourthdateday = date("d", strtotime($property->fourthdate));
+          $fourthdatetime = date('g:h A', strtotime($property->fourthdate));
           ?>
-          @if($property->firstdate != NULL)
+          @if($property->firstdate != NULL && $property->seconddate)
             <h4>First Date</h4>
             <hr>
-            <p class="calendar">{{$firstdateday}}<em>{{$firstdatemonth}}</em></p>
-            <h3>{{$firstdatetime}}</h3>
-            <br>
+            <div class="row">
+             <div class="col-md-6" style="display: inline-block;">
+                <div style="text-align:center">
+                  <strong><h4>Start Date</h4></strong>
+                  <p style="text-indent: 5px; display:inline-block;" class="calendar">{{$firstdateday}}<em>{{$firstdatemonth}}</em></p>
+                  <h3>{{$firstdatetime}}</h3>
+                </div>
+              </div>
+              <div class="col-md-6" style="display: inline-block;">
+                <div style="text-align:center">
+                  <strong><h4>End Date</h4></strong>
+                  <p style="text-indent: 5px; display:inline-block;" class="calendar">{{$secdateday}}<em>{{$secdatemonth}}</em></p>
+                  <h3>{{$secdatetime}}</h3>
+                </div>
+              </div>
+            </div>
+            &nbsp;
           @endif
-          @if($property->seconddate != NULL)
+          @if($property->thirddate != NULL && $property->fourthdate)
             <h4>Second Date</h4>
             <hr>
-            <p class="calendar">{{$secdateday}}<em>{{$secdatemonth}}</em></p>
-            <h3>{{$secdatetime}}</h3>
+            <div class="row">
+              <div class="col-md-6" style="display: inline-block;">
+                <div style="text-align:center">
+                  <strong><h4>Start Date</h4></strong>
+                  <p style="text-indent: 5px; display:inline-block;" class="calendar">{{$thirddateday}}<em>{{$thirddatemonth}}</em></p>
+                  <h3>From: {{$thirddatetime}}</h3>
+                </div>
+              </div>
+              <div class="col-md-6" style="display: inline-block;">
+                <div style="text-align:center">
+                  <strong><h4>End Date</h4></strong>
+                  <p style="text-indent: 5px; display:inline-block;" class="calendar">{{$fourthdateday}}<em>{{$fourthdatemonth}}</em></p>
+                  <h3>To: {{$fourthdatetime}}</h3>
+                </div>
+              </div>
+            </div>
           @endif
           @if(($property->firstdate && $property->seconddate) == NULL)
             <h4>No Open-House Dates</h4>
@@ -276,9 +310,9 @@
                 <h3>Request a Viewing Time</h3>
                 <strong>Name</strong>
                   @if(Auth::check())
-                    <input name="name" class="form-control" value="{{Auth::user()->name}}"></input>
+                    <input name="name" class="form-control" value="{{Auth::user()->name}}" required></input>
                   @else
-                    <input name="name" class="form-control"></input>
+                    <input name="name" class="form-control" required></input>
                   @endif
               </div>
             </div>
@@ -298,14 +332,14 @@
               <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
                   <strong>Message:</strong>
-                  <textarea rows="5" cols="5" name="description" placeholder="Description" class="form-control"></textarea>
+                  <textarea rows="5" cols="5" name="description" placeholder="Description" class="form-control" required></textarea>
                 </div>
               </div>
             </div>
             <div class="col-xs-6 col-sm-6 col-md-6">
                 <div class="form-group">
                   <div class='input-group date' id='openfirst'>
-                      <input type="text" name="openfirst" placeholder="First Date" class="form-control">
+                      <input type="text" name="openfirst" placeholder="Start Date" class="form-control" required readonly="readonly">
                       <span class="input-group-addon">
                           <span class="glyphicon glyphicon-calendar"></span>
                       </span>
@@ -315,7 +349,7 @@
             <div class="col-xs-6 col-sm-6 col-md-6">
                 <div class="form-group">
                   <div class='input-group date' id='opensecond'>
-                      <input type="text" name="opensecond" placeholder="Second Date" class="form-control">
+                      <input type="text" name="opensecond" placeholder="End Date" class="form-control" required readonly="readonly">
                       <span class="input-group-addon">
                           <span class="glyphicon glyphicon-calendar"></span>
                       </span>
