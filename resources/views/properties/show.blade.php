@@ -106,6 +106,10 @@
         <div class="panel-title">
           <h4>Ending Date - {{$property->date}}</h4>
         </div>
+        <div class="alert alert-info">
+          <i style="font-size: 20px;"class="fa fa-info-circle" aria-hidden="true"></i>
+          <p style="margin-top: 5px; margin-left: 2px; display: inline-block">All offers are legitimate and documented</p>
+        </div>
         <div data-countdown= "{{$property->date}}" style="text-align: center; font-size: 50px; color: black; margin-bottom: 20px; font-weight: bold">
         </div>
         <?php
@@ -243,6 +247,10 @@
               </div>
             </form>
           </div>
+        </div>
+        <div class="alert alert-info">
+          <i style="font-size: 20px;"class="fa fa-info-circle" aria-hidden="true"></i>
+          <p style="display: inline; margin-left: 2px;">All offers will be legitimately made, we will email you an electronic document to sign. For more information, please check out our FAQ page <a href="/questions">HERE</a>.</p>
         </div>
         <div class="panel-heading">
           @if($remaining>0)
@@ -396,10 +404,13 @@
   $link = $_SERVER['PHP_SELF'];
   $link_array = explode('/',$link);
   $currslug = end($link_array);
-  $searchprop = DB::table('properties')->where(function ($q) use ($property) {
+  $nospace = $property->street_address . $property->route;
+  //$test = DB::table('properties')->where('route', 'LIKE', "{$property->route}")->get();
+  //dd($test);
+  $searchprop = DB::table('properties')->where(function ($q) use ($property, $nospace) {
     $q->where('city', 'LIKE', "%{$property->city}%")
-    ->orwhere(DB::raw('CONCAT_WS(" ", street_address, route)'), 'LIKE', "%{$property->route}%")
-    ->orwhere('postal_code', 'LIKE', "%{$property->postal_code}%")
+    ->orwhere('route', 'LIKE', "{$property->route}")
+    ->orwhere('postal_code', 'LIKE', "{$property->postal_code}")
     ->where('state', 'LIKE', "%{$property->state}%")
     ->where('country', 'LIKE', "%{$property->country}%");
   })->where('id', '!=', "$property->id")->paginate(4);
@@ -420,6 +431,9 @@
             @endforeach
           </div>
         </div>
+        @if($searchprop->isEmpty())
+          <h3 style="color:white">There are currently no similar properties listed!</h3>
+        @endif
       </div>
     </div>
 </section>
