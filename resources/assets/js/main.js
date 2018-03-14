@@ -277,7 +277,7 @@ $(document).ready(function () {
           e.preventDefault();
           swal({
               title: "Are you sure?",
-              text: 'Your offer will be submitted. We will forward you an email for the next step to make this offer legitimate.',
+              text: 'Your offer will be submitted. We are sending you an email that allows you to confirm this offer and send offer documents to the seller.',
               type: "warning",
               showCancelButton: true,
               confirmButtonClass: 'btn-info',
@@ -292,7 +292,7 @@ $(document).ready(function () {
                 });
                 form.submit();
               } else {
-                  swal("Cancelled", "Your offer has not been submitted.", "error");
+                swal("Cancelled", "Your offer has not been submitted.", "error");
               }
             });
       });

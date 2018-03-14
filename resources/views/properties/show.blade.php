@@ -52,7 +52,7 @@
       <!-- PANEL START -->
       <div class ="panel panel-default">
         <div class="panel-title">
-          <h4>Details of Property</h4>
+          <h4>Property Details</h4>
         </div>
         <div class="row">
           <div class="col-md-12">
@@ -87,7 +87,7 @@
           </div>
         </div>
         <div class="panel-title">
-          <h4>Description of Property</h4>
+          <h4>Property Description</h4>
         </div>
         <div class="row">
           <div class="col-md-12">
@@ -104,7 +104,7 @@
             @include('includes.walkscore')
         </div>
         <div class="panel-title">
-          <h4>Ending Date - {{$property->date}}</h4>
+          <h4>Listing End Date - {{$property->date}}</h4>
         </div>
         <div class="alert alert-info">
           <i style="font-size: 20px;"class="fa fa-info-circle" aria-hidden="true"></i>
@@ -154,7 +154,7 @@
           @endforeach
         </div>
         <div class="panel-title">
-          <h4>Open-House Times</h4>
+          <h4>Open Houses</h4>
         </div>
         <div class="panel-heading">
           <?php
@@ -219,7 +219,7 @@
         <div class="panel-heading">
           <div class="row">
             <h3 style=" color: #111; font-family: 'Helvetica Neue', sans-serif; font-size: 20px; font-weight: bold; letter-spacing: -1px; line-height: 1; text-align: center;">
-              Send a Message</h3>
+              Send Seller a Message</h3>
             <form id="message-form" action="{{ route('messages.store') }}" method="post">
               {{ csrf_field() }}
               <div class="col-xs-12 col-sm-12 col-md-12">
@@ -254,7 +254,7 @@
         </div>
         <div class="panel-heading">
           @if($remaining>0)
-              <h4 style="color: #111; font-family: 'Helvetica Neue', sans-serif; font-size: 20px; font-weight: bold; letter-spacing: -1px; line-height: 1; text-align: center;">Send an Offer</h4>
+              <h4 style="color: #111; font-family: 'Helvetica Neue', sans-serif; font-size: 20px; font-weight: bold; letter-spacing: -1px; line-height: 1; text-align: center;">Make an Offer on This Property</h4>
               <form id="offer-property" action="{{action('OfferController@store')}}" method="post" enctype="multipart/form-data">
                 <meta name="csrf-token" content="{{ csrf_token() }}">
                 {{ csrf_field() }}

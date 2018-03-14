@@ -24,6 +24,7 @@ class BookingController extends Controller
       ]);
       $inputs = $request->all();
       $offers = Booking::Create($inputs);
+      //$from maybe add person's email for another use.
       $from = $request->email;
       $prop_id = $inputs['prop_id'];
       $property = Property::find($prop_id);
@@ -34,10 +35,10 @@ class BookingController extends Controller
         "<br>Comments: ".$request->description . "<br>First Date: ".$request->openfirst.
         "<br>Second Date: ".$request->opensecond.
         "<br>";
-      Mail::send(['html' =>'emails.booking'], ['text' => $messages], function($message) use ($from,$useremail)
+      Mail::send(['html' =>'emails.booking'], ['text' => $messages], function($message) use ($useremail)
       {
         $message->subject('Suuty - Requested Viewing Time');
-        $message->from($from, 'Suuty');
+        $message->from('david@suuty.com', 'Suuty');
         $message->to($useremail);
       });
       Session::flash('success', 'Request Successful!');
