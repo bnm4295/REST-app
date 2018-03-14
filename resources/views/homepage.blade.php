@@ -238,7 +238,7 @@
   <div id="results">@include('includes.propertydisplay')</div>
 </div>
 <div class="container">
-  <h4 style="text-align: center; line-height: 200%; font-weight: bold">At Suuty, we believe in housing for all. That’s we give a percentage of our revenues (the $990 flat fee sellers pay when they accept an offer on their home) to Habitat for Humanity.
+  <h4 style="text-align: center; line-height: 200%; font-weight: bold">At Suuty, we believe in housing for all. That’s why we give a percentage of our revenues (the $990 flat fee sellers pay when they accept an offer on their home) to Habitat for Humanity.
 
     Find out more about Habitat for Humanity <a href="{{URL::to('about')}}">HERE</a> and other ways you can get involved supporting housing for all in your local community.
     <img style="display: block; margin-left: auto; margin-right: auto;" src="/images/Teal-Large.png" alt="logo" width="160px" height="80px"></img>

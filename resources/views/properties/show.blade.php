@@ -314,7 +314,7 @@
     </div>
     <div class="col-md-5 col-sm-12 col-xs-12" style="float:right">
       <div class="container requestform">
-        <form id="request-time" method="post" action="{{url('post-booking')}}" enctype="multipart/form-data">
+        <form id="request-time" method="post" action="{{ route('bookings.store') }}" enctype="multipart/form-data">
           <meta name="csrf-token" content="{{ csrf_token() }}">
           {{ csrf_field() }}
           <input type="hidden" name="prop_id" value="{{$property->id}}">
@@ -370,7 +370,7 @@
                 </div>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12" style="text-align: right">
-              <input type="submit" name="submit" class="btn btn-primary"></input>
+              <button type="submit" class="btn btn-primary form-control">Submit</button>
             </div>
         </form>
       </div>
@@ -405,8 +405,7 @@
   $link_array = explode('/',$link);
   $currslug = end($link_array);
   $nospace = $property->street_address . $property->route;
-  //$test = DB::table('properties')->where('route', 'LIKE', "{$property->route}")->get();
-  //dd($test);
+
   $searchprop = DB::table('properties')->where(function ($q) use ($property, $nospace) {
     $q->where('city', 'LIKE', "%{$property->city}%")
     ->orwhere('route', 'LIKE', "{$property->route}")

@@ -162,14 +162,14 @@
         </div>
         <div class="dropdown" style="float:left; margin-left: 10px; margin-right: 10px;">
           <button href="#" class="dropdown-toggle form-control input-md" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">
-            <b>Area Range</b><span class="caret"></span>
+            <b>Sqft Range</b><span class="caret"></span>
           </button>
           <div class="dropdown-menu" style="min-width: 350px;" role="menu">
             <div style="margin: 20px;">
-              <h3>Area MIN</h3>
+              <h3>Sqft MIN</h3>
               <input type="text" name="area_left" value="0" selectBoxOptions="2000;3000;4000;5000;6000;7000;8000;9000;10000;20000;30000;40000;50000">
               <hr>
-              <h3>Area MAX</h3>
+              <h3>Sqft MAX</h3>
               <input type="text" name="area_right" value="50000" selectBoxOptions="2000;3000;4000;5000;6000;7000;8000;9000;10000;20000;30000;40000;50000">
             </div>
           </div>

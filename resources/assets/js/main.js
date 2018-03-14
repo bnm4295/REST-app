@@ -263,11 +263,10 @@ $(document).ready(function () {
               },
            function (isConfirm) {
               if (isConfirm) {
-                swal("Confirmed!", "Your request has been submitted.", "success", function () {
-                });
+                swal("Confirmed!", "Your request has been submitted.", "success");
                 form.submit();
               } else {
-                  swal("Cancelled", "Your request has not been submitted.", "error");
+                swal("Cancelled", "Your request has not been submitted.", "error");
               }
               });
       });

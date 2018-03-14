@@ -45,7 +45,8 @@
         </a>
         <div id="faq3" class="panel-collapse collapse">
           <div class="panel-body">
-            <p>The seller will enter their target price and desired timeframe for offers. Prospective purchasers can enter their offers including and subjects. At the end of the timeframe the seller will accept the offer that is the best for their circumstance and move into negotiation. This is true “market pricing”! Suuty will then assist both parties drawing up all the paperwork and ensuring the deal is legit.  All you have to do is start planning your move!</p>
+            <p>The seller will enter their target price and desired timeframe for offers. Prospective purchasers can offer their desired price for a particular property until the closing date.
+              These offers will be transparent to everyone. At the end of the timeframe the seller will accept an offer that is the best for their circumstance and move into negotiation. This is true “market pricing”! Suuty will then assist both parties drawing up all the paperwork and ensuring the deal is legit.  All you have to do is start planning your move!</p>
           </div>
         </div>
       </div>
