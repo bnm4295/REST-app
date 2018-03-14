@@ -283,7 +283,7 @@
                 </div>
               </form>
             @else
-              <h4>Offer Period is Over</h4>
+              <h4 style="text-align: center; font-size: 50px; color: black; margin-bottom: 20px; font-weight: bold;">Offer Period is Over</h4>
             @endif
           </div>
       </div>
@@ -310,11 +310,11 @@
             <img src="https://www.ratehub.ca/assets/images/widget-logo.png" style="width:100%;" alt="RateHub logo"></a>
           </div>
         </div>-->
+        &nbsp;
     </div>
-    &nbsp;
     <div class="col-md-5 col-sm-12 col-xs-12" style="float:right">
       <div class="container requestform">
-        <form method="post" action="{{url('post-booking')}}" enctype="multipart/form-data">
+        <form id="request-time" method="post" action="{{url('post-booking')}}" enctype="multipart/form-data">
           <meta name="csrf-token" content="{{ csrf_token() }}">
           {{ csrf_field() }}
           <input type="hidden" name="prop_id" value="{{$property->id}}">

@@ -186,7 +186,7 @@ $(document).ready(function () {
       $this.countdown(finalDate, function(event) {
         $this.html(event.strftime('%D days %H:%M:%S'));
         if(event.strftime('%D days %H:%M:%S') == "00 days 00:00:00"){
-          $this.html("Bidding Is Over. <br>");
+          $this.html("Bidding is Over. <br>");
         }
       });
       $this.on('finish.countdown', function(event){
@@ -246,6 +246,32 @@ $(document).ready(function () {
         //endDate: '+1d',
         //autoclose: true
     //});
+    if($('#request-time').exists()){
+      document.querySelector('#request-time').addEventListener('submit', function(e) {
+          var form = this;
+          e.preventDefault();
+          swal({
+              title: "Are you sure?",
+              text: 'Your request will be submitted with the following time.',
+              type: "warning",
+              showCancelButton: true,
+              confirmButtonClass: 'btn-info',
+              confirmButtonText: 'Yes',
+              cancelButtonText: "No",
+              closeOnConfirm: false,
+              closeOnCancel: false
+              },
+           function (isConfirm) {
+              if (isConfirm) {
+                swal("Confirmed!", "Your request has been submitted.", "success", function () {
+                });
+                form.submit();
+              } else {
+                  swal("Cancelled", "Your request has not been submitted.", "error");
+              }
+              });
+      });
+    }
     if($('#offer-property').exists()){
       document.querySelector('#offer-property').addEventListener('submit', function(e) {
           var form = this;
@@ -264,12 +290,12 @@ $(document).ready(function () {
            function (isConfirm) {
               if (isConfirm) {
                 swal("Confirmed!", "Your offer has been submitted.", "success", function () {
-                  form.submit();
                 });
+                form.submit();
               } else {
                   swal("Cancelled", "Your offer has not been submitted.", "error");
               }
-              });
+            });
       });
     }
     if($("#message-form").exists()){
@@ -290,8 +316,8 @@ $(document).ready(function () {
            function (isConfirm) {
               if (isConfirm) {
                 swal("Confirmed!", "Your message has been submitted.", "success", function () {
-                  form.submit();
                 });
+                form.submit();
               } else {
                   swal("Cancelled", "Your message has not been submitted.", "error");
               }
