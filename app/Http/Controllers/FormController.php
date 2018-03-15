@@ -4,6 +4,7 @@ namespace Suuty\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Suuty\Form;
+use Mail;
 
 class FormController extends Controller
 {
@@ -24,6 +25,18 @@ class FormController extends Controller
       $inputs = $request->all();
       $inputs['provider'] = $encodeprovider;
       $form = Form::Create($inputs);
-      return redirect()->back()->with('alert','success');
+
+      $messages =
+        "<br>Comments: ".$request->description . "<br>From: ".$request->name.
+        "<br>Email: ".$request->email.
+        "<br>";
+
+      Mail::send(['html' =>'emails.contactform'], ['text' => $messages], function($message)
+      {
+        $message->subject('Suuty - Contact Form');
+        $message->from('david@suuty.com', 'Suuty');
+        $message->to('david@suuty.com'); //change to another email? add bcc?
+      }); //->bcc('info@propels.ca')
+      return redirect()->back();
     }
 }

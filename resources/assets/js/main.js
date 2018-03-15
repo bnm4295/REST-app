@@ -246,6 +246,82 @@ $(document).ready(function () {
         //endDate: '+1d',
         //autoclose: true
     //});
+
+    if($('#addcomments').exists()){
+      document.querySelector('#addcomments').addEventListener('submit', function(e) {
+          var form = this;
+          e.preventDefault();
+          swal({
+              title: "Are you sure?",
+              text: 'Your form will be submitted.',
+              type: "warning",
+              showCancelButton: true,
+              confirmButtonClass: 'btn-info',
+              confirmButtonText: 'Yes',
+              cancelButtonText: "No",
+              closeOnConfirm: false,
+              closeOnCancel: false
+              },
+           function (isConfirm) {
+              if (isConfirm) {
+                swal("Confirmed!", "Your form has been submitted.", "success");
+                form.submit();
+              } else {
+                swal("Cancelled", "Your form has not been submitted.", "error");
+              }
+              });
+      });
+    }
+    if($('#serviceform').exists()){
+      document.querySelector('#serviceform').addEventListener('submit', function(e) {
+          var form = this;
+          e.preventDefault();
+          swal({
+              title: "Are you sure?",
+              text: 'Your form will be submitted.',
+              type: "warning",
+              showCancelButton: true,
+              confirmButtonClass: 'btn-info',
+              confirmButtonText: 'Yes',
+              cancelButtonText: "No",
+              closeOnConfirm: false,
+              closeOnCancel: false
+              },
+           function (isConfirm) {
+              if (isConfirm) {
+                swal("Confirmed!", "Your form has been submitted.", "success");
+                form.submit();
+              } else {
+                swal("Cancelled", "Your form has not been submitted.", "error");
+              }
+              });
+      });
+    }
+    if($('#contact-form').exists()){
+      document.querySelector('#contact-form').addEventListener('submit', function(e) {
+          var form = this;
+          e.preventDefault();
+          swal({
+              title: "Are you sure?",
+              text: 'Your form will be submitted.',
+              type: "warning",
+              showCancelButton: true,
+              confirmButtonClass: 'btn-info',
+              confirmButtonText: 'Yes',
+              cancelButtonText: "No",
+              closeOnConfirm: false,
+              closeOnCancel: false
+              },
+           function (isConfirm) {
+              if (isConfirm) {
+                swal("Confirmed!", "Your form has been submitted.", "success");
+                form.submit();
+              } else {
+                swal("Cancelled", "Your form has not been submitted.", "error");
+              }
+              });
+      });
+    }
     if($('#request-time').exists()){
       document.querySelector('#request-time').addEventListener('submit', function(e) {
           var form = this;

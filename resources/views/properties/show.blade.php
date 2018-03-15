@@ -15,9 +15,7 @@
       </ul>
     </div>
   @endif
-  <h1 style="color: #111; white-space: nowrap; overflow: hidden;
-  text-overflow: ellipsis;font-size: 40px; font-weight:
-  bold; letter-spacing: -1px; line-height: 1;">{{$property->title}}</h1>
+  <h1 style="color: #111; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;font-size: 40px; font-weight: bold; letter-spacing: -1px; line-height: 1;">{{$property->title}}</h1>
   <h5>{{$property->street_address}} {{$property->route}} {{$property->city}} {{$property->state}}, {{$property->postal_code}} {{$property->country}}</h5>
   <h2 id="pricenum" style="color: #111; font-family: 'Helvetica Neue', sans-serif; font-size: 40px; font-weight: bold; letter-spacing: -1px; line-height: 1;">
     ${{$property->price}}</h2>
@@ -35,7 +33,7 @@
         <a href="{{ asset('/../images/') }}/{{$firstimg}}" class="image-link">
           <img class="prop_thumb" src="{{ asset('/../images/') }}/{{$firstimg}}" style="width: 100%; height: 400px; margin-bottom: 2px;" alt="property-images"/>
         </a>
-        <div style="text-align:center">
+        <div style="text-align:center">--
           <div style="display: inline-block">
           <?php
             for ($i = 1 ; $i < $counter; $i++ ){
