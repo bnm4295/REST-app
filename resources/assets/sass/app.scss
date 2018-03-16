@@ -1072,6 +1072,7 @@ and (max-width: 339px){
 	}
 	.splash-title{
 		top: 100px;
+    text-align:center;
 	}
 	.splash-title p{
 		text-align:center !important;
@@ -1090,6 +1091,11 @@ and (max-width: 339px){
 	#fb-widget{
 		display:none;
 	}
+  #no-proplisted{
+    float: initial;
+    top: 100px;
+    position: relative;
+  }
 }
 @media only screen
 and (min-width: 340px)
@@ -1157,6 +1163,7 @@ and (max-width: 767px){
 	}
 	.splash-title{
 		top: 100px;
+    text-align:center;
 	}
 	.splash-title p{
 		text-align:center !important;
@@ -1172,6 +1179,12 @@ and (max-width: 767px){
 		top: 100px;
 		width: 100%;
 	}
+  #no-proplisted{
+    float: initial;
+    top: 100px;
+    position: relative;
+    text-align:center;
+  }
 }
 
 @media only screen

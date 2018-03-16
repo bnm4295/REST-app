@@ -429,7 +429,7 @@
           </div>
         </div>
         @if($searchprop->isEmpty())
-          <h3 style="color:white">There are currently no similar properties listed!</h3>
+          <h3 id="no-proplisted" style="color:white">There are currently no similar properties listed!</h3>
         @endif
       </div>
     </div>

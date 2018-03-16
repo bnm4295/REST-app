@@ -29,7 +29,7 @@
           </div>
         </div>
       </div>
-      <div class="col-xs-1 col-sm-1 col-md-1" style="text-align: left">
+      <div class="col-xs-12 col-sm-12 col-md-2" style="text-align: left">
         <button type="submit" class="btn btn-primary form-control">Send</button>
       </div>
   </form>
