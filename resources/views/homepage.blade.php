@@ -191,6 +191,7 @@
       </div>
       <!-- END PANEL COLLAPSE -->
     </div>
+    <h4><b>For more information, click <a href="/how-it-works">HERE</a>.</b></h4>
   </div>
 </div>
 &nbsp;

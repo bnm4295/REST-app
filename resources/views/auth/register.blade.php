@@ -1,11 +1,24 @@
 @extends('layouts.app')
 
 @section('content')
+&nbsp;
 <div class="container">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
                 <div class="panel-heading">Register</div>
+                <div class="alert alert-info">
+                  <i style="font-size: 20px;"class="fa fa-info-circle" aria-hidden="true"></i>
+                  <p style="margin-top: 5px; margin-left: 2px; display: inline-block"><b>
+                    Hey, Sellers! Ready to list your home? Sign up now with your name and email address and we’ll send you a confirmation email. Then, just go to the “List Your Home” page to get started!
+                    <br><br>
+                    Are you a Buyer? Feel free to browse our listings, or sign up now with your name and email address
+                    and we’ll send you a confirmation email. We’ll connect you to your “My Profile” page, so you can get
+                    started messaging sellers. And if and when you choose, you will be able to make an offer on the property
+                    that’s right for you!
+                  </b>
+                  </p>
+                </div>
 
                 <div class="panel-body">
                     <form class="form-horizontal" method="POST" action="{{ route('register') }}">
@@ -73,4 +86,8 @@
         </div>
     </div>
 </div>
+@endsection
+
+@section('footer')
+@include('includes.footer')
 @endsection

@@ -7,7 +7,7 @@
     <div class="page-wrap">
       <div class="row row-fluid">
         <div class="col-sm-12">
-          <h3>Terms of Use</h3>
+          <h2><b>Terms of Use</b></h2>
           <hr>
           <div class="entry-content">
           <p>Welcome and thank you for visiting <a href="http://www.suuty.com">www.suuty.com</a> (the “Website”), which is owned and operated by Suuty Technologies (“Suuty”). These Terms of Use (the “Agreement”) constitute a legal agreement between you and Suuty. Please read these Terms of Use (the “Agreement”) carefully before using the Website.</p>

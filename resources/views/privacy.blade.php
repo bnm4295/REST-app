@@ -8,7 +8,7 @@
     <div class="page-wrap">
       <div class="row row-fluid">
         <div class="col-sm-12">
-          <h3>Privacy</h3>
+          <h2><b>Privacy</b></h2>
           <hr>
           <div class="entry-content">
           <p><strong>Commitment to Privacy</strong></p>

@@ -76,7 +76,7 @@ $(document).ready(function () {
     //var sticky = header.offsetTop;
     //header.classList.add("sticky");
     function sticknav() {
-      if (window.pageYOffset > 30) {
+      if (window.pageYOffset > 10) {
         //remove before add
         $(".stickynav").removeClass("fadeInUp animated");
 
