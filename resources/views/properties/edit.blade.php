@@ -145,12 +145,12 @@
                   onFocus="geolocate()" type="text"></input>
                 </div>
                 <input id="edit-check" type="hidden" value="1">
-                <input class="form-control" id="street_number" disabled="true" name="street_address" placeholder="Street Number" value="{{$property->street_address}}"></input>
-                <input class="form-control" id="route" disabled="true" name="route" placeholder="Street" value="{{$property->route}}"></input>
-                <input class="form-control" id="locality" disabled="true" name="city" placeholder="City" value="{{$property->city}}"></input>
-                <input class="form-control" id="country" disabled="true" name="country" placeholder="Country" value="{{$property->country}}"></input>
+                <input class="form-control" id="street_number" disabled="true" name="street_address" placeholder="Street Number" value="{{$property->street_address}}" readonly></input>
+                <input class="form-control" id="route" disabled="true" name="route" placeholder="Street" value="{{$property->route}}" readonly></input>
+                <input class="form-control" id="locality" disabled="true" name="city" placeholder="City" value="{{$property->city}}" readonly></input>
+                <input class="form-control" id="country" disabled="true" name="country" placeholder="Country" value="{{$property->country}}" readonly></input>
                 <input class="form-control" id="postal_code" disabled="true" name="postal_code" placeholder="Postal Code" value="{{$property->postal_code}}"></input>
-                <input class="form-control" id="administrative_area_level_1" disabled="true" name="state" placeholder="State" value="{{$property->state}}"></input>
+                <input class="form-control" id="administrative_area_level_1" disabled="true" name="state" placeholder="State" value="{{$property->state}}" read only></input>
                 <strong>Optional:</strong>
                 <input class="form-control" id="unit" name="unit" placeholder="Unit *Not Required" value="{{$property->unit}}"></input>
                 <input class="form-control" id="address_opt" name="address_opt" placeholder="Optional Address *Not Required" value="{{$property->address_opt}}"></input>
