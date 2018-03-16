@@ -90,7 +90,7 @@ class RegisterController extends Controller
 
           UserVerification::generate($user);
 
-          UserVerification::send($user, 'E-mail Verification');
+          UserVerification::send($user, 'E-mail Verification for Suuty');
 
           //Session::flash('success', 'Sent E-mail Verification.');
           return $this->registered($request, $user)

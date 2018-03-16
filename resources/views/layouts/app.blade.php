@@ -145,7 +145,7 @@ drift.load('3zb8wvvu7pby');
                         <!--<li class="active"><a href="#">Home</a></li>-->
                         <li><a class="navbar-brand" href="{{ URL::to('/') }}">Home</a></li>
                         <li><a class="navbar-brand" href="{{ URL::to('properties') }}">Properties</a></li>
-                        <li><a class="navbar-brand" href="{{ URL::to('/questions') }}">How it Works</a></li>
+                        <li><a class="navbar-brand" href="{{ URL::to('/how-it-works') }}">How it Works</a></li>
                         <li><a class="navbar-brand" href="{{ URL::to('properties/create') }}">List Your Home</a></li>
 
                         <li id="resources-menu" class="dropdown"><!--href="{{ URL::to('resources') }}"-->
@@ -155,7 +155,7 @@ drift.load('3zb8wvvu7pby');
                           <ul class="dropdown-menu">
                             <li>
                               <a href="{{ URL::to('about') }}">About Us</a>
-                              <a href="/">Contact Us</a>
+                              <a href="{{ URL::to('contact-us') }}">Contact Us</a>
                               <a href="{{ URL::to('blogs') }}">Blog Posts</a>
                             </li>
                             <li>
@@ -274,6 +274,18 @@ drift.load('3zb8wvvu7pby');
                                 <div class="modal-header">
                                   <button type="button" class="close" data-dismiss="modal">&times;</button>
                                   <h4 class="modal-title">Register</h4>
+                                </div>
+                                <div class="alert alert-info">
+                                  <i style="font-size: 20px;"class="fa fa-info-circle" aria-hidden="true"></i>
+                                  <p style="margin-top: 5px; margin-left: 2px; display: inline-block"><b>
+                                    Hey, Sellers! Ready to list your home? Sign up now with your name and email address and we’ll send you a confirmation email. Then, just go to the “List Your Home” page to get started!
+                                    <br><br>
+                                    Are you a Buyer? Feel free to browse our listings, or sign up now with your name and email address
+                                    and we’ll send you a confirmation email. We’ll connect you to your “My Profile” page, so you can get
+                                    started messaging sellers. And if and when you choose, you will be able to make an offer on the property
+                                    that’s right for you!
+                                    </b>
+                                  </p>
                                 </div>
                                 <div class="modal-body">
                                   <div class="panel-body">

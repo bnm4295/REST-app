@@ -6,7 +6,7 @@
   <div id="home-owners-media" class="splash-inner-media"></div>
   <div class="splash-inner-content">
     <div class="container">
-      <div id="home-container" class="container">
+      <div class="container page-container">
         <div class="splash-title">
           <h1><p style="text-align: center; font-size: 50px; color: white">Resources for Home Owners</p></h1>
         </div>

@@ -33,7 +33,7 @@
         <a href="{{ asset('/../images/') }}/{{$firstimg}}" class="image-link">
           <img class="prop_thumb" src="{{ asset('/../images/') }}/{{$firstimg}}" style="width: 100%; height: 400px; margin-bottom: 2px;" alt="property-images"/>
         </a>
-        <div style="text-align:center">--
+        <div style="text-align:center">
           <div style="display: inline-block">
           <?php
             for ($i = 1 ; $i < $counter; $i++ ){

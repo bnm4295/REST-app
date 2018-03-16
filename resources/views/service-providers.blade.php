@@ -20,7 +20,7 @@
   <div id="services-media" class="splash-inner-media"></div>
   <div class="splash-inner-content">
     <div class="container">
-      <div id="home-container" class="container">
+      <div class="container page-container">
         <div class="splash-title">
           <h1><p style="text-align: center; font-size: 50px; color: white">Service Providers</p></h1>
         </div>
@@ -61,9 +61,17 @@
       </div>
     </div>
     <hr>
+
       @include('includes.createform')
+
       &nbsp;
+
       @include('includes.createformreview')
+
+      <div class="marginfix" style="text-align: center;">
+        <button class="btn btn-primary btn-lg" style="border-radius: 5px" onclick="window.location.href='{{ URL::to('properties') }}'">Find Your Home</button>
+        <button class="btn btn-primary btn-lg" style="border-radius: 5px" onclick="window.location.href='{{ URL::to('properties/create') }}'">List Your Home</button>
+      </div>
 </div>
 @endsection
 @section('footer')

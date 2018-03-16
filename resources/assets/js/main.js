@@ -246,7 +246,31 @@ $(document).ready(function () {
         //endDate: '+1d',
         //autoclose: true
     //});
-
+    if($('#submit-property').exists()){
+      document.querySelector('#submit-property').addEventListener('submit', function(e) {
+          var form = this;
+          e.preventDefault();
+          swal({
+              title: "Are you sure?",
+              text: 'Your form will be submitted. We will be sending an electronic Property disclosure statement for you to sign within 24hours after your submission. Would you like to submit your property?',
+              type: "warning",
+              showCancelButton: true,
+              confirmButtonClass: 'btn-info',
+              confirmButtonText: 'Yes',
+              cancelButtonText: "No",
+              closeOnConfirm: false,
+              closeOnCancel: false
+              },
+           function (isConfirm) {
+              if (isConfirm) {
+                swal("Confirmed!", "Your form has been submitted.", "success");
+                form.submit();
+              } else {
+                swal("Cancelled", "Your form has not been submitted.", "error");
+              }
+              });
+      });
+    }
     if($('#addcomments').exists()){
       document.querySelector('#addcomments').addEventListener('submit', function(e) {
           var form = this;

@@ -373,6 +373,7 @@ img[src=""] {
 /* CONTAINERS */
 .reviewform{
 	width: 500px;
+  padding: 30px;
 	margin-right: -20px;
 	margin: 0 auto;
 	background-color: #e5e5e5;
@@ -380,6 +381,7 @@ img[src=""] {
 }
 .requestform{
 	width: 100%;
+  padding: 30px;
 	margin-right: -20px;
 	margin: 0 auto;
 	background-color: #e5e5e5;
@@ -618,7 +620,13 @@ body.modal-open{
 	top: 30%;
 }
 #home-container div {
-    margin: 0 auto;
+  margin: 0 auto;
+}
+.page-container div{
+  margin: 0 auto;
+}
+.page-container{
+  height: 500px;
 }
 #home-container{
 	height: 700px;

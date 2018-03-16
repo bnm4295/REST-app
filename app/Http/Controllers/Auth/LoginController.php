@@ -46,7 +46,7 @@ class LoginController extends Controller
     public function userLogout()
     {
         Auth::guard('web')->logout();
-        Session::flash('danger', 'Please check your email for verification.');
+        Session::flash('success', "Please check your email for verification!");
         return redirect('/');
     }
     public function maxAttempts()

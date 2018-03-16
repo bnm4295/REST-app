@@ -1,10 +1,11 @@
-<div class="container reviewform">
+<div class="container">
   <form id="addcomments" method="post" action="{{url('post-form')}}" enctype="multipart/form-data">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     {{ csrf_field() }}
       <div class="form-group">
         <div class="col-xs-12 col-sm-12 col-md-12">
           <h3>Add Your Comments</h3>
+          <hr>
           <strong>Name</strong>
           <input name="name" class="form-control" required></input>
         </div>

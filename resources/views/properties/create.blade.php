@@ -20,8 +20,15 @@
     </ul>
   </div>
 @endif
-<div style="float: left;">
+<div>
   <h1>Create A Property</h1>
+</div>
+<div class="alert alert-info">
+  <i style="font-size: 20px;"class="fa fa-info-circle" aria-hidden="true"></i>
+  <p style="margin-top: 5px; margin-left: 2px; display: inline-block">
+    Remember to sign up <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#myreg">HERE</button>
+     before listing your home!</p>
+  <p style="text-indent: 25px;">Check out our FAQ page <a href="/questions">HERE</a> for more information!</p>
 </div>
 <!-- {{url('properties')}}-->
 <form id="submit-property" method="post" action="{{url('properties')}}" enctype="multipart/form-data">
@@ -192,6 +199,13 @@
     </div>
   </form>
 </div>
+  <div class="alert alert-info">
+    <i style="font-size: 20px;"class="fa fa-info-circle" aria-hidden="true"></i>
+    <p style="margin-top: 5px; margin-left: 2px; display: inline-block"><b>
+      You will be required to sign a Property disclosure statement after you have submitted your property. An email will be sent within 24hours of submission. The property disclosure statement is designed, in part, to protect the seller by establishing that all relevant
+  information concerning the premise has been provided to the buyer.</b>
+    </p>
+  </div>
 </div>
 </body>
 </html>

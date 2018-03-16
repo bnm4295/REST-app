@@ -45,6 +45,14 @@ Route::get('my-profile', function (){
     //$name = $user->name;
     return view('profile');
 });
+
+Route::get('/how-it-works', function () {
+    return view('howitworks');
+});
+
+Route::get('/contact-us', function () {
+    return view('contactus');
+});
 /*Route::get('/mailable', function () {
 //    $property = Suuty\Property::find(171);
 //    return new Suuty\Mail\SaveSearch($property);
