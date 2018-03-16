@@ -285,7 +285,7 @@
             <p>
               Yes, transactions can fall through for many reasons. If this happens to you,
                we suggest you contact your lawyer to get legal advice on your specific situation.
-               You can also contact our Support Team <a href="/contact-us">HERE</>.
+               You can also contact our Support Team <a href="/contact-us">HERE<a/>.
             </p>
           </div>
         </div>
