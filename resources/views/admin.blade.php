@@ -73,39 +73,41 @@
     </div>
       <h3><a href="{{ asset('/../blogs/create') }}" >Create a Blog</a></h3>
 
-      @foreach($blogs as $blog)
-        <div class="col-md-4 text-center">
-          {{$blog->title}}
-          <div class ="panel panel-default">
+    @foreach($blogs as $blog)
+      <div class="col-md-4 text-center">
+        {{$blog->title}}
+        <div class ="panel panel-default">
 
-              @if($blog['images'] != "")
-                  <?php
-                    $decodedarr = json_decode( $blog->images , true);
-                    $counter = count($decodedarr);
-                    //$image = $decodedarr[$i];
-                    $image = $decodedarr[0];
-                  ?>
+            @if($blog['images'] != "")
+                <?php
+                  $decodedarr = json_decode( $blog->images , true);
+                  $counter = count($decodedarr);
+                  //$image = $decodedarr[$i];
+                  $image = $decodedarr[0];
+                ?>
 
-                   <a href="{{ url('blogs')}}/{{$blog->slug}}"><img src="{{ asset('/../images/') }}/{{$image}}" style="border: solid 0px #000000; height: 200px; width: 100%;
-                     background-size: 375px; background-repeat: no-repeat;"></a>
-                @endif
+             <a href="{{ url('blogs')}}/{{$blog->slug}}"><img src="{{ asset('/../images/') }}/{{$image}}" style="border: solid 0px #000000; height: 200px; width: 100%;
+               background-size: 375px; background-repeat: no-repeat;">
+             </a>
+            @endif
 
-              <form id="delete-blog" action="{{action('BlogController@destroy', $blog['id'])}}" method="post">
-                {{csrf_field()}}
-                <input name="_method" type="hidden" value="delete">
-                <button class="btn btn-danger" type="submit" onclick="return confirm('Do you really want to delete this blog?')">
-                  Delete
-                </button>
-              </form>
-              <form action="{{action('BlogController@edit', $blog['id'])}}" method="get">
-                {{csrf_field()}}
-                <input type="hidden" name="_method" value="EDIT">
-                <button class="btn btn-success" type="submit">Edit</button>
-              </form>
-            </div>
+            <form id="delete-blog" action="{{action('BlogController@destroy', $blog['id'])}}" method="post">
+              {{csrf_field()}}
+              <input name="_method" type="hidden" value="delete">
+              <button class="btn btn-danger" type="submit" onclick="return confirm('Do you really want to delete this blog?')">
+                Delete
+              </button>
+            </form>
+            <form action="{{action('BlogController@edit', $blog['id'])}}" method="get">
+              {{csrf_field()}}
+              <input type="hidden" name="_method" value="EDIT">
+              <button class="btn btn-success" type="submit">Edit</button>
+            </form>
           </div>
-        @endforeach
+        </div>
+      @endforeach
 </div>
+
 @endsection
 @section('footer')
 @include('includes.footer')

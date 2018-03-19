@@ -28,7 +28,7 @@
   <p style="margin-top: 5px; margin-left: 2px; display: inline-block">
     Remember to sign up <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#myreg">HERE</button>
      before listing your home!</p>
-  <p style="text-indent: 25px;">Check out our FAQ page <a href="/questions">HERE</a> for more information!</p>
+  <p>Check out our FAQ page <a href="/questions">HERE</a> for more information!</p>
 </div>
 <!-- {{url('properties')}}-->
 <form id="submit-property" method="post" action="{{url('properties')}}" enctype="multipart/form-data">
