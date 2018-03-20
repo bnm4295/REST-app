@@ -72,7 +72,7 @@ class Kernel extends ConsoleKernel
               ->get();
 
               foreach($savesearch as $post){
-                $messages .= "<a href='$post->url'>SavedSearch</a>";
+                $messages .= "<a href='https://www.suuty/$post->url'>SavedSearch</a>";
               }
 
               foreach($savesearch as $post){
