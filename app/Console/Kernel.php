@@ -60,7 +60,7 @@ class Kernel extends ConsoleKernel
                 ->where('addr', 'LIKE', "%$checkstate%")
                 ->where('addr', 'LIKE', "%$checkcountry%");
               })
-              ->where('house_type', 'LIKE', "%$checkproptype%")
+              //->where('house_type', 'LIKE', "%$checkproptype%")
               ->where([
                 ['price_left', '<=', (int)$checkprice],
                 ['price_right', '>=', (int)$checkprice]

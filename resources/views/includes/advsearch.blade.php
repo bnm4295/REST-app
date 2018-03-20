@@ -106,6 +106,13 @@
       </div>
   </div>
 </div-->
+<?php
+if(isset($_GET['addr'])){
+  $search = $_GET['addr'];
+}
+else{$search = "";}
+?>
+
 <div id="advsearch" class="container-fluid">
   <form id="propsearch" action="{{url('/properties')}}" method="GET" class="form-inline" role="form">
     <div class="row">
@@ -143,7 +150,7 @@
           <option value="Condo">Condo</option>
         </select>
         <!-- city -->
-        <input type="text" class="form-control input-md" id="autocomplete" name="addr" placeholder="City">
+        <input type="text" class="form-control input-md" id="autocomplete" name="addr" placeholder="City" value="{{$search}}">
 
         <!-- prices -->
         <div class="dropdown" style="float:left; margin-left: 10px;">
