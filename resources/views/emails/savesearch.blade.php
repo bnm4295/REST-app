@@ -1,3 +1,9 @@
-<div>
-    Price: {{ $property->price }}
-</div>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+  <body>
+      <b>Newly listed house matches with your search!</b>
+      {!! $text !!}
+      <img src="{{$message->embed(public_path() . '/images/logo.png')}}" alt="logo" width="40px" height="40px" style="display: inline-block;">
+      <a href="https://www.suuty.com">Back to Suuty</a>
+  </body>
+</html>

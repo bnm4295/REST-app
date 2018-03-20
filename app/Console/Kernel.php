@@ -53,7 +53,14 @@ class Kernel extends ConsoleKernel
               //$checknull = DB::table('savesearch');
 
               //AKDOSKDOASDOSAKD hElP
-              $savesearch = DB::table('savesearch')
+              $savesearch = DB::table('savesearch')->where(function($query) use ($checkcity,$checkroute,$checkstate,$checkcountry,$checkpostal){
+                $query->where('addr', 'LIKE', "%$checkcity%")
+                ->orwhere('addr', 'LIKE', "$checkroute")
+                ->orwhere('addr', 'LIKE', "$checkpostal")
+                ->where('addr', 'LIKE', "%$checkstate%")
+                ->where('addr', 'LIKE', "%$checkcountry%");
+              })
+              ->where('house_type', 'LIKE', "%$checkproptype%")
               ->where([
                 ['price_left', '<=', (int)$checkprice],
                 ['price_right', '>=', (int)$checkprice]
@@ -62,26 +69,15 @@ class Kernel extends ConsoleKernel
                 ['area_left', '<=', (int)$checkarea],
                 ['area_right', '>=', (int)$checkarea]
               ])
-              ->orwhere(function($query) use ($checkcity,$checkroute,$checkstate,$checkcountry,$checkpostal){
-                $query->where('addr', 'LIKE', "%$checkcity%")
-                ->orwhere('addr', 'LIKE', "%$checkroute%")
-                ->orwhere('addr', 'LIKE', "%$checkstate%")
-                ->orwhere('addr', 'LIKE', "%$checkpostal%")
-                ->orwhere('addr', 'LIKE', "%$checkcountry%");
-              })
-              ->where('house_type', 'LIKE', "%$checkproptype%")
-              ->orwhere('number_of_beds', 'LIKE', "%$checknumbeds%")
-              ->orwhere('number_of_baths', 'LIKE', "%$checknumbaths%")
               ->get();
 
               foreach($savesearch as $post){
-                $url = $post->url;
-                $messages .= $post->id . " " . $post->email . " " . $post->url;
+                $messages .= "<a href='$post->url'>SavedSearch</a>";
               }
 
               foreach($savesearch as $post){
                 if($messages != ""){
-                  Mail::raw($messages, function($message) use ($post)
+                  Mail::send(['html' =>'emails.savesearch'], ['text' => $messages], function($message) use ($post)
                   {
                     $message->subject('Suuty Save Search Match!');
                     $message->from('david@suuty.com', 'Suuty');
