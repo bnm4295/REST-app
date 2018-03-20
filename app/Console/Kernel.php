@@ -73,12 +73,10 @@ class Kernel extends ConsoleKernel
 
               foreach($savesearch as $post){
                 $messages .= "<a href='https://suuty.com$post->url'>
-                City: $post->addr |
-                PriceMIN: $post->price_left | PriceMAX: $$post->price_right |
-                AreaMIN: $post->area_left sqft | AreaMAX: $post->area_right sqft
-                  Beds: $post->number_of_beds
-                  Baths: $post->number_of_baths
-                </a>""<br>";
+                City: $post->addr | PriceMIN: $post->price_left | PriceMAX: $$post->price_right | AreaMIN: $post->area_left sqft | AreaMAX: $post->area_right sqft
+                Beds: $post->number_of_beds
+                Baths: $post->number_of_baths
+                </a> <br>";
               }
 
               foreach($savesearch as $post){
