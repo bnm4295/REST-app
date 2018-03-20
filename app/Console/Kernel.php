@@ -70,8 +70,8 @@ class Kernel extends ConsoleKernel
                 ->orwhere('addr', 'LIKE', "%$checkcountry%");
               })
               ->where('house_type', 'LIKE', "%$checkproptype%")
-              ->orwhere('number_of_beds', 'LIKE', "%$numbeds%")
-              ->orwhere('number_of_baths', 'LIKE', "%$numbaths%")
+              ->orwhere('number_of_beds', 'LIKE', "%$checknumbeds%")
+              ->orwhere('number_of_baths', 'LIKE', "%$checknumbaths%")
               ->get();
 
               foreach($savesearch as $post){

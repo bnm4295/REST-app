@@ -402,9 +402,9 @@
   $link = $_SERVER['PHP_SELF'];
   $link_array = explode('/',$link);
   $currslug = end($link_array);
-  $nospace = $property->street_address . $property->route;
+  //$nospace = $property->street_address . $property->route;
 
-  $searchprop = DB::table('properties')->where(function ($q) use ($property, $nospace) {
+  $searchprop = DB::table('properties')->where(function ($q) use ($property) {
     $q->where('city', 'LIKE', "%{$property->city}%")
     ->orwhere('route', 'LIKE', "{$property->route}")
     ->orwhere('postal_code', 'LIKE', "{$property->postal_code}")
