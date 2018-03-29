@@ -32,6 +32,7 @@ class Kernel extends ConsoleKernel
           $tomorrow = time() + (1 * 24 * 60 * 60);
           $diff = $tomorrow - time();
 
+          //Possible improvement: difference of 24hours should be compared to the scheduler's initial running time (nightly).
           foreach($checktest as $check){
             $testing = strtotime($check->created_at);
             $remaining = time() - $testing;
@@ -52,7 +53,6 @@ class Kernel extends ConsoleKernel
 
               //$checknull = DB::table('savesearch');
 
-              //AKDOSKDOASDOSAKD hElP
               $savesearch = DB::table('savesearch')->where(function($query) use ($checkcity,$checkroute,$checkstate,$checkcountry,$checkpostal){
                 $query->where('addr', 'LIKE', "%$checkcity%")
                 ->orwhere('addr', 'LIKE', "$checkroute")
@@ -72,14 +72,14 @@ class Kernel extends ConsoleKernel
               ->get();
 
               foreach($savesearch as $post){
-                $messages .= "<br><a href='https://suuty.com$post->url'>
+                $messages .= "<b>Newly listed house matches with your search!</b><br><a href='https://suuty.com$post->url'>
                 City: $post->addr | PriceMIN: $post->price_left | PriceMAX: $$post->price_right | AreaMIN: $post->area_left sqft | AreaMAX: $post->area_right sqft
                 </a><br>";
               }
 
               foreach($savesearch as $post){
                 if($messages != ""){
-                  Mail::send(['html' =>'emails.savesearch'], ['text' => $messages], function($message) use ($post)
+                  Mail::send(['html' =>'emails.template'], ['text' => $messages], function($message) use ($post)
                   {
                     $message->subject('Matched Search from Suuty!');
                     $message->from('david@suuty.com', 'Suuty');

@@ -59,7 +59,7 @@
         <a data-toggle="collapse" data-parent="#accordion" href="#home1">
           <div class="panel-heading">
             <div class="panel-title">
-                <h3><b>List Your Home</b></h3>
+                <h4><b>List Your Home</b></h4>
             </div>
           </div>
         </a>
@@ -72,7 +72,7 @@
         <a data-toggle="collapse" data-parent="#accordion" href="#home2">
           <div class="panel-heading">
             <div class="panel-title">
-              <h3><b>Market Your Home</b></h3>
+              <h4><b>Market Your Home</b></h4>
             </div>
           </div>
         </a>
@@ -86,7 +86,7 @@
         <a data-toggle="collapse" data-parent="#accordion" href="#home3">
           <div class="panel-heading">
             <div class="panel-title">
-              <h3><b>Transparent Process</b></h3>
+              <h4><b>Transparent Process</b></h4>
             </div>
           </div>
         </a>
@@ -100,7 +100,7 @@
         <a data-toggle="collapse" data-parent="#accordion" href="#home4">
           <div class="panel-heading">
             <div class="panel-title">
-              <h3><b>Secure & Legal Paperwork</b></h3>
+              <h4><b>Secure & Legal Paperwork</b></h4>
             </div>
           </div>
         </a>
@@ -114,7 +114,7 @@
         <a data-toggle="collapse" data-parent="#accordion" href="#home5">
           <div class="panel-heading">
             <div class="panel-title">
-              <h3><b>Save Money</b></h3>
+              <h4><b>Save Money</b></h4>
             </div>
           </div>
         </a>

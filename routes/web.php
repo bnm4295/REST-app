@@ -16,7 +16,19 @@ use Suuty\User;
 
 //AUTH
 Auth::routes();
+Route::get('/test-email', function(){
+    $messages =
+      "<br>Comments: "."Description" . "<br>From: "."Name".
+      "<br>Email: "."Email".
+      "<br>";
 
+    Mail::send(['html' =>'emails.template-test'], ['text' => $messages], function($message)
+    {
+      $message->subject('Suuty - Contact Form');
+      $message->from('david@suuty.com', 'Suuty');
+      $message->to('jhso@sfu.ca'); //change to another email? add bcc?
+    }); //->bcc('info@propels.ca')
+});
 Route::get('/redirect', 'SocialAuthFacebookController@redirect');
 Route::get('/callback', 'SocialAuthFacebookController@callback');
 //GET

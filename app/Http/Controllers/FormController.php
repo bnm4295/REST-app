@@ -27,11 +27,11 @@ class FormController extends Controller
       $form = Form::Create($inputs);
 
       $messages =
-        "<br>Comments: ".$request->description . "<br>From: ".$request->name.
+        "<b>Someone has sent you a contact form</b><br>Comments: ".$request->description . "<br>From: ".$request->name.
         "<br>Email: ".$request->email.
         "<br>";
 
-      Mail::send(['html' =>'emails.contactform'], ['text' => $messages], function($message)
+      Mail::send(['html' =>'emails.template'], ['text' => $messages], function($message)
       {
         $message->subject('Suuty - Contact Form');
         $message->from('david@suuty.com', 'Suuty');

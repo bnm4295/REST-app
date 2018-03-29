@@ -32,10 +32,10 @@ class BookingController extends Controller
       $user = User::find($user_id);
       $useremail = $user->email;
       $messages =
-        "<br>Comments: ".$request->description . "<br>First Date: ".$request->openfirst.
+        "<b>Someone has requested viewing times for your property!</b><br>Comments: ".$request->description . "<br>First Date: ".$request->openfirst.
         "<br>Second Date: ".$request->opensecond.
         "<br>";
-      Mail::send(['html' =>'emails.booking'], ['text' => $messages], function($message) use ($useremail)
+      Mail::send(['html' =>'emails.template'], ['text' => $messages], function($message) use ($useremail)
       {
         $message->subject('Suuty - Requested Viewing Time');
         $message->from('david@suuty.com', 'Suuty');
