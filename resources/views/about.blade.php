@@ -25,7 +25,7 @@
           <h1>About Suuty</h1>
           <hr>
           <h4 style="text-align:center">
-            <b>At Suuty, we believe everyone should be able to buy and sell their home themselves, directly and transparently, without paying tens of thousands of dollars in realtors’ fees.</b>
+            <b>We believe everyone should be able to buy and sell their home themselves, directly and transparently, without paying tens of thousands of dollars in realtors’ fees.</b>
           </h4>
           <p>  Suuty is a transparent marketplace that connects homeowners with buyers.
             This allows buyers and sellers to interact directly with each other, eliminating traditional commissions in the process.
