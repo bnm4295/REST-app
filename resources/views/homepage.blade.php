@@ -137,7 +137,7 @@
         <a data-toggle="collapse" data-parent="#accordion" href="#home6">
           <div class="panel-heading">
             <div class="panel-title">
-              <h3><b>Find Your Home</b></h3>
+              <h4><b>Find Your Home</b></h4>
             </div>
           </div>
         </a>
@@ -151,7 +151,7 @@
         <a data-toggle="collapse" data-parent="#accordion" href="#home7">
           <div class="panel-heading">
             <div class="panel-title">
-              <h3><b>Transparent Process</b></h3>
+              <h4><b>Transparent Process</b></h4>
             </div>
           </div>
         </a>
@@ -165,7 +165,7 @@
         <a data-toggle="collapse" data-parent="#accordion" href="#home8">
           <div class="panel-heading">
             <div class="panel-title">
-              <h3><b>Secure & Legal Paperwork</b></h3>
+              <h4><b>Secure & Legal Paperwork</b></h4>
             </div>
           </div>
         </a>
@@ -179,7 +179,7 @@
         <a data-toggle="collapse" data-parent="#accordion" href="#home9">
           <div class="panel-heading">
             <div class="panel-title">
-              <h3><b>Housing for Everyone</b></h3>
+              <h4><b>Housing for Everyone</b></h4>
             </div>
           </div>
         </a>
