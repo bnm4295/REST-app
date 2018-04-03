@@ -54,7 +54,7 @@
     <h4 style="font-family: 'Helvetica Neue', sans-serif; font-weight: bold; letter-spacing: -1px;">Suuty makes it easy to buy or sell your home online, with no realtor's fees</h4>
     <hr>
     <h3><strong>For Sellers</strong></h3>
-    <div class="panel-group">
+    <div class="panel-group" id="accordion">
       <div class="panel panel-default">
         <a data-toggle="collapse" data-parent="#accordion" href="#home1">
           <div class="panel-heading">
