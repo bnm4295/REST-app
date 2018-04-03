@@ -132,9 +132,9 @@
 <div class="container panel-collapse">
   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 container-contentbar">
     <h3><strong>For Buyers</strong></h3>
-    <div class="panel-group">
+    <div class="panel-group" id="accordion-two">
       <div class="panel panel-default">
-        <a data-toggle="collapse" data-parent="#accordion" href="#home6">
+        <a data-toggle="collapse" data-parent="#accordion-two" href="#home6">
           <div class="panel-heading">
             <div class="panel-title">
               <h4><b>Find Your Home</b></h4>
@@ -148,7 +148,7 @@
         </div>
       </div>
       <div class="panel panel-default">
-        <a data-toggle="collapse" data-parent="#accordion" href="#home7">
+        <a data-toggle="collapse" data-parent="#accordion-two" href="#home7">
           <div class="panel-heading">
             <div class="panel-title">
               <h4><b>Transparent Process</b></h4>
@@ -162,7 +162,7 @@
         </div>
       </div>
       <div class="panel panel-default">
-        <a data-toggle="collapse" data-parent="#accordion" href="#home8">
+        <a data-toggle="collapse" data-parent="#accordion-two" href="#home8">
           <div class="panel-heading">
             <div class="panel-title">
               <h4><b>Secure & Legal Paperwork</b></h4>
@@ -176,7 +176,7 @@
         </div>
       </div>
       <div class="panel panel-default">
-        <a data-toggle="collapse" data-parent="#accordion" href="#home9">
+        <a data-toggle="collapse" data-parent="#accordion-two" href="#home9">
           <div class="panel-heading">
             <div class="panel-title">
               <h4><b>Housing for Everyone</b></h4>

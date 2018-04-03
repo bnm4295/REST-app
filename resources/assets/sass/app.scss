@@ -9,11 +9,9 @@
 
 @import  url(https://fonts.googleapis.com/css?family=Montserrat);
 
-// ボールのサイズ
 $width: 15px;
 $height: 15px;
 
-// バウンドの距離
 $bounce_height: 30px;
 
 body {
@@ -98,6 +96,10 @@ body {
 }
 select{
 	text-align-last: center;
+}
+
+.panel-group .panel + .panel{
+  margin-top: 0px;
 }
 #no-proplisted{
   top: 200px;
