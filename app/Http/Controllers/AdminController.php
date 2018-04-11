@@ -17,7 +17,7 @@ class AdminController extends Controller
     {
         $this->middleware('auth:admin');
     }
-    protected $per_page = 1;
+    protected $per_page = 6;
 
     /**
      * Show the application dashboard.
