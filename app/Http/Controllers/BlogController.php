@@ -42,6 +42,12 @@ class BlogController extends Controller
     {
         $inputs = $request->all();
 
+        $slug = strtolower($request->title);
+        if ($count = Blog::where('slug', 'like', "$slug%")->count()){
+          $slug = str_finish($slug, "-$count");
+        }
+        $inputs['slug'] = preg_replace('/\s+/', '-', $slug);
+        
         $imagepaths = array();
         $picture = '';
 

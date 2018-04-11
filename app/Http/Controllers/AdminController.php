@@ -5,6 +5,7 @@ namespace Suuty\Http\Controllers;
 use Illuminate\Http\Request;
 use Suuty\Offer;
 use Suuty\Blog;
+use Suuty\Property;
 class AdminController extends Controller
 {
     /**
@@ -16,6 +17,7 @@ class AdminController extends Controller
     {
         $this->middleware('auth:admin');
     }
+    protected $per_page = 1;
 
     /**
      * Show the application dashboard.
@@ -24,8 +26,9 @@ class AdminController extends Controller
      */
     public function index()
     {
-        $offers = Offer::all();
+        $properties = Property::paginate($this->per_page);
+        $offers = Offer::paginate($this->per_page);
         $blogs = Blog::all();
-        return view('admin', compact('offers', 'blogs'));
+        return view('admin', compact('properties','offers', 'blogs'));
     }
 }

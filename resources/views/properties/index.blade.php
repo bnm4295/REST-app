@@ -77,28 +77,6 @@
                         {{$post->state}}
                       </strong></p>
                     </div>
-                      <!--form action="{{action('PropertyController@show', $post->slug)}}" method="get">
-                        <input name="_method" type="hidden" value="show">
-                        <input name="title" type="hidden" value="">
-                        <img class="img-rounded" style="height: 230px; width: 100%" src="{{ asset('/../images/') }}/{{$image}}"/>
-                        <button class="btn btn-success" type="submit">Show</button>
-                      </form>-->
-
-                      @if ((Auth::guard('admin')->check() == true ))
-                        <form action="{{action('PropertyController@edit', $post['id'])}}" method="get">
-                          {{csrf_field()}}
-                          <input type="hidden" name="_method" value="EDIT">
-                          <button class="btn btn-success" type="submit">Edit</button>
-                        </form>
-
-                        <form action="{{action('PropertyController@destroy', $post['id'] )}}" method="post">
-                          {{csrf_field()}}
-                          <input type="hidden" name="_method" value="DELETE">
-                          <button class="btn btn-danger" type="submit" onclick="return confirm('Do you really want to delete this property?')">
-                            Delete
-                          </button>
-                        </form>
-                      @endif
                   </div>
                 </div>
               </div>

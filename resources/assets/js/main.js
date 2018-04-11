@@ -195,7 +195,7 @@ $(document).ready(function () {
         //make $post['user_id'] equate to $post['currentbidderid']
       });
     });
-    $('body').on('click', '.pagination a', function(e){
+    $('body').on('click', '.properties .pagination a', function(e){
 
          e.preventDefault();
          var url = $(this).attr('href');
@@ -216,6 +216,23 @@ $(document).ready(function () {
           });
 
      });
+     $('body').on('click', '.offers .pagination a', function(e){
+
+          e.preventDefault();
+          var url = $(this).attr('href');
+  
+          $.ajax({
+              type: "GET",
+              url: url,
+              dataType: 'html',
+              success: function(data) {
+                  $('.offers').html(
+                      $('<div />').html(data).find('.offers').html()
+                  );
+              }
+          });
+
+      });
  /*
      $(window).scroll(fetchProperties);
 
