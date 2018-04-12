@@ -6,6 +6,87 @@
         <h3>{{ session('alert') }}</h3>
     </div>
 @endif
+
+<?php
+/*
+use Coinbase\Wallet\Client;
+use Coinbase\Wallet\Configuration;
+$api_key = 'ed43fccd9f69d28e5efa45b07df1c40a4c8e0e6277266e654b42aa0786069558';
+$coinbase = new Coinbase($api_key);
+$orders = $coinbase->getOrders();
+/*
+   
+$curl = curl_init();
+
+curl_setopt_array($curl, array(
+    CURLOPT_URL => "https://www.coinbase.com/oauth/authorize?client_id=ed43fccd9f69d28e5efa45b07df1c40a4c8e0e6277266e654b42aa0786069558&meta%5Bsend_limit_amount%5D=1.00&meta%5Bsend_limit_currency%5D=USD&redirect_uri=https%3A%2F%2Fwww.suuty.com&response_type=code&scope=wallet%3Atransactions%3Asend&state=SECURE_RANDOM",
+    CURLOPT_RETURNTRANSFER => true,
+    CURLOPT_FOLLOWLOCATION => true,
+    CURLOPT_ENCODING => "",
+    CURLOPT_TIMEOUT => 30000,
+    CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+    CURLOPT_CUSTOMREQUEST => "GET",
+    CURLOPT_HTTPHEADER => array(
+        // Set Here Your Requesred Headers
+        'Content-Type: application/json',
+    ),
+));
+
+$response = curl_exec($curl);
+
+//$response = json_decode($response);
+
+//dd($response);
+*/
+
+$request = '{
+  "grant_type" : "authorization_code", 
+  "code" : "430064190bd2c57ef78a5e3c4288573d7a0e282be66e6bc79c6e79503082af23",
+  "client_id" : "ed43fccd9f69d28e5efa45b07df1c40a4c8e0e6277266e654b42aa0786069558",
+  "client_secret" : "bc143defff0d547a53a83f86c6cfce059482f4767e4a1e75b41b8149297f1d47",
+  "redirect_uri" : "https://www.suuty.com"
+}';
+
+$post_fields = json_decode($request, true); //convert json string to an object
+$post_fields = http_build_query($post_fields); //urlencode for arrays
+
+$curl = curl_init();
+ curl_setopt($curl, CURLOPT_POST, true); //tell curl that were posting some data along with the request 
+ curl_setopt($curl, CURLOPT_POSTFIELDS, $post_fields); //the data that we want to post
+ curl_setopt($curl, CURLOPT_URL, 'https://api.coinbase.com/oauth/token'); //the request url
+
+ curl_setopt($curl, CURLOPT_RETURNTRANSFER, true); //return the transfer, by default its being echoed out
+$response = curl_exec($curl); //execute the request
+$response = json_decode($response, true);
+
+var_dump( $response );
+
+
+$request = '{
+  "grant_type" : "refresh_token", 
+  "client_id" : "ed43fccd9f69d28e5efa45b07df1c40a4c8e0e6277266e654b42aa0786069558",
+  "client_secret" : "bc143defff0d547a53a83f86c6cfce059482f4767e4a1e75b41b8149297f1d47",
+  "refresh_token" : "cfa8da03fc6f54959ea2933590fd6592f09ac3fbf29364a17b6a02b92ac34de3"
+}';
+//dd($request);
+$post_fields = json_decode($request, true); //convert json string to an object
+$post_fields = http_build_query($post_fields); //urlencode for arrays
+
+$curl = curl_init();
+curl_setopt($curl, CURLOPT_POST, true); //tell curl that were posting some data along with the request 
+curl_setopt($curl, CURLOPT_POSTFIELDS, $post_fields); //the data that we want to post
+curl_setopt($curl, CURLOPT_URL, 'https://api.coinbase.com/oauth/token'); //the request url
+
+curl_setopt($curl, CURLOPT_RETURNTRANSFER, true); //return the transfer, by default its being echoed out
+$response = curl_exec($curl); //execute the request
+$response = json_decode($response, true);
+var_dump($response);
+echo $response['access_token'];
+//echo $response[0]['access_token'];
+
+
+?>
+
 <div class="container">
     @if ($errors->any())
       <div class="alert alert-danger">
