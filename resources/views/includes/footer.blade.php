@@ -1,4 +1,4 @@
-<footer class="footer-section" style="background-color: #3ca597;">
+<footer class="footer-section">
   <div class="container">
     <div class="footer">
           <!--@include('includes.subscribe')>
