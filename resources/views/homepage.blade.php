@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 <head>
-  <script src="https://a.mailmunch.co/app/v1/site.js" id="mailmunch-script" data-mailmunch-site-id="430047" async="async"></script>
+  <!--script src="https://a.mailmunch.co/app/v1/site.js" id="mailmunch-script" data-mailmunch-site-id="430047" async="async"></script>-->
 </head>
 @include('includes.socialshare')
 @section('content')

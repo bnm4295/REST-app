@@ -73,7 +73,7 @@
     <script src="{{ asset('/../js/sweetalert.min.js')}}"></script>
 </head>
 
-<!-- Start of Async Drift Code -->
+<!-- Start of Async Drift Code
 <script>
 !function() {
   var t;
@@ -96,7 +96,7 @@
 drift.SNIPPET_VERSION = '0.3.1';
 drift.load('3zb8wvvu7pby');
 </script>
-<!-- End of Async Drift Code -->
+ End of Async Drift Code -->
 <!-- start of fbsdk -->
 <div id="fb-root"></div>
 <script>(function(d, s, id) {
@@ -107,14 +107,14 @@ drift.load('3zb8wvvu7pby');
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
 <!-- end of fbsdk -->
-<!-- loader -->
+<!-- loader >
 <div class="wrap">
   <div class="loading">
     <div class="bounceball"></div>
     <div class="text">NOW LOADING</div>
   </div>
 </div>
-<!-- end loader -->
+ end loader -->
 <body>
     <div id="app">
         <nav id="main-nav" class="navbar navbar-default navbar-static-top stickynav">
@@ -143,12 +143,11 @@ drift.load('3zb8wvvu7pby');
                       </div>-->
 
                         <!--<li class="active"><a href="#">Home</a></li>-->
-                        <li><a class="navbar-brand" href="{{ URL::to('/') }}">Home</a></li>
                         <li><a class="navbar-brand" href="{{ URL::to('properties') }}">Properties</a></li>
                         <li><a class="navbar-brand" href="{{ URL::to('/how-it-works') }}">How it Works</a></li>
                         <li><a class="navbar-brand" href="{{ URL::to('properties/create') }}">List Your Home</a></li>
 
-                        <li id="resources-menu" class="dropdown"><!--href="{{ URL::to('resources') }}"-->
+                        <!--li id="resources-menu" class="dropdown">
                           <a href="#" class="dropdown-toggle navbar-brand" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">
                             Resources<span class="caret"></span>
                           </a>
@@ -171,8 +170,8 @@ drift.load('3zb8wvvu7pby');
                               <a href="{{ URL::to('home-buyer') }}">Resources for Home Buyers</a>
                             </li>
                           </ul>
-                        </li>
-                      </ul>
+                        </li>-->
+                    </ul>
 
 
                     <!-- Right Side Of Navbar -->
@@ -184,7 +183,7 @@ drift.load('3zb8wvvu7pby');
                             <!-- <li id="regroute"><a href="{{ route('register') }}">Register</a></li> -->
                             <!--li><button id="create_propbtn" class="btn btn-info btn-lg" onclick="window.location.href='{{ URL::to('/properties/create') }}'">List Your Home</button></li>-->
                             <li><button type="button" id="login-btn" class="btn btn-info btn-lg" data-toggle="modal" data-target="#mylogin">Login</button></li>
-                            <li><button type="button" id="reg-btn" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myreg">Sign Up</button></li>
+                            <!--li><button type="button" id="reg-btn" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myreg">Sign Up</button></li>-->
 
                             <!-- Modal -->
                             <div class="modal fade" id="mylogin" role="dialog">

@@ -8,6 +8,7 @@
 @endif
 
 <?php
+// IN PROGRESS CRYPTOCURRENCY REQUEST TRANSACTION CODE COINBASE API
 /*
 use Coinbase\Wallet\Client;
 use Coinbase\Wallet\Configuration;
@@ -59,7 +60,7 @@ $curl = curl_init();
 $response = curl_exec($curl); //execute the request
 $response = json_decode($response, true);
 
-var_dump( $response );
+//var_dump( $response );
 
 
 $request = '{
@@ -80,11 +81,11 @@ curl_setopt($curl, CURLOPT_URL, 'https://api.coinbase.com/oauth/token'); //the r
 curl_setopt($curl, CURLOPT_RETURNTRANSFER, true); //return the transfer, by default its being echoed out
 $response = curl_exec($curl); //execute the request
 $response = json_decode($response, true);
-var_dump($response);
-echo $response['access_token'];
+//var_dump($response);
+//echo $response['access_token'];
 //echo $response[0]['access_token'];
 
-
+//END COINBASE CODE
 ?>
 
 <div class="container">
