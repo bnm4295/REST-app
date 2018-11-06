@@ -72,8 +72,8 @@ class PropertyController extends Controller
         'version'     => 'latest',
         'region'      => 'ca-central-1',
         'credentials' => [
-          'key'    => 'AKIAIN256AG732NIPEXQ',
-          'secret' => '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'
+          'key'    => '',
+          'secret' => ''
         ]
       ]);
 
@@ -305,8 +305,8 @@ class PropertyController extends Controller
         'version'     => 'latest',
         'region'      => 'ca-central-1',
         'credentials' => [
-          'key'    => 'AKIAIN256AG732NIPEXQ',
-          'secret' => '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'
+          'key'    => '',
+          'secret' => ''
         ]
       ]);
       $s3->registerStreamWrapper();
@@ -375,8 +375,8 @@ class PropertyController extends Controller
         'version'     => 'latest',
         'region'      => 'ca-central-1',
         'credentials' => [
-          'key'    => 'AKIAIN256AG732NIPEXQ',
-          'secret' => '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'
+          'key'    => '',
+          'secret' => ''
         ]
       ]);
       $s3->registerStreamWrapper();
